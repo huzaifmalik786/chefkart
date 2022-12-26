@@ -1,4 +1,5 @@
 import BookTrial from "../components/homepage/BookTrial";
+import Facts from "../components/homepage/Facts";
 import FoodDisplay from "../components/homepage/FoodDisplay";
 import ForEveryone from "../components/homepage/ForEveryone";
 import HasleFreeHiring from "../components/homepage/HasleFreeHiring";
@@ -16,7 +17,7 @@ export default function Home() {
         <HomeBanner />
         <ForEveryone />
         <FoodDisplay />
-        {/* <HomePricing /> */}
+        <Facts />
         <HowChefkartWorks />
         <HasleFreeHiring />
         <JoinAsChef />
