@@ -1,0 +1,48 @@
+.facts_container {
+  display: flex;
+  background: #f9f9f9;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 8.328vw 4.44vw;
+  gap: 1.66vw;
+  width: 100vw;
+  
+  
+
+  .fact_title {
+    width: 18.73vw;
+    height: 4.99vw;
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.88vw;
+    line-height: 4.99vw;
+    margin: 0px 1.11vw;
+    /* identical to box height, or 129% */
+
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #000000;
+  }
+  .fact_description {
+    width: 19.15vw;
+    height: 3.88vw;
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25vw;
+    line-height: 1.94vw;
+    margin: 0px 1.11vw;
+
+    /* or 156% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: #000000;
+  }
+}

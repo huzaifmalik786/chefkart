@@ -48,7 +48,7 @@ const FoodDisplay = (props: Props) => {
           draggable={false}
           showDots={false}
           responsive={responsive}
-          // autoPlay={true}
+          autoPlay={true}
           autoPlaySpeed={2000}
           transitionDuration={900}
           rewindWithAnimation
