@@ -1,0 +1,63 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #f9f9f9;
+
+  padding: 4vw 0;
+
+  .phone_img {
+    place-self: center;
+    position: relative;
+    width: 32.5vw;
+    height: 37vw;
+  }
+
+  .container_text {
+    padding-top: 3.5vw;
+    .heading {
+      h2 {
+        font-size: 3.3vw;
+        font-weight: 700;
+        line-height: 3.5vw;
+      }
+    }
+
+    .text {
+      padding-top: 1.5vw;
+      font-size: 1.1vw;
+
+      .para_1 {
+        border-left: 2px solid #2d4739;
+        p {
+          font-weight: 300;
+          padding: 0vw 1.5vw 1vw 1.5vw;
+        }
+      }
+      .para_2 {
+        border-left: 1px solid #7abd99;
+        p {
+          padding: 2.5vw 1.5vw 0vw 1.5vw;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .bottom_img {
+    display: flex;
+    gap: 2vw;
+    padding-top: 2vw;
+    .app_icon,
+    .play_icon {
+      position: relative;
+      width: 10vw;
+      height: 3.5vw;
+    }
+
+    .play_icon {
+      background: #f6f6f6;
+      border-radius: 8px;
+      border: 1px solid #adadad;
+    }
+  }
+}

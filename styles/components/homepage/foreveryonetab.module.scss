@@ -1,0 +1,31 @@
+.tab {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding-top: 2vw;
+  padding-bottom: 1vw;
+  gap: 2vw;
+
+  .tab_img {
+    position: relative;
+    width: 42.5vw;
+    height: 39.5vw;
+  }
+
+  .tab_text {
+    h3 {
+      font-weight: 700;
+      font-size: 2.77vw;
+      line-height: 3.33vw;
+      letter-spacing: -1px;
+      color: #808080;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.66vw;
+      line-height: 2.22vw;
+      padding-top: 2.22vw;
+    }
+  }
+}

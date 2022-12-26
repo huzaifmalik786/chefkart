@@ -1,0 +1,49 @@
+.pricing_wrapper {
+  .banner {
+    background: url(../../../public/pricing-banner.png) no-repeat;
+    background-size: cover;
+    height: 45vw;
+    position: relative;
+
+    .overlay {
+      .content {
+        padding-left: 7vw;
+        padding-top: 5vw;
+
+        .heading {
+          padding-top: 2vw;
+          h2 {
+            font-size: 3.33vw;
+            font-weight: 700;
+            line-height: 4vw;
+            color: white;
+            letter-spacing: -1.5px;
+            span {
+              color: #ff961f;
+            }
+          }
+        }
+
+        .subheading {
+          padding-top: 2vw;
+
+          p {
+            font-size: 1.38vw;
+            font-weight: 300;
+            line-height: 1.94vw;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .pricing_card {
+    display: flex;
+    margin-top: -12%;
+    padding-bottom: 1vw;
+    z-index: 5;
+    position: relative;
+    justify-content: center;
+    gap: 2.22vw;
+  }
+}

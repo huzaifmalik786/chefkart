@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg1);
+  color: white;
+  height: 6.6vw;
+  padding: 0vw 6.5vw;
+
+  .nav_left {
+    position: relative;
+    height: 4vw;
+    width: 13.5vw;
+  }
+
+  .nav_center {
+    ul {
+      display: flex;
+
+      gap: 2vw;
+      list-style: none;
+      font-weight: 500;
+      font-size: 1.25vw;
+      line-height: 1.5vw;
+    }
+  }
+
+  .nav_right {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    div {
+      position: relative;
+      height: 4vw;
+      width: 4vw;
+    }
+
+    button {
+      text-transform: uppercase;
+      font-weight: 800;
+      padding: 0.8vw 1.4vw;
+      font-size: 1.1vw;
+      line-height: 1.4vw;
+      letter-spacing: 0.005em;
+    }
+  }
+}

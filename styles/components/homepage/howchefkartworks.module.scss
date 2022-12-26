@@ -1,0 +1,70 @@
+.how_container {
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+  padding: 8vw 1vw 5vw 1vw;
+
+  .how_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 6vw;
+    padding-top: 1vw;
+
+    h2 {
+      font-size: 3.3vw;
+      font-weight: 600;
+      line-height: 3.5vw;
+    }
+
+    p {
+      padding-top: 1.8vw;
+      font-size: 1.38vw;
+      font-weight: 300;
+      line-height: 1.6vw;
+    }
+  }
+
+  .how_right {
+    display: flex;
+    justify-content: space-around;
+
+    .step {
+      .step_img {
+        position: relative;
+        height: 12.2vw;
+        width: 12.2vw;
+      }
+      .step_num {
+        background: #ff8811;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5vw;
+        width: 2.5vw;
+        border-radius: 50%;
+        p {
+          font-weight: 700;
+          font-size: 1.9vw;
+          color: white;
+          line-height: 2.5vw;
+        }
+      }
+    }
+
+    .step_text {
+      padding-top: 1vw;
+      color: #8a8a8a;
+      font-weight: 700;
+      font-size: 1.9vw;
+      line-height: 2.5vw;
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1vw;
+        gap: 1vw;
+      }
+    }
+  }
+}

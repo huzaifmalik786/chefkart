@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background-color: var(--bg-orange);
+  padding: 3vw 7vw;
+
+  .heading {
+    h2 {
+      font-weight: 600;
+      font-family: var(--secondary_font);
+      font-size: 3.2vw;
+      color: var(--content-color-dark);
+      line-height: 3.8vw;
+    }
+  }
+  .btn {
+    place-self: center;
+    padding-left: 10vw;
+    button {
+      padding: 1.3vw 5.5vw;
+      background-color: #ff961f;
+      //   padding: 16px 24px;
+      line-height: 1.65vw;
+      font-size: 1.4vw;
+      font-weight: 700;
+    }
+  }
+}

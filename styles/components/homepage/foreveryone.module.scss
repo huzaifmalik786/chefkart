@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  background: #f9f9f9;
+
+  align-items: center;
+  flex-direction: column;
+  padding-top: 3.8vw;
+
+  .heading {
+    h3 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.7vw;
+      line-height: 3.3vw;
+    }
+  }
+
+  .link_wrapper {
+    .link_list {
+      display: flex;
+      gap: 3.5vw;
+      list-style: none;
+      padding-top: 3vw;
+
+      .link_list_item {
+        font-size: 1.66vw;
+        line-height: 2vw;
+        color: #afafaf;
+        letter-spacing: -0.016em;
+        font-weight: 500;
+      }
+
+      .link_list_active_item {
+        color: #ff961f;
+        padding-bottom: 1vw;
+        border-bottom: 2px solid #ff961f;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #214e34;
+
+  .text_content {
+    color: white;
+    place-self: center;
+    justify-content: center;
+    h2,
+    button {
+      font-family: var(--secondary_font);
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.5vw;
+      line-height: 3vw;
+      padding-bottom: 5.4vw;
+
+      span {
+        color: #ff8811;
+      }
+    }
+
+    button {
+      font-size: 1.25vw;
+      line-height: 1.66vw;
+      padding: 1vw 2vw;
+    }
+  }
+  .img {
+    position: relative;
+    height: 40.625vw;
+    width: 50vw;
+  }
+}

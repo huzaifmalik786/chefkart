@@ -1,0 +1,30 @@
+.pricing_wrapper {
+  background: #fff3e8;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  padding: 4.5vw 6.5vw;
+
+  .pricing_heading {
+    place-self: center;
+    h2 {
+      color: #242424;
+      font-size: 3.33vw; // 48px
+      font-weight: 700;
+      line-height: 4.16vw; // 60px
+      padding-bottom: 1.66vw;
+    }
+
+    p {
+      color: #242424;
+      font-size: 1.38vw;
+      font-weight: 300;
+      line-height: 1.9vw;
+    }
+  }
+
+  .pricecard_wrapper {
+    padding-left: 2vw;
+    display: flex;
+    gap: 2vw;
+  }
+}
