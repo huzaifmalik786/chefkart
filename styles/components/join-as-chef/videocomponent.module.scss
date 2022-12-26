@@ -1,0 +1,24 @@
+.video_wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .video_text {
+    place-self: center;
+
+    h2 {
+      color: #4a4a4a;
+      white-space: pre-line;
+      font-size: 3.33vw;
+      line-height: 4vw;
+      padding-top: 2.22vw;
+      font-weight: 400;
+    }
+    p {
+      color: #e76f51;
+      padding-top: 2.77vw;
+      font-size: 1.38vw;
+      font-family: var(tertiary_font);
+      font-weight: 700;
+    }
+  }
+}
