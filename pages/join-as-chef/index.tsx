@@ -13,6 +13,7 @@ const index = (props: Props) => {
       <VideoComponent />
       <Chef />
       <SimplifyWay />
+      <FAQ />
     </Layout>
   );
 };
