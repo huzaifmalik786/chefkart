@@ -1,0 +1,30 @@
+.content_wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  background-color: var(--bg-orange);
+  white-space: pre-line;
+  align-items: center;
+  padding: 4.65vw 6vw;
+
+  .heading_div {
+    h2 {
+      color: #242424;
+      font-size: 3.33vw;
+      line-height: 4.28vw;
+      letter-spacing: -2.5%;
+
+      span {
+        color: #e5871c;
+      }
+    }
+  }
+
+  .text_div {
+    padding-left: 3vw;
+    p {
+      font-size: 1.38vw;
+      line-height: 1.94vw;
+      color: #072125;
+    }
+  }
+}
