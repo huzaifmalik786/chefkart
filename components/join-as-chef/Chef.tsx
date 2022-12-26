@@ -8,15 +8,18 @@ type Props = {};
 const Chef = (props: Props) => {
   return (
     <div className={Styles.chef_wrapper}>
-      <div>
-        <Image src={"/chef.png"} alt="chef" width={511} height={568} />
+      <div className={Styles.chef_img}>
+        <Image src={"/chef.png"} alt="chef" fill />
       </div>
-      <div>
-        <p>The new way to work</p>
+      <div className={Styles.chef_content}>
+        <h6>The new way to work</h6>
         <h2>
           Ready to show your{"\n"} customers what you’ve {"\n"}got?
         </h2>
-        <p>Apply here to join our nationwide network of private chefs.</p>
+        <p>
+          <span> Apply here</span> to join our nationwide network of private
+          chefs.
+        </p>
         <button>Sign up now</button>
       </div>
     </div>
