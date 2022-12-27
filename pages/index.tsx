@@ -1,3 +1,4 @@
+import Artisans from "../components/homepage/Artisans";
 import BookTrial from "../components/homepage/BookTrial";
 import Facts from "../components/homepage/Facts";
 import FoodDisplay from "../components/homepage/FoodDisplay";
@@ -20,6 +21,7 @@ export default function Home() {
         <Facts />
         <HowChefkartWorks />
         <HasleFreeHiring />
+        <Artisans />
         <JoinAsChef />
         <HomeBlogs />
         <BookTrial />

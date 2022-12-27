@@ -95,7 +95,7 @@ const Testimonial = () => {
                 testimonies.map((t, key)=>{
                     return(
                         <div key={key} className={Styles.item} style={activeSlide === key ? activeStyle : {}}>
-                            <Image src={t.image}  width={100} height={100} alt="" className={Styles.image}  />
+                            <div className={Styles.image} ><Image src={t.image} fill alt="" /></div>
                             <div>
                                 {renderStars(t.stars)}
                                 <p className={Styles.content} style={activeSlide===key? {fontSize: "1.38vw", lineHeight: "1.80vw"}: {}}>{t.content}</p>

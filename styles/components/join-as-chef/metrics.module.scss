@@ -1,0 +1,52 @@
+.metric_container{
+    display: flex;
+    background: #FFFFFF;
+    justify-content: space-between;
+    padding: 5.97vw 11.8vw;
+
+    .metric_item{
+        width: 20%;
+        position: relative;
+       
+
+        .metric_title{
+            z-index: 1;
+            font-family: 'Figtree';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 3.89vw;
+            line-height: 5.1vw;
+            text-align: center;
+            letter-spacing: -0.02em;
+            color: #000000;
+            
+            
+        }
+    
+        .metric_description{
+            font-family: 'Figtree';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.25vw;
+            line-height: 1.94vw;
+            align-items: center;
+            text-align: center;
+            letter-spacing: -0.01em;
+    
+            color: #000000;
+    
+        }
+
+        .image{
+            width: 30%;
+            // height: 60%;
+            aspect-ratio: 1/1;
+            position: absolute;
+            top: -2%;
+            right: 0;
+            z-index: 0;
+        }
+    }
+
+   
+}
