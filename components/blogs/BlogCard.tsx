@@ -22,9 +22,9 @@ const BlogCard = (props: Props) => {
       <div className={Styles.content}>
         <p className={Styles.subheading}>{props.card.subheading}</p>
         <h3 className={Styles.heading}>{props.card.heading}</h3>
+        <p className={Styles.date}>{props.card.date}</p>
       </div>
       <div>
-        <p className={Styles.date}>{props.card.date}</p>
       </div>
     </div>
   );
