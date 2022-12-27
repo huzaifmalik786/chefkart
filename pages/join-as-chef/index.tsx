@@ -1,6 +1,7 @@
 import React from "react";
 import FAQ from "../../components/FAQ";
 import Chef from "../../components/join-as-chef/Chef";
+import Metrics from "../../components/join-as-chef/Metrics";
 import CookWithUs from "../../components/join-as-chef/CookWithUs";
 import JoinHeroCarousel from "../../components/join-as-chef/JoinHeroCarousel";
 import SimplifyWay from "../../components/join-as-chef/SimplifyWay";
@@ -16,6 +17,7 @@ const index = (props: Props) => {
       <JoinHeroCarousel />
       <CookWithUs />
       <VideoComponent />
+      <Metrics />
       <Testimonial />
       <Chef />
       <SimplifyWay />
