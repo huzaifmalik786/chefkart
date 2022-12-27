@@ -1,0 +1,46 @@
+.us_wrapper {
+  padding: 5vw 0;
+  h2 {
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -1.5px;
+    font-size: 2.77vw;
+    line-height: 3.48vw;
+  }
+
+  .cards_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8.26vw;
+    padding: 4vw 0;
+    .card {
+      text-align: center;
+      font-family: var(--secondary_font);
+      width: 21vw;
+      align-self: stretch;
+
+      div {
+        position: relative;
+        height: 15.9vw;
+      }
+
+      h4 {
+        font-size: 1.66vw;
+        line-height: 2.22vw;
+        font-family: var(--secondary_font);
+        padding-top: 1.45vw;
+      }
+
+      p {
+        font-size: 1.25vw;
+        color: #484848;
+        line-height: 1.56vw;
+        white-space: pre-line;
+        padding-top: 0.55vw;
+        font-weight: 400;
+        font-family: var(--secondary_font);
+      }
+    }
+  }
+}
