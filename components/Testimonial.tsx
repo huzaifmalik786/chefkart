@@ -80,7 +80,7 @@ const Testimonial = () => {
         slidesToSlide={1}
         autoPlay={false}
         autoPlaySpeed={1000}
-        // arrows={false}
+        arrows={false}
         centerMode={true}
         // infinite={true}
         customTransition="all .5"
