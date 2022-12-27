@@ -65,6 +65,7 @@
     }
 
     .get_started_popular {
+      min-width: 11.86vw;
         margin: 0px auto;
       display: flex;
       flex-direction: row;
@@ -89,6 +90,7 @@
         display: flex;
         justify-content: center;
         background-color: #eeeeee;
+        border-radius: 0px 0px 0.55vw 0.55vw;
 
         .get_started_premium {
           min-width: 11.86vw;

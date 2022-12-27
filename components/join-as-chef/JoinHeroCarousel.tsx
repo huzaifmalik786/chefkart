@@ -58,7 +58,7 @@ const JoinHeroCarousel = (props: Props) => {
           return (
             <div key={img.id} className={Styles.items}>
               <div>
-                <Image src={img.img} alt="food" height={671} width={1440} />
+                <Image src={img.img} alt="food" fill />
               </div>
               <div>
                 <h2>Lorem Ipsum,</h2>

@@ -15,9 +15,9 @@ const index = (props: Props) => {
   return (
     <Layout>
       <JoinHeroCarousel />
+      <Metrics />
       <CookWithUs />
       <VideoComponent />
-      <Metrics />
       <Testimonial />
       <Chef />
       <SimplifyWay />

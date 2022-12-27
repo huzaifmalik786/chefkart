@@ -2,6 +2,7 @@
   box-shadow: 0.899225px 6.29457px 21.5814px rgba(0, 0, 0, 0.21);
   width: 28.5vw;
   border-radius: 10.7907px;
+  position: relative;
 
   .blog_img {
     position: relative;
@@ -14,7 +15,7 @@
   }
 
   .content {
-    padding: 1.66vw 1.8vw;
+    padding: 1.66vw 1.8vw 6.03vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -39,6 +40,17 @@
     }
   }
 
+  .date {
+    position: absolute;
+    bottom: 1.66vw;
+    left: 1.8vw;
+    color: #9a9da3;
+    font-size: 0.97vw;
+    line-height: 1.45vw;
+    font-weight: 400;
+    padding-top: 2.77vw;
+    justify-self: end;
+  }
   .date {
     // display: flex;
     // justify-self: flex-end;
