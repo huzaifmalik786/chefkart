@@ -57,7 +57,7 @@ const ProjectFeatures = () => {
                             <tr key={key}>
                                 <td className={Styles.feature_name}>{i.feature}</td>
                                 <td>{i.popular &&  <div className={Styles.checked}><Image fill src='/Vector (9).png' alt="" /></div>}</td>
-                                <td>{i.premium &&  <div className={Styles.checked}><Image fill src='/Vector (9).png' alt="" /></div>}</td>
+                                <td style={key%2?{backgroundColor: "#eeeeee"}:{}}>{i.premium &&  <div className={Styles.checked}><Image fill src='/Vector (9).png' alt="" /></div>}</td>
                             </tr>
                         )
                     })
