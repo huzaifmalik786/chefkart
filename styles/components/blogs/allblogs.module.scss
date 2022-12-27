@@ -1,0 +1,38 @@
+.blogs {
+  //   padding: 5vw;
+
+  .filter_btns {
+    display: flex;
+    justify-content: center;
+    gap: 0.83vw;
+    // padding-bottom: 4vw;
+    font-family: var(--inter_font);
+
+    .button {
+      padding: 0.65vw 3.15vw;
+      background-color: #f5f5f5;
+      color: #878787;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.76vw;
+      line-height: 1.06vw;
+    }
+    .active_btn {
+      padding: 0.65vw 3.15vw;
+      color: white;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 0.9vw;
+      line-height: 1.26vw;
+      background-color: #571c5e;
+    }
+  }
+
+  .cards_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.66vw;
+    padding: 4vw 0;
+  }
+}

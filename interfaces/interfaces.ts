@@ -4,3 +4,10 @@ export interface PriceCard {
   price: number;
   points: string[];
 }
+
+export interface BlogCardType {
+  heading: string;
+  subheading: string;
+  img: string;
+  date: string;
+}
