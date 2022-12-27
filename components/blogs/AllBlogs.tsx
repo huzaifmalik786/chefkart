@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BlogCard from "./BlogCard";
 import Styles from "../../styles/components/blogs/allblogs.module.scss";
 import { BlogCardType } from "../../interfaces/interfaces";
+import Image from "next/image";
 
 type Props = {};
 
@@ -80,6 +81,16 @@ const AllBlogs = (props: Props) => {
         {BlogData.map((card, index) => {
           return <BlogCard card={card} key={index} />;
         })}
+      </div>
+      <div className={Styles.pagination}>
+        {[1, 2, 3, 4].map((item, index) => {
+          return <button key={index}>{item}</button>;
+        })}
+        <button>
+          <div className={Styles.next}>
+            <Image src={"/arrow_next.svg"} alt="next" fill />
+          </div>
+        </button>
       </div>
     </div>
   );

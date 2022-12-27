@@ -33,6 +33,33 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.66vw;
-    padding: 4vw 0;
+    padding-top: 4vw;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    padding: 5vw 0;
+
+    button {
+      background-color: #d9d9d9;
+      border-radius: 50%;
+      height: 2.22vw;
+      width: 2.22vw;
+
+      .next {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 0.69vw;
+        position: relative;
+        width: 0.34vw;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 }

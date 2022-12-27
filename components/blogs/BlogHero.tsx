@@ -8,7 +8,7 @@ const BlogHero = (props: Props) => {
   return (
     <div className={Styles.hero_wrapper}>
       <div className={Styles.hero_content}>
-        <p className={Styles.label}>Blogs</p>
+        <p className={Styles.label}>Blog</p>
         <h2>
           Book a Trained Chef {"\n"} for your <span> Aniversary</span>
         </h2>

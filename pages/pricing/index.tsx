@@ -1,4 +1,5 @@
 import React from "react";
+import FAQ from "../../components/FAQ";
 import BookTrial from "../../components/homepage/BookTrial";
 import Layout from "../../components/layouts/Layout";
 import Features from "../../components/pricing/Features";
@@ -17,6 +18,7 @@ const index = (props: Props) => {
       <ProjectFeatures />
       <RestaurantLike />
       <PricingSignUp />
+      <FAQ />
 
       <BookTrial />
     </Layout>
