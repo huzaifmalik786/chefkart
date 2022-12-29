@@ -2,7 +2,7 @@
   padding: 6.94vw 6.45vw 2.43vw 6.38vw;
 
   .sub_heading {
-    font-family: "Plus Jakarta Sans";
+    font-family: var(--tertiary_font);
     font-style: normal;
     font-weight: 700;
     font-size: 1.25vw;
@@ -22,7 +22,7 @@
 
     th {
       padding: 2.45vw 0px 0.97vw 0px;
-      font-family: "Plus Jakarta Sans";
+      font-family: var(--tertiary_font);
       font-style: normal;
       font-weight: 700;
       font-size: 1.25vw;
@@ -49,7 +49,7 @@
       border-radius: 0.55vw 0.55vw 0px 0px;
     }
     .feature_name {
-      font-family: "Plus Jakarta Sans";
+      font-family: var(--tertiary_font);
       font-style: normal;
       font-weight: 400;
       font-size: 1.11vw;
@@ -107,6 +107,12 @@
           font-size: 0.97vw;
           line-height: 150%;
           color: #ffffff;
+
+          &:hover {
+            background: #1a3b41;
+            // background: #20484f;
+            transition: ease-out 200ms;
+          }
         }
     }
 

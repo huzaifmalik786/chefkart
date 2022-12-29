@@ -17,7 +17,7 @@ const PricingCardData: PriceCard[] = [
     ],
   },
   {
-    heading: "Standard",
+    heading: "Popular",
     desc: "Missing the ‘ghar ka khana \n much? This one’s for you.",
     price: 3000,
     points: [

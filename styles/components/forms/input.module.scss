@@ -1,0 +1,37 @@
+.input_container {
+    border: 0.07vw solid #e5e5e5;
+    padding: 0.83vw 0.83vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1.66vw 0px;
+    font-family: var(--secondary_font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.11vw;
+    line-height: 1.38vw;
+    letter-spacing: -0.005em;
+
+    color: #979797;
+
+    span {
+      border-right: 0.138vw solid #979797;
+      margin-right: 0.42vw;
+    }
+
+    input,
+    textarea {
+      font-family: var(--secondary_font);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.11vw;
+      line-height: 1.66vw;
+      letter-spacing: -0.005em;
+
+      color: #979797;
+
+      outline: none;
+      flex-grow: 1;
+      border: none;
+    }
+  }

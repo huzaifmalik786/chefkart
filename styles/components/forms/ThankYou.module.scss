@@ -1,0 +1,51 @@
+.thank_you_modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.33vw 3.88vw 8.467vw;
+  gap: 5vw;
+  background: #ffffff;
+  box-shadow: 0px 0.28vw 1.53vw rgba(0, 0, 0, 0.25);
+  border-radius: 0.55vw;
+
+  position: relative;
+  width: 52.05vw;
+  //   height: 604px;
+
+  .icon {
+    position: relative;
+    width: 7.42vw;
+    height: 5.76vw;
+  }
+
+  .content {
+    // font-family: "Open Sans";
+    // font-style: normal;
+    font-weight: 600;
+    font-size: 2.77vw;
+    line-height: 224.18%;
+    /* or 90px */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.07vw;
+
+    color: #242424;
+  }
+
+  a {
+    // font-family: "Open Sans";
+    // font-style: normal;
+    font-weight: 600;
+    font-size: 1.38vw;
+    line-height: 224.18%;
+    text-align: center;
+    letter-spacing: -0.07vw;
+    text-decoration-line: underline;
+
+    color: #ff8811;
+  }
+}

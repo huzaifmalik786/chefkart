@@ -8,8 +8,7 @@
         width: 31.36vw;
 
         .main_title{
-            font-family: 'Livvic';
-            font-style: normal;
+            font-family: var(--secondary_font);
             font-weight: 700;
             font-size: 2.77vw;
             line-height: 3.47vw;
@@ -24,7 +23,7 @@
         }
 
         .sub_title{
-            font-family: 'Plus Jakarta Sans';
+            font-family: var(--tertiary_font);
             font-style: normal;
             font-weight: 400;
             font-size: 1.66vw;
@@ -50,7 +49,7 @@
 
             }
             .icon_title{
-                font-family: 'Plus Jakarta Sans';
+                font-family: var(--tertiary_font);
                 font-style: normal;
                 font-weight: 700;
                 font-size: 1.11vw;

@@ -72,7 +72,7 @@ const Header = () => {
           </ul>
         </div>
         <div className={Styles.nav_right}>
-          <button>contact us</button>
+          <button onClick={() => router.push("/contact-us")}>contact us</button>
           <div>
             <Image
               src={"/burger-icon.svg"}

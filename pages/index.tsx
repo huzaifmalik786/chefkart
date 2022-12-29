@@ -10,7 +10,9 @@ import HomePricing from "../components/homepage/HomePricing";
 import HowChefkartWorks from "../components/homepage/HowChefkartWorks";
 import JoinAsChef from "../components/homepage/JoinAsChef";
 import Layout from "../components/layouts/Layout";
-
+import Testimonial from "../components/Testimonial";
+import FeedbackVideo from "../components/homepage/FeedbackVideo";
+import Hygiene from "../components/Hygiene";
 export default function Home() {
   return (
     <>
@@ -19,7 +21,14 @@ export default function Home() {
         <ForEveryone />
         <FoodDisplay />
         <Facts />
+        <Hygiene subheading="Mom Approved" heading="safety standards" main_desc="At Chefkart, we are truly committed to" sub_desc="simplifying the way India eats." text_align="center" />
+        <HomePricing />
         <HowChefkartWorks />
+
+        {/* section for customer feedback  */}
+        
+          <Testimonial />
+        
         <HasleFreeHiring />
         <Artisans />
         <JoinAsChef />
