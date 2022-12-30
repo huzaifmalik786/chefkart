@@ -1,0 +1,34 @@
+.founder {
+  h2 {
+    font-family: var(--secondary_font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.77vw;
+    line-height: 4.30vw;
+    text-align: center;
+    letter-spacing: -0.10vw;
+    color: #292929;
+    padding: 2.78vw 0px 3.33vw 0px;
+
+    span{
+        font-family: var(--secondary_font);
+        color: #E76F51;
+    }
+  }
+
+  .founder_carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class*="track"] {
+      align-items: center;
+      gap: 6.03vw;
+    }
+
+    .founder_item{
+      width: 16.28vw !important;
+
+    }
+  }
+}

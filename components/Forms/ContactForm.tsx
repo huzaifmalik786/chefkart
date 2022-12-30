@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, Resolver } from "react-hook-form";
 import Styles from '../../styles/components/forms/contactForm.module.scss'
+import Button from "./Button";
 import Input from "./Input";
 
 type FormValues = {
@@ -50,7 +51,7 @@ const ContactForm = () => {
         </div>
         {/* {errors.message && <p>Please enter a message</p>} */}
 
-        <button type="submit">Submit</button>
+        <Button text="Submit" />
       </form>
 
       

@@ -1,0 +1,57 @@
+.profile_item {
+  .image {
+    width: 16.28vw;
+    height: 20.38vw;
+    position: relative;
+    border-radius: 0.7vw;
+    overflow: hidden;
+  }
+
+  .content {
+    margin-bottom: 1.25vw;
+    .name {
+        margin: 1.11vw 0px 0.27vw 0px;
+      font-weight: 700;
+      font-size: 1.67vw;
+      line-height: 2.01vw;
+      display: flex;
+      align-items: center;
+      color: #292929;
+    }
+
+    .designation {
+      font-weight: 400;
+      font-size: 1.25vw;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+
+      color: #5b5b5b;
+    }
+  }
+
+  .social {
+    display: flex;
+    gap: 1.38vw;
+    a {
+      display: flex;
+    //   flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    //   padding: 4px;
+      gap: 0.7vw;
+
+      width: 2.22vw;
+      height: 2.22vw;
+
+      border: 0.07vw solid #cfcfcf;
+      border-radius: 3.33vw;
+
+      .social_icon {
+        position: relative;
+        width: 1.25vw;
+        height: 1.25vw;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.vision_container {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.32vw 5.55vw 6.73vw 6.10vw;
+
+  .left_section {
+    width: 50%;
+
+    span {
+      font-weight: 700;
+      font-size: 1.66vw;
+      line-height: 2.01vw;
+
+      color: #e76f51;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2.22vw;
+      line-height: 2.64vw;
+      color: #072125;
+      margin: 1.11vw 0px 2.5vw 0px;
+    }
+
+    p {
+      font-family: var(--tertiary_font);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.25vw;
+      line-height: 150%;
+      color: #072125;
+    }
+  }
+
+  .right_section{
+    display: flex;
+    justify-content: flex-end;
+
+      .vison_image {
+        width: 31.7vw;
+        height: 28.80vw;
+        position: relative;
+        border-radius: 0.83vw;
+        overflow: hidden;
+      }
+  }
+
+}

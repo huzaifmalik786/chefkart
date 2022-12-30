@@ -1,0 +1,25 @@
+import React from 'react'
+import Founder from '../../components/AboutUs/Founder'
+import Hero from '../../components/AboutUs/Hero'
+import Mission from '../../components/AboutUs/Mission'
+import Vision from '../../components/AboutUs/Vision'
+import ContactForm from '../../components/AboutUs/ContactForm'
+import Facts from '../../components/homepage/Facts'
+import Layout from '../../components/layouts/Layout'
+import Social from '../../components/AboutUs/Social'
+
+const index = () => {
+  return (
+    <Layout>
+        <Hero />
+        <Vision />
+        <Mission />
+        <Facts bgcolor='#2D4739' color='#ffffff' />
+        <Founder />
+        <ContactForm />
+        <Social />
+    </Layout>
+  )
+}
+
+export default index

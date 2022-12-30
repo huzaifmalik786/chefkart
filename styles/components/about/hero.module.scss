@@ -1,0 +1,115 @@
+.about_hero {
+  display: flex;
+  background: #F2F2F2;
+  justify-content: space-between;
+  padding: 0px 6.6vw 0px 6.6vw;
+  width: 100vw;
+  height: 44vw;
+  margin-bottom: 6.6vw;
+
+  .description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .badge {
+      font-weight: 700;
+      font-size: 0.97vw;
+      line-height: 1.38vw;
+      padding: 0.27vw 0.69vw;
+      gap: 0.69vw;
+      background: #3a8459;
+      border-radius: 1.87vw;
+      letter-spacing: -0.015em;
+      color: #ffffff;
+    }
+
+    h2 {
+      font-family: var(--secondary_font);
+      font-weight: 700;
+      font-size: 3.33vw;
+      line-height: 4.16vw;
+      letter-spacing: -0.025em;
+      margin: 1.38vw 0px 1.66vw 0px;
+
+      color: #111111;
+
+      span {
+        font-family: var(--secondary_font);
+        color: #214e34;
+      }
+    }
+    p {
+      font-weight: 400;
+      font-size: 1.66vw;
+      line-height: 2.22vw;
+      letter-spacing: -0.01em;
+      margin-bottom: 4.44vw;
+      color: #000000;
+    }
+
+    button {
+      background: #000000;
+      border-radius: 0.55vw;
+      padding: 1.11vw 1.38vw;
+      font-weight: 800;
+      font-size: 1.38vw;
+      line-height: 1.66vw;
+      letter-spacing: -0.005em;
+      text-transform: uppercase;
+
+      color: #ffffff;
+    }
+  }
+
+  .images_section {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2.43vw;
+
+    .rightmost {
+      position: relative;
+      width: 27.8vw;
+      height: 27.6vw;
+
+      .left_image_bg {
+        background: url("/Rectangle 191.png") no-repeat;
+        background-size: cover;
+        width: 24.6vw;
+        height: 27.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+  
+        position: absolute;
+        top: 10.54vw;
+        right: 17.1vw;
+  
+        .left_image {
+          position: relative;
+          width: 19.63vw;
+          height: 29.45vw;
+        }
+      }
+
+      .big_ellipse{
+        position: absolute;
+        width: 4.58vw;
+        aspect-ratio: 1/1;
+        left: -10.06vw;
+        top: 3.9vw;
+      }
+      .small_ellipse{
+        width: 2.91vw;
+        aspect-ratio: 1/1;
+        position: absolute;
+        bottom: -4.5vw;
+        left: 50%;
+
+      }
+    }
+  }
+}

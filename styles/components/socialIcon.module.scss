@@ -1,0 +1,16 @@
+.social_container{
+    width: 42px;
+    height: 42px;
+    border: 1.3125px solid #CDCACA;
+    border-radius: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon{
+        position: relative;
+        width: 31.5px;
+        height: 31.5px;
+
+    }
+}

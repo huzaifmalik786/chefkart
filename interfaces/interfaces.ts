@@ -11,3 +11,11 @@ export interface BlogCardType {
   img: string;
   date: string;
 }
+
+export interface ProfileCardType {
+  image: string;
+  name: string;
+  designation: string;
+  twitter_link: string;
+  linkedin_link: string;
+}

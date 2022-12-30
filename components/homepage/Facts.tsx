@@ -26,9 +26,9 @@ const FactArr: FactData[] = [
   },
 ];
 
-const Facts = () => {
+const Facts = (props: any) => {
   return (
-    <div className={Styles.facts_container}>
+    <div className={Styles.facts_container} style={{backgroundColor: `${props.bgcolor}`, color: `${props.color}`}}>
       {FactArr.map((item, index) => {
         return (
           <div key={index}>
