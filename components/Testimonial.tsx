@@ -31,7 +31,7 @@ const Testimonial = () => {
 
     const activeStyle = {
       width: "26.49vw !important",
-      height: "25.81vw",
+      // height: "25.81vw",
       backgroundColor: "#f9f9f9",
       borderRadius: "0.16vw solid #ABC0B5",
       border: "0.16vw solid #ABC0B5",

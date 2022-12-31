@@ -4,7 +4,7 @@ import Styles from '../styles/components/Hygiene.module.scss'
 
 
 
-const Hygiene = (props) => {
+const Hygiene = (props: any) => {
   return (
     <div className={Styles.hygiene_container} style={{textAlign: `${props.text_align}`}}>
         {/* <div className={Styles.centered}> */}
