@@ -1,0 +1,36 @@
+.hero_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .hero_content {
+    h2 {
+      font-size: 3.33vw;
+      line-height: 4vw;
+      font-weight: 700;
+      white-space: pre-line;
+    }
+
+    h4 {
+      font-size: 1.66vw;
+      line-height: 2.26vw;
+      font-weight: 400;
+      padding-top: 1.31vw;
+      padding-bottom: 3.81vw;
+    }
+
+    button {
+      background-color: black;
+      font-size: 1.38vw;
+      line-height: 1.66vw;
+      text-transform: uppercase;
+      padding: 1.11vw 1.38vw;
+    }
+  }
+
+  .img_container {
+    display: flex;
+    gap: 38px;
+    align-items: center;
+  }
+}
