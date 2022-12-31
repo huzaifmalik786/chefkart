@@ -29,6 +29,17 @@
       position: relative;
       width: 37.05vw;
       height: 34.35vw;
+      z-index: 1;
+
+      .bg_orange{
+        position: absolute;
+        background-color: #E76F51;
+        width: 33.86vw;
+        height: 25vw;
+        bottom: 0;
+        left: 2.36vw;
+        z-index: -1;
+      }
     }
     .line {
       width: 7.5vw;

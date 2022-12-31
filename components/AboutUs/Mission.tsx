@@ -5,8 +5,10 @@ const Mission = () => {
   return (
     <div className={Styles.vision_container}>
         <div className={Styles.right_section}>
-            <div className={Styles.vison_image} style={{width: '29.36vw', height: '27.2vw'}}>
+            <div className={Styles.vison_image} style={{width: '29.36vw', height: '27.2vw', overflow: 'visible'}}>
                 <Image src='/M_F_Home chef_refine 1.png' alt="mission_image" fill />
+
+                <div className={Styles.bg_orange}></div>
             </div>
         </div>
         <div className={Styles.left_section}>

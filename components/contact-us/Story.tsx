@@ -11,6 +11,8 @@ const Story = () => {
             <span className={Styles.line}></span>
             <div className={Styles.image}>
                 <Image src='/M_F_Home chef_refine 1.png' alt="chef_photo" fill />
+
+                <div className={Styles.bg_orange}></div>
             </div>
         </div>
         <div className={Styles.right_section}>

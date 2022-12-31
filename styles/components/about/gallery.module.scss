@@ -1,0 +1,34 @@
+.gallery_container {
+  h2 {
+    font-family: var(--secondary_font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.33vw;
+    line-height: 4.2vw;
+    text-align: center;
+    margin-bottom: 5.5vw;
+    margin-top: 5.5vw;
+    letter-spacing: -0.025em;
+    color: #111111;
+  }
+}
+.gallery_carousel {
+  justify-content: center;
+  align-items: center;
+
+  [class*="track"] {
+    justify-content: center;
+    align-items: center;
+    gap: 1.35vw;
+  }
+
+  .gallery_item {
+    width: 16.58vw !important;
+    height: 16.58vw !important;
+    position: relative;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    background-color: #d9d9d9;
+    border-radius: 0.45vw;
+    overflow: hidden;
+  }
+}
