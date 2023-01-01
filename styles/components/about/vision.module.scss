@@ -31,6 +31,7 @@
       line-height: 150%;
       color: #072125;
     }
+    
   }
 
   .right_section{
@@ -43,6 +44,18 @@
         position: relative;
         border-radius: 0.83vw;
         overflow: hidden;
+        z-index: 1;
+
+        .bg_orange{
+          position: absolute;
+          width: 30.25vw;
+          height: 18.52vw;
+          background-color: #e76f51;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 0.83vw;
+        }
       }
   }
 

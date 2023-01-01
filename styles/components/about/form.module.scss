@@ -18,6 +18,9 @@
     flex-direction: column;
     justify-content: center;
     padding: 0.34vw 0.34vw 0.34vw 3.88vw;
+    gap: 2.22vw;
+    
+
 
     h2 {
       text-align: center;
@@ -34,7 +37,12 @@
       color: #242424;
     }
 
-    input[type="checkbox"] {
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 1.11vw;
+
+      input[type="checkbox"] {
       accent-color: #1c1b1f;
       width: 1.25vw;
       aspect-ratio: 1/1;
@@ -53,5 +61,7 @@
 
       color: #000000;
     }
+    }
+    
   }
 }

@@ -10,21 +10,26 @@ type Props = {
 
 const Accordion = (props: Props) => {
     const [isActive, setIsActive] = useState<Boolean>(false);
+    
   
     return (
       <div
         key={props.key}
         className={Styles.card}
-        onClick={() => {setIsActive(!isActive)}}
+        onClick={() => {setIsActive(!isActive)} }
       >
         <div className={Styles.accordion}>
           <p>{props.title}</p>
-          <Image
-            src={"/arrow_forward_ios.svg"}
-            alt="arrow"
-            width={24}
-            height={24}
-          />
+          <div className={Styles.arrow}>
+            <Image
+              src="/arrow_forward_ios.svg"
+              alt="arrow"
+              fill
+
+              style={isActive ? {transform: 'rotate(180deg)'} : {}}
+            />
+
+          </div>
         </div>
         {isActive && <div className={Styles.panel}>{props.content}</div>}
       </div>

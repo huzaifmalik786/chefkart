@@ -7,6 +7,7 @@ import ContactForm from '../../components/AboutUs/ContactForm'
 import Facts from '../../components/homepage/Facts'
 import Layout from '../../components/layouts/Layout'
 import Social from '../../components/AboutUs/Social'
+import Gallery from '../../components/AboutUs/Gallery'
 
 const index = () => {
   return (
@@ -16,6 +17,7 @@ const index = () => {
         <Mission />
         <Facts bgcolor='#2D4739' color='#ffffff' />
         <Founder />
+        <Gallery />
         <ContactForm />
         <Social />
     </Layout>

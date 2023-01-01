@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Styles from "../styles/components/Hygiene.module.scss";
 
-const Hygiene = (props) => {
+const Hygiene = (props: any) => {
   return (
     <div
       className={Styles.hygiene_container}

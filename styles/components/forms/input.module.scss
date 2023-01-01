@@ -5,7 +5,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 1.66vw 0px;
+    // margin: 1.66vw 0px;
     font-family: var(--secondary_font);
     font-style: normal;
     font-weight: 500;
@@ -34,5 +34,10 @@
       outline: none;
       flex-grow: 1;
       border: none;
+    }
+    .link_icon{
+      position: relative;
+      width: 1.52vw;
+      aspect-ratio: 1/1;
     }
   }
