@@ -1,0 +1,15 @@
+.founder_carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class*="track"] {
+      align-items: center;
+      gap: 6.03vw;
+    }
+
+    .founder_item{
+      width: 16.28vw !important;
+
+    }
+  }

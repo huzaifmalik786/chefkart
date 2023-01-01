@@ -23,12 +23,15 @@
     align-items: center;
     text-align: center;
     letter-spacing: -0.07vw;
-
     color: #242424;
   }
 
   form {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    gap: 1.11vw;
+
 
     .input_container {
     border: 0.07vw solid #e5e5e5;
