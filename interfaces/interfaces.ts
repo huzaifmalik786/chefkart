@@ -19,3 +19,10 @@ export interface ProfileCardType {
   twitter_link: string;
   linkedin_link: string;
 }
+
+export interface CultureCardType {
+  num: string;
+  title: string;
+  img: string;
+  color: string;
+}

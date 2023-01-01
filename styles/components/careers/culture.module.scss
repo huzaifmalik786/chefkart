@@ -1,0 +1,31 @@
+.culture_wrapper {
+  background-color: #eaeaea;
+  padding: 5.34vw 5.41vw 4.23vw 5.97vw;
+
+  .culture_header {
+    // width: 50%;
+    h3 {
+      font-size: 2.77vw;
+      line-height: 3.4vw;
+      font-weight: 700;
+      font-family: var(--open_sans);
+    }
+
+    p {
+      font-size: 1.66vw;
+      line-height: 2.26vw;
+      font-weight: 400;
+      color: #616161;
+      padding-top: 1.11vw;
+      font-family: var(--open_sans);
+      white-space: pre-line;
+    }
+  }
+
+  .card_wrapper {
+    display: flex;
+    gap: 3.61vw;
+    padding-top: 5.97vw;
+    // justify-content: center;
+  }
+}

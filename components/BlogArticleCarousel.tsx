@@ -8,7 +8,12 @@ import "react-multi-carousel/lib/styles.css";
 
 // import { isMobile, isDesktop, isTablet } from "react-device-detect";
 
-type Props = {};
+type Props = {
+  isDots: boolean;
+  isArrow: boolean;
+  isFull: boolean;
+  isInfinite: boolean;
+};
 
 const Images = [
   { img: "/pricing_signup.png", id: 1 },
@@ -17,6 +22,44 @@ const Images = [
   { img: "/pricing_signup.png", id: 4 },
   { img: "/pricing_signup.png", id: 5 },
 ];
+
+const CustomDot = ({ ...rest }) => {
+  const {
+    onMove,
+    index,
+    active,
+    carouselState: { currentSlide, deviceType },
+  } = rest;
+  const carouselItems = [1, 2, 3, 4, 5];
+  // onMove means if dragging or swiping in progress.
+  // active is provided by this lib for checking if the item is active or not.
+  return (
+    <button
+      className={active ? Styles.active : Styles.inactive}
+      // onClick={() => onClick()}
+    >
+      {/* {React.Children.toArray(carouselItems)[index]} */}
+      <p />
+    </button>
+  );
+};
+
+const ButtonGroup = ({ next, previous, ...rest }: any) => {
+  const {
+    carouselState: { currentSlide },
+  } = rest;
+  return (
+    <div className={Styles.button_group}>
+      <button
+        className={currentSlide === 0 ? "disable" : ""}
+        onClick={() => previous()}
+      >
+        1
+      </button>
+      <button onClick={() => next()}>2</button>
+    </div>
+  );
+};
 
 const BlogArticleCarousel = (props: Props) => {
   const [device, setDevice] = useState<string>();
@@ -53,11 +96,11 @@ const BlogArticleCarousel = (props: Props) => {
   // console.log(device);
 
   return (
-    <div>
+    <div className={Styles.blogcarousel_wrapper}>
       <Carousel
         swipeable
         draggable
-        showDots={false}
+        showDots={props.isDots}
         responsive={responsive}
         // autoPlay={true}
         autoPlaySpeed={2000}
@@ -65,12 +108,15 @@ const BlogArticleCarousel = (props: Props) => {
         rewindWithAnimation
         customTransition="transform 900ms ease-in"
         // ssr
-        // infinite
-        arrows={false}
-        containerClass={Styles.carousel}
+        infinite={props.isInfinite}
+        containerClass={!props.isFull ? Styles.carousel : Styles.full_carousel}
         itemClass={Styles.item}
         // deviceType={device}
+        arrows={false}
+        customDot={<CustomDot />}
+        customButtonGroup={props.isArrow ? <ButtonGroup /> : null}
         partialVisbile
+        renderDotsOutside
       >
         {Images.map((img) => {
           return (
@@ -84,7 +130,7 @@ const BlogArticleCarousel = (props: Props) => {
                     <p>15 min read</p>
                   </div>
                   <div className={Styles.item_heading}>
-                    <h3>Lorem ipsum {"\n"}dolor sit amet</h3>
+                    <h2>Lorem ipsum {"\n"}dolor sit amet</h2>
                   </div>
                 </div>
               </div>

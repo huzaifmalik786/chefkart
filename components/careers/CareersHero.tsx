@@ -14,28 +14,31 @@ const CareersHero = (props: Props) => {
         <button> VIEW OPEN POSITIONS</button>
       </div>
       <div className={Styles.img_container}>
-        <div>
+        <div className={Styles.img1}>
           <Image
             src={"/career-hero-1.png"}
             alt="img"
-            height={489}
-            width={326}
+            // height={489}
+            // width={326}
+            fill
           />
         </div>
-        <div>
+        <div className={Styles.img2}>
           <Image
             src={"/career-hero-2.png"}
             alt="img"
-            height={366}
-            width={244}
+            // height={366}
+            // width={244}
+            fill
           />
         </div>
-        <div>
+        <div className={Styles.img3}>
           <Image
             src={"/career-hero-3.png"}
             alt="img"
-            height={366}
-            width={158}
+            // height={366}
+            // width={158}
+            fill
           />
         </div>
       </div>

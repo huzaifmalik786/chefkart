@@ -1,7 +1,8 @@
 .hero_wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  place-items: center;
+  padding: 3.88vw 0 2.36vw 3.88vw;
 
   .hero_content {
     h2 {
@@ -29,8 +30,26 @@
   }
 
   .img_container {
+    place-self: end;
     display: flex;
-    gap: 38px;
+    gap: 2.63vw;
+    padding: 1.38vw 0vw 1.38vw 1.38vw;
     align-items: center;
+
+    .img1 {
+      position: relative;
+      height: 33.95vw;
+      width: 22.63vw;
+    }
+    .img2 {
+      position: relative;
+      width: 16.94vw;
+      height: 25.41vw;
+    }
+    .img3 {
+      position: relative;
+      width: 10.97vw;
+      height: 25.41vw;
+    }
   }
 }

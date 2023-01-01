@@ -21,14 +21,20 @@ export default function Home() {
         <ForEveryone />
         <FoodDisplay />
         <Facts />
-        <Hygiene subheading="Mom Approved" heading="safety standards" main_desc="At Chefkart, we are truly committed to" sub_desc="simplifying the way India eats." text_align="center" />
+        <Hygiene
+          subheading="Mom Approved"
+          heading="safety standards"
+          main_desc="At Chefkart, we are truly committed to"
+          sub_desc="simplifying the way India eats."
+          text_align="center"
+        />
         <HomePricing />
         <HowChefkartWorks />
 
         {/* section for customer feedback  */}
-        
-          <Testimonial />
-        
+
+        <Testimonial />
+
         <HasleFreeHiring />
         <Artisans />
         <JoinAsChef />

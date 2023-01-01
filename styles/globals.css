@@ -11,12 +11,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans,wght@700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
 :root {
   --main_font: "Figtree", "normal";
   --secondary_font: "Livvic", "normal";
   --tertiary_font: "Plus Jakarta Sans", "normal";
   --inter_font: "Inter", "sans-serif";
+  --open_sans: "Open Sans", "normal";
   --bg1: #000000;
   --bg2: #e5e5e5;
   --bg-orange: #fff3e8;
