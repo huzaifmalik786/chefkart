@@ -15,7 +15,12 @@ const HomeBlogs = (props: Props) => {
         <h3>Cusines worth travelling, now {"\n"} at your fingertips</h3>
       </div>
       <div>
-        <BlogArticleCarousel />
+        <BlogArticleCarousel
+          isArrow={false}
+          isDots={false}
+          isFull={false}
+          isInfinite={false}
+        />
       </div>
       <div className={Styles.footer}>
         <button onClick={() => router.push("/blogs")}>

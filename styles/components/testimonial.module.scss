@@ -1,9 +1,8 @@
-
 .carousel_container {
   display: flex;
+  padding-top: 4vw;
   justify-content: space-around;
   gap: 0.98vw;
-  padding: 11.93vw 0px 6.94vw 0px;
   [class*="track"] {
     align-items: center;
   }
@@ -40,12 +39,12 @@
     overflow: hidden;
   }
 
-  .stars{
+  .stars {
     margin-right: 0.28vw;
     margin-bottom: 0.28vw;
   }
 
-  .content{
+  .content {
     font-size: 1.11vw;
     line-height: 132%;
   }

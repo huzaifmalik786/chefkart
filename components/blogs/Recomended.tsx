@@ -8,7 +8,12 @@ const Recomended = (props: Props) => {
   return (
     <div className={Styles.recomended_wrapper}>
       <h4>Recommended Articles</h4>
-      <BlogArticleCarousel />
+      <BlogArticleCarousel
+        isArrow={false}
+        isDots={false}
+        isFull={false}
+        isInfinite={false}
+      />
     </div>
   );
 };

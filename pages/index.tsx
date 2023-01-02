@@ -10,7 +10,7 @@ import HomePricing from "../components/homepage/HomePricing";
 import HowChefkartWorks from "../components/homepage/HowChefkartWorks";
 import JoinAsChef from "../components/homepage/JoinAsChef";
 import Layout from "../components/layouts/Layout";
-import Testimonial from "../components/Testimonial";
+import Testimonial from "../components/TestimonialCarousel";
 import FeedbackVideo from "../components/homepage/FeedbackVideo";
 import Hygiene from "../components/Hygiene";
 export default function Home() {

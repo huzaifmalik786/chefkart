@@ -23,7 +23,7 @@ const Images = [
   { img: "/pricing_signup.png", id: 5 },
 ];
 
-const CustomDot = ({ ...rest }) => {
+const CustomDot = ({ onClick, ...rest }: any) => {
   const {
     onMove,
     index,
@@ -36,7 +36,7 @@ const CustomDot = ({ ...rest }) => {
   return (
     <button
       className={active ? Styles.active : Styles.inactive}
-      // onClick={() => onClick()}
+      onClick={() => onClick()}
     >
       {/* {React.Children.toArray(carouselItems)[index]} */}
       <p />
@@ -50,13 +50,13 @@ const ButtonGroup = ({ next, previous, ...rest }: any) => {
   } = rest;
   return (
     <div className={Styles.button_group}>
-      <button
-        className={currentSlide === 0 ? "disable" : ""}
-        onClick={() => previous()}
-      >
-        1
+      <button onClick={() => previous()} className={Styles.prev}>
+        <Image src={"/prev_white.svg"} fill alt="prev" />
       </button>
-      <button onClick={() => next()}>2</button>
+
+      <button onClick={() => next()} className={Styles.next}>
+        <Image src={"/next_white.svg"} fill alt="prev" />
+      </button>
     </div>
   );
 };
@@ -107,7 +107,7 @@ const BlogArticleCarousel = (props: Props) => {
         transitionDuration={900}
         rewindWithAnimation
         customTransition="transform 900ms ease-in"
-        // ssr
+        ssr
         infinite={props.isInfinite}
         containerClass={!props.isFull ? Styles.carousel : Styles.full_carousel}
         itemClass={Styles.item}

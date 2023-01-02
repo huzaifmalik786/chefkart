@@ -1,0 +1,20 @@
+.hero_video_wrapper {
+  position: relative;
+  width: 100vw;
+  height: 36.59vw;
+
+  .hero_heading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      font-size: 3.33vw;
+      font-weight: 700;
+      line-height: 4vw;
+      letter-spacing: -1%;
+      color: white;
+    }
+  }
+}

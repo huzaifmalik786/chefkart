@@ -1,0 +1,42 @@
+.video_reverse {
+  flex-direction: row-reverse;
+}
+.video_wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8vw;
+
+  padding: 2vw;
+
+  .video_text {
+    width: 37.29vw;
+    height: auto;
+
+    h2 {
+      color: #4a4a4a;
+      white-space: pre-line;
+      font-size: 2.77vw;
+      line-height: 3.33vw;
+      padding-top: 2.22vw;
+      font-weight: 400;
+    }
+    p {
+      color: #e76f51;
+      padding-top: 2.77vw;
+      font-size: 1.38vw;
+      font-family: var(tertiary_font);
+      font-weight: 700;
+      line-height: 1.75vw;
+    }
+  }
+
+  .video {
+    position: relative;
+    height: 25.76vw;
+    width: 38.93vw;
+
+    .video_img {
+      border-radius: 1.52vw;
+    }
+  }
+}

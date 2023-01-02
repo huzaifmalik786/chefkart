@@ -73,6 +73,26 @@
 
 .button_group {
   position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.36vw;
+
+  button {
+    background-color: transparent;
+
+    position: relative;
+  }
+
+  .prev {
+    width: 3.88vw;
+    height: 3.88vw;
+  }
+
+  .next {
+    width: 3.88vw;
+    height: 4.72vw;
+  }
 }
 
 .active,
@@ -96,8 +116,9 @@
   padding-left: 5vw;
 }
 
-.full_carousel {
-  padding-left: 1vw;
+.item {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 800px) {

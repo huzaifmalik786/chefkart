@@ -26,3 +26,9 @@ export interface CultureCardType {
   img: string;
   color: string;
 }
+export interface ReviewsCardType {
+  quote: string;
+  name: string;
+  video: string;
+  rev: boolean;
+}
