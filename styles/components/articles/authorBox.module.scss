@@ -1,0 +1,79 @@
+.authorBox_container {
+  padding: 37px 0px 36px 275px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: #fafafa;
+
+  .vector {
+    width: 78px;
+    height: 0px;
+    position: relative;
+    border: 1px solid #aaaaaa;
+    background-color: #aaaaaa;
+  }
+
+  .author_details {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+    border: 1px solid #d0d0d0;
+    width: 973px;
+
+    .author_image {
+      position: relative;
+      width: 108.68px;
+      height: 119px;
+    }
+
+    .details_content {
+      display: flex;
+      flex-direction: column;
+      width: 792.32px;
+      padding: 0px;
+      gap: 16px;
+
+      h4 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+
+        color: #656565;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        /* or 27px */
+
+        display: flex;
+        align-items: center;
+
+        color: #5b5b5b;
+      }
+    }
+  }
+
+  .posted {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #5b5b5b;
+
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      color: #3d3d3d;
+    }
+  }
+}

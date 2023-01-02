@@ -1,0 +1,71 @@
+.comment_box_container {
+  padding: 0px 96px 0px 88px;
+  margin: 66px 0px 85px 275px;
+
+  .comment_box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 30px;
+
+    .comment_profile {
+      position: relative;
+      width: 84px;
+      aspect-ratio: 1/1;
+    }
+
+    .comment {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 13px;
+
+      width: 660px;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        h4 {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 29px;
+          display: flex;
+          align-items: center;
+
+          color: #656565;
+        }
+        span {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 150%;
+          display: flex;
+          align-items: flex-end;
+
+          color: #5b5b5b;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        /* or 27px */
+
+        display: flex;
+        align-items: center;
+
+        color: #5b5b5b;
+      }
+      .like_icon {
+        position: relative;
+        width: 21px;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+}
