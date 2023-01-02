@@ -1,12 +1,20 @@
 import Image from "next/image";
-import React from "react";
+import React, { CSSProperties } from "react";
 import Styles from "../styles/components/Hygiene.module.scss";
 
-const Hygiene = (props: any) => {
+type Props = {
+  text_align?: string;
+  subheading: string;
+  heading: string;
+  main_desc: string;
+  sub_desc: string;
+};
+
+const Hygiene = (props: Props) => {
   return (
     <div
       className={Styles.hygiene_container}
-      style={{ textAlign: `${props.text_align}` }}
+      // style={{ textAlign: `${props.text_align} ` }}
     >
       {/* <div className={Styles.centered}> */}
       <span className={Styles.subheading}>{props.subheading}</span>

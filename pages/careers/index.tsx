@@ -9,7 +9,7 @@ import Founders from "../../components/careers/Founders";
 import Leadership from "../../components/careers/Leadership";
 import Perks from "../../components/careers/Perks";
 import Vacancies from "../../components/careers/Vacancies";
-import Divider from "../../components/divider";
+import Divider from "../../components/Divider";
 import JoinOurTeam from "../../components/Forms/JoinOurTeam";
 
 import Layout from "../../components/layouts/Layout";
