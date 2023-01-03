@@ -3,6 +3,7 @@ import Input from '../Forms/Input'
 import Styles from '../../styles/components/about/form.module.scss'
 import Image from 'next/image'
 import Button from '../Forms/Button'
+import Dropdown from '../Forms/Dropdown'
 
 const ContactForm = () => {
   return (
@@ -15,7 +16,13 @@ const ContactForm = () => {
             <form>
                 <Input left_section="Name" placeholder="" type="text" name="name" />
                 <Input left_section="" placeholder="Email" type="email" name="email" />
-                <Input left_section="+91" placeholder="9987115132" type="text" name="mobile" />
+                <div className={Styles.two_input}>
+                    <Input left_section="+91" placeholder="9987115132" type="text" name="mobile" />
+                    <div className={Styles.dropdown}>
+                        <Dropdown arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
+                    </div>
+
+                </div>
 
                 <div className={Styles.checbox_container}>
                     <input type="checkbox" name="" id="checkbox" /> I agree to Chefkart’s terms of service & Privacy Policy

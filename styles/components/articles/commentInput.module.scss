@@ -1,23 +1,23 @@
 .comment_input_container {
- padding: 0px 96px 0px 88px;
- margin-top: 13px;
+ padding: 0px 6.66vw 0px 6.10vw;
+ margin-top: 0.9vw;
 
   .input_box{
-     width: 879px;
-  margin-left: 275px;
+     width: 61vw;
+  margin-left: 19vw;
   display: flex;
-  gap: 83px;
-  border: 1px solid #adafae;
-  border-radius: 8px;
+  gap: 5.76vw;
+  border: 0.07vw solid #adafae;
+  border-radius: 0.55vw;
   justify-content: space-between;
 
     input {
-      padding: 16.5px 24px;
-      gap: 10px;
+      padding: 1.14vw 1.66vw;
+      gap: 0.7vw;
       font-family: "Inter";
       font-style: normal;
       font-weight: 600;
-      font-size: 19px;
+      font-size: 1.31vw;
       line-height: 120%;
       letter-spacing: -0.01em;
       border: none;
@@ -31,15 +31,15 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding: 16px 24px;
-      gap: 10px;
+      padding: 1.11vw 1.66vw;
+      gap: 0.69vw;
       background: #5c605e;
-      border-radius: 8px;
+      border-radius: 0.55vw;
   
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 1.11vw;
       line-height: 120%;
       letter-spacing: -0.02em;
   

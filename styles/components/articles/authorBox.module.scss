@@ -1,15 +1,15 @@
 .authorBox_container {
-  padding: 37px 0px 36px 275px;
+  padding: 2.5vw 0px 2.5vw 19vw;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 2.77vw;
   background: #fafafa;
 
   .vector {
-    width: 78px;
+    width: 5.41vw;
     height: 0px;
     position: relative;
-    border: 1px solid #aaaaaa;
+    border: 0.07vw solid #aaaaaa;
     background-color: #aaaaaa;
   }
 
@@ -17,28 +17,28 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 24px;
-    gap: 24px;
-    border: 1px solid #d0d0d0;
-    width: 973px;
+    padding: 1.66vw;
+    gap: 1.66vw;
+    border: 0.07vw solid #d0d0d0;
+    width: 67.5vw;
 
     .author_image {
       position: relative;
-      width: 108.68px;
-      height: 119px;
+      width: 7.5vw;
+      height: 8.25vw;
     }
 
     .details_content {
       display: flex;
       flex-direction: column;
-      width: 792.32px;
+      width: 55vw;
       padding: 0px;
-      gap: 16px;
+      gap: 1.11vw;
 
       h4 {
         font-weight: 700;
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 1.66vw;
+        line-height: 2vw;
         display: flex;
         align-items: center;
 
@@ -47,7 +47,7 @@
 
       p {
         font-weight: 400;
-        font-size: 18px;
+        font-size: 1.25vw;
         line-height: 150%;
         /* or 27px */
 
@@ -61,7 +61,7 @@
 
   .posted {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.25vw;
     line-height: 150%;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@
 
     span {
       font-weight: 500;
-      font-size: 18px;
+      font-size: 1.25vw;
       line-height: 150%;
       color: #3d3d3d;
     }

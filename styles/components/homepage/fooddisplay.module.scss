@@ -11,6 +11,41 @@
     letter-spacing: -0.5%;
     font-weight: 700;
     padding-bottom: 2.56vw;
+
+    h3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .slider {
+      position: absolute;
+      color: red;
+      animation: slider 6s linear infinite;
+    }
+
+    @keyframes slider {
+      0% {
+        margin-top: -200px;
+      }
+      30% {
+        margin-top: -200px;
+      }
+      35% {
+        margin-top: 0px;
+      }
+      65% {
+        margin-top: 0px;
+      }
+      70% {
+        margin-top: 200px;
+      }
+      100% {
+        margin-top: 200px;
+      }
+    }
   }
 
   .carousel_wrapper {

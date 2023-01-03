@@ -72,7 +72,7 @@
         .star {
           position: relative;
           display: flex;
-          width: 0.97vw;
+          width: 0.95vw;
           height: 0.9vw;
         }
       }
@@ -93,10 +93,12 @@
       flex-direction: column;
       gap: 0.55vw;
       opacity: 0;
-      display: none;
+      // display: none;
+      height: 0vw;
+
       transform: translateY(100%);
       margin-top: 1.38vw;
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
 
       .specialize_heading {
         // margin-bottom: 0.69vw;
@@ -132,10 +134,12 @@
 }
 
 .item:hover .item:hover .hover_overlay {
+  height: 6.66vw;
   display: flex;
   opacity: 1;
   transform: translateY(0%);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
 }
 
 @keyframes slide-up {
@@ -147,5 +151,6 @@
   100% {
     opacity: 1;
     transform: translateY(0%);
+
   }
 }
