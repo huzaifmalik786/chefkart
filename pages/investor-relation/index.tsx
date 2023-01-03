@@ -17,9 +17,9 @@ const index = (props: Props) => {
     <Layout>
       <InvestorHero />
       <Mission />
+      <PressRelease />
       <BlogsSection />
       <InvestorCarousel />
-      <PressRelease />
       <ContactForm />
       <Banner />
       <Divider />

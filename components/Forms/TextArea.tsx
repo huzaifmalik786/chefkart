@@ -1,9 +1,14 @@
 import React from 'react'
 import Styles from '../../styles/components/forms/input.module.scss'
-const TextArea = () => {
+
+type Props = {
+  row: number;
+}
+
+const TextArea = (props: Props) => {
   return (
     <div className={Styles.input_container}>
-          <textarea name="message" placeholder="Message" rows={4} />
+          <textarea name="message" placeholder="Message" rows={props.row} />
     </div>
   )
 }
