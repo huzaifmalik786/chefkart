@@ -16,7 +16,7 @@ const index = (props: Props) => {
     <Layout>
       <PricingBanner />
       <Features />
-      <Hygiene subheading="" heading="We assure you of the best hygiene" main_desc="At Chefkart, we are truly committed to" sub_desc="simplifying the way India eats." text_align="left" />
+      <Hygiene subheading="" heading="We assure you of the best hygiene" main_desc="At Chefkart, we are truly committed to" sub_desc="simplifying the way India eats."  />
       <ProjectFeatures />
       <RestaurantLike />
       <PricingSignUp />

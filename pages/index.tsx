@@ -13,6 +13,9 @@ import Layout from "../components/layouts/Layout";
 import Testimonial from "../components/TestimonialCarousel";
 import FeedbackVideo from "../components/homepage/FeedbackVideo";
 import Hygiene from "../components/Hygiene";
+import UserReviews from "../components/testimonials/UserReviews";
+import VideoQuote from "../components/VideoQuote";
+import ReviewsSection from "../components/homepage/ReviewsSection";
 export default function Home() {
   return (
     <>
@@ -26,15 +29,12 @@ export default function Home() {
           heading="safety standards"
           main_desc="At Chefkart, we are truly committed to"
           sub_desc="simplifying the way India eats."
-          text_align="center"
+          center
+          headingSize='4.44vw'
         />
         <HomePricing />
         <HowChefkartWorks />
-
-        {/* section for customer feedback  */}
-
-        <Testimonial />
-
+        <ReviewsSection />
         <HasleFreeHiring />
         <Artisans />
         <JoinAsChef />
