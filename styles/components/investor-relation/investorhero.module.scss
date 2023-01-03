@@ -1,0 +1,26 @@
+.hero_wrapper {
+  position: relative;
+  width: 100vw;
+  height: 34.375vw;
+
+  .hero_heading {
+    position: absolute;
+    left: 6%;
+    top: 53%;
+
+    h3 {
+      font-size: 2.5vw;
+      font-weight: 700;
+      line-height: 3.4vw;
+      color: white;
+      white-space: pre-line;
+      font-family: var(--secondary_font);
+
+      span {
+        color: #ff8811;
+        font-family: var(--open_sans);
+        line-height: 3.1375vw;
+      }
+    }
+  }
+}

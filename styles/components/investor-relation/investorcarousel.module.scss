@@ -1,0 +1,127 @@
+.investorcarousel_wrapper {
+  background-color: #f8f8f8;
+  padding-bottom: 2.91vw;
+  padding-top: 5vw;
+
+  .card {
+    // display: flex;
+    // justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    .investor_about {
+      padding-left: 4.79vw;
+      padding-bottom: 6.34vw;
+
+      .heading {
+        h2 {
+          font-size: 2.77vw;
+          font-family: var(--tertiary_font);
+          line-height: 3.5vw;
+          font-weight: 700;
+        }
+      }
+
+      .desc,
+      .investor_name > h5 {
+        font-family: var(--open_sans);
+
+        line-height: 1.89vw;
+        letter-spacing: -1%;
+        color: #686868;
+        padding-top: 2.98vw;
+      }
+
+      .desc {
+        font-size: 1.38vw;
+        width: 60%;
+      }
+
+      .investor_name {
+        color: #686868;
+        padding-top: 2.98vw;
+        padding-bottom: 3.54vw;
+
+        h5 {
+          font-size: 1.66vw;
+        }
+        p {
+          font-size: 1.11vw;
+          letter-spacing: -1%;
+
+          line-height: 1.51vw;
+          padding-top: 0.27vw;
+        }
+      }
+
+      .logo_container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2.91vw;
+
+        .logo {
+          position: relative;
+
+          width: 4.45vw;
+          height: 1.49vw;
+        }
+      }
+    }
+
+    .investor_img {
+      position: relative;
+      width: 26.94vw;
+      height: 24.44vw;
+    }
+  }
+
+  [class*="dot"] {
+    // position: inherit;
+    gap: 10px;
+  }
+}
+
+//----custom button
+
+.button_group {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.36vw;
+
+  button {
+    background-color: transparent;
+
+    position: relative;
+  }
+
+  .prev {
+    width: 3.88vw;
+    height: 3.88vw;
+  }
+
+  .next {
+    width: 3.88vw;
+    height: 4.72vw;
+  }
+}
+
+//custom dots
+
+.active,
+.inactive {
+  p {
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+  }
+}
+
+.active {
+  background-color: #ff8811;
+}
+
+.inactive {
+  background-color: #d9d9d9;
+}
