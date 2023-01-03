@@ -1,0 +1,15 @@
+.blog_wrapper {
+  padding-top: 1.94vw;
+  padding-bottom: 4vw;
+  h2 {
+    font-size: 2.77vw;
+    padding-left: 6.38vw;
+  }
+  .cards_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.59vw;
+    padding-top: 2.56vw;
+  }
+}
