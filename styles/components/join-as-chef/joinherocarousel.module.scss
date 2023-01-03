@@ -2,7 +2,65 @@
   width: 100vw;
 }
 
-.item {
-  width: 100vw;
-  height: 671px;
+.carousel_wrapper {
+  .items {
+    .carousel_img {
+      position: relative;
+      width: 100vw;
+      height: 46.5vw;
+    }
+
+    .carousel_text {
+      position: absolute;
+      top: 40%;
+      left: 5%;
+      color: white;
+
+      h1 {
+        font-size: 3.33vw;
+        line-height: 4.18vw;
+        font-family: var(--secondary_font);
+        font-weight: 600;
+      }
+
+      p {
+        padding-top: 1.59vw;
+        padding-bottom: 2.5vw;
+        font-size: 1.25vw;
+        line-height: 1.94vw;
+        font-weight: 500;
+        width: 46%;
+      }
+
+      button {
+        padding: 1.25vw 3.29vw;
+        font-size: 1.25vw;
+        line-height: 1.66vw;
+        font-weight: 700;
+        font-family: var(--open_sans);
+      }
+    }
+  }
+
+  [class*="dot"] {
+    gap: 10px;
+    padding-bottom: 3.4vw;
+  }
+}
+
+.active,
+.inactive {
+  p {
+    height: 4px;
+    width: 5.5vw;
+    border-radius: 2px;
+  }
+}
+
+.active {
+  background-color: #ff8811;
+}
+
+.inactive {
+  background-color: #fff;
 }

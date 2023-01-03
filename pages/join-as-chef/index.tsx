@@ -7,7 +7,7 @@ import JoinHeroCarousel from "../../components/join-as-chef/JoinHeroCarousel";
 import SimplifyWay from "../../components/join-as-chef/SimplifyWay";
 import VideoComponent from "../../components/join-as-chef/VideoComponent";
 import Layout from "../../components/layouts/Layout";
-import Testimonial from "../../components/TestimonialCarousel";
+import Testimonial from "../../components/join-as-chef/Testimonial";
 
 type Props = {};
 
@@ -19,6 +19,7 @@ const index = (props: Props) => {
       <CookWithUs />
       <VideoComponent />
       <Testimonial />
+
       <Chef />
       <SimplifyWay />
       <FAQ />

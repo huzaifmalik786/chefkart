@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom-left-radius: 42% 8%;
-  border-bottom-right-radius: 40% 8%;
+  padding-top: 3.19vw;
 
   .food_heading {
     color: #585858;
@@ -11,41 +10,41 @@
     line-height: 48px;
     letter-spacing: -0.5%;
     font-weight: 700;
+    padding-bottom: 2.56vw;
   }
 
   .carousel_wrapper {
     background: url(../../../public/food-plate.png) no-repeat;
-    background-size: 845px 680px;
+    background-size: 58.68vw 47.22vw;
     height: 680px;
     background-position: center;
     width: 100%;
-    border-bottom-left-radius: 42% 8%;
-    border-bottom-right-radius: 40% 8%;
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
+
+    .items {
+      position: relative;
+      height: 34.7vw;
+      width: 34.7vw;
+    }
   }
 
   [class*="active"] {
-    // border: 5px solid #ccc;
-    // background-color: red;
     opacity: 1 !important;
+    padding: 0;
+    padding-top: 4vw;
   }
-}
-
-.react-multi-carousel-track {
-  // .react-multi-carousel-item--active {
-
-  // }
-}
-.carousel {
-  height: 680px;
-  padding-bottom: 5vw;
-  //   padding: 10vw;
-  //   padding-left: 10vw;
-  //   padding-left: 8vw;
 }
 
 .item {
   display: flex;
-  align-content: center;
+  align-content: flex-end;
   justify-content: center;
   opacity: 0.5;
+
+  padding-top: 10vw;
+  padding-left: 2vw;
+  // height: 360px;
+  // width: 360px;
+  // position: relative;
 }

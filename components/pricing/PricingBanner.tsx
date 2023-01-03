@@ -16,9 +16,10 @@ const PricingCardData: PriceCard[] = [
       "Customizable Menu - Everyday",
       "Free Deep Kitchen Cleans",
     ],
+    checkImg: "/check_gold.svg",
   },
   {
-    heading: "Standard",
+    heading: "Popular",
     desc: "Missing the ‘ghar ka khana \n much? This one’s for you.",
     price: 3000,
     points: [
@@ -27,6 +28,7 @@ const PricingCardData: PriceCard[] = [
       "North / South Indian Menu",
       "Free Deep Kitchen Cleans",
     ],
+    checkImg: "/check_circle.svg",
   },
 ];
 
@@ -53,7 +55,7 @@ const PricingBanner = () => {
       </div>
       <div className={Styles.pricing_card}>
         {PricingCardData.map((card, index) => {
-          return <PricingCard card={card} key={index} />;
+          return <PricingCard card={card} key={index} isWide />;
         })}
       </div>
     </div>

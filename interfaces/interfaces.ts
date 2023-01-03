@@ -3,6 +3,7 @@ export interface PriceCard {
   desc: string;
   price: number;
   points: string[];
+  checkImg: string;
 }
 
 export interface BlogCardType {

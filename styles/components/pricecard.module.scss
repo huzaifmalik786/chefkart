@@ -1,5 +1,4 @@
 .card_wrapper {
-  width: 388px;
   background-color: #2d4739;
   box-shadow: -4px 4px 56px rgba(231, 111, 81, 0.12);
   border-radius: 12px;
@@ -34,6 +33,26 @@
     }
   }
 
+  .header_white {
+    h4 {
+      color: #3d3d3d;
+    }
+
+    p {
+      color: #484848;
+    }
+  }
+
+  .price_white {
+    h2 {
+      color: #e5871c;
+
+      span {
+        color: #242424;
+      }
+    }
+  }
+
   .card_price {
     text-align: center;
     border-width: 1px 0px;
@@ -49,20 +68,30 @@
         line-height: 1.38vw;
         font-size: 1.25vw;
         margin-left: -1vw;
+        font-weight: 400;
       }
     }
   }
-
+  .points_white {
+    color: #3d3d3d;
+  }
   .card_key_points {
-    align-self: start;
+    // align-self: start;
+    // align-self: center;
     justify-content: left;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     gap: 1.66vw;
-    span {
+    .point {
       display: flex;
       align-items: center;
+      gap: 7.94px;
+      span {
+        position: relative;
+        height: 1.66vw;
+        width: 1.66vw;
+      }
       p {
         font-weight: 500;
         line-height: 1.8vw;

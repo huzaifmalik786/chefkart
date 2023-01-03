@@ -15,6 +15,7 @@ const PricingCardData: PriceCard[] = [
       "Customizable Menu - Everyday",
       "Free Deep Kitchen Cleans",
     ],
+    checkImg: "/check_gold.svg",
   },
   {
     heading: "Popular",
@@ -26,6 +27,7 @@ const PricingCardData: PriceCard[] = [
       "North / South Indian Menu",
       "Free Deep Kitchen Cleans",
     ],
+    checkImg: "/check_circle.svg",
   },
 ];
 
@@ -47,7 +49,13 @@ const HomePricing = () => {
       </div>
       <div className={Styles.pricecard_wrapper}>
         {PricingCardData.map((pricecard) => {
-          return <PricingCard key={pricecard.price} card={pricecard} />;
+          return (
+            <PricingCard
+              key={pricecard.price}
+              card={pricecard}
+              isWide={false}
+            />
+          );
         })}
       </div>
     </div>

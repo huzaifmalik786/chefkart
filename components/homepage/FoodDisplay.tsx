@@ -24,7 +24,7 @@ const FoodDisplay = (props: Props) => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
       slidesToSlide: 2,
     },
     mobile: {
@@ -52,7 +52,7 @@ const FoodDisplay = (props: Props) => {
           autoPlaySpeed={2000}
           transitionDuration={900}
           rewindWithAnimation
-          customTransition="transform 900ms ease-in"
+          customTransition="transform 900ms ease-out"
           ssr
           infinite
           arrows={false}
@@ -66,7 +66,7 @@ const FoodDisplay = (props: Props) => {
           {Images.map((img) => {
             return (
               <div key={img.id} className={Styles.items}>
-                <Image src={img.img} alt="food" height={"500"} width={500} />
+                <Image src={img.img} alt="food" fill />
               </div>
             );
           })}

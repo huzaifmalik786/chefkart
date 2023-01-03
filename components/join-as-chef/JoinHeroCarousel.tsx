@@ -14,6 +14,27 @@ const Images = [
   { img: "/join-carousel.png", id: 3 },
 ];
 
+const CustomDot = ({ onClick, ...rest }: any) => {
+  const {
+    onMove,
+    index,
+    active,
+    carouselState: { currentSlide, deviceType },
+  } = rest;
+  const carouselItems = [1, 2, 3, 4, 5];
+  // onMove means if dragging or swiping in progress.
+  // active is provided by this lib for checking if the item is active or not.
+  return (
+    <button
+      className={active ? Styles.active : Styles.inactive}
+      onClick={() => onClick()}
+    >
+      {/* {React.Children.toArray(carouselItems)[index]} */}
+      <p />
+    </button>
+  );
+};
+
 const JoinHeroCarousel = (props: Props) => {
   const responsive = {
     desktop: {
@@ -50,6 +71,7 @@ const JoinHeroCarousel = (props: Props) => {
         containerClass={Styles.hero_carousel}
         itemClass={Styles.item}
         deviceType={"desktop"}
+        customDot={<CustomDot />}
         // centerMode
 
         // partialVisbile
@@ -57,11 +79,11 @@ const JoinHeroCarousel = (props: Props) => {
         {Images.map((img) => {
           return (
             <div key={img.id} className={Styles.items}>
-              <div>
+              <div className={Styles.carousel_img}>
                 <Image src={img.img} alt="food" fill />
               </div>
-              <div>
-                <h2>Lorem Ipsum,</h2>
+              <div className={Styles.carousel_text}>
+                <h1>Lorem Ipsum,</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
