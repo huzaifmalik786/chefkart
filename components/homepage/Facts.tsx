@@ -25,8 +25,11 @@ const FactArr: FactData[] = [
     desc: " Average Chefkart rating from thousands of happy customers",
   },
 ];
-
-const Facts = (props: any) => {
+type Props = {
+  bgcolor: string;
+  color: string;
+}
+const Facts = (props: Props) => {
   return (
     <div className={Styles.facts_container} style={{backgroundColor: `${props.bgcolor}`, color: `${props.color}`}}>
       {FactArr.map((item, index) => {

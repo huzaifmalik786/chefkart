@@ -20,7 +20,7 @@ export default function Home() {
         <HomeBanner />
         <ForEveryone />
         <FoodDisplay />
-        <Facts />
+        <Facts bgcolor="#F9F9F9" color="#000000" />
         <Hygiene
           subheading="Mom Approved"
           heading="safety standards"

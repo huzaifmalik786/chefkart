@@ -1,0 +1,52 @@
+.mission_container {
+  background: #ececec;
+  display: flex;
+  padding: 5.62vw 6.1vw 3.6vw 6.1vw;
+  gap: 0.9vw;
+
+  .left_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 1.52vw;
+
+    p {
+      font-family: var(--secondary_font);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.66vw;
+      line-height: 2.22vw;
+      letter-spacing: -0.01em;
+
+      color: #000000;
+    }
+
+    h2 {
+      font-family: var(--open_sans);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2.77vw;
+      line-height: 3.74vw;
+      letter-spacing: -0.01em;
+
+      color: #222222;
+    }
+
+    a {
+      font-family: var(--secondary_font);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.38vw;
+      line-height: 150%;
+      text-decoration-line: underline;
+      margin-top: 2vw;
+      color: #2d4739;
+    }
+  }
+  .right_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

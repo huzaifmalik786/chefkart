@@ -1,0 +1,22 @@
+.banner_container {
+  padding: 5.34vw 4.44vw 3.26vw 4.30vw;
+
+  .banner {
+    background-image: url("/BG (1).png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5.41vw 0px 3.12vw 0px;
+
+    p {
+      font-weight: 600;
+      font-size: 3.60vw;
+      line-height: 4.30vw;
+      letter-spacing: -0.138vw;
+      width: 57.11vw;
+      height: 13vw;
+      color: #ffffff;
+    }
+  }
+}
