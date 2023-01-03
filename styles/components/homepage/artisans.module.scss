@@ -5,10 +5,10 @@
   h3 {
     font-family: var(--secondary_font);
     font-size: 2.77vw;
-    line-height: 4.30vw;
+    line-height: 4.3vw;
     line-height: 124%;
     text-align: center;
-    letter-spacing: -0.10vw;
+    letter-spacing: -0.1vw;
     color: #ffffff;
     margin-bottom: 2.22vw;
   }
@@ -73,7 +73,7 @@
           position: relative;
           display: flex;
           width: 0.97vw;
-          height: 0.90vw;
+          height: 0.9vw;
         }
       }
 
@@ -90,46 +90,62 @@
     }
 
     .hover_overlay {
-        opacity: 0;
-        display: none;
+      flex-direction: column;
+      gap: 0.55vw;
+      opacity: 0;
+      display: none;
       transform: translateY(100%);
       margin-top: 1.38vw;
       transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
       .specialize_heading {
-        color: #ffffff;
-        margin-bottom: 0.69vw;
+        // margin-bottom: 0.69vw;
+        font-weight: 600;
         font-family: var(--secondary_font);
-      }
-      .pills {
         font-size: 0.97vw;
-        display: inline-flex;
-        background-color: #ff961f;
+        line-height: 1.66vw;
+        /* identical to box height, or 171% */
+
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.03vw;
+
         color: #ffffff;
-        border-radius: 3.47vw;
-        padding: 0.69vw 0.347vw;
-        margin-top: 0.55vw;
-        margin-right: 0.55vw;
+      }
+      .pills_container{
+        display: flex;
+        gap: 0.55vw;
+        flex-wrap: wrap;
+        .pills {
+          font-size: 0.97vw;
+          line-height: 1.66vw;
+          font-family: var(--secondary_font);
+          display: inline-flex;
+          background-color: #ff961f;
+          color: #ffffff;
+          border-radius: 2.63vw;
+          padding: 0.27vw 0.55vw;
+        }
       }
     }
   }
 }
 
 .item:hover .item:hover .hover_overlay {
-  display: block;
+  display: flex;
   opacity: 1;
   transform: translateY(0%);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 @keyframes slide-up {
-    0% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }

@@ -129,7 +129,7 @@ const Artisans = () => {
 
                 <div className={Styles.hover_overlay}>
                     <p className={Styles.specialize_heading}>Specializes in:</p>
-                    <div>
+                    <div className={Styles.pills_container}>
                     {
                         (c.specialization).map((s, key)=>{
                             return(
