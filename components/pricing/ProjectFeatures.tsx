@@ -55,8 +55,10 @@ const ProjectFeatures = () => {
                     feature_array.map((i, key)=>{
                         return(
                             <tr key={key}>
-                                <td className={Styles.feature_name}>{i.feature}</td>
-                                <td>{i.popular &&  <div className={Styles.checked}><Image fill src='/Vector (9).png' alt="" /></div>}</td>
+                                <td style={key%2?{}:{backgroundColor: "#FAFAFA"}} className={Styles.feature_name}>{i.feature}</td>
+                                
+                                <td style={key%2?{}:{backgroundColor: "#FAFAFA"}}>{i.popular &&  <div className={Styles.checked}><Image fill src='/Vector (9).png' alt="" /></div>}</td>
+                                
                                 <td style={key%2?{backgroundColor: "#eeeeee"}:{}}>{i.premium &&  <div className={Styles.checked}><Image fill src='/Vector (9).png' alt="" /></div>}</td>
                             </tr>
                         )

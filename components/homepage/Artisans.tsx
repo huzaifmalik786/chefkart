@@ -123,7 +123,7 @@ const Artisans = () => {
                       <Image src="/star.png" fill alt="" />
                     </div>
                   </div>{" "}
-                  <span className={Styles.experience}>&nbsp; &nbsp;• &nbsp; &nbsp;{c.experience} yrs experience</span>
+                  <span className={Styles.experience}>&nbsp; • &nbsp;{c.experience} yrs experience</span>
                 </p>
                 </div>
 

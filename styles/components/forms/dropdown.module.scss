@@ -1,37 +1,31 @@
 .dd_wrapper {
-  position: relative;
+//   position: relative;
+  width: 100%;
 
   .dd_header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25vw 1.11vw;
     gap: 0.7vw;
-    width: 32vw;
-    border: 0.07vw solid #adafae;
-    border-radius: 0.28vw;
 
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.32vw;
-    line-height: 120%;
-    color: #5C605E;
+    font-family: inherit;
 
     .arrow {
-      width: 1.1vw;
-      aspect-ratio: 1/1;
+    //   width: 1.1vw;
+    //   aspect-ratio: 1/1;
       position: relative;
+      width: 0.7vw;
+      height: 0.35vw;
     }
   }
 
   .dd_list {
-    margin-top: 0.55vw;
-    border: 0.07vw solid #adafae;
-    border-radius: 0.27vw;
-    position: absolute;
-    width: 32vw;
-    left: 0;
+//     margin-top: 0.55vw;
+//     border: 0.07vw solid #adafae;
+//     border-radius: 0.27vw;
+//     position: absolute;
+//     width: 100%;
+//     left: 0;
   }
 }

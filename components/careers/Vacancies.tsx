@@ -41,7 +41,9 @@ const Vacancies = () => {
       <div className={Styles.vacancy_body}>
         <div className={Styles.header}>
           <span className={Styles.body_heading}>Recent Openings</span>
-          <Dropdown />
+          <div className={Styles.dropdown}>
+            <Dropdown heading="Select Department" arrow_width="1.04vw" arrow_height="1.04vw" />
+          </div>
           <span className={Styles.viewAll}>View all openings &#62;</span>
         </div>
 

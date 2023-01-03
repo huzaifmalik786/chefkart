@@ -1,17 +1,17 @@
 .comment_box_container {
-  padding: 0px 96px 0px 88px;
-  margin: 66px 0px 85px 275px;
+  padding: 0px 6.66vw 0px 6.10vw;
+  margin: 4.58vw 0px 5.9vw 19vw;
 
   .comment_box {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
-    gap: 30px;
+    gap: 2.08vw;
 
     .comment_profile {
       position: relative;
-      width: 84px;
+      width: 5.82vw;
       aspect-ratio: 1/1;
     }
 
@@ -21,9 +21,9 @@
       justify-content: center;
       align-items: flex-start;
       padding: 0px;
-      gap: 13px;
+      gap: 0.9vw;
 
-      width: 660px;
+      width: 45.8vw;
 
       .header {
         display: flex;
@@ -32,8 +32,8 @@
 
         h4 {
           font-weight: 700;
-          font-size: 24px;
-          line-height: 29px;
+          font-size: 1.66vw;
+          line-height: 2vw;
           display: flex;
           align-items: center;
 
@@ -41,7 +41,7 @@
         }
         span {
           font-weight: 400;
-          font-size: 12px;
+          font-size: 0.83vw;
           line-height: 150%;
           display: flex;
           align-items: flex-end;
@@ -52,7 +52,7 @@
 
       p {
         font-weight: 400;
-        font-size: 18px;
+        font-size: 1.25vw;
         line-height: 150%;
         /* or 27px */
 
@@ -63,7 +63,7 @@
       }
       .like_icon {
         position: relative;
-        width: 21px;
+        width: 1.45vw;
         aspect-ratio: 1/1;
       }
     }

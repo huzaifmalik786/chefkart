@@ -1,6 +1,7 @@
 .video_wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  
 
   .video_text {
     place-self: center;
@@ -20,5 +21,11 @@
       font-family: var(tertiary_font);
       font-weight: 700;
     }
+  }
+
+  .video{
+    position: relative;
+    width: 53.64vw;
+    height: 32.48vw;
   }
 }

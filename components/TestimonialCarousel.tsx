@@ -126,7 +126,7 @@ const TestimonialCarousel = () => {
               </div>
               <Image
                 src="/vector-3.svg"
-                alt="line"
+                alt=""
                 width={53}
                 height={0}
                 className={Styles.line}
