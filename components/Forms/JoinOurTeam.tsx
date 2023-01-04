@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm, Resolver } from "react-hook-form";
 import Input from './Input';
 import Styles from '../../styles/components/forms/jointeam.module.scss'
 import FileDropbox from './FileDropbox';
 import Button from './Button';
+import Modal from '../careers/Modal';
+import ThankYou from './ThankYou';
 
 type FormValues = {
     name: string;
@@ -31,13 +33,15 @@ type FormValues = {
 
 const JoinOurTeam = () => {
   const { handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
+  
 
   const onSubmit = (data: any) => {
-    console.log(data);
     // send form data to server or perform other actions
   };
 
   return (
+    <>
+
     <div className={Styles.join_team_form}>
         <h2>Join Our Team</h2>
 
@@ -51,10 +55,11 @@ const JoinOurTeam = () => {
 
             <FileDropbox />
             <div className={Styles.button}>
-                <Button text="Submit" />
+                <Button  text="Submit" />
             </div>
         </form>
     </div>
+    </>
   )
 }
 

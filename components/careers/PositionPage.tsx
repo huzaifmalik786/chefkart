@@ -1,7 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Styles from "../../styles/components/careers/positionPage.module.scss";
 import { useRouter } from "next/router";
+import Modal from "./Modal";
+import JoinOurTeam from "../Forms/JoinOurTeam";
 
 const positionDetails = {
   position: "Software Engineer",
@@ -22,7 +24,12 @@ const positionDetails = {
 
 const PositionPage = () => {
   const router = useRouter();
+  const [openModal, setOpenModal] = useState<boolean>(false)
   return (
+    <>
+    {
+      openModal && <Modal><JoinOurTeam /> </Modal>
+    }
     <div className={Styles.positionPage}>
       <header>
         <div>
@@ -63,9 +70,11 @@ const PositionPage = () => {
           </ul>
         </div>
         <p>{positionDetails.conclusion}</p>
-        <button>Apply now</button>
+        <button onClick={()=> setOpenModal(true)}>Apply now</button>
       </div>
+      
     </div>
+    </>
   );
 };
 
