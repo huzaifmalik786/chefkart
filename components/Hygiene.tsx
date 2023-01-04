@@ -8,18 +8,31 @@ type Props = {
   heading: string;
   main_desc: string;
   sub_desc: string;
-  headingSize?: string
+  headingSize?: string;
 };
 
 const Hygiene = (props: Props) => {
   return (
     <div
       className={Styles.hygiene_container}
-      style={props.center ? {textAlign: 'center'} : {}}
+      style={
+        !props.center
+          ? {
+              alignItems: "flex-start",
+              paddingBottom: "4vw",
+              paddingLeft: "6.59vw",
+            }
+          : {}
+      }
     >
       {/* <div className={Styles.centered}> */}
       <span className={Styles.subheading}>{props.subheading}</span>
-      <h3 className={Styles.heading} style={{fontSize: `${props.headingSize}`}}>{props.heading}</h3>
+      <h3
+        className={Styles.heading}
+        style={{ fontSize: `${props.headingSize}` }}
+      >
+        {props.heading}
+      </h3>
       <p className={Styles.description}>
         {props.main_desc}
         <br /> <span>{props.sub_desc}</span>{" "}

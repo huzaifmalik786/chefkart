@@ -1,6 +1,4 @@
 .hygiene_container {
-  position: relative;
-  width: 100vw;
   height: 42.9vw;
   background: linear-gradient(
       0.63deg,
@@ -10,8 +8,15 @@
     url("/Rectangle 10.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 12.66vw 0 0px 6.57vw;
+  background-position: center;
+  // border-radius: 50% 50% 0% 0% / 15% 15% 0% 0%;
+  // border-radius: 10px/50%;
+  // border-radius: 50% 50% 0 0 /20px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .subheading {
     font-weight: 700;
     font-size: 1.66vw;
@@ -30,8 +35,6 @@
     text-transform: uppercase;
     margin-bottom: 1.93vw;
     margin-top: 0.55vw;
-
-
   }
 
   p {
@@ -39,7 +42,7 @@
     font-size: 1.66vw;
     line-height: 2vw;
     letter-spacing: -0.005em;
-
+    white-space: pre-line;
     color: #d9d9d9;
 
     span {

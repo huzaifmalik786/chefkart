@@ -7,13 +7,7 @@ const Footer = () => {
     <footer className={Styles.footer}>
       <div className={Styles.footer_row_1}>
         <div className={Styles.footer_logo}>
-          <Image
-            src={"/Logo-black.svg"}
-            alt="chefkart-logo"
-            // width={223}
-            // height={59}
-            fill
-          />
+          <Image src={"/Logo-black.svg"} alt="chefkart-logo" fill />
         </div>
         <div className={Styles.footer_content}>
           <div className={Styles.content_column}>
@@ -32,41 +26,17 @@ const Footer = () => {
             <p>Follow Us</p>
             <div>
               <span>
-                <Image
-                  src={"/Facebook.svg"}
-                  alt="fb"
-                  // width={32}
-                  // height={32}
-                  fill
-                />
+                <Image src={"/Facebook.svg"} alt="fb" fill />
               </span>
               <span>
-                <Image
-                  src={"/Twitter.svg"}
-                  alt="fb"
-                  // width={32}
-                  // height={32}
-                  fill
-                />
+                <Image src={"/Twitter.svg"} alt="fb" fill />
               </span>
 
               <span>
-                <Image
-                  src={"/Linkedin.svg"}
-                  alt="fb"
-                  // width={32}
-                  // height={32}
-                  fill
-                />
+                <Image src={"/Linkedin.svg"} alt="fb" fill />
               </span>
               <span>
-                <Image
-                  src={"/Instagram.svg"}
-                  alt="fb"
-                  // width={32}
-                  // height={32}
-                  fill
-                />
+                <Image src={"/Instagram.svg"} alt="fb" fill />
               </span>
             </div>
           </div>
@@ -78,22 +48,10 @@ const Footer = () => {
         </div>
         <div className={Styles.row2_img}>
           <div>
-            <Image
-              src={"/google-play.svg"}
-              alt="google-play"
-              // height={45}
-              // width={133}
-              fill
-            />
+            <Image src={"/google-play.svg"} alt="google-play" fill />
           </div>
           <div>
-            <Image
-              src={"/app-store.svg"}
-              alt="app-store"
-              // height={45}
-              // width={133}
-              fill
-            />
+            <Image src={"/app-store.svg"} alt="app-store" fill />
           </div>
         </div>
       </div>

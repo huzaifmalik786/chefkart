@@ -55,7 +55,7 @@ const FoodDisplay = (props: Props) => {
           customTransition="transform 900ms ease-out"
           ssr
           infinite
-          arrows={false}
+          arrows
           containerClass={Styles.carousel}
           itemClass={Styles.item}
           deviceType={"desktop"}
