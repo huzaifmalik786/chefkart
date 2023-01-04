@@ -59,8 +59,10 @@
 
     .items {
       position: relative;
-      height: 34.7vw;
-      width: 34.7vw;
+      // height: 34.7vw;
+      // width: 34.7vw;
+      height: 25vw;
+      width: 25vw;
     }
   }
 
@@ -68,6 +70,13 @@
     opacity: 1 !important;
     padding: 0;
     padding-top: 4vw;
+
+    .items {
+      height: 34.7vw;
+      width: 34.7vw;
+    }
+
+    // padding-left: -10vw;
   }
 }
 
@@ -79,6 +88,8 @@
 
   padding-top: 10vw;
   padding-left: 3vw;
+  width: fit-content;
+  height: fit-content;
   // height: 360px;
   // width: 360px;
   // position: relative;

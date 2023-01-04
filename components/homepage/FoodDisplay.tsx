@@ -25,7 +25,7 @@ const FoodDisplay = (props: Props) => {
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 1,
-      slidesToSlide: 2,
+      slidesToSlide: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -66,7 +66,7 @@ const FoodDisplay = (props: Props) => {
           {Images.map((img) => {
             return (
               <div key={img.id} className={Styles.items}>
-                <Image src={img.img} alt="food" fill />
+                <Image className={Styles.photo} src={img.img} alt="food" fill />
               </div>
             );
           })}
