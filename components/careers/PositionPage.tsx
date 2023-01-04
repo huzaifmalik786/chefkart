@@ -4,6 +4,7 @@ import Styles from "../../styles/components/careers/positionPage.module.scss";
 import { useRouter } from "next/router";
 import Modal from "./Modal";
 import JoinOurTeam from "../Forms/JoinOurTeam";
+import ThankYou from "../Forms/ThankYou";
 
 const positionDetails = {
   position: "Software Engineer",
@@ -24,57 +25,69 @@ const positionDetails = {
 
 const PositionPage = () => {
   const router = useRouter();
-  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [openModal, setOpenModal] = useState<boolean>(false)
+  const [secondModal, setSecondModal] = useState<boolean>(false)
+  function handleClose(){
+    setOpenModal(false)
+  }
+
+  const handlemodalClosed = (closed:boolean)=>{
+    setOpenModal(closed);
+    setSecondModal(!closed)
+  }
   return (
     <>
-      {openModal && (
-        <Modal>
-          <JoinOurTeam />{" "}
-        </Modal>
-      )}
-      <div className={Styles.positionPage}>
-        <header>
-          <div>
-            <h1>{positionDetails.position}</h1>
-            <p>{positionDetails.sub_heading}</p>
-            <div className={Styles.type}>
-              <div className={Styles.icon}>
-                <Image src="/Shape.png" alt="" fill />
-              </div>
-              <span>{positionDetails.type}</span>
+    {
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+    }
+
+    {
+      openModal && <Modal setOpenModal={setOpenModal} openModal={openModal}><JoinOurTeam setOpenModal={handlemodalClosed} openModal={openModal} /> </Modal>
+    }
+    <div className={Styles.positionPage}>
+      <header>
+        <div>
+          <h1>{positionDetails.position}</h1>
+          <p>{positionDetails.sub_heading}</p>
+          <div className={Styles.type}>
+            <div className={Styles.icon}>
+              <Image src="/Shape.png" alt="" fill />
             </div>
+            <span>{positionDetails.type}</span>
           </div>
-          <div>
-            <button>Apply now</button>
-          </div>
-        </header>
-        <div className={Styles.main}>
-          <div className={Styles.section}>
-            <h2>About the Role</h2>
-            <p>{positionDetails.about_the_role}</p>
-          </div>
-          <div className={Styles.section}>
-            <h2>What the Candidate Will Need / Bonus Points</h2>
-            <ul>
-              {positionDetails.what_candidate_need
-                .split("\n")
-                .map((item, key) => {
-                  return <li key={key}>{item}</li>;
-                })}
-            </ul>
-          </div>
-          <div className={Styles.section}>
-            <h2>Basic Qualifications</h2>
-            <ul>
-              {positionDetails.qualifications.split("\n").map((item, key) => {
+        </div>
+        <div>
+          <button onClick={()=> setOpenModal(true)}>Apply now</button>
+        </div>
+      </header>
+      <div className={Styles.main}>
+        <div className={Styles.section}>
+          <h2>About the Role</h2>
+          <p>{positionDetails.about_the_role}</p>
+        </div>
+        <div className={Styles.section}>
+          <h2>What the Candidate Will Need / Bonus Points</h2>
+          <ul>
+            {positionDetails.what_candidate_need
+              .split("\n")
+              .map((item, key) => {
                 return <li key={key}>{item}</li>;
               })}
-            </ul>
-          </div>
-          <p>{positionDetails.conclusion}</p>
-          <button onClick={() => setOpenModal(true)}>Apply now</button>
+          </ul>
         </div>
+        <div className={Styles.section}>
+          <h2>Basic Qualifications</h2>
+          <ul>
+            {positionDetails.qualifications.split("\n").map((item, key) => {
+              return <li key={key}>{item}</li>;
+            })}
+          </ul>
+        </div>
+        <p>{positionDetails.conclusion}</p>
+        <button onClick={()=> setOpenModal(true)}>Apply now</button>
       </div>
+      
+    </div>
     </>
   );
 };

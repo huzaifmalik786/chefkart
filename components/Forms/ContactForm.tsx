@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, Resolver } from "react-hook-form";
 import Styles from '../../styles/components/forms/contactForm.module.scss'
+import Modal from "../careers/Modal";
 import Button from "./Button";
 import Input from "./Input";
+import ThankYou from "./ThankYou";
 
 type FormValues = {
     name: string;
@@ -28,17 +30,25 @@ type FormValues = {
 
 const ContactForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
+  const [openModal, setOpenModal] = useState<boolean>(false)
+
 
   const onSubmit = (data: any) => {
+    data.preventDefault()
     console.log(data);
+    setOpenModal(true)
     // send form data to server or perform other actions
   };
 
   return (
+    <>
+    {
+      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
+    }
     <div className={Styles.contact_form}>
       <h2>Please fill out the form below and we will respond within 24hrs. </h2>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={onSubmit}>
         <Input left_section="Name" placeholder="" type="text" name="name" />
         {/* {errors.name && <p>Please enter your name</p>} */}
 
@@ -56,6 +66,7 @@ const ContactForm = () => {
 
       
     </div>
+    </>
   );
 };
 
