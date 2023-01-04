@@ -2,6 +2,7 @@ import React from "react";
 import Styles from "../../styles/components/careers/vacancies.module.scss";
 import Dropdown from "../Forms/Dropdown";
 import JoinOurTeam from "../Forms/JoinOurTeam";
+import { useRouter } from "next/router";
 
 type vacancyType = {
   position: string;
@@ -28,6 +29,7 @@ const vacancy: vacancyType[] = [
 ];
 
 const Vacancies = () => {
+  const router = useRouter();
   return (
     <div className={Styles.vacancy_container}>
       <div className={Styles.heading}>
@@ -42,7 +44,11 @@ const Vacancies = () => {
         <div className={Styles.header}>
           <span className={Styles.body_heading}>Recent Openings</span>
           <div className={Styles.dropdown}>
-            <Dropdown heading="Select Department" arrow_width="1.04vw" arrow_height="1.04vw" />
+            <Dropdown
+              heading="Select Department"
+              arrow_width="1.04vw"
+              arrow_height="1.04vw"
+            />
           </div>
           <span className={Styles.viewAll}>View all openings &#62;</span>
         </div>
@@ -57,7 +63,9 @@ const Vacancies = () => {
                     <span>Lorem ipsum </span>
                     <span>City location </span>
                   </div>
-                  <button>Apply</button>
+                  <button onClick={() => router.push("/careers/position")}>
+                    Apply
+                  </button>
                 </div>
               </div>
             );

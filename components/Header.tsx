@@ -53,15 +53,6 @@ const Header = () => {
         </div>
         <div className={Styles.nav_center}>
           <ul>
-            {/* <Link href="chef-on-demand">
-              <li>Chef On-Demand</li>
-            </Link>
-            <Link href="monthly">
-              <li>Monthly Subscriptions</li>
-            </Link>
-            <Link href="join-as-chef">
-              <li>Join As Chef</li>
-            </Link> */}
             {headerItems.map((item, index) => {
               return (
                 <Link href={item.href} key={index}>

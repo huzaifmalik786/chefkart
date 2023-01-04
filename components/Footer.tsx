@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Styles from "../styles/components/footer.module.scss";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -11,32 +12,42 @@ const Footer = () => {
         </div>
         <div className={Styles.footer_content}>
           <div className={Styles.content_column}>
-            <p>Chef On-Demand</p>
-            <p>Resources</p>
+            <Link href={"/chef-on-demand"}>Chef On-Demand</Link>
+            <Link href={"/resources"}>Resources</Link>
           </div>
           <div className={Styles.content_column}>
-            <p>Join As Chef</p>
-            <p>Contact Us</p>
+            <Link href={"/join-as-chef"}>Join As Chef</Link>
+            <Link href={"/contact-us"}>Contact Us</Link>
           </div>
           <div className={Styles.content_column}>
-            <p>Monthly Subscriptions</p>
-            <p>About Us</p>
+            <Link href={"/pricing"}>Monthly Subscriptions</Link>
+            <Link href={"/about-us"}>About Us</Link>
           </div>
           <div className={Styles.social_icons}>
             <p>Follow Us</p>
             <div>
               <span>
-                <Image src={"/Facebook.svg"} alt="fb" fill />
+                <button>
+                  {" "}
+                  <Image src={"/Facebook.svg"} alt="fb" fill />
+                </button>
               </span>
               <span>
-                <Image src={"/Twitter.svg"} alt="fb" fill />
+                <button>
+                  <Image src={"/Twitter.svg"} alt="fb" fill />
+                </button>
               </span>
 
               <span>
-                <Image src={"/Linkedin.svg"} alt="fb" fill />
+                <button>
+                  <Image src={"/Linkedin.svg"} alt="fb" fill />
+                </button>
               </span>
               <span>
-                <Image src={"/Instagram.svg"} alt="fb" fill />
+                <button>
+                  {" "}
+                  <Image src={"/Instagram.svg"} alt="fb" fill />
+                </button>{" "}
               </span>
             </div>
           </div>
