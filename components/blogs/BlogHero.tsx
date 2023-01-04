@@ -10,7 +10,7 @@ const BlogHero = (props: Props) => {
       <div className={Styles.hero_content}>
         <p className={Styles.label}>Blog</p>
         <h2>
-          Book a Trained Chef {"\n"} for your <span> Aniversary</span>
+          Book a Trained Chef {"\n"} for your <span> Something Special</span>
         </h2>
         <h4>
           Food that makes your guests go <span> UMAAAHHH!!</span> {"\n"} Hire a

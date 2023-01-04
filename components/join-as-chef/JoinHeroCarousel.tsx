@@ -9,9 +9,9 @@ import "react-multi-carousel/lib/styles.css";
 type Props = {};
 
 const Images = [
-  { img: "/join-carousel.png", id: 1 },
-  { img: "/join-carousel.png", id: 2 },
-  { img: "/join-carousel.png", id: 3 },
+  { img: "/join-carousel-1.png", id: 1 },
+  { img: "/join-carousel-2.png", id: 2 },
+  { img: "/join-carousel-3.png", id: 3 },
 ];
 
 const CustomDot = ({ onClick, ...rest }: any) => {
@@ -60,11 +60,11 @@ const JoinHeroCarousel = (props: Props) => {
         draggable={false}
         showDots
         responsive={responsive}
-        // autoPlay={true}
-        // autoPlaySpeed={2000}
-        // transitionDuration={900}
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        transitionDuration={1200}
         rewindWithAnimation
-        customTransition="transform 900ms ease-in"
+        customTransition="transform 1200ms ease-out"
         ssr
         infinite
         arrows={false}

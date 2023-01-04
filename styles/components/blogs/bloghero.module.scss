@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   // background-color: #e5e5e5;
-  place-items: center;
-  padding: 4vw;
+  // place-items: center;
+  padding: 4vw 0vw 4vw 6.66vw;
 
   .hero_img {
     width: 40vw;
@@ -17,6 +17,7 @@
 
   .hero_content {
     font-weight: 700;
+    place-self: center;
 
     .label {
       font-size: 0.97vw;
