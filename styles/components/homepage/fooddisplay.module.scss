@@ -6,8 +6,8 @@
 
   .food_heading {
     color: #585858;
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 2.77vw;
+    line-height: 3.33vw;
     letter-spacing: -0.5%;
     font-weight: 700;
     padding-bottom: 2.56vw;
@@ -51,7 +51,7 @@
   .carousel_wrapper {
     background: url(../../../public/food-plate.png) no-repeat;
     background-size: 58.68vw 47.22vw;
-    height: 680px;
+    height: 47.22vw;
     background-position: center;
     width: 100%;
     border-bottom-left-radius: 50% 15%;
@@ -59,8 +59,10 @@
 
     .items {
       position: relative;
-      height: 34.7vw;
-      width: 34.7vw;
+      // height: 34.7vw;
+      // width: 34.7vw;
+      height: 25vw;
+      width: 25vw;
     }
   }
 
@@ -68,6 +70,13 @@
     opacity: 1 !important;
     padding: 0;
     padding-top: 4vw;
+
+    .items {
+      height: 34.7vw;
+      width: 34.7vw;
+    }
+
+    // padding-left: -10vw;
   }
 }
 
@@ -77,8 +86,10 @@
   justify-content: center;
   opacity: 0.5;
 
-  padding-top: 20vw;
-  padding-left: 2vw;
+  padding-top: 10vw;
+  padding-left: 3vw;
+  width: fit-content;
+  height: fit-content;
   // height: 360px;
   // width: 360px;
   // position: relative;
