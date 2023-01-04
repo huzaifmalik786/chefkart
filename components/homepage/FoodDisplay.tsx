@@ -38,7 +38,7 @@ const FoodDisplay = (props: Props) => {
     <div className={Styles.food_display_wrapper}>
       <div className={Styles.food_heading}>
         <h3>
-          Feeling Indian? you got it, without
+          Feeling Indian you got it, without
           <br /> the ridiculous spends ordering online
         </h3>
       </div>
@@ -60,7 +60,6 @@ const FoodDisplay = (props: Props) => {
           itemClass={Styles.item}
           deviceType={"desktop"}
           centerMode
-
           // partialVisbile
         >
           {Images.map((img) => {
