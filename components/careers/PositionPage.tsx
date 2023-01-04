@@ -86,6 +86,8 @@ const PositionPage = () => {
         <p>{positionDetails.conclusion}</p>
         <button onClick={()=> setOpenModal(true)}>Apply now</button>
       </div>
+      
+    </div>
     </>
   );
 };
