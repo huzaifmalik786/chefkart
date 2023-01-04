@@ -1,0 +1,40 @@
+.tools_container{
+    position: absolute;
+    width: 24.5vw;
+    height: 7.14vw;
+
+    .tools_subcontainer{
+        background: #FFFFFF;
+    box-shadow: 0.2vw 0.2vw 0.7vw rgba(0, 0, 0, 0.08);
+    border-radius: 1.04vw;
+    width: 24.5vw;
+    height: 7.14vw;
+    // position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .text{
+        width: 16.9vw;
+        height: 4.78vw;
+    
+        span{
+            font-weight: 700;
+            font-size: 1vw;
+            line-height: 1.78vw;
+        }
+        p{
+            font-weight: 400;
+            font-size: 1vw;
+            line-height: 1.78vw;
+        }
+    }
+    
+    .navigation{
+        position: relative;
+        width: 3.81vw;
+        height: 3.81vw;
+    }
+    }
+}
+

@@ -1,20 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Input from '../Forms/Input'
 import Styles from '../../styles/components/about/form.module.scss'
 import Image from 'next/image'
 import Button from '../Forms/Button'
 import Dropdown from '../Forms/Dropdown'
+import Modal from '../careers/Modal'
+import ThankYou from '../Forms/ThankYou'
 
 const ContactForm = () => {
+    const [openModal, setOpenModal] = useState<boolean>(false)
+
+    const onSubmit = (data: any) => {
+        // send form data to server or perform other actions
+        data.preventDefault()
+        setOpenModal(true)
+        console.log("submite",data.name, data.target.name.value)
+    
+      };
   return (
+    <>
+    {
+        openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
+    }
     <div className={Styles.about_form}>
         <div className={Styles.image}>
             <Image src='/iStock-495494292 1.png' alt='' fill />
         </div>
         <div className={Styles.form_container}>
             <h2>Please fill out the form below and we will respond within 24hrs. </h2>
-            <form>
-                <Input left_section="Name" placeholder="" type="text" name="name" />
+            <form onSubmit={onSubmit}>
+                <Input left_section="Name" placeholder="Name" type="text" name="name" />
                 <Input left_section="" placeholder="Email" type="email" name="email" />
                 <div className={Styles.two_input}>
                     <Input left_section="+91" placeholder="9987115132" type="text" name="mobile" />
@@ -32,6 +47,7 @@ const ContactForm = () => {
             </form>
         </div>
     </div>
+    </>
   )
 }
 

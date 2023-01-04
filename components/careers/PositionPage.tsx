@@ -4,6 +4,7 @@ import Styles from "../../styles/components/careers/positionPage.module.scss";
 import { useRouter } from "next/router";
 import Modal from "./Modal";
 import JoinOurTeam from "../Forms/JoinOurTeam";
+import ThankYou from "../Forms/ThankYou";
 
 const positionDetails = {
   position: "Software Engineer",
@@ -25,10 +26,23 @@ const positionDetails = {
 const PositionPage = () => {
   const router = useRouter();
   const [openModal, setOpenModal] = useState<boolean>(false)
+  const [secondModal, setSecondModal] = useState<boolean>(false)
+  function handleClose(){
+    setOpenModal(false)
+  }
+
+  const handlemodalClosed = (closed:boolean)=>{
+    setOpenModal(closed);
+    setSecondModal(!closed)
+  }
   return (
     <>
     {
-      openModal && <Modal><JoinOurTeam /> </Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+    }
+
+    {
+      openModal && <Modal setOpenModal={setOpenModal} openModal={openModal}><JoinOurTeam setOpenModal={handlemodalClosed} openModal={openModal} /> </Modal>
     }
     <div className={Styles.positionPage}>
       <header>
@@ -43,7 +57,7 @@ const PositionPage = () => {
           </div>
         </div>
         <div>
-          <button>Apply now</button>
+          <button onClick={()=> setOpenModal(true)}>Apply now</button>
         </div>
       </header>
       <div className={Styles.main}>

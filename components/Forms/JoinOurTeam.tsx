@@ -30,13 +30,19 @@ type FormValues = {
         : {},
     };
   };
-
-const JoinOurTeam = () => {
+type Props = {
+  openModal: boolean;
+  setOpenModal: (open:boolean)=> void;
+}
+const JoinOurTeam = (props: Props) => {
   const { handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
   
 
   const onSubmit = (data: any) => {
     // send form data to server or perform other actions
+    props.setOpenModal(false)
+    console.log("submite",data.name, data.target.name.value)
+
   };
 
   return (
@@ -45,7 +51,7 @@ const JoinOurTeam = () => {
     <div className={Styles.join_team_form}>
         <h2>Join Our Team</h2>
 
-        <form action="" onSubmit={handleSubmit(onSubmit)}>
+        <form action="" onSubmit={onSubmit}>
             <Input name="name" left_section="Name" type="text"  />
             <Input name="mobile" left_section="+91" type="text"  />
             <Input name="email" type="email" placeholder="Email"  />

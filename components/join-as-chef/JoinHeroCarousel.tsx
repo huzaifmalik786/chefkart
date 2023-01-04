@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Styles from "../../styles/components/join-as-chef/joinherocarousel.module.scss";
 import Image from "next/image";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Modal from "../careers/Modal";
+import SignupForm from "../Forms/SignupForm";
+import ThankYou from "../Forms/ThankYou";
 
 type Props = {};
 
@@ -36,6 +39,8 @@ const CustomDot = ({ onClick, ...rest }: any) => {
 };
 
 const JoinHeroCarousel = (props: Props) => {
+  const [openModal, setOpenModal] = useState<boolean>(false)
+  const [secondModal, setSecondModal] = useState<boolean>(false)
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -53,7 +58,19 @@ const JoinHeroCarousel = (props: Props) => {
       slidesToSlide: 1,
     },
   };
+  const handlemodalClosed = (closed:boolean)=>{
+    setOpenModal(closed);
+    setSecondModal(!closed)
+  }
+
   return (
+    <>
+    {
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+    }
+    {
+      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
+    }
     <div className={Styles.carousel_wrapper}>
       <Carousel
         swipeable={false}
@@ -89,13 +106,14 @@ const JoinHeroCarousel = (props: Props) => {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam,
                 </p>
-                <button>Sign up now</button>
+                <button onClick={()=>setOpenModal(true)}>Sign up now</button>
               </div>
             </div>
           );
         })}
       </Carousel>
     </div>
+    </>
   );
 };
 
