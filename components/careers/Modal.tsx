@@ -20,8 +20,8 @@ const Modal: React.FC<Props> = ({ children, setOpenModal, openModal }) => {
 
   const handleClickOutside = (event: MouseEvent) => {
     
-    if(event?.target?.id === 'modal'){
-        setOpenModal(prev => !prev)
+    if((event?.target as HTMLInputElement)?.id === 'modal'){
+        setOpenModal(!openModal)
     }
   };
   useEffect(() => {
