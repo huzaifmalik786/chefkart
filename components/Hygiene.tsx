@@ -19,8 +19,8 @@ const Hygiene = (props: Props) => {
         !props.center
           ? {
               alignItems: "flex-start",
-              paddingBottom: "4vw",
-              paddingLeft: "6.59vw",
+              padding: '12.7vw 0px 4vw 6.59vw',
+              justifyContent: 'flex-start'
             }
           : {}
       }
@@ -33,9 +33,9 @@ const Hygiene = (props: Props) => {
       >
         {props.heading}
       </h3>
-      <p className={Styles.description}>
+      <p className={Styles.description} style={!props.center ? {} : {textAlign: 'center', width: '33.6vw'}}>
         {props.main_desc}
-        <br /> <span>{props.sub_desc}</span>{" "}
+         <span> {props.sub_desc}</span>{" "}
       </p>
       {/* </div> */}
     </div>
