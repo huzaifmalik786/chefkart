@@ -14,8 +14,8 @@ const PricingCard = (props: Props) => {
       className={Styles.card_wrapper}
       style={{
         width: props.isWide ? "34.16vw" : "27vw",
-        backgroundColor: props.card.heading === "Popular" ? "#fff" : "",
-        border: props.card.heading === "Popular" ? "1px solid #D9D9D9" : "",
+        backgroundColor: props.card.heading === "Popular" ? "#fff" : "#2d4739",
+        border: props.card.heading === "Popular" ? "1px solid #D9D9D9" : "none",
       }}
     >
       <div
@@ -58,8 +58,8 @@ const PricingCard = (props: Props) => {
       <div className={Styles.card_footer}>
         <button
           style={{
-            paddingLeft: props.isWide ? "8.75vw" : "",
-            paddingRight: props.isWide ? "8.75vw" : "",
+            paddingLeft: props.isWide ? "8.75vw" : "6vw",
+            paddingRight: props.isWide ? "8.75vw" : "6vw",
           }}
         >
           Book a trial

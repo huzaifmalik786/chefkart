@@ -6,12 +6,6 @@ import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-
 type Props = {};
 
 const Images = [
@@ -41,18 +35,14 @@ const FoodDisplay = (props: Props) => {
     },
   };
 
-  setTimeout(() => {
-    console.log("Hello, World!");
-  }, 3000);
-
   return (
     <div className={Styles.food_display_wrapper}>
       <div className={Styles.food_heading}>
         <h3>
           Feeling <span style={{ color: "#FF8811" }}>Indian?</span>
-          <span style={{ color: "#FF6978" }}>Chinease?</span>
-          <span style={{ color: "#4F4789" }}>Italian?</span>
-          <span style={{ color: "#214E34" }}>Mexican?</span>
+          {/* <span style={{ color: "#FF6978" }}>Chinease?</span>
+            <span style={{ color: "#4F4789" }}>Italian?</span>
+            <span style={{ color: "#214E34" }}>Mexican?</span> */}
           you got it, without
           <br /> the ridiculous spends ordering online
         </h3>

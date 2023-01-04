@@ -5,47 +5,63 @@
   padding-top: 3.19vw;
 
   .food_heading {
-    color: #585858;
-    font-size: 2.77vw;
-    line-height: 3.33vw;
-    letter-spacing: -0.5%;
-    font-weight: 700;
-    padding-bottom: 2.56vw;
-
     h3 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      // overflow: hidden;
+      color: #585858;
+      font-size: 2.77vw;
+      line-height: 3.33vw;
+      letter-spacing: -0.5%;
+      font-weight: 700;
+      padding-bottom: 2.56vw;
     }
+
+    .animation {
+      display: flex;
+      flex-direction: column;
+      height: 3.33vw;
+      overflow-y: hidden;
+    }
+
+    // span:nth-child(1) {
+    //   background-color: blue;
+    // }
+
+    // span:nth-child(2) {
+    //   display: none;
+    // }
+    // span:nth-child(3) {
+    //   display: none;
+    // }
+    // span:nth-child(4) {
+    //   display: none;
+    // }
 
     .slider {
       position: absolute;
       color: red;
       animation: slider 6s linear infinite;
+      height: 4vw;
     }
 
-    // @keyframes slider {
-    //   0% {
-    //     margin-top: 0px;
-    //   }
-    //   30% {
-    //     margin-top: 20px;
-    //   }
-    //   35% {
-    //     margin-top: 40px;
-    //   }
-    //   65% {
-    //     margin-top: 60px;
-    //   }
-    //   70% {
-    //     margin-top: 80px;
-    //   }
-    //   100% {
-    //     margin-top: 0px;
-    //   }
-    // }
+    @keyframes slider {
+      0% {
+        margin-top: 0px;
+      }
+      30% {
+        margin-top: 20px;
+      }
+      35% {
+        margin-top: 40px;
+      }
+      65% {
+        margin-top: 60px;
+      }
+      70% {
+        margin-top: 80px;
+      }
+      100% {
+        margin-top: 0px;
+      }
+    }
   }
 
   .carousel_wrapper {
@@ -99,25 +115,4 @@
   // max-width: 34.5vw;
   // width: 20px;
   // border: 5px solid red;
-}
-
-.swiper {
-  height: 8vw;
-  // width: auto;
-  // max-width: fit-content;
-  font-size: 4vw;
-  // background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper:nth-child(1) {
-  color: #ff8811;
-}
-
-.slide {
-  height: 3.33vw;
-  width: auto;
-  // color: yellow;
 }
