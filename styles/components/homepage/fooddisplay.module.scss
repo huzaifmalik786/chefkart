@@ -100,3 +100,24 @@
   // width: 20px;
   // border: 5px solid red;
 }
+
+.swiper {
+  height: 8vw;
+  // width: auto;
+  // max-width: fit-content;
+  font-size: 4vw;
+  // background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper:nth-child(1) {
+  color: #ff8811;
+}
+
+.slide {
+  height: 3.33vw;
+  width: auto;
+  // color: yellow;
+}

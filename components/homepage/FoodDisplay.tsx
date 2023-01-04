@@ -1,9 +1,16 @@
 import React from "react";
 import Styles from "../../styles/components/homepage/fooddisplay.module.scss";
+
 import Image from "next/image";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
 
 type Props = {};
 
@@ -34,14 +41,23 @@ const FoodDisplay = (props: Props) => {
     },
   };
 
+  setTimeout(() => {
+    console.log("Hello, World!");
+  }, 3000);
+
   return (
     <div className={Styles.food_display_wrapper}>
       <div className={Styles.food_heading}>
         <h3>
-          Feeling Indian you got it, without
+          Feeling <span style={{ color: "#FF8811" }}>Indian?</span>
+          <span style={{ color: "#FF6978" }}>Chinease?</span>
+          <span style={{ color: "#4F4789" }}>Italian?</span>
+          <span style={{ color: "#214E34" }}>Mexican?</span>
+          you got it, without
           <br /> the ridiculous spends ordering online
         </h3>
       </div>
+
       <div className={Styles.carousel_wrapper}>
         <Carousel
           swipeable={false}
@@ -52,7 +68,7 @@ const FoodDisplay = (props: Props) => {
           autoPlaySpeed={2000}
           transitionDuration={900}
           rewindWithAnimation
-          customTransition="transform 900ms ease-out"
+          customTransition="transform 900ms smooth"
           ssr
           infinite
           arrows={false}
