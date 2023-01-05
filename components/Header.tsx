@@ -15,15 +15,15 @@ const Header = () => {
   const headerItems: HeaderItems[] = [
     {
       name: "Chef On-Demand",
-      href: "chef-on-demand",
+      href: "/chef-on-demand",
     },
     {
       name: "Monthly Subscriptions",
-      href: "pricing",
+      href: "/pricing",
     },
     {
       name: "Join as Chef",
-      href: "join-as-chef",
+      href: "/join-as-chef",
     },
   ];
 

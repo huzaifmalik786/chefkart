@@ -73,6 +73,7 @@ const PositionPage = () => {
               .map((item, key) => {
                 return <li key={key}>{item}</li>;
               })}
+              
           </ul>
         </div>
         <div className={Styles.section}>

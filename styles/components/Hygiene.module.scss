@@ -1,53 +1,65 @@
-.hygiene_container {
-  height: 42.9vw;
-  background: linear-gradient(
-      0.63deg,
-      rgba(0, 0, 0, 0.71) -17.65%,
-      rgba(0, 0, 0, 0) 86.92%
-    ),
-    url("/Rectangle 10.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  // border-radius: 50% 50% 0% 0% / 30px 15px 0% 0%;
-  // border-radius: 10px/50%;
-  // border-radius: 50% 50% 0 0 /20px;
+.ellipse{
+  width: 111vw;
+  position: relative;
+    background-color: black;
+  border-radius: 50% 50% 0 0 /15% 15% 0% 0%;
+  overflow: hidden;
+  margin-left: -6.17vw;
+  padding-left: 6.17vw;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  .subheading {
-    font-weight: 700;
-    font-size: 1.66vw;
-    line-height: 3.32vw;
-    text-align: center;
-    letter-spacing: -0.0692vw;
-
-    color: #ffffff;
-  }
-
-  h3 {
-    font-weight: 700;
-    font-size: 2.76vw;
-    line-height: 3.32vw;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 1.93vw;
-    margin-top: 0.55vw;
-  }
-
-  p {
-    font-weight: 400;
-    font-size: 1.66vw;
-    line-height: 2vw;
-    letter-spacing: -0.005em;
-    white-space: pre-line;
-    color: #d9d9d9;
-    width: 43.2vw;
-
-    span {
-      color: #ff8811;
+  .hygiene_container {
+    width: 100vw;
+    height: 42.9vw;
+    background: linear-gradient(
+        0.63deg,
+        rgba(0, 0, 0, 0.71) -17.65%,
+        rgba(0, 0, 0, 0) 86.92%
+      ),
+      url("/Rectangle 10.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // border-radius: 50% 50% 0% 0% / 30px 15px 0% 0%;
+    // border-radius: 10px/50%;
+    // border-radius: 50% 50% 0 0 /20px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .subheading {
+      font-weight: 700;
+      font-size: 1.66vw;
+      line-height: 3.32vw;
+      text-align: center;
+      letter-spacing: -0.0692vw;
+  
+      color: #ffffff;
+    }
+  
+    h3 {
+      font-weight: 700;
+      font-size: 2.76vw;
+      line-height: 3.32vw;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 1.93vw;
+      margin-top: 0.55vw;
+    }
+  
+    p {
+      font-weight: 400;
+      font-size: 1.66vw;
+      line-height: 2vw;
+      letter-spacing: -0.005em;
+      white-space: pre-line;
+      color: #d9d9d9;
+      width: 43.2vw;
+  
+      span {
+        color: #ff8811;
+      }
     }
   }
 }
+

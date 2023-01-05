@@ -1,118 +1,132 @@
-.food_display_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 3.19vw;
 
-  .food_heading {
-    h3 {
-      color: #585858;
-      font-size: 2.77vw;
-      line-height: 3.33vw;
-      letter-spacing: -0.5%;
-      font-weight: 700;
-      padding-bottom: 2.56vw;
+.ellipse{
+    width: 111vw;
+  position: relative;
+    // background-color: black;
+  border-radius:  0 0 50% 50% / 0% 0% 15% 15% ;
+  overflow: hidden;
+  margin-left: -6.17vw;
+  padding-left: 6.17vw;
+  z-index: 1;
+  .food_display_wrapper {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.19vw;
+    background-color: #ffffff;
+  
+    .food_heading {
+      h3 {
+        color: #585858;
+        font-size: 2.77vw;
+        line-height: 3.33vw;
+        letter-spacing: -0.5%;
+        font-weight: 700;
+        padding-bottom: 2.56vw;
+      }
+  
+      .animation {
+        display: flex;
+        flex-direction: column;
+        height: 3.33vw;
+        overflow-y: hidden;
+      }
+  
+      // span:nth-child(1) {
+      //   background-color: blue;
+      // }
+  
+      // span:nth-child(2) {
+      //   display: none;
+      // }
+      // span:nth-child(3) {
+      //   display: none;
+      // }
+      // span:nth-child(4) {
+      //   display: none;
+      // }
+  
+      .slider {
+        position: absolute;
+        color: red;
+        animation: slider 6s linear infinite;
+        height: 4vw;
+      }
+  
+      @keyframes slider {
+        0% {
+          margin-top: 0px;
+        }
+        30% {
+          margin-top: 20px;
+        }
+        35% {
+          margin-top: 40px;
+        }
+        65% {
+          margin-top: 60px;
+        }
+        70% {
+          margin-top: 80px;
+        }
+        100% {
+          margin-top: 0px;
+        }
+      }
     }
-
-    .animation {
-      display: flex;
-      flex-direction: column;
-      height: 3.33vw;
-      overflow-y: hidden;
+  
+    .carousel_wrapper {
+      background: url(../../../public/food-plate.png) no-repeat;
+      background-size: 58.68vw 47.22vw;
+      height: 47.22vw;
+      background-position: center;
+      width: 100%;
+      border-bottom-left-radius: 50% 15%;
+      border-bottom-right-radius: 50% 15%;
+  
+      .items {
+        position: relative;
+        height: 25vw;
+        width: 25vw;
+      }
     }
-
-    // span:nth-child(1) {
-    //   background-color: blue;
-    // }
-
-    // span:nth-child(2) {
-    //   display: none;
-    // }
-    // span:nth-child(3) {
-    //   display: none;
-    // }
-    // span:nth-child(4) {
-    //   display: none;
-    // }
-
-    .slider {
-      position: absolute;
-      color: red;
-      animation: slider 6s linear infinite;
-      height: 4vw;
+    .item {
+      // border: 5px solid blue;
     }
-
-    @keyframes slider {
-      0% {
-        margin-top: 0px;
+  
+    [class*="active"] {
+      opacity: 1 !important;
+      padding: 0;
+      padding-top: 4vw;
+      // border: 5px solid #ccc;
+      max-width: 34.7vw;
+  
+      .items {
+        // border: 5px solid green;
+        left: 22%;
+  
+        height: 34.7vw;
+        width: 34.7vw;
       }
-      30% {
-        margin-top: 20px;
-      }
-      35% {
-        margin-top: 40px;
-      }
-      65% {
-        margin-top: 60px;
-      }
-      70% {
-        margin-top: 80px;
-      }
-      100% {
-        margin-top: 0px;
-      }
+  
+      // padding-left: -10vw;
     }
   }
-
-  .carousel_wrapper {
-    background: url(../../../public/food-plate.png) no-repeat;
-    background-size: 58.68vw 47.22vw;
-    height: 47.22vw;
-    background-position: center;
-    width: 100%;
-    border-bottom-left-radius: 50% 15%;
-    border-bottom-right-radius: 50% 15%;
-
-    .items {
-      position: relative;
-      height: 25vw;
-      width: 25vw;
-    }
-  }
+  
   .item {
-    // border: 5px solid blue;
+    display: flex;
+    // width: 20%;
+    align-content: flex-end;
+    justify-content: center;
+    opacity: 0.5;
+    padding-top: 20vw;
+    // padding-right: 100px;
+    padding-left: 17vw;
+    // padding-left: 3vw;
+    // max-width: 34.5vw;
+    // width: 20px;
+    // border: 5px solid red;
   }
-
-  [class*="active"] {
-    opacity: 1 !important;
-    padding: 0;
-    padding-top: 4vw;
-    // border: 5px solid #ccc;
-    max-width: 34.7vw;
-
-    .items {
-      // border: 5px solid green;
-      left: 22%;
-
-      height: 34.7vw;
-      width: 34.7vw;
-    }
-
-    // padding-left: -10vw;
-  }
-}
-
-.item {
-  display: flex;
-  // width: 20%;
-  align-content: flex-end;
-  justify-content: center;
-  opacity: 0.5;
-  padding-top: 20vw;
-  // padding-right: 100px;
-  padding-left: 17vw;
-  // padding-left: 3vw;
-  // max-width: 34.5vw;
-  // width: 20px;
-  // border: 5px solid red;
+  
 }

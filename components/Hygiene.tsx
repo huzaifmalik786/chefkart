@@ -13,7 +13,8 @@ type Props = {
 
 const Hygiene = (props: Props) => {
   return (
-    <div
+    <div className={Styles.ellipse}>
+      <div
       className={Styles.hygiene_container}
       style={
         !props.center
@@ -39,6 +40,8 @@ const Hygiene = (props: Props) => {
       </p>
       {/* </div> */}
     </div>
+    </div>
+    
   );
 };
 

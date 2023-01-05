@@ -36,7 +36,8 @@ const FoodDisplay = (props: Props) => {
   };
 
   return (
-    <div className={Styles.food_display_wrapper}>
+    <div className={Styles.ellipse}>
+      <div className={Styles.food_display_wrapper}>
       <div className={Styles.food_heading}>
         <h3>
           Feeling <span style={{ color: "#FF8811" }}>Indian?</span>
@@ -78,6 +79,8 @@ const FoodDisplay = (props: Props) => {
         </Carousel>
       </div>
     </div>
+    </div>
+    
   );
 };
 

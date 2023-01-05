@@ -16,6 +16,7 @@ import Hygiene from "../components/Hygiene";
 import UserReviews from "../components/testimonials/UserReviews";
 import VideoQuote from "../components/VideoQuote";
 import ReviewsSection from "../components/homepage/ReviewsSection";
+
 export default function Home() {
   return (
     <>
@@ -23,7 +24,10 @@ export default function Home() {
         <HomeBanner />
         <ForEveryone />
         <FoodDisplay />
-        <Facts bgcolor="#F9F9F9" color="#000000" />
+        <div style={{marginTop: '-4.8vw'}}>
+          <Facts bgcolor="#F9F9F9" color="#000000" />
+        </div>
+        <div style={{marginTop: '-4.8vw'}}>
         <Hygiene
           subheading="Mom Approved"
           heading="safety standards"
@@ -32,6 +36,7 @@ export default function Home() {
           center
           headingSize='4.44vw'
         />
+        </div>
         <HomePricing />
         <HowChefkartWorks />
         <ReviewsSection />
