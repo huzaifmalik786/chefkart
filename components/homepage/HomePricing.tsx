@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "../../styles/components/homepage/homepricing.module.scss";
 import PricingCard from "../PricingCard";
 import { PriceCard } from "../../interfaces/interfaces";
+import useFetchData from "../../lib/api";
 
 const PricingCardData: PriceCard[] = [
   {
@@ -32,12 +33,16 @@ const PricingCardData: PriceCard[] = [
 ];
 
 const HomePricing = () => {
+  const { data, loading, error } = useFetchData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/pricing`)
+
+  
   return (
     <div className={Styles.pricing_wrapper}>
       <div className={Styles.pricing_heading}>
         <h2>
           Gastronomical,
           <br /> economical &<br /> Phenomenal
+         
         </h2>
         <p>
           Starting at just Rs.3000/- that’s 1/3 of 80
@@ -45,6 +50,7 @@ const HomePricing = () => {
           online orders on a monthly basis. A simple
           <br /> subscription to hire, manage your apetite
           <br /> and home chefs on the go.
+
         </p>
       </div>
       <div className={Styles.pricecard_wrapper}>

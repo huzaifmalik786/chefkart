@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
+import useFetchData from "../lib/api";
 import Styles from "../styles/components/Hygiene.module.scss";
 
 type Props = {
@@ -10,8 +11,32 @@ type Props = {
   sub_desc: string;
   headingSize?: string;
 };
-
+type dataType = {
+    subheading: string;
+    heading: string;
+    description: string;
+    colored_text: string;
+}
 const Hygiene = (props: Props) => {
+  const { data, loading, error } = useFetchData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/hygiene`)
+  const [values, setValues] = useState<dataType>({
+    subheading: '',
+    heading: '',
+    description: '',
+    colored_text: ''
+  })
+
+  useEffect(() => {
+    if(data){
+      setValues({
+        ...values,
+        subheading: data.data.attributes.subheading,
+        heading: data.data.attributes.heading,
+        description: data.data.attributes.description,
+        colored_text: data.data.attributes.colored_desc
+      })
+  }
+  }, [data])
   return (
     <div className={Styles.ellipse}>
       <div
@@ -27,16 +52,16 @@ const Hygiene = (props: Props) => {
       }
     >
       {/* <div className={Styles.centered}> */}
-      <span className={Styles.subheading}>{props.subheading}</span>
+      <span className={Styles.subheading}>{values.subheading}</span>
       <h3
         className={Styles.heading}
         style={{ fontSize: `${props.headingSize}` }}
       >
-        {props.heading}
+        {values.heading}
       </h3>
       <p className={Styles.description} style={!props.center ? {} : {textAlign: 'center', width: '33.6vw'}}>
-        {props.main_desc}
-         <span> {props.sub_desc}</span>{" "}
+        {values.description}
+         <span> {values.colored_text}</span>{" "}
       </p>
       {/* </div> */}
     </div>

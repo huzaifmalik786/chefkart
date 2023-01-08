@@ -16,6 +16,7 @@ import Hygiene from "../components/Hygiene";
 import UserReviews from "../components/testimonials/UserReviews";
 import VideoQuote from "../components/VideoQuote";
 import ReviewsSection from "../components/homepage/ReviewsSection";
+import { GetStaticProps } from "next";
 
 export default function Home() {
   return (
@@ -49,3 +50,4 @@ export default function Home() {
     </>
   );
 }
+

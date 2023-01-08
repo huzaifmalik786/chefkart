@@ -3,7 +3,7 @@
   position: relative;
     background-color: black;
   border-radius: 50% 50% 0 0 /15% 15% 0% 0%;
-  overflow: hidden;
+  overflow-x: hidden;
   margin-left: -6.17vw;
   padding-left: 6.17vw;
 
@@ -33,7 +33,7 @@
       line-height: 3.32vw;
       text-align: center;
       letter-spacing: -0.0692vw;
-  
+      margin-bottom: 0.77vw;
       color: #ffffff;
     }
   
@@ -48,7 +48,7 @@
     }
   
     p {
-      font-weight: 400;
+      font-weight: 600;
       font-size: 1.66vw;
       line-height: 2vw;
       letter-spacing: -0.005em;
@@ -58,6 +58,7 @@
   
       span {
         color: #ff8811;
+        font-weight: 700;
       }
     }
   }

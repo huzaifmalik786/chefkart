@@ -1,16 +1,30 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import useFetchData from "../../lib/api";
 import Styles from "../../styles/components/homepage/foreveryone.module.scss";
 import ForEveryOneTab from "./ForEveryOneTab";
 
 const ForEveryone = () => {
   const [openTab, setOpenTab] = useState<number>(1);
+  const { data, loading, error } = useFetchData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/for-everyone`)
+  const [values, setValues] = useState({
+    heading: '',
+  })
+
+  useEffect(() => {
+    if(data){
+      setValues({
+        ...values,
+        heading: data.data.attributes.heading,
+      })
+  }
+  }, [data])
+
   return (
     <div className={Styles.container}>
       <div className={Styles.heading}>
         <h3>
-          Freshly homemade food served
-          <br /> everyday, for you and your loved ones.
+          {values.heading}
         </h3>
       </div>
       <div className={Styles.link_wrapper}>

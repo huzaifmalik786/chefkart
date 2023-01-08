@@ -39,8 +39,9 @@ const ForEveryOneTab = (props: Props) => {
             <Image
               src={"/for-single.png"}
               alt="for-moms-img"
-              width={612}
-              height={572}
+              // width={612}
+              // height={572}
+              fill
             />
           </div>
           <div className={Styles.tab_text}>
@@ -62,8 +63,9 @@ const ForEveryOneTab = (props: Props) => {
             <Image
               src={"/for-family.png"}
               alt="for-moms-img"
-              width={612}
-              height={572}
+              // width={612}
+              // height={572}
+              fill
             />
           </div>
           <div className={Styles.tab_text}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "../../styles/components/homepage/fooddisplay.module.scss";
 
 import Image from "next/image";
@@ -7,6 +7,14 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 type Props = {};
+type styleType = {
+  color: string;
+  marginTop: string;
+  width: string;
+  position: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky';
+  transition: string;
+}
+const words = ['Indian?', 'Italian?', 'Chinese?', 'Mexican?'];
 
 const Images = [
   { img: "/food-1.png", id: 1 },
@@ -17,6 +25,43 @@ const Images = [
 ];
 
 const FoodDisplay = (props: Props) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const wordElements = words.map((word, index) => {
+    const style : styleType = {
+      color: '#FF8811',
+      marginTop: '',
+      width: '120px',
+      position: 'absolute',
+      transition: 'margin-top 0.7s, width 0.5s ease-in-out'
+    };
+    if (index === currentIndex && index===0) {
+      style.marginTop = '0px'
+      style.position= 'relative'
+      style.width = '150px'
+    } else if(index === currentIndex && index === 1){
+      style.marginTop = '0px'
+      style.color = '#FF6978'
+       style.position= 'relative'
+       style.width = '150px'
+    } else if(index === currentIndex && index === 2){
+      style.marginTop = '0px'
+      style.color = '#4F4789'
+       style.position= 'relative'
+       style.width = '185px'
+    } else if(index === currentIndex && index === 3){
+      style.marginTop = '0px'
+      style.color = '#214E34'
+       style.position= 'relative'
+       style.width = '192px'
+    }
+     else {
+      style.marginTop = `${index > currentIndex ? '50px' : `-50px`}`
+    }
+
+    return <div className={Styles.slider_word} key={index} style={style}>{word}</div>;
+  });
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -35,18 +80,30 @@ const FoodDisplay = (props: Props) => {
     },
   };
 
+   useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((currentIndex + 1) % words.length);
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [currentIndex])
+
   return (
     <div className={Styles.ellipse}>
       <div className={Styles.food_display_wrapper}>
       <div className={Styles.food_heading}>
-        <h3>
-          Feeling <span style={{ color: "#FF8811" }}>Indian?</span>
+        {/* <h3>
+          Feeling <span style={{ color: "#FF8811" }}>Indian?</span> */}
           {/* <span style={{ color: "#FF6978" }}>Chinease?</span>
             <span style={{ color: "#4F4789" }}>Italian?</span>
             <span style={{ color: "#214E34" }}>Mexican?</span> */}
-          you got it, without
+          {/* you got it, without
           <br /> the ridiculous spends ordering online
-        </h3>
+        </h3> */}
+        <div className={Styles.heading_text}>
+          <div style={{display: 'flex'}}> Feeling &nbsp; <div className={Styles.slider} style={{}}>{wordElements}</div>&nbsp; you got it, without</div>
+           the ridiculous spends ordering online
+        </div>
       </div>
 
       <div className={Styles.carousel_wrapper}>
