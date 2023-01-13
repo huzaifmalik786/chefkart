@@ -13,9 +13,13 @@ type Props = {
   isArrow: boolean;
   isFull: boolean;
   isInfinite: boolean;
+  
 };
-
-const Images = [
+type blog = {
+  img: string;
+  id: number;
+}
+const Images: blog[] = [
   { img: "/pricing_signup.png", id: 1 },
   { img: "/pricing_signup.png", id: 2 },
   { img: "/pricing_signup.png", id: 3 },
@@ -118,10 +122,10 @@ const BlogArticleCarousel = (props: Props) => {
         partialVisbile
         renderDotsOutside
       >
-        {Images.map((img) => {
+        {Images.map((blog, key) => {
           return (
-            <div key={img.id} className={Styles.items}>
-              <Image src={img.img} alt="food" fill className={Styles.img} />
+            <div key={key} className={Styles.items}>
+              <Image src={blog.img} alt="food" fill className={Styles.img} />
               <div className={Styles.item_overlay}>
                 <div className={Styles.item_content}>
                   <div className={Styles.item_label}>

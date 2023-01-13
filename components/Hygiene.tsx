@@ -7,36 +7,13 @@ type Props = {
   center?: boolean;
   subheading: string;
   heading: string;
-  main_desc: string;
-  sub_desc: string;
+  description: string;
+  colored_text: string;
   headingSize?: string;
 };
-type dataType = {
-    subheading: string;
-    heading: string;
-    description: string;
-    colored_text: string;
-}
-const Hygiene = (props: Props) => {
-  const { data, loading, error } = useFetchData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/hygiene`)
-  const [values, setValues] = useState<dataType>({
-    subheading: '',
-    heading: '',
-    description: '',
-    colored_text: ''
-  })
 
-  useEffect(() => {
-    if(data){
-      setValues({
-        ...values,
-        subheading: data.data.attributes.subheading,
-        heading: data.data.attributes.heading,
-        description: data.data.attributes.description,
-        colored_text: data.data.attributes.colored_desc
-      })
-  }
-  }, [data])
+const Hygiene = (props: Props) => {
+
   return (
     <div className={Styles.ellipse}>
       <div
@@ -52,16 +29,16 @@ const Hygiene = (props: Props) => {
       }
     >
       {/* <div className={Styles.centered}> */}
-      <span className={Styles.subheading}>{values.subheading}</span>
+      <span className={Styles.subheading}>{props.subheading}</span>
       <h3
         className={Styles.heading}
         style={{ fontSize: `${props.headingSize}` }}
       >
-        {values.heading}
+        {props.heading}
       </h3>
       <p className={Styles.description} style={!props.center ? {} : {textAlign: 'center', width: '33.6vw'}}>
-        {values.description}
-         <span> {values.colored_text}</span>{" "}
+        {props.description}
+         <span> {props.colored_text}</span>{" "}
       </p>
       {/* </div> */}
     </div>

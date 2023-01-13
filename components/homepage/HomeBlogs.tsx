@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BlogArticleCarousel from "../BlogArticleCarousel";
 import Styles from "../../styles/components/homepage/homeblogs.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import useFetchData from "../../lib/api";
 
-type Props = {};
+type Props = {
+
+};
+
+
 
 const HomeBlogs = (props: Props) => {
+  
   const router = useRouter();
+
+  
   return (
     <div className={Styles.blogs_wrapper}>
       <div className={Styles.header}>

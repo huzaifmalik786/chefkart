@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import Styles from "../../styles/components/homepage/artisans.module.scss";
 import "react-multi-carousel/lib/styles.css";
+import useFetchData from "../../lib/api";
 
 type chef = {
   id: number;
@@ -11,6 +12,7 @@ type chef = {
   stars: number;
   experience: string;
   specialization: string[];
+
 };
 
 const chef_array: chef[] = [
@@ -64,6 +66,7 @@ const chef_array: chef[] = [
   },
 ];
 const Artisans = () => {
+  
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -83,6 +86,7 @@ const Artisans = () => {
       partialVisibilityGutter: 120,
     },
   };
+
 
   return (
     <div className={Styles.chef_container}>
@@ -109,7 +113,7 @@ const Artisans = () => {
         {chef_array.map((c, key) => {
           return (
             
-            <div key={c.id} className={Styles.item}>
+            <div key={key} className={Styles.item}>
               <Image src={c.image} alt="" fill />
               <div className={Styles.inset}></div>
               <div className={Styles.upper_content}>

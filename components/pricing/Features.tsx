@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import useFetchData from '../../lib/api'
 import Styles from '../../styles/components/pricing/features.module.scss'
 
 type features_icon = {
@@ -31,10 +32,11 @@ const icons : features_icon[] = [
 ]
 
 const Features = () => {
+
   return (
     <div className={Styles.feature_container}>
         <div className={Styles.heading}>
-            <h3 className={Styles.main_title}>Our affordable prices are based on <span className={Styles.colored}>4 factors</span></h3>
+            <h3 className={Styles.main_title}>Our affordable prices are based on <span className={Styles.colored}>4 factors </span></h3>
             <span className={Styles.sub_title}>Minimum prices guaranteed*</span>
         </div>
         <div className={Styles.icons_container}>

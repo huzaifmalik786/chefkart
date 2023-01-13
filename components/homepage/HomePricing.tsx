@@ -33,7 +33,6 @@ const PricingCardData: PriceCard[] = [
 ];
 
 const HomePricing = () => {
-  const { data, loading, error } = useFetchData(`${process.env.NEXT_PUBLIC_STRAPI_URL}/pricing`)
 
   
   return (

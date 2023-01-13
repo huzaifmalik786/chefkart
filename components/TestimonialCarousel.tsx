@@ -1,7 +1,8 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import useFetchData from "../lib/api";
 
 import Styles from "../styles/components/testimonial.module.scss";
 
@@ -29,9 +30,11 @@ const testimonies = [
   },
 ];
 
-const TestimonialCarousel = () => {
-  const [activeSlide, setActiveSlide] = useState(1);
 
+const TestimonialCarousel = () => {
+  
+  const [activeSlide, setActiveSlide] = useState(1);
+  
   const activeStyle = {
     width: "26.49vw !important",
     // height: "25.81vw",
@@ -101,7 +104,7 @@ const TestimonialCarousel = () => {
         // partialVisbile
         // onChange={(newIndex: number) => setActiveSlide(newIndex)}
       >
-        {testimonies.map((t, key) => {
+        {testimonies?.map((t, key) => {
           return (
             <div
               key={key}

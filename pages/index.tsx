@@ -16,7 +16,7 @@ import Hygiene from "../components/Hygiene";
 import UserReviews from "../components/testimonials/UserReviews";
 import VideoQuote from "../components/VideoQuote";
 import ReviewsSection from "../components/homepage/ReviewsSection";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 
 export default function Home() {
   return (
@@ -26,14 +26,15 @@ export default function Home() {
         <ForEveryone />
         <FoodDisplay />
         <div style={{marginTop: '-4.8vw'}}>
-          <Facts bgcolor="#F9F9F9" color="#000000" />
+        {/* px: padding x, py: padding y */}
+          <Facts bgcolor="#F9F9F9" color="#000000" px="4.44vw" py="8.32vw" /> 
         </div>
         <div style={{marginTop: '-4.8vw'}}>
         <Hygiene
           subheading="Mom Approved"
-          heading="safety standards"
-          main_desc="At Chefkart, we are truly committed to"
-          sub_desc="simplifying the way India eats."
+          heading="SAFETY STANDARDS"
+          description="At Chefkart, we are truly committed to"
+          colored_text="simplifying the way India eats."
           center
           headingSize='4.44vw'
         />
@@ -50,4 +51,3 @@ export default function Home() {
     </>
   );
 }
-

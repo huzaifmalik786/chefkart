@@ -1,9 +1,10 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import useFetchData from "../lib/api";
 import Styles from "../styles/components/faq.module.scss";
 import Accordion from './Accordion'
 type QUESTIONS = {
-  id: Number;
+  id: number;
   Question: string;
   Answer: string;
 };
@@ -45,6 +46,7 @@ const questions: QUESTIONS[] = [
 
 const FAQ = () => {
   const [active, setActive] = React.useState<Number>();
+  
   return (
     <div className={Styles.faq_container}>
       <h2 className={Styles.faq_title}>Frequently Asked Questions</h2>

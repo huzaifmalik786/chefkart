@@ -8,19 +8,19 @@ import PricingBanner from "../../components/pricing/PricingBanner";
 import PricingSignUp from "../../components/pricing/PricingSignUp";
 import ProjectFeatures from "../../components/pricing/ProjectFeatures";
 import RestaurantLike from "../../components/pricing/RestaurantLike";
+import { GetServerSideProps } from "next";
 
-type Props = {};
 
-const index = (props: Props) => {
+const index = () => {
   return (
     <Layout>
       <PricingBanner />
       <Features />
       <Hygiene
         subheading=""
-        heading="We assure you of the best hygiene"
-        main_desc="At Chefkart, we are truly committed to"
-        sub_desc="simplifying the way India eats."
+        heading="WE ASSURE YOU OF THE BEST HYGIENE"
+        description="At Chefkart, we are truly committed to"
+        colored_text="simplifying the way India eats."
       />
       <ProjectFeatures />
       <RestaurantLike />
@@ -31,5 +31,6 @@ const index = (props: Props) => {
     </Layout>
   );
 };
+
 
 export default index;

@@ -15,7 +15,7 @@ const index = () => {
         <Hero />
         <Vision />
         <Mission />
-        <Facts bgcolor='#2D4739' color='#ffffff' />
+        <Facts bgcolor='#2D4739' color='#ffffff' px="4.44vw" py="5.55vw" />
         <Founder />
         <Gallery />
         <ContactForm />

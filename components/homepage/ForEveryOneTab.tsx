@@ -1,19 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/homepage/foreveryonetab.module.scss";
+import useFetchData from "../../lib/api";
 
 type Props = {
   tab: number;
 };
 
 const ForEveryOneTab = (props: Props) => {
+
   return (
     <div className={Styles.tab}>
       {props.tab === 1 && (
         <>
           <div className={Styles.tab_img}>
             <Image
-              src={"/for-moms.png"}
+              src='/for-moms.png'
               alt="for-moms-img"
               // width={612}
               // height={572}
@@ -37,7 +39,7 @@ const ForEveryOneTab = (props: Props) => {
         <>
           <div className={Styles.tab_img}>
             <Image
-              src={"/for-single.png"}
+              src='/for-single.png'
               alt="for-moms-img"
               // width={612}
               // height={572}
@@ -61,7 +63,7 @@ const ForEveryOneTab = (props: Props) => {
         <>
           <div className={Styles.tab_img}>
             <Image
-              src={"/for-family.png"}
+              src='/for-family.png'
               alt="for-moms-img"
               // width={612}
               // height={572}
