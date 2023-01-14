@@ -29,7 +29,7 @@ const Footer = () => {
               <span>
                 <button>
                   {" "}
-                  <Image src={"/Facebook.svg"} alt="fb" fill />
+                  <Image src={"/FaceBook.svg"} alt="fb" fill />
                 </button>
               </span>
               <span>
