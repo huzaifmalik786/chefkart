@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Styles from "../styles/components/header.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Sidebar from "./Sidebar";
 
 type HeaderItems = {
   name: string;
@@ -10,6 +11,7 @@ type HeaderItems = {
 };
 
 const Header = () => {
+  const [openSidebar, setOpenSidebar] = useState(false)
   const router = useRouter();
 
   const headerItems: HeaderItems[] = [
@@ -64,7 +66,7 @@ const Header = () => {
         </div>
         <div className={Styles.nav_right}>
           <button onClick={() => router.push("/contact-us")}>contact us</button>
-          <div>
+          <div onClick={()=> setOpenSidebar(true)}>
             <Image
               src={"/burger-icon.svg"}
               alt="menu-icon"
@@ -75,6 +77,9 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      {
+        openSidebar && <Sidebar show={openSidebar} hide={()=> setOpenSidebar(false)} />
+      }
     </>
   );
 };

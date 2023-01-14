@@ -2,7 +2,9 @@
   display: flex;
   padding-top: 4vw;
   justify-content: space-around;
+  align-items: center;
   gap: 0.98vw;
+  height: 28.9vw;
   [class*="track"] {
     align-items: center;
   }
@@ -26,6 +28,23 @@
   background: #2d4739;
   color: #ededed;
   border-radius: 1.09vw;
+  transition: transform 0.5s ease;
+
+  &:hover{
+    transform: scale(1.1);
+    background-color: #f9f9f9;
+    color: #615E5E;
+    border: 0.16vw solid #ABC0B5;
+    // padding: 5vw 1.66vw 2.22vw 1.66vw;
+     font-size: 1.38vw;
+    line-height: 1.80vw;
+
+    .line{
+      border: 0.1vw solid #5C5B5B;
+      background-color: #5C5B5B;
+    }
+     
+  }
 
   .image {
     position: absolute;

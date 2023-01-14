@@ -49,13 +49,13 @@ const TestimonialCarousel = () => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1280 },
       items: 3,
       slidesToSlide: 1,
       partialVisibilityGutter: 40,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 540 },
+      breakpoint: { max: 1280, min: 768 },
       items: 2,
       slidesToSlide: 1,
       partialVisibilityGutter: 160,
@@ -109,7 +109,7 @@ const TestimonialCarousel = () => {
             <div
               key={key}
               className={Styles.item}
-              style={activeSlide === key ? activeStyle : {}}
+              // style={activeSlide === key ? activeStyle : {}}
             >
               <div className={Styles.image}>
                 <Image src={t.image} fill alt="" />
@@ -118,11 +118,11 @@ const TestimonialCarousel = () => {
                 {renderStars(t.stars)}
                 <p
                   className={Styles.content}
-                  style={
-                    activeSlide === key
-                      ? { fontSize: "1.38vw", lineHeight: "1.80vw" }
-                      : {}
-                  }
+                  // style={
+                  //   activeSlide === key
+                  //     ? { fontSize: "1.38vw", lineHeight: "1.80vw" }
+                  //     : {}
+                  // }
                 >
                   {t.content}
                 </p>
@@ -133,11 +133,11 @@ const TestimonialCarousel = () => {
                 width={53}
                 height={0}
                 className={Styles.line}
-                style={activeSlide === key ? { borderColor: "#2d4739" } : {}}
+                // style={activeSlide === key ? { borderColor: "#2d4739" } : {}}
               />
               <p
                 className={Styles.name}
-                style={activeSlide === key ? { color: "#262626" } : {}}
+                // style={activeSlide === key ? { color: "#262626" } : {}}
               >
                 {t.name}
               </p>
