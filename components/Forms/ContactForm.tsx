@@ -52,7 +52,7 @@ const ContactForm = () => {
         <Input left_section="Name" placeholder="" type="text" name="name" />
         {/* {errors.name && <p>Please enter your name</p>} */}
 
-        <Input left_section="+91" placeholder="9987115132" type="text" name="mobile" />
+        <Input placeholder="9987115132" type="text" name="mobile" />
 
         <Input left_section="" placeholder="Email" type="email" name="email" />
 

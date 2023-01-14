@@ -79,8 +79,8 @@
          padding: 1.25vw 1.11vw;
          border: 0.07vw solid #adafae;
         border-radius: 0.28vw;
-
-        font-family: "Inter";
+        position: relative;
+        font-family: var(--main_font);
         font-style: normal;
         font-weight: 600;
         font-size: 1.32vw;
@@ -151,12 +151,12 @@
             flex-direction: row;
             align-items: flex-start;
             padding: 1.66vw;
-            gap: 26.65vw;
+            gap: 25.65vw;
             background: #ffffff;
             border: 0.07vw solid #d8d8d8;
             border-radius: 0.55vw;
 
-            font-family: "Open Sans";
+            font-family: var(--main_font);
             font-style: normal;
             font-weight: 600;
             font-size: 1.25vw;

@@ -29,7 +29,7 @@ const Dropdown = (props: Props) => {
     <div className={Styles.dd_wrapper} ref={ref}>
       <div
         className={Styles.dd_header}
-        // onClick={() => setOpenDropdown(!openDropdown)}
+        onClick={() => setOpenDropdown(!openDropdown)}
       >
         <div className={Styles.dd_header_title}>{props.heading}</div>
         <div className={Styles.arrow} style={{width: `${props.arrow_width}`, height: `${props.arrow_height}`}}>
@@ -37,11 +37,11 @@ const Dropdown = (props: Props) => {
         </div>
       </div>
       {openDropdown && (
-        <div className={Styles.dd_list}>
-          <div className={Styles.dd_list_item}>l1</div>
-          <div className={Styles.dd_list_item}>l1</div>
-          <div className={Styles.dd_list_item}>l1</div>
-        </div>
+        <ul className={Styles.dd_list}>
+          <li className={Styles.dd_list_item}>Lorem ipsum</li>
+          <li className={Styles.dd_list_item}>Lorem ipsum</li>
+          <li className={Styles.dd_list_item}>Lorem ipsum</li>
+        </ul>
       )}
     </div>
   );

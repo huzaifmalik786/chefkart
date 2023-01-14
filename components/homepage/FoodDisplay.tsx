@@ -101,7 +101,7 @@ const FoodDisplay = (props: Props) => {
           <br /> the ridiculous spends ordering online
         </h3> */}
         <div className={Styles.heading_text}>
-          <div style={{display: 'flex'}}> Feeling &nbsp; <div className={Styles.slider} style={{}}>{wordElements}</div>&nbsp; you got it, without</div>
+          <div style={{display: 'flex'}}> Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>&nbsp; you got it, without</div>
            the ridiculous spends ordering online
         </div>
       </div>
@@ -113,10 +113,10 @@ const FoodDisplay = (props: Props) => {
           showDots={false}
           responsive={responsive}
           autoPlay={true}
-          autoPlaySpeed={2000}
+          autoPlaySpeed={4000}
           transitionDuration={900}
           rewindWithAnimation
-          customTransition="transform 900ms smooth"
+          // customTransition="transform 900ms smooth 0s"
           ssr
           infinite
           arrows={false}

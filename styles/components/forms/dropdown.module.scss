@@ -1,5 +1,5 @@
 .dd_wrapper {
-//   position: relative;
+  // position: relative;
   width: 100%;
 
   .dd_header {
@@ -8,6 +8,9 @@
     justify-content: space-between;
     align-items: center;
     gap: 0.7vw;
+
+    cursor: pointer;
+
 
     font-family: inherit;
 
@@ -21,11 +24,27 @@
   }
 
   .dd_list {
-//     margin-top: 0.55vw;
-//     border: 0.07vw solid #adafae;
-//     border-radius: 0.27vw;
-//     position: absolute;
-//     width: 100%;
-//     left: 0;
+    // margin-top: 0.55vw;
+    border: 0.07vw solid #adafae;
+    border-radius: 0.27vw;
+    position: absolute;
+    width: 100%;
+    top: 65px;
+    left: 0;
+    background: #ffffff;
+    list-style: none;
+
+    .dd_list_item{
+      width: 100%;
+      padding: 10px 10px;
+      border-bottom: 1px solid #adafae;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+
+      &:hover{
+        background: #f9f9f9;
+      }
+    }
   }
 }

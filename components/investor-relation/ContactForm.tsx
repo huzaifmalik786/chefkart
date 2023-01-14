@@ -15,7 +15,7 @@ const ContactForm = () => {
 
         <form action="">
           <Input left_section="Name" type="text" />
-          <Input left_section="+91" placeholder="9987115132" type='text' />
+          <Input placeholder="9987115132" name="mobile" type='text' />
           <Input type='email' placeholder='Email'  />
           <TextArea row={2} />
           <Button text="Submit" />

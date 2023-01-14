@@ -14,10 +14,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap");
 :root {
-  --main_font: "Figtree", "normal";
-  --secondary_font: "Livvic", "normal";
-  --tertiary_font: "Plus Jakarta Sans", "normal";
-  --inter_font: "Inter", "base";
+  --main_font: "Open Sans", "normal";;
+  --secondary_font: "Open Sans", "normal";
+  --tertiary_font: "Open Sans", "normal";
+  --inter_font: "Open Sans", "normal";
   --open_sans: "Open Sans", "normal";
   --bg1: #000000;
   --bg2: #e5e5e5;

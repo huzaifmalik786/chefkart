@@ -32,7 +32,7 @@ const ContactForm = () => {
                 <Input left_section="Name" placeholder="Name" type="text" name="name" />
                 <Input left_section="" placeholder="Email" type="email" name="email" />
                 <div className={Styles.two_input}>
-                    <Input left_section="+91" placeholder="9987115132" type="text" name="mobile" />
+                    <Input placeholder="9987115132" type="text" name="mobile" />
                     <div className={Styles.dropdown}>
                         <Dropdown arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
                     </div>

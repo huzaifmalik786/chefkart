@@ -53,7 +53,7 @@ const JoinOurTeam = (props: Props) => {
 
         <form action="" onSubmit={onSubmit}>
             <Input name="name" left_section="Name" type="text"  />
-            <Input name="mobile" left_section="+91" type="text"  />
+            <Input name="mobile" type="text"  />
             <Input name="email" type="email" placeholder="Email"  />
             <Input name="location" type="text" placeholder="Current Location"  />
             <Input name="linkedIn" type="url" placeholder="Enter Linkedin url"  />

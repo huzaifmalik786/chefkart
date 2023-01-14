@@ -31,13 +31,28 @@
       border-radius: 1.875vw;
     }
 
-    h2 {
+    .h2 {
       color: #292929;
       white-space: pre-line;
       font-size: 3.33vw;
       line-height: 4vw;
       letter-spacing: -1%;
       padding-top: 1.94vw;
+      position: relative;
+      display: block;
+
+
+      .slider{
+        position: absolute;
+        top: 5.9vw;
+        left: 8.3vw;
+        letter-spacing: -0.01em;
+        font-size: inherit;
+        display: flex;
+          height: 4vw;
+          overflow: hidden;
+          transition: margin-top 0.5s, width 0.5s ease-in-out;
+      }
     }
 
     h4 {
