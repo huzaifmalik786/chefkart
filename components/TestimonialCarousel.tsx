@@ -128,7 +128,7 @@ const TestimonialCarousel = () => {
                 </p>
               </div>
               <Image
-                src="/vector-3.svg"
+                src="/Vector-3.svg"
                 alt=""
                 width={53}
                 height={0}
