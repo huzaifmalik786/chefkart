@@ -11,7 +11,7 @@ type HeaderItems = {
 };
 
 const Header = () => {
-  const [openSidebar, setOpenSidebar] = useState(false)
+  const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const router = useRouter();
 
   const headerItems: HeaderItems[] = [
@@ -66,7 +66,7 @@ const Header = () => {
         </div>
         <div className={Styles.nav_right}>
           <button onClick={() => router.push("/contact-us")}>contact us</button>
-          <div onClick={()=> setOpenSidebar(true)}>
+          <div onClick={() => setOpenSidebar(true)}>
             <Image
               src={"/burger-icon.svg"}
               alt="menu-icon"
@@ -77,9 +77,9 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      {
-        openSidebar && <Sidebar show={openSidebar} hide={()=> setOpenSidebar(false)} />
-      }
+      {openSidebar && (
+        <Sidebar show={openSidebar} hide={() => setOpenSidebar(false)} />
+      )}
     </>
   );
 };
