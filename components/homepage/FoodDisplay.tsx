@@ -10,7 +10,7 @@ type Props = {};
 type styleType = {
   color: string;
   marginTop: string;
-  width: string;
+  // width: string;
   position: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky';
   transition: string;
 }
@@ -31,29 +31,29 @@ const FoodDisplay = (props: Props) => {
     const style : styleType = {
       color: '#FF8811',
       marginTop: '',
-      width: '8.3vw',
+      // width: '8.3vw',
       position: 'absolute',
       transition: 'margin-top 0.7s, width 0.5s ease-in-out'
     };
     if (index === currentIndex && index===0) {
       style.marginTop = '0px'
       style.position= 'relative'
-      style.width = '10.41vw'
+      // style.width = '10.41vw'
     } else if(index === currentIndex && index === 1){
       style.marginTop = '0px'
       style.color = '#FF6978'
        style.position= 'relative'
-       style.width = '10.41vw'
+      //  style.width = '10.41vw'
     } else if(index === currentIndex && index === 2){
       style.marginTop = '0px'
       style.color = '#4F4789'
        style.position= 'relative'
-       style.width = '12.8vw'
+      //  style.width = '12.8vw'
     } else if(index === currentIndex && index === 3){
       style.marginTop = '0px'
       style.color = '#214E34'
        style.position= 'relative'
-       style.width = '13.3vw'
+      //  style.width = '13.3vw'
     }
      else {
       style.marginTop = `${index > currentIndex ? '3.47vw' : `-3.47vw`}`

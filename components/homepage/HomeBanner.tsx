@@ -13,12 +13,13 @@ const HomeBanner = () => {
       <div className={Styles.overlay}>
         <div className={Styles.content}>
           <div className={Styles.toast}>
+            <div className={Styles.icon}>
             <Image
               src={"/toast-burger-icon.svg"}
               alt="taost-icon"
-              height={28}
-              width={28}
+              fill
             />
+            </div>
             <p>Serving with love across NCR</p>
           </div>
           <div className={Styles.heading}>
