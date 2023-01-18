@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import Styles from '../../styles/components/homepage/circularCarousel.module.scss'
+import Styles from "../../styles/components/homepage/circularCarousel.module.scss";
 
 const items = [
   { id: 1, title: "Slide 1", src: "/food-1.png" },
@@ -26,7 +26,7 @@ export default function CircularCarousel() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleNext = () => {
-    console.log("chal ja")
+    console.log("chal ja");
 
     let nextSlides = items2.slice(
       currentIndex + 1,
@@ -89,10 +89,9 @@ export default function CircularCarousel() {
   }, []);
 
   useEffect(() => {
-    
-      const interval = setInterval(handleNext, 2000);
-      return () => clearInterval(interval);
-    }, [currentIndex, handleNext]);
+    const interval = setInterval(handleNext, 2500);
+    return () => clearInterval(interval);
+  }, [currentIndex, handleNext]);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => {
@@ -117,22 +116,22 @@ export default function CircularCarousel() {
 
   return (
     <>
-        <div className={Styles.myswiper}>
-          {currentSlides.map((item: any, index: any) => (
-            <div
-              key={item.id}
-              className={
-                index === 1
-                  ? `${Styles.active}`
-                  : index === 0
-                  ? `${Styles.left} `
-                  : `${Styles.right}`
-              }
-            >
-              <Image src={item.src} alt={item.title} fill />
-            </div>
-          ))}
-        </div>
+      <div className={Styles.myswiper}>
+        {currentSlides.map((item: any, index: any) => (
+          <div
+            key={item.id}
+            className={
+              index === 1
+                ? `${Styles.active}`
+                : index === 0
+                ? `${Styles.left} `
+                : `${Styles.right}`
+            }
+          >
+            <Image src={item.src} alt={item.title} fill />
+          </div>
+        ))}
+      </div>
     </>
   );
 }
