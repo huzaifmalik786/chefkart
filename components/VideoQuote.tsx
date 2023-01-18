@@ -16,7 +16,7 @@ const VideoQuote = (props: Props) => {
     >
       <div className={Styles.video_text}>
         <Image src={"/comma.svg"} alt="comma" height={33} width={41} />
-        <h2>{props.card.quote}</h2>
+        <p className={Styles.quote}>{props.card.quote}</p>
 
         <p> {props.card.name}</p>
       </div>

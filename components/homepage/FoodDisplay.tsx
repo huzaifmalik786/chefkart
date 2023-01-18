@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import CircularCarousel from "./CircularCarousel";
 
 type Props = {};
 type styleType = {
@@ -106,7 +107,7 @@ const FoodDisplay = (props: Props) => {
         </div>
       </div>
 
-      <div className={Styles.carousel_wrapper}>
+      {/* <div className={Styles.carousel_wrapper}>
         <Carousel
           swipeable={false}
           draggable={false}
@@ -134,7 +135,8 @@ const FoodDisplay = (props: Props) => {
             );
           })}
         </Carousel>
-      </div>
+      </div> */}
+      <CircularCarousel />
     </div>
     </div>
     

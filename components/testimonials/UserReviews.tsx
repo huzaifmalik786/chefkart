@@ -7,25 +7,25 @@ type Props = {};
 
 const ReviewsData: ReviewsCardType[] = [
   {
-    quote: `Ever Since Geeta Didi has ${"\n"} started Working my Kitchen ${"\n"} is no longer a headache for ${"\n"} me`,
+    quote: `Ever Since Geeta Didi has started Working my Kitchen is no longer a headache for me`,
     name: "Rishi",
     video: "/review-video-1.png",
     rev: false,
   },
   {
-    quote: `My cook is coming on regular ${"\n"} basis, I’ve been eating well, ${"\n"}healthy diet. My health has${"\n"} been better`,
+    quote: `My cook is coming on regular  basis, I’ve been eating well, healthy diet. My health has been better`,
     name: "Rahul",
     video: "/review-video-2.png",
     rev: true,
   },
   {
-    quote: `Its been 5 months. My  ${"\n"}business has picked up and ${"\n"} I’m no longer worried about  ${"\n"}kitchen`,
+    quote: `Its been 5 months. My  business has picked up and  I’m no longer worried about  kitchen`,
     name: "Sakhi",
     video: "/review-video-3.png",
     rev: false,
   },
   {
-    quote: `After Searching online we got${"\n"} to know about Chefkart. It${"\n"} was so easy. Our life is now${"\n"} Sorted`,
+    quote: `After Searching online we got to know about Chefkart. It was so easy. Our life is now Sorted`,
     name: "Shikha & Aneesh",
     video: "/review-video-4.png",
     rev: true,
