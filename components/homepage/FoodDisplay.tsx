@@ -12,10 +12,10 @@ type styleType = {
   color: string;
   marginTop: string;
   // width: string;
-  position: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky';
+  position: "absolute" | "fixed" | "relative" | "static" | "sticky";
   transition: string;
-}
-const words = ['Indian?', 'Italian?', 'Chinese?', 'Mexican?'];
+};
+const words = ["Indian?", "Italian?", "Chinese?", "Mexican?"];
 
 const Images = [
   { img: "/food-1.png", id: 1 },
@@ -29,38 +29,41 @@ const FoodDisplay = (props: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const wordElements = words.map((word, index) => {
-    const style : styleType = {
-      color: '#FF8811',
-      marginTop: '',
+    const style: styleType = {
+      color: "#FF8811",
+      marginTop: "",
       // width: '8.3vw',
-      position: 'absolute',
-      transition: 'margin-top 0.7s, width 0.5s ease-in-out'
+      position: "absolute",
+      transition: "margin-top 0.7s, width 0.5s ease-in-out",
     };
-    if (index === currentIndex && index===0) {
-      style.marginTop = '0px'
-      style.position= 'relative'
+    if (index === currentIndex && index === 0) {
+      style.marginTop = "0px";
+      style.position = "relative";
       // style.width = '10.41vw'
-    } else if(index === currentIndex && index === 1){
-      style.marginTop = '0px'
-      style.color = '#FF6978'
-       style.position= 'relative'
+    } else if (index === currentIndex && index === 1) {
+      style.marginTop = "0px";
+      style.color = "#FF6978";
+      style.position = "relative";
       //  style.width = '10.41vw'
-    } else if(index === currentIndex && index === 2){
-      style.marginTop = '0px'
-      style.color = '#4F4789'
-       style.position= 'relative'
+    } else if (index === currentIndex && index === 2) {
+      style.marginTop = "0px";
+      style.color = "#4F4789";
+      style.position = "relative";
       //  style.width = '12.8vw'
-    } else if(index === currentIndex && index === 3){
-      style.marginTop = '0px'
-      style.color = '#214E34'
-       style.position= 'relative'
+    } else if (index === currentIndex && index === 3) {
+      style.marginTop = "0px";
+      style.color = "#214E34";
+      style.position = "relative";
       //  style.width = '13.3vw'
-    }
-     else {
-      style.marginTop = `${index > currentIndex ? '3.47vw' : `-3.47vw`}`
+    } else {
+      style.marginTop = `${index > currentIndex ? "3.47vw" : `-3.47vw`}`;
     }
 
-    return <div className={Styles.slider_word} key={index} style={style}>{word}</div>;
+    return (
+      <div className={Styles.slider_word} key={index} style={style}>
+        {word}
+      </div>
+    );
   });
 
   const responsive = {
@@ -81,19 +84,19 @@ const FoodDisplay = (props: Props) => {
     },
   };
 
-   useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((currentIndex + 1) % words.length);
     }, 2500)
 
-    return () => clearInterval(interval)
-  }, [currentIndex])
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
     <div className={Styles.ellipse}>
       <div className={Styles.food_display_wrapper}>
-      <div className={Styles.food_heading}>
-        {/* <h3>
+        <div className={Styles.food_heading}>
+          {/* <h3>
           Feeling <span style={{ color: "#FF8811" }}>Indian?</span> */}
           {/* <span style={{ color: "#FF6978" }}>Chinease?</span>
             <span style={{ color: "#4F4789" }}>Italian?</span>
@@ -101,13 +104,17 @@ const FoodDisplay = (props: Props) => {
           {/* you got it, without
           <br /> the ridiculous spends ordering online
         </h3> */}
-        <div className={Styles.heading_text}>
-          <div style={{display: 'flex'}}> Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>&nbsp; you got it, without</div>
-           the ridiculous spends ordering online
+          <div className={Styles.heading_text}>
+            <div style={{ display: "flex" }}>
+              {" "}
+              Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>
+              &nbsp; you got it, without
+            </div>
+            the ridiculous spends ordering online
+          </div>
         </div>
-      </div>
 
-      {/* <div className={Styles.carousel_wrapper}>
+        {/* <div className={Styles.carousel_wrapper}>
         <Carousel
           swipeable={false}
           draggable={false}
@@ -136,10 +143,9 @@ const FoodDisplay = (props: Props) => {
           })}
         </Carousel>
       </div> */}
-      <CircularCarousel />
+        <CircularCarousel />
+      </div>
     </div>
-    </div>
-    
   );
 };
 
