@@ -58,7 +58,7 @@ export default function CircularCarousel() {
 
   useEffect(() => {
     if (autoPlay) {
-      const interval = setInterval(handleNext, 2500);
+      const interval = setInterval(handleNext, 2000);
       return () => clearInterval(interval);
     }
   }, [autoPlay, handleNext]);
