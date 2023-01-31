@@ -1,11 +1,21 @@
 .contact_wrapper {
   position: relative;
   .banner {
-    background: url("/Rectangle 60.png") no-repeat;
+    // background: url("/Rectangle 60.png") no-repeat;
     background-size: cover;
     height: 45vw;
     position: relative;
     padding-top: 6.80vw;
+
+    .banner_img{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
 
     h2 {
       font-weight: 600;
@@ -14,6 +24,8 @@
       letter-spacing: -0.10vw;
       color: #ffffff;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
   }
 

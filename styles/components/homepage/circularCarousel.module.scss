@@ -60,7 +60,7 @@
     height: 35vw;
     aspect-ratio: 1/1;
     width: 35vw;
-    transform: translate(-40%, 0%);
+    transform: translate(-35%, 0%);
     animation: slide-animation-active 1.5s ease-in-out;
   }
   @keyframes slide-animation-left-out {
@@ -73,7 +73,7 @@
   }
   @keyframes slide-animation-left {
     from {
-      transform: translate(28%, 0%);
+      transform: translate(36.6%, 0%);
       width: 35vw;
       height: 35vw;
       opacity: 1;
@@ -94,7 +94,7 @@
       opacity: 0.5;
     }
     to {
-      transform: translate(-40%, 0%);
+      transform: translate(-35%, 0%);
       width: 35vw;
       height: 35vw;
       opacity: 1;

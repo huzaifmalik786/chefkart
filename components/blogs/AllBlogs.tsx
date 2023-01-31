@@ -4,7 +4,9 @@ import Styles from "../../styles/components/blogs/allblogs.module.scss";
 import { BlogCardType } from "../../interfaces/interfaces";
 import Image from "next/image";
 
-type Props = {};
+type Props = {
+  data: BlogCardType[]
+};
 
 const FilterButtons: string[] = [
   "Trending",
@@ -19,37 +21,79 @@ const BlogData: BlogCardType[] = [
     heading: "11 ways to avoid the spread of COVID-191",
     subheading: "Lorum Ipsum",
     date: "November 18, 2022",
-    img: "/blog-1.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/blog-1.png",
+          alternativeText: ""
+        }
+      }
+    }
   },
   {
     heading: "Love in the times of Quarantine",
     subheading: "Lorum Ipsum",
     date: "November 18, 2022",
-    img: "/blog-2.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/blog-2.png",
+          alternativeText: ""
+        }
+      }
+    }
   },
   {
     heading: "A foodie next door",
     subheading: "Lorum Ipsum",
     date: "November 18, 2022",
-    img: "/blog-3.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/blog-3.png",
+          alternativeText: ""
+        }
+      }
+    }
   },
   {
     heading: "11 ways to avoid the spread of COVID-191",
     subheading: "Lorum Ipsum",
     date: "November 18, 2022",
-    img: "/blog-4.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/blog-4.png",
+          alternativeText: ""
+        }
+      }
+    }
   },
   {
     heading: "Love in the times of Quarantine",
     subheading: "Lorum Ipsum",
     date: "November 18, 2022",
-    img: "/blog-5.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/blog-5.png",
+          alternativeText: ""
+        }
+      }
+    }
   },
   {
     heading: "A foodie next door",
     subheading: "Lorum Ipsum",
     date: "November 18, 2022",
-    img: "/blog-6.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/blog-1.png",
+          alternativeText: ""
+        }
+      }
+    }
   },
 ];
 
@@ -59,7 +103,6 @@ const AllBlogs = (props: Props) => {
     setActiveBtn(index);
   };
 
-  console.log(activeBtn);
   return (
     <div className={Styles.blogs}>
       <div className={Styles.filter_btns}>
@@ -78,7 +121,7 @@ const AllBlogs = (props: Props) => {
         })}
       </div>
       <div className={Styles.cards_wrapper}>
-        {BlogData.map((card, index) => {
+        {(props.data || BlogData).map((card, index) => {
           return <BlogCard card={card} key={index} />;
         })}
       </div>

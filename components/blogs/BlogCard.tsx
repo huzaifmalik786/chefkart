@@ -9,12 +9,22 @@ type Props = {
 };
 
 const BlogCard = (props: Props) => {
+  function changeFormat(d: string){
+    let date = new Date(d);
+    let formatter = new Intl.DateTimeFormat('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
+    let newDate = formatter.format(date);
+    return newDate
+}
   return (
     <div className={Styles.blog_card}>
       <div className={Styles.blog_img}>
         <Image
-          alt="blog-image"
-          src={props.card.img}
+          alt={props.card.image.data.attributes.url || "blog-image"}
+          src={props.card.image.data.attributes.url}
           className={Styles.img}
           fill
         />
@@ -22,7 +32,7 @@ const BlogCard = (props: Props) => {
       <div className={Styles.content}>
         <p className={Styles.subheading}>{props.card.subheading}</p>
         <h3 className={Styles.heading}>{props.card.heading}</h3>
-        <p className={Styles.date}>{props.card.date}</p>
+        <p className={Styles.date}>{changeFormat(props.card.date)}</p>
       </div>
     </div>
   );

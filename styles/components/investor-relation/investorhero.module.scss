@@ -15,8 +15,9 @@
       color: white;
       white-space: pre-line;
       font-family: var(--secondary_font);
-
-      span {
+      width: 40.6vw;
+      
+      .colored {
         color: #ff8811;
         font-family: var(--open_sans);
         line-height: 3.1375vw;

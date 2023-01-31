@@ -4,27 +4,27 @@ import useFetchData from "../../lib/api";
 import Styles from "../../styles/components/homepage/facts.module.scss";
 
 type FactData = {
-  title: string;
-  desc: string;
+  heading: string;
+  description: string;
 
 };
 
 const FactArr: FactData[] = [
   {
-    title: "3M+",
-    desc: "Meals homemade dishes cooked and served with love",
+    heading: "3M+",
+    description: "Meals homemade dishes cooked and served with love",
   },
   {
-    title: "2500+",
-    desc: "Verified & Trained Home-Chefs On-board.",
+    heading: "2500+",
+    description: "Verified & Trained Home-Chefs On-board.",
   },
   {
-    title: "1500+",
-    desc: "Households trust Chefkart with their daily cooking needs",
+    heading: "1500+",
+    description: "Households trust Chefkart with their daily cooking needs",
   },
   {
-    title: "4.8/5",
-    desc: " Average Chefkart rating from thousands of happy customers",
+    heading: "4.8/5",
+    description: " Average Chefkart rating from thousands of happy customers",
   },
 ];
 type Props = {
@@ -32,17 +32,21 @@ type Props = {
   color: string;
   px: string;
   py: string;
+  data: {
+    heading: string,
+    description: string
+  }[]
 }
 
 const Facts = (props: Props) => {
 
   return (
     <div className={Styles.facts_container} style={{backgroundColor: `${props.bgcolor}`, color: `${props.color}`, padding: `${props.py} ${props.px}`}}>
-      {FactArr.map((item, index) => {
+      {(props.data || FactArr).map((item, index) => {
         return (
           <div key={index}>
-            <p className={Styles.fact_title}>{item.title}</p>
-            <p className={Styles.fact_description}>{item.desc}</p>
+            <p className={Styles.fact_title}>{item.heading}</p>
+            <p className={Styles.fact_description}>{item.description}</p>
           </div>
         );
       })}

@@ -4,15 +4,58 @@ import Styles from "../../styles/components/careers/endcarousel.module.scss";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { image_type } from "../../interfaces/interfaces";
 
-type Props = {};
+type Props = {
+  data: {
+    heading: string;
+    description: string;
+    carousel: {
+      heading: string;
+      badge: string;
+      image: image_type;
+    }[]
+
+  }
+};
 
 const Images = [
-  { img: "/footer_carousel.png", id: 1 },
-  { img: "/footer_carousel.png", id: 2 },
-  { img: "/footer_carousel.png", id: 3 },
-  { img: "/footer_carousel.png", id: 4 },
-  { img: "/footer_carousel.png", id: 5 },
+  {
+    heading: "Lorem ipsum dolor sit amet, consectetur",
+    badge: "Lorem ipsum",
+    image: {
+      data: {
+        attributes: {
+          url: "/footer_carousel.png",
+          alternativeText: ""
+        }
+      }
+    }
+  },
+  {
+    heading: "Lorem ipsum dolor sit amet, consectetur",
+    badge: "Lorem ipsum",
+    image: {
+      data: {
+        attributes: {
+          url: "/footer_carousel.png",
+          alternativeText: ""
+        }
+      }
+    }
+  },
+  {
+    heading: "Lorem ipsum dolor sit amet, consectetur",
+    badge: "Lorem ipsum",
+    image: {
+      data: {
+        attributes: {
+          url: "/footer_carousel.png",
+          alternativeText: ""
+        }
+      }
+    }
+  },
 ];
 
 const ButtonGroup = ({ next, previous, ...rest }: any) => {
@@ -55,8 +98,8 @@ const EndCarousel = (props: Props) => {
   return (
     <div className={Styles.end_carousel}>
       <div className={Styles.carousel_header}>
-        <h1>Lorem Ipsum Dolor</h1>
-        <p>Our values outline who we are, what we hope to accomplish, </p>
+        <h1>{props.data.heading || "Lorem Ipsum Dolor"}</h1>
+        <p>{props.data.description || "Our values outline who we are, what we hope to accomplish, "}</p>
       </div>
       <div className={Styles.carousel_wrapper}>
         <Carousel
@@ -80,17 +123,17 @@ const EndCarousel = (props: Props) => {
           partialVisbile
           renderDotsOutside
         >
-          {Images.map((img) => {
+          {(props.data.carousel || Images).map((img, key) => {
             return (
-              <div key={img.id} className={Styles.items}>
-                <Image src={img.img} alt="food" fill className={Styles.img} />
+              <div key={key} className={Styles.items}>
+                <Image src={img.image.data.attributes.url} alt={img.image.data.attributes.alternativeText || "food"} fill className={Styles.img} />
                 <div className={Styles.item_overlay}>
                   <div className={Styles.item_content}>
                     <div className={Styles.item_label}>
-                      <span>Lorem ipsum </span>
+                      <span>{img.badge || "Lorem ipsum "}</span>
                     </div>
                     <div className={Styles.item_heading}>
-                      <h4>Lorem ipsum dolor sit amet,{"\n"} consectetur </h4>
+                      <h4>{img.heading || "Lorem ipsum dolor sit amet, consectetur"} </h4>
                     </div>
                   </div>
                 </div>

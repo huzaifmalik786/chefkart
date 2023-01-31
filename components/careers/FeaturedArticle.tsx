@@ -1,15 +1,21 @@
 import React from "react";
+import { blogType } from "../../interfaces/interfaces";
 import Styles from "../../styles/components/careers/featuredarticle.module.scss";
 import BlogArticleCarousel from "../BlogArticleCarousel";
 
-type Props = {};
+type Props = {
+  data: {
+    heading: string;
+    array: blogType[]
+  }
+};
 
 const FeaturedArticle = (props: Props) => {
   return (
     <div className={Styles.article_wrapper}>
-      <h3>Featured Article</h3>
+      <h3>{props.data.heading || "Featured Article"}</h3>
       <div>
-        <BlogArticleCarousel isDots isArrow isFull isInfinite />
+        <BlogArticleCarousel cards={props.data.array} isDots isArrow isFull isInfinite />
       </div>
     </div>
   );

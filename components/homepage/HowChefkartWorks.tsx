@@ -1,68 +1,103 @@
 import Image from "next/image";
 import React from "react";
+import { image_type } from "../../interfaces/interfaces";
 import Styles from "../../styles/components/homepage/howchefkartworks.module.scss";
 
 type HowItWorksSteps = {
-  img: string;
-  num: number;
+  image: image_type;
   text: string;
 };
 
 const Steps: HowItWorksSteps[] = [
   {
-    img: "/how-it-works-1.svg",
-    num: 1,
     text: "Download the app",
+    image: {
+      data: {
+        attributes: {
+          url: "/how-it-works-1.svg",
+          alternativeText: ""
+        }
+      }
+    }
   },
   {
-    img: "/how-it-works-2.svg",
-    num: 2,
     text: "Book your free trial!",
+    image: {
+      data: {
+        attributes: {
+          url: "/how-it-works-2.svg",
+          alternativeText: ""
+        }
+      }
+    }
   },
   {
-    img: "/how-it-works-3.svg",
-    num: 3,
     text: "You’ve been served",
+    image: {
+      data: {
+        attributes: {
+          url: "/how-it-works-3.svg",
+          alternativeText: ""
+        }
+      }
+    }
   },
 ];
 
-const HowChefkartWorks = () => {
+type Props={
+  data:{
+    brief: {
+      heading: string;
+      description: string;
+    }
+    steps:{
+      text: string;
+      image: image_type
+    }[]
+    download_icon: {
+      icon: image_type
+    }[]
+  }
+}
+
+const HowChefkartWorks = (props: Props) => {
   return (
     <div className={Styles.how_container}>
       <div className={Styles.how_left}>
         <h2>
-          How Chefkart <br />
-          works
+          {
+            props.data?.brief.heading || "How Chefkart works"
+          }
         </h2>
         <p>
-          Tell us what you need, and we’ll <br />
-          get the best chefs around you to
-          <br /> your place.
+          {
+            props.data.brief.description || "Tell us what you need, and we’ll get the best chefs around you to your place."
+          }
         </p>
       </div>
       <div className={Styles.how_right}>
-        {Steps.map((step) => {
+        {(props.data.steps || Steps).map((step, key) => {
           return (
-            <div className={Styles.step} key={step.num}>
+            <div className={Styles.step} key={key}>
               <div className={Styles.step_img}>
-                <Image src={step.img} fill alt="how-it-works" />
+                <Image src={step.image.data.attributes.url} fill alt={step.image.data.attributes.alternativeText || "how-it-works"} />
               </div>
               <div className={Styles.step_num}>
-                <p>{step.num}</p>
+                <p>{key+1}</p>
               </div>
               <div className={Styles.step_text}>
                 <p>{step.text}</p>
-                {step.num === 1 && (
+                {key === 0 && (
                   <span>
                     <Image
-                      src={"/apple-vector.svg"}
+                      src={props.data.download_icon[0].icon.data.attributes.url || "/apple-vector.svg"}
                       // fill
                       width={24}
                       height={29}
                       alt="apple-icon"
                     />
                     <Image
-                      src={"/play-vector.svg"}
+                      src={props.data.download_icon[1].icon.data.attributes.url || "/play-vector.svg"}
                       width={24}
                       height={29}
                       // fill

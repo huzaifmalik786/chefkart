@@ -1,45 +1,59 @@
 import React from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/homepage/haslefreehiring.module.scss";
+import { image_type } from "../../interfaces/interfaces";
 
-type Props = {};
+type Props = {
+  data: {
+    heading: string;
+    subheading1: string;
+    subheading2: string;
+    image: image_type
+    download_icons: {
+      icon: image_type
+    }[]
+  }
+};
 
 const HasleFreeHiring = (props: Props) => {
   return (
     <div className={Styles.container}>
       <div className={Styles.phone_img}>
-        <Image src={"/phone.png"} alt="phone" fill />
+        <Image src={props.data?.image?.data?.attributes?.url || "/phone.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "phone"} fill />
       </div>
       <div className={Styles.container_text}>
         <div className={Styles.heading}>
           <h2>
-            Hassle free hiring of
-            <br /> reliable cooks
+            {
+              props.data.heading || " Hassle free hiring of reliable cooks"
+            }
+           
           </h2>
         </div>
 
         <div className={Styles.text}>
           <div className={Styles.para_1}>
             <p>
-              It all starts here. Get us close to your fingertips It all
-              <br /> starts here. Get us close to your fingertipsIt all starts{" "}
-              <br />
-              here. Get us close to your fingertipsIt all starts here.
+              {
+                props.data.subheading1 || "It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here."
+              }
             </p>
           </div>
           <div className={Styles.para_2}>
             <p>
-              It all starts here. Get us close to your fingertips It all
-              <br /> starts here.
+              {
+                props.data.subheading2 || "It all starts here. Get us close to your fingertips It all starts here."
+              }
+              
             </p>
           </div>
         </div>
         <div className={Styles.bottom_img}>
           <div className={Styles.app_icon}>
-            <Image src={"/app-store-icon.svg"} alt="appstore" fill />
+            <Image src={props.data?.download_icons[1]?.icon.data?.attributes?.url || "/app-store-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "appstore"} fill />
           </div>
           <div className={Styles.play_icon}>
-            <Image src={"/play-icon.svg"} alt="playstore" fill />
+            <Image src={props.data?.download_icons[0]?.icon.data.attributes?.url || "/play-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "playstore"} fill />
           </div>
         </div>
       </div>

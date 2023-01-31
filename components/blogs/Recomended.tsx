@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { blogType } from "../../interfaces/interfaces";
 import useFetchData from "../../lib/api";
 import Styles from "../../styles/components/blogs/recomended.module.scss";
 import BlogArticleCarousel from "../BlogArticleCarousel";
 
-type Props = {};
+type Props = {
+  data: {
+    heading: string;
+    carousel: blogType[]
+  }
+};
 
 const Recomended = (props: Props) => {
 
@@ -11,6 +17,7 @@ const Recomended = (props: Props) => {
     <div className={Styles.recomended_wrapper}>
       <h4>Recommended Articles</h4>
       <BlogArticleCarousel
+      cards={props.data.carousel}
         isArrow={false}
         isDots={false}
         isFull={false}

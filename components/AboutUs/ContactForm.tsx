@@ -7,7 +7,14 @@ import Dropdown from '../Forms/Dropdown'
 import Modal from '../careers/Modal'
 import ThankYou from '../Forms/ThankYou'
 
-const ContactForm = () => {
+type Props = {
+    data: {
+        url: string;
+        alternativeText: string;
+    }
+}
+
+const ContactForm = (props: Props) => {
     const [openModal, setOpenModal] = useState<boolean>(false)
 
     const onSubmit = (data: any) => {
@@ -24,7 +31,7 @@ const ContactForm = () => {
     }
     <div className={Styles.about_form}>
         <div className={Styles.image}>
-            <Image src='/iStock-495494292 1.png' alt='' fill />
+            <Image src={props.data.url || '/iStock-495494292 1.png'} alt={props.data.alternativeText || ''} fill />
         </div>
         <div className={Styles.form_container}>
             <h2>Please fill out the form below and we will respond within 24hrs. </h2>

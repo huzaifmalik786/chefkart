@@ -10,6 +10,16 @@ type Props = {
   description: string;
   colored_text: string;
   headingSize?: string;
+
+  data: {
+    heading: string;
+    subheading: string;
+    description: {
+      text: string;
+      highlight: string;
+    }[]
+
+  }
 };
 
 const Hygiene = (props: Props) => {
@@ -28,19 +38,36 @@ const Hygiene = (props: Props) => {
           : {}
       }
     >
-      {/* <div className={Styles.centered}> */}
-      <span className={Styles.subheading}>{props.subheading}</span>
+      {/* <div className={Styles.video_container}> */}
+        <video className={Styles.video} src="/hygiene.mp4"
+          autoPlay 
+          loop 
+          muted 
+          playsInline />
+      {/* </div> */}
+      <span className={Styles.subheading}>{props.data?.subheading || props.subheading}</span>
       <h3
         className={Styles.heading}
         style={{ fontSize: `${props.headingSize}` }}
       >
-        {props.heading}
+        {props.data?.heading || props.heading}
       </h3>
+
       <p className={Styles.description} style={!props.center ? {} : {textAlign: 'center', width: '33.6vw'}}>
-        {props.description}
-         <span> {props.colored_text}</span>{" "}
+        {
+          props.data?.description ? (
+            (props.data?.description).map((item, key)=>{
+              return(
+              <span key={key}>
+               {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
+              </span>
+              )
+            })
+          ) : ( <> {props.description}
+            <span> {props.colored_text}</span>{" "}</>)
+          
+        }
       </p>
-      {/* </div> */}
     </div>
     </div>
     

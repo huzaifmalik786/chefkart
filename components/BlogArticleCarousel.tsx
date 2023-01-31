@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import { blogType } from "../interfaces/interfaces";
 // import { isMobile, isDesktop, isTablet } from "react-device-detect";
 
 type Props = {
@@ -13,18 +13,60 @@ type Props = {
   isArrow: boolean;
   isFull: boolean;
   isInfinite: boolean;
+
+  cards: blogType[]
   
 };
-type blog = {
-  img: string;
-  id: number;
-}
-const Images: blog[] = [
-  { img: "/pricing_signup.png", id: 1 },
-  { img: "/pricing_signup.png", id: 2 },
-  { img: "/pricing_signup.png", id: 3 },
-  { img: "/pricing_signup.png", id: 4 },
-  { img: "/pricing_signup.png", id: 5 },
+const Images: blogType[] = [
+  {
+    id: 1,
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "blog_image"
+        }
+      }
+    },
+    heading: "Lorem ipsum dolor sit amet", read_time: "15 ", tag: "Recipe"
+  },
+  {
+    id: 2,
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "blog_image"
+        }
+      }
+    },
+    heading: "Lorem ipsum dolor sit amet", read_time: "15 ", tag: "Recipe"
+  },
+  {
+    id: 3,
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "blog_image"
+        }
+      }
+    },
+    heading: "Lorem ipsum dolor sit amet", read_time: "15 ", tag: "Recipe"
+  },
+  {
+    id: 4,
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "blog_image"
+        }
+      }
+    },
+    heading: "Lorem ipsum dolor sit amet", read_time: "15 ", tag: "Recipe"
+  },
+ 
 ];
 
 const CustomDot = ({ onClick, ...rest }: any) => {
@@ -122,19 +164,19 @@ const BlogArticleCarousel = (props: Props) => {
         partialVisbile
         renderDotsOutside
       >
-        {Images.map((blog, key) => {
+        {(props.cards || Images).map((blog, key) => {
           return (
             <div key={key} className={Styles.items}>
-              <Image src={blog.img} alt="food" fill className={Styles.img} />
+              <Image src={blog.image?.data?.attributes?.url} alt="food" fill className={Styles.img} />
               <div className={Styles.item_overlay}>
                 <div className={Styles.item_content}>
                   <div className={Styles.item_label}>
-                    <button>Recipe </button>
+                    <button>{blog.tag} </button>
                     <span />
-                    <p>15 min read</p>
+                    <p>{blog.read_time} min read</p>
                   </div>
                   <div className={Styles.item_heading}>
-                    <h2>Lorem ipsum {"\n"}dolor sit amet</h2>
+                    <h2>{blog.heading}</h2>
                   </div>
                 </div>
               </div>

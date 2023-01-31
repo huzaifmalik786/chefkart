@@ -87,7 +87,7 @@ const FoodDisplay = (props: Props) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((currentIndex + 1) % words.length);
-    }, 2500)
+    }, 2000)
 
     return () => clearInterval(interval);
   }, [currentIndex]);

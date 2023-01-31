@@ -2,44 +2,73 @@ import React from "react";
 import Styles from "../../styles/components/join-as-chef/cookwithus.module.scss";
 
 import Image from "next/image";
+import { image_type } from "../../interfaces/interfaces";
 
 type CookWithUsData = {
-  img: string;
+  image: image_type;
   heading: string;
-  desc: string;
+  description: string;
 };
 
 const WhyUs: CookWithUsData[] = [
   {
-    img: "/cook-with-us-1.png",
+    image:{
+      data: {
+        attributes: {
+          url: "/cook-with-us-1.png",
+          alternativeText: ""
+        }
+      }
+    } ,
     heading: "Make money consistently",
-    desc: `Weekly payments in your bank  account. `,
+    description: `Weekly payments in your bank  account. `,
   },
   {
-    img: "/cook-with-us-2.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/cook-with-us-2.png",
+          alternativeText: ""
+        }
+      }
+      },
     heading: "Be your own boss",
-    desc: `You decide when you want to work. As for the other stuff, We’ll help you with `,
+    description: `You decide when you want to work. As for the other stuff, We’ll help you with `,
   },
   {
-    img: "/cook-with-us-3.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/cook-with-us-3.png",
+          alternativeText: ""
+        }
+      }
+    },
     heading: "Support at every nook",
-    desc: `We’ll provide you with the marketing  support so you can focus on what `,
+    description: `We’ll provide you with the marketing  support so you can focus on what `,
   },
 ];
 
-const CookWithUs = () => {
+type Props = {
+  data:{
+    heading: string;
+    cards: CookWithUsData[]
+  } 
+}
+
+const CookWithUs = (props: Props) => {
   return (
     <div className={Styles.us_wrapper}>
-      <h2>Why cook with us?</h2>
+      <h2>{props.data.heading || "Why cook with us?"}</h2>
       <div className={Styles.cards_wrapper}>
-        {WhyUs.map((item, index) => {
+        {(props.data.cards || WhyUs).map((item, index) => {
           return (
             <div key={index} className={Styles.card}>
               <div>
-                <Image src={item.img} alt="img" fill />
+                <Image src={item.image?.data?.attributes?.url} alt={item.image?.data?.attributes?.alternativeText || "img"} fill />
               </div>
               <h4>{item.heading}</h4>
-              <p>{item.desc}</p>
+              <p>{item.description}</p>
             </div>
           );
         })}

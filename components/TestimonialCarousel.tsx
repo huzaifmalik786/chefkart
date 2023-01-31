@@ -2,36 +2,66 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { image_type } from "../interfaces/interfaces";
 import useFetchData from "../lib/api";
 
 import Styles from "../styles/components/testimonial.module.scss";
 
 const testimonies = [
   {
-    image: "/image 14.png",
     stars: 5,
-    content:
+    review:
       "“Absolutely loved the food prepared by the chef, specially the cheese bombs, they were so crispy on the outside. The lasagna was to die for! The food was definitely the highlight of my party”",
     name: "Amrita , Analyst",
+    image: {
+      data: {
+        attributes: {
+          url: "/image 14.png",
+          alternativeText: "review-image"
+        }
+      }
+    }
   },
   {
-    image: "/image 13.png",
     stars: 5,
-    content:
+    review:
       "“I hired Chefkart Chefs in the last month's kitty party. I actually had fun & didn't had to worry about food burning on the gas.Chef Abhishek saved the day with his Tiramisu & Paneer Tikka”",
     name: "Sneha , CEO",
+    image: {
+      data: {
+        attributes: {
+          url: "/image 13.png",
+          alternativeText: "review-image"
+        }
+      }
+    }
   },
   {
-    image: "/image 15.png",
     stars: 5,
-    content:
+    review:
       "“Staying away from home, my friends are my family. We often have parties at home and explored their Chef for the first time. Needless to say, I loved every bit of the experience.”",
     name: "Diwakar, Media Head",
+    image: {
+      data: {
+        attributes: {
+          url: "/image 15.png",
+          alternativeText: "review-image"
+        }
+      }
+    }
   },
 ];
 
+type Props = {
+  cards:{
+    review: string;
+    name: string;
+    stars: number;
+    image: image_type
+  }[]
+}
 
-const TestimonialCarousel = () => {
+const TestimonialCarousel = (props:Props) => {
   
   const [activeSlide, setActiveSlide] = useState(1);
   
@@ -104,7 +134,7 @@ const TestimonialCarousel = () => {
         // partialVisbile
         // onChange={(newIndex: number) => setActiveSlide(newIndex)}
       >
-        {testimonies?.map((t, key) => {
+        {(props.cards || testimonies).map((t, key) => {
           return (
             <div
               key={key}
@@ -112,7 +142,7 @@ const TestimonialCarousel = () => {
               // style={activeSlide === key ? activeStyle : {}}
             >
               <div className={Styles.image}>
-                <Image src={t.image} fill alt="" />
+                <Image src={(t.image?.data?.attributes?.url)} fill alt={t.image?.data?.attributes?.alternativeText || ""} />
               </div>
               <div>
                 {renderStars(t.stars)}
@@ -124,7 +154,7 @@ const TestimonialCarousel = () => {
                   //     : {}
                   // }
                 >
-                  {t.content}
+                  {t.review}
                 </p>
               </div>
               <Image

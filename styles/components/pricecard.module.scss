@@ -12,6 +12,9 @@
 
   .card_header {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h4 {
       flex: none;
@@ -30,6 +33,7 @@
       line-height: 1.38vw;
       padding-top: 0.5vw;
       white-space: pre-line;
+      width: 15.2vw;
     }
   }
 
@@ -110,6 +114,15 @@
       line-height: 1.66vw;
       padding-top: 1vw;
       padding-bottom: 1vw;
+
     }
+      .colored_bg{
+        &:hover{
+          background-color: #ffffff;
+          color: #e5871c;
+          transition: all 0.5s ease-out;
+        }
+
+      }
   }
 }

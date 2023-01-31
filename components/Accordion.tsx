@@ -14,7 +14,6 @@ const Accordion = (props: Props) => {
   
     return (
       <div
-        key={props.key}
         className={Styles.card}
         onClick={() => {setIsActive(!isActive)} }
       >

@@ -24,7 +24,7 @@ const PricingCard = (props: Props) => {
         }`}
       >
         <h4>{props.card.heading}</h4>
-        <p>{props.card.desc}</p>
+        <p>{props.card.subheading}</p>
       </div>
       <div
         className={`${Styles.card_price} ${
@@ -43,13 +43,13 @@ const PricingCard = (props: Props) => {
           alignSelf: props.isWide ? "center" : "start",
         }}
       >
-        {props.card.points.map((point, index) => {
+        {props.card.features.map((point, index) => {
           return (
             <div key={index} className={Styles.point}>
               <span className={Styles.check_img}>
-                <Image src={props.card.checkImg} alt="check" fill />
+                <Image src={props.card.heading === "Premium" ? '/check_gold.svg' : '/check_circle.svg'} alt="check" fill />
               </span>
-              <p>{point}</p>
+              <p>{point.feature}</p>
             </div>
           );
         })}
@@ -57,12 +57,13 @@ const PricingCard = (props: Props) => {
 
       <div className={Styles.card_footer}>
         <button
+        className={props.card.heading === "Premium" ? Styles.colored_bg : ""}
           style={{
             paddingLeft: props.isWide ? "8.75vw" : "6vw",
             paddingRight: props.isWide ? "8.75vw" : "6vw",
           }}
         >
-          Book a trial
+          {props.card.button.button_text || "Book a trial"}
         </button>
       </div>
     </div>

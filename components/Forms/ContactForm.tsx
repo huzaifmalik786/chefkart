@@ -28,7 +28,12 @@ type FormValues = {
     };
   };
 
-const ContactForm = () => {
+  type Props={
+    heading?: string
+    openModal_two?: boolean;
+    setOpenModal_two ?: (open:boolean)=> void;
+  }
+const ContactForm = (props: Props) => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
   const [openModal, setOpenModal] = useState<boolean>(false)
 
@@ -36,7 +41,11 @@ const ContactForm = () => {
   const onSubmit = (data: any) => {
     data.preventDefault()
     console.log(data);
-    setOpenModal(true)
+    setOpenModal(true);
+    if(props.setOpenModal_two){
+      props.setOpenModal_two(false)
+
+    }
     // send form data to server or perform other actions
   };
 
@@ -46,7 +55,7 @@ const ContactForm = () => {
       openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
     }
     <div className={Styles.contact_form}>
-      <h2>Please fill out the form below and we will respond within 24hrs. </h2>
+      <h2>{props.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
 
       <form onSubmit={onSubmit}>
         <Input left_section="Name" placeholder="" type="text" name="name" />

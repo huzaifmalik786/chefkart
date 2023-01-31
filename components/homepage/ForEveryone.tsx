@@ -1,10 +1,24 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { image_type } from "../../interfaces/interfaces";
 import useFetchData from "../../lib/api";
 import Styles from "../../styles/components/homepage/foreveryone.module.scss";
 import ForEveryOneTab from "./ForEveryOneTab";
 
-const ForEveryone = () => {
+type Props={
+  data: {
+    heading: string
+    tab: {
+      title: string,
+      heading: string,
+      description: string,
+      image: image_type
+    }[]
+
+  }
+}
+
+const ForEveryone = (props:Props) => {
   const [openTab, setOpenTab] = useState<number>(1);
 
 
@@ -12,7 +26,10 @@ const ForEveryone = () => {
     <div className={Styles.container}>
       <div className={Styles.heading}>
         <h3>
-        Freshly homemade food served everyday, for you and your loved ones.
+          {
+            props.data?.heading || "Freshly homemade food served everyday, for you and your loved ones."
+          }
+        
         </h3>
       </div>
       <div className={Styles.link_wrapper}>
@@ -29,7 +46,7 @@ const ForEveryone = () => {
                 setOpenTab(1);
               }}
             >
-              For the Moms
+              {props.data?.tab[0].title || "For the Moms" }
             </Link>
           </li>
           <li
@@ -44,7 +61,7 @@ const ForEveryone = () => {
                 setOpenTab(2);
               }}
             >
-              For the Singles
+             {props.data?.tab[1].title || "For the Singles"}
             </Link>
           </li>
           <li
@@ -59,12 +76,12 @@ const ForEveryone = () => {
                 setOpenTab(3);
               }}
             >
-              For the Families
+              {props.data?.tab[2].title || "For the Families"}
             </Link>
           </li>
         </ul>
       </div>
-      <ForEveryOneTab tab={openTab} />
+      <ForEveryOneTab tab_data={props.data?.tab} tab={openTab} />
     </div>
   );
 };

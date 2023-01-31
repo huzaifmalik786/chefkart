@@ -5,70 +5,287 @@ import ProfileCard from '../ProfileCard'
 
 const leaders : ProfileCardType[] = [
     {
-        image: '/leader1.png',
+        image:{
+            data: {
+                attributes: {
+                    url: '/leader1.png',
+                    alternativeText: ""
+                }
+            }
+        } ,
         name: 'Lorum Ipsum Dolor',
         designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
+        social_media: [
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/Vector (10).png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/twitter.png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+        ]
     },
     {
-        image: '/Rectangle 126 (1).png',
+        image:{
+            data: {
+                attributes: {
+                    url: '/Rectangle 126 (1).png',
+                    alternativeText: ""
+                }
+            }
+        } ,
         name: 'Lorum Ipsum Dolor',
         designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
+        social_media: [
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/Vector (10).png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/twitter.png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+        ]
     },
     {
-        image: '/Rectangle 126 (2).png',
+        image:{
+            data: {
+                attributes: {
+                    url: '/Rectangle 126 (2).png',
+                    alternativeText: ""
+                }
+            }
+        } ,
         name: 'Lorum Ipsum Dolor',
         designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
+        social_media: [
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/Vector (10).png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/twitter.png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+        ]
     },
     {
-        image: '/Rectangle 126 (3).png',
+        image:{
+            data: {
+                attributes: {
+                    url: '/Rectangle 126 (3).png',
+                    alternativeText: ""
+                }
+            }
+        } ,
         name: 'Lorum Ipsum Dolor',
         designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
+        social_media: [
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/Vector (10).png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/twitter.png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+        ]
     },
     {
-        image: '/leader1.png',
+        image:{
+            data: {
+                attributes: {
+                    url: '/leader1.png',
+                    alternativeText: ""
+                }
+            }
+        } ,
         name: 'Lorum Ipsum Dolor',
         designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
+        social_media: [
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/Vector (10).png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/twitter.png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+        ]
     },
     {
-        image: '/Rectangle 126 (1).png',
+        image:{
+            data: {
+                attributes: {
+                    url: '/Rectangle 126 (1).png',
+                    alternativeText: ""
+                }
+            }
+        } ,
         name: 'Lorum Ipsum Dolor',
         designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
+        social_media: [
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/Vector (10).png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/twitter.png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+        ]
     },
     {
-        image: '/Rectangle 126 (2).png',
+        image:{
+            data: {
+                attributes: {
+                    url: '/Rectangle 126 (2).png',
+                    alternativeText: ""
+                }
+            }
+        } ,
         name: 'Lorum Ipsum Dolor',
         designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
+        social_media: [
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/Vector (10).png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+            {
+            url: "#",
+            icon: {
+              data: {
+                attributes: {
+                  url: "/twitter.png",
+                  alternativeText: "linkedin"
+                }
+              }
+            }
+    
+          },
+        ]
     },
-    {
-        image: '/Rectangle 126 (3).png',
-        name: 'Lorum Ipsum Dolor',
-        designation: 'Lorum Ipsum Dolor',
-        twitter_link: '#',
-        linkedin_link: '#'
-    },
+    
 ]
-const Leadership = () => {
+type Props={
+    data: {
+        heading: string;
+        array: ProfileCardType[]
+    }
+}
+const Leadership = (props: Props) => {
   return (
     <div className={Styles.leaders_containers}>
-        <h2>Leadership</h2>
+        <h2>{props.data.heading || "Leadership"}</h2>
         
         <div className={Styles.leader_grid}>
             {
-                leaders.map((leader, key)=>{
+                (props.data.array || leaders).map((leader, key)=>{
                     return(
                         <ProfileCard key={key} card={leader} />
                     )

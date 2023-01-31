@@ -2,50 +2,107 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import useFetchData from '../../lib/api'
 import Styles from '../../styles/components/pricing/features.module.scss'
-
-type features_icon = {
-    icon: string,
-    title: string
-}
+import { features_icon } from '../../interfaces/interfaces'
 
 const icons : features_icon[] = [
     {
-        icon: '/Batch Assign.png',
-        title: 'No. of People'
+        text: 'No. of People',
+        image: {
+            data: {
+                attributes: {
+                    url: "/Batch Assign.png",
+                    alternativeText: 'no-of-people'
+                }
+            }
+        }
     },
     {
-        icon: '/Delivery Time.png',
-        title: 'Time Slot'
+        text: 'Time Slot',
+        image: {
+            data: {
+                attributes: {
+                    url: '/Delivery Time.png',
+                    alternativeText: 'time'
+                }
+            }
+        }
     },
     {
-        icon: '/Vegan Food.png',
-        title: 'No. of meals'
+        text: 'No. of meals',
+        image: {
+            data: {
+                attributes: {
+                    url: '/Vegan Food.png',
+                    alternativeText: 'food'
+                }
+            }
+        }
+        
     },
     {
-        icon: '/Noodles.png',
-        title: 'Cuisines'
+        text: 'Cuisines',
+        image: {
+            data: {
+                attributes: {
+                    url: '/Noodles.png',
+                    alternativeText: 'cuisines'
+                }
+            }
+        }
+        
     },
     {
-        icon: '/Place Marker.png',
-        title: 'Location'
+        text: 'Location',
+        image: {
+            data: {
+                attributes: {
+                    url: '/Place Marker.png',
+                    alternativeText: 'cuisines'
+                }
+            }
+        }
+        
     }
 ]
-
-const Features = () => {
+type Props={
+    data: {
+        subheading: string;
+        heading: {
+            text: string;
+            highlight: boolean;
+        }[]
+        factors: features_icon[]
+    }
+}
+const Features = (props: Props) => {
 
   return (
     <div className={Styles.feature_container}>
         <div className={Styles.heading}>
-            <h3 className={Styles.main_title}>Our affordable prices are based on <span className={Styles.colored}>4 factors </span></h3>
-            <span className={Styles.sub_title}>Minimum prices guaranteed*</span>
+            <h3 className={Styles.main_title}>
+                {
+                    (props.data?.heading) ? (
+                        (props.data?.heading).map((item, key)=>{
+                            return(
+                            <span key={key}>
+                             {item.highlight ? <span className={Styles.colored}> {item.text} </span> : item.text }
+                            </span>
+                            )
+                          })
+                    ) : (
+                        <span> Our affordable prices are based on <span className={Styles.colored}>4 factors </span></span>
+                    )
+                }
+               </h3>
+            <span className={Styles.sub_title}>{props.data?.subheading || "Minimum prices guaranteed*"}</span>
         </div>
         <div className={Styles.icons_container}>
             {
-                icons.map((i, key)=>{
+                (props.data.factors || icons).map((i, key)=>{
                     return (
                         <div className={Styles.icons_item} key={key}>
-                            <div className={Styles.icon}><Image src={i.icon} alt="" fill /></div>
-                            <span className={Styles.icon_title}>{i.title}</span>
+                            <div className={Styles.icon}><Image src={i.image.data.attributes.url} alt={i.image.data.attributes.alternativeText} fill /></div>
+                            <span className={Styles.icon_title}>{i.text}</span>
                         </div>
                     )
                 })

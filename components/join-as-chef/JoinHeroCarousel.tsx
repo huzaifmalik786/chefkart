@@ -8,13 +8,37 @@ import "react-multi-carousel/lib/styles.css";
 import Modal from "../careers/Modal";
 import SignupForm from "../Forms/SignupForm";
 import ThankYou from "../Forms/ThankYou";
+import { image_type } from "../../interfaces/interfaces";
 
-type Props = {};
+type Props = {
+  data: {
+    image: image_type
+    heading: {
+      text: string;
+      highlight: string;
+    }[]
+    description: {
+      text: string;
+      highlight: string;
+    }[]
+
+    button: {
+      button_text: string;
+    }
+
+  }[]
+};
 
 const Images = [
-  { img: "/join-carousel-1.png", id: 1 },
-  { img: "/join-carousel-2.png", id: 2 },
-  { img: "/join-carousel-3.png", id: 3 },
+{
+  image: {
+    data: {
+      attributes: {
+        url: '/join-carousel-1.png'
+      }
+    }
+  }
+}
 ];
 
 const CustomDot = ({ onClick, ...rest }: any) => {
@@ -93,20 +117,44 @@ const JoinHeroCarousel = (props: Props) => {
 
         // partialVisbile
       >
-        {Images.map((img) => {
+        {(props.data || Images).map((img, key) => {
           return (
-            <div key={img.id} className={Styles.items}>
+            <div key={key} className={Styles.items}>
               <div className={Styles.carousel_img}>
-                <Image src={img.img} alt="food" fill />
+                <Image src={img.image.data.attributes.url} alt={img.image.data.attributes.alternativeText || "food"} fill />
               </div>
               <div className={Styles.carousel_text}>
-                <h1>Lorem Ipsum,</h1>
+                <h1>
+                {
+            (img.heading) ? (
+              (img.heading).map((item, key)=>{
+                return(
+                  <span key={key}>
+                    {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
+                  </span>
+                )
+              })
+            ) : (
+              <span>Lorem Ipsum,</span>
+            )
+          }
+                  </h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam,
+                  {
+                (img.description) ? (
+              (img.description).map((item, key)=>{
+                return(
+                  <span key={key}>
+                    {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
+                  </span>
+                )
+              })
+            ) : (
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span>
+            )
+          }
                 </p>
-                <button onClick={()=>setOpenModal(true)}>Sign up now</button>
+                <button onClick={()=>setOpenModal(true)}>{img.button.button_text || "Sign up now"}</button>
               </div>
             </div>
           );

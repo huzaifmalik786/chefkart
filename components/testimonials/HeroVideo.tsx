@@ -2,7 +2,9 @@ import Image from "next/image";
 import React from "react";
 import Styles from "../../styles/components/testimonials/herovideo.module.scss";
 
-type Props = {};
+type Props = {
+  
+};
 
 const HeroVideo = (props: Props) => {
   return (

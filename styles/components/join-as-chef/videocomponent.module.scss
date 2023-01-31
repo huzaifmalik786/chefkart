@@ -23,9 +23,13 @@
     }
   }
 
-  .video{
+  .video_container{
     position: relative;
     width: 53.64vw;
     height: 32.48vw;
+
+    .video{
+      width: 100%;
+    }
   }
 }

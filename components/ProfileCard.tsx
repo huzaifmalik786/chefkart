@@ -9,28 +9,29 @@ type Props = {
 };
 
 const ProfileCard = (props: Props) => {
+  console.log(props.card)
   return (
     <div className={Styles.profile_item}>
       <div className={Styles.image}>
-        <Image src={props.card.image} alt="founder_image" fill />
+        <Image src={props.card.image?.data?.attributes?.url} alt="founder_image" fill />
       </div>
 
       <div className={Styles.content}>
         <p className={Styles.name}>{props.card.name}</p>
         <p className={Styles.designation}>{props.card.designation}</p>
       </div>
-
       <div className={Styles.social}>
-        <Link href={props.card.twitter_link}>
+      {
+        (props.card?.social_media).map((item, key)=>{
+          return(
+            <Link href={item.url} key={key}>
             <div className={Styles.social_icon}>
-            <Image src="/twitter.png" alt="twitter" fill />
+            <Image src={item.icon.data.attributes.url} alt={item.icon.data.attributes.url || ""} fill />
             </div>
         </Link>
-        <Link href={props.card.linkedin_link}>
-            <div className={Styles.social_icon}>
-            <Image src="/Vector (10).png" alt="linkedin" fill />
-            </div>
-        </Link>
+          )
+        })
+      }
       </div>
     </div>
   );

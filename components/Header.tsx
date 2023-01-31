@@ -4,28 +4,39 @@ import Styles from "../styles/components/header.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Sidebar from "./Sidebar";
+import { image_type } from "../interfaces/interfaces";
 
 type HeaderItems = {
-  name: string;
-  href: string;
+  text: string;
+  url: string
 };
 
-const Header = () => {
+type Props = {
+  data : {
+    nav_links: [],
+    button: {
+      button_text: string;
+    }
+    avatar: image_type
+  }
+}
+const Header = (props:Props) => {
+  console.log(props.data)
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const router = useRouter();
 
   const headerItems: HeaderItems[] = [
     {
-      name: "Chef On-Demand",
-      href: "/chef-on-demand",
+      text: "Chef On-Demand",
+      url: "/chef-on-demand",
     },
     {
-      name: "Monthly Subscriptions",
-      href: "/pricing",
+      text: "Monthly Subscriptions",
+      url: "/pricing",
     },
     {
-      name: "Join as Chef",
-      href: "/join-as-chef",
+      text: "Join as Chef",
+      url: "/join-as-chef",
     },
   ];
 
@@ -55,23 +66,21 @@ const Header = () => {
         </div>
         <div className={Styles.nav_center}>
           <ul>
-            {headerItems.map((item, index) => {
+            {(props.data?.nav_links || headerItems).map((item:HeaderItems, index:number) => {
               return (
-                <Link href={item.href} key={index}>
-                  <li>{item.name}</li>
+                <Link href={item.url} key={index}>
+                  <li>{item.text}</li>
                 </Link>
               );
             })}
           </ul>
         </div>
         <div className={Styles.nav_right}>
-          <button onClick={() => router.push("/contact-us")}>contact us</button>
+          <button onClick={() => router.push("/contact-us")}>{props.data?.button.button_text || "contact us"}</button>
           <div onClick={() => setOpenSidebar(true)}>
             <Image
-              src={"/burger-icon.svg"}
-              alt="menu-icon"
-              // width={56}
-              // height={56}
+              src={props.data.avatar?.data?.attributes?.url || "/burger-icon.svg"}
+              alt={props.data.avatar?.data?.attributes?.url || "menu-icon"}
               fill
             />
           </div>

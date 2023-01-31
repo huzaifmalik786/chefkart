@@ -7,6 +7,7 @@
   .text_content {
     color: #072125;
     place-self: center;
+    width: 31.4vw;
     h2,
     p,
     button {
@@ -16,11 +17,20 @@
       font-weight: 700;
       font-size: 2.77vw;
       line-height: 3.5vw;
+
+
+      .colored{
+        color: #ff8811;
+      }
     }
 
     p {
       padding-top: 1.6vw;
       padding-bottom: 4.3vw;
+      max-width: 29.7vw;
+      .colored{
+        color: #ff8811;
+      }
     }
 
     p,
@@ -31,6 +41,13 @@
     }
     button {
       padding: 1vw 2.5vw;
+      transition: all 0.5s ease-out;
+
+      &:hover{
+        background-color: #242424;
+        color: #ff8811;
+        transition: all 0.5s ease-out;
+      }
     }
   }
   .cook_img {

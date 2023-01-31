@@ -4,9 +4,17 @@ import Styles from "../../styles/components/homepage/homeblogs.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import useFetchData from "../../lib/api";
+import { blogType } from "../../interfaces/interfaces";
 
 type Props = {
-
+  data: {
+    section_name: string;
+    heading: string;
+    blog_carousel: blogType[],
+    button: {
+      button_text: string
+    }
+  }
 };
 
 
@@ -19,8 +27,8 @@ const HomeBlogs = (props: Props) => {
   return (
     <div className={Styles.blogs_wrapper}>
       <div className={Styles.header}>
-        <p>Blogs</p>
-        <h3>Cusines worth travelling, now {"\n"} at your fingertips</h3>
+        <p>{props.data.section_name || "Blogs"}</p>
+        <h3>{props.data.heading || "Cusines worth travelling, now at your fingertips"}</h3>
       </div>
       <div>
         <BlogArticleCarousel
@@ -28,11 +36,12 @@ const HomeBlogs = (props: Props) => {
           isDots={false}
           isFull={false}
           isInfinite={false}
+          cards={props.data.blog_carousel}
         />
       </div>
       <div className={Styles.footer}>
         <button onClick={() => router.push("/blogs")}>
-          View All Blogs{" "}
+          {props.data.button.button_text || "View All Blogs"}
           <Image src={"/next-page.svg"} alt="next" height={15} width={15} />
         </button>
       </div>

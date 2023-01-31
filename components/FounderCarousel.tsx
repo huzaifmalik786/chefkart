@@ -7,29 +7,127 @@ import Styles from '../styles/components/foundercarousel.module.scss'
 
   const founders : ProfileCardType[] = [
     {
-      image: '/Rectangle 126.png',
       name: 'Lorum Ipsum Dolor',
       designation: 'Lorum Ipsum Dolor',
-      twitter_link: '#',
-      linkedin_link: '#'
-    },
-    {
-      image: '/1627892959-CO-FOUNDERS1111v1 3.png',
-      name: 'Lorum Ipsum Dolor',
-      designation: 'Lorum Ipsum Dolor',
-      twitter_link: '#',
-      linkedin_link: '#'
-    },
-    {
-      image: '/1627892959-CO-FOUNDERS1111v1 2.png',
-      name: 'Lorum Ipsum Dolor',
-      designation: 'Lorum Ipsum Dolor',
-      twitter_link: '#',
-      linkedin_link: '#'
-    },
-  ]
-const FounderCarousel = () => {
+      image: {
+        data: {
+          attributes: {
+            url: '/Rectangle 126.png',
+            alternativeText: "founder-image"
+          }
+        }
+      },
+      social_media: [
+        {
+        url: "#",
+        icon: {
+          data: {
+            attributes: {
+              url: "/Vector (10).png",
+              alternativeText: "linkedin"
+            }
+          }
+        }
 
+      },
+        {
+        url: "#",
+        icon: {
+          data: {
+            attributes: {
+              url: "/twitter.png",
+              alternativeText: "linkedin"
+            }
+          }
+        }
+
+      },
+    ]
+    },
+    {
+      name: 'Lorum Ipsum Dolor',
+      designation: 'Lorum Ipsum Dolor',
+      image: {
+        data: {
+          attributes: {
+            url: '/1627892959-CO-FOUNDERS1111v1 3.png',
+            alternativeText: "founder-image"
+          }
+        }
+      },
+      social_media: [
+        {
+        url: "#",
+        icon: {
+          data: {
+            attributes: {
+              url: "/Vector (10).png",
+              alternativeText: "linkedin"
+            }
+          }
+        }
+
+      },
+        {
+        url: "#",
+        icon: {
+          data: {
+            attributes: {
+              url: "/twitter.png",
+              alternativeText: "linkedin"
+            }
+          }
+        }
+
+      },
+    ]
+    },
+    {
+      name: 'Lorum Ipsum Dolor',
+      designation: 'Lorum Ipsum Dolor',
+      image: {
+        data: {
+          attributes: {
+            url: '/1627892959-CO-FOUNDERS1111v1 2.png',
+            alternativeText: "founder-image"
+          }
+        }
+      },
+      social_media: [
+        {
+        url: "#",
+        icon: {
+          data: {
+            attributes: {
+              url: "/Vector (10).png",
+              alternativeText: "linkedin"
+            }
+          }
+        }
+
+      },
+        {
+        url: "#",
+        icon: {
+          data: {
+            attributes: {
+              url: "/twitter.png",
+              alternativeText: "linkedin"
+            }
+          }
+        }
+
+      },
+    ]
+    },
+
+  ]
+
+  type Props= {
+    data: ProfileCardType[]
+  }
+const FounderCarousel = (props: Props) => {
+console.log(props.data)
     
 const responsive = {
     desktop: {
@@ -71,7 +169,7 @@ const responsive = {
         partialVisbile
       >
         {
-          founders.map((card, key)=>{
+          (props.data || founders).map((card, key)=>{
             return(
               <ProfileCard key={key} card={card} />
             )

@@ -4,68 +4,66 @@ import Carousel from "react-multi-carousel";
 import Styles from "../../styles/components/homepage/artisans.module.scss";
 import "react-multi-carousel/lib/styles.css";
 import useFetchData from "../../lib/api";
+import { chefType } from "../../interfaces/interfaces";
 
-type chef = {
-  id: number;
-  image: string;
-  name: string;
-  stars: number;
-  experience: string;
-  specialization: string[];
+type Props={
+  data: {
+    heading: string;
+    chef_array: chefType[]
+  }
+}
 
-};
-
-const chef_array: chef[] = [
+const chef_array: chefType[] = [
   {
     id: 0,
     image: "/pricing_signup.png",
     name: "Rajesh Rathod",
-    stars: 4.2,
+    rating: 4.2,
     experience: "10+",
-    specialization: ["North Indian", "South Indian", "Chinese", "Continental"],
+    specialization: [{feature: "North Indian"}, {feature: "South Indian"}, {feature: "Chinese"}, {feature: "Continental"}],
   },
   {
     id: 1,
     image: "/pricing_signup.png",
     name: "Rajesh Rathod",
-    stars: 4.2,
+    rating: 4.2,
     experience: "10+",
-    specialization: ["North Indian", "South Indian", "Chinese", "Continental"],
+    specialization: [{feature: "North Indian"}, {feature: "South Indian"}, {feature: "Chinese"}, {feature: "Continental"}],
   },
   {
     id: 2,
     image: "/pricing_signup.png",
     name: "Rajesh Rathod",
-    stars: 4.2,
+    rating: 4.2,
     experience: "10+",
-    specialization: ["North Indian", "South Indian", "Chinese", "Continental"],
+    specialization: [{feature: "North Indian"}, {feature: "South Indian"}, {feature: "Chinese"}, {feature: "Continental"}],
   },
   {
     id: 3,
     image: "/pricing_signup.png",
     name: "Rajesh Rathod",
-    stars: 4.2,
+    rating: 4.2,
     experience: "10+",
-    specialization: ["North Indian", "South Indian", "Chinese", "Continental"],
+    specialization: [{feature: "North Indian"}, {feature: "South Indian"}, {feature: "Chinese"}, {feature: "Continental"}],
   },
   {
     id: 4,
     image: "/pricing_signup.png",
     name: "Rajesh Rathod",
-    stars: 4.2,
+    rating: 4.2,
     experience: "10+",
-    specialization: ["North Indian", "South Indian", "Chinese", "Continental"],
+    specialization: [{feature: "North Indian"}, {feature: "South Indian"}, {feature: "Chinese"}, {feature: "Continental"}],
   },
   {
     id: 4,
     image: "/pricing_signup.png",
     name: "Rajesh Rathod",
-    stars: 4.2,
+    rating: 4.2,
     experience: "10+",
-    specialization: ["North Indian", "South Indian", "Chinese", "Continental"],
+    specialization: [{feature: "North Indian"}, {feature: "South Indian"}, {feature: "Chinese"}, {feature: "Continental"}],
   },
 ];
-const Artisans = () => {
+const Artisans = (props: Props) => {
   
   const responsive = {
     desktop: {
@@ -75,22 +73,22 @@ const Artisans = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 540 },
-      items: 2,
+      items: 3,
       slidesToSlide: 1,
-      partialVisibilityGutter: 160,
+      // partialVisibilityGutter: 60,
     },
     mobile: {
       breakpoint: { max: 540, min: 0 },
       items: 1,
       slidesToSlide: 1,
-      partialVisibilityGutter: 120,
+      // partialVisibilityGutter: 120,
     },
   };
 
 
   return (
     <div className={Styles.chef_container}>
-      <h3>Meet the Food Artisans</h3>
+      <h3>{props.data.heading || "Meet the Food Artisans"}</h3>
 
       <Carousel
         swipeable
@@ -110,7 +108,7 @@ const Artisans = () => {
         itemClass={Styles.item}
         // partialVisbile
       >
-        {chef_array.map((c, key) => {
+        {(props.data.chef_array || chef_array).map((c, key) => {
           return (
             
             <div key={key} className={Styles.item}>
@@ -119,16 +117,16 @@ const Artisans = () => {
               <div className={Styles.upper_content}>
                 <div className="">
                 <p className={Styles.name}>{c.name}</p>
-                <p className={Styles.rating}>
+                <div className={Styles.rating}>
                   <div className={Styles.badge}>
-                    {c.stars}{" "}
+                    {c.rating}{" "}
                     <div className={Styles.star}>
                       {" "}
                       <Image src="/star.png" fill alt="" />
                     </div>
                   </div>{" "}
                   <span className={Styles.experience}>&nbsp; • &nbsp;{c.experience} yrs experience</span>
-                </p>
+                </div>
                 </div>
 
                 <div className={Styles.hover_overlay}>
@@ -137,7 +135,7 @@ const Artisans = () => {
                     {
                         (c.specialization).map((s, key)=>{
                             return(
-                                <span className={Styles.pills} key={key}>{s}</span>
+                                <span className={Styles.pills} key={key}>{s.feature}</span>
                             )
                         })
                     }

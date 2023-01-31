@@ -1,42 +1,68 @@
 import Image from 'next/image'
 import React from 'react'
+import { image_type } from '../../interfaces/interfaces'
 import Styles from '../../styles/components/join-as-chef/metrics.module.scss'
 
 type metrics = {
-    title: string,
+    heading: string,
     description: string,
-    image: string
+    image: image_type
 }
 
 const metrics_array : metrics[] = [
     {
-        title: "2500+",
+        heading: "2500+",
         description: "Verified & Trained Home-Chefs On-board.",
-        image: "/Vector (8).png"
+        image: {
+            data: {
+                attributes: {
+                    url: "/Vector (8).png",
+                    alternativeText: ""
+                }
+            }
+        }
     },
     {
-        title: "1500+",
+        heading: "1500+",
         description: "Households trust Chefkart with their daily cooking needs",
-        image: "/Number.png"
+        image: {
+            data: {
+                attributes: {
+                    url: "/Number.png",
+                    alternativeText: ""
+                }
+            }
+        }
     },
     {
-        title: "₹50L",
+        heading: "₹50L",
         description: "Paid out to chefs in 2020",
-        image: "/smle.png"
+        image: {
+            data: {
+                attributes: {
+                    url: "/smle.png",
+                    alternativeText: ""
+                }
+            }
+        }
     },
 ]
 
-const Metrics = () => {
+type Props = {
+
+    data: metrics[]
+}
+const Metrics = (props: Props) => {
   return (
     <div className={Styles.metric_container}>
         {
-            metrics_array.map((i, key)=>{
+            (props.data || metrics_array).map((i, key)=>{
                 return(
                     <div className={Styles.metric_item} key={key}>
-                        <p className={Styles.metric_title}>{i.title}</p>
+                        <p className={Styles.metric_title}>{i.heading}</p>
                         <p className={Styles.metric_description}>{i.description}</p>
                         <div className={Styles.image}>
-                            <Image src={i.image} fill alt=""  />
+                            <Image src={i?.image?.data?.attributes?.url} fill alt={i?.image?.data?.attributes?.alternativeText || ""}  />
                         </div>
                     </div>
                 )

@@ -1,14 +1,26 @@
 .pricing_wrapper {
   .banner {
-    background: url(../../../public/pricing-banner.png) no-repeat;
-    background-size: cover;
-    height: 45vw;
+    // background: url(../../../public/pricing-banner.png) no-repeat;
+    // background-size: cover;
     position: relative;
+    height: 45vw;
+
+    .banner_img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+
+    }
 
     .overlay {
       .content {
         padding-left: 7vw;
         padding-top: 5vw;
+        position: relative;
+        z-index: 1;
 
         .heading {
           padding-top: 2vw;
@@ -17,8 +29,9 @@
             font-weight: 700;
             line-height: 4vw;
             color: white;
-            letter-spacing: -1.5px;
-            span {
+            letter-spacing: -0.1vw;
+            width: 43vw;
+            .colored {
               color: #ff961f;
             }
           }
@@ -31,6 +44,8 @@
             font-size: 1.38vw;
             font-weight: 300;
             line-height: 1.94vw;
+            width: 43vw;
+
             color: white;
           }
         }

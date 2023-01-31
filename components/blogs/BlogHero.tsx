@@ -2,7 +2,19 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/blogs/bloghero.module.scss";
 
-type Props = {};
+type Props = {
+  data: {
+    badge: string
+    heading: string;
+    subheading: {
+      text: string;
+      highlight: boolean;
+    }[]
+    button: {
+      button_text: string;
+    }
+  }
+};
 
 type styleType = {
   color: string;
@@ -65,15 +77,27 @@ const BlogHero = (props: Props) => {
   return (
     <div className={Styles.hero_wrapper}>
       <div className={Styles.hero_content}>
-        <p className={Styles.label}>Blog</p>
+        <p className={Styles.label}>{props.data?.badge || "Blog" }</p>
         <div className={Styles.h2}>
-          Book a Trained Chef for your <div className={Styles.slider}>{wordElements}</div>
+          {props.data?.heading || "Book a Trained Chef for your"} <div className={Styles.slider}>{wordElements}</div>
         </div>
         <h4>
-          Food that makes your guests go <span> UMAAAHHH!!</span> {"\n"} Hire a
-          verified chef for your special occasions.
+        {
+            (props.data?.subheading) ? (
+              (props.data?.subheading).map((item, key)=>{
+                return(
+                  <span key={key}>
+                    {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
+                  </span>
+                )
+              })
+            ) : (
+              <span>Food that makes your guests go <span className={Styles.colored}> UMAAAHHH!!</span> Hire a verified chef for your special occasions.</span>
+            )
+          }
+          
         </h4>
-        <button>Read More</button>
+        <button>{props.data.button.button_text || "Read More"}</button>
       </div>
       <div className={Styles.hero_img}>
         <Image src={"/blogs_hero.png"} className={Styles.img} alt="chef" fill />

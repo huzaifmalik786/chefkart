@@ -31,16 +31,16 @@ const Dropdown = (props: Props) => {
         className={Styles.dd_header}
         onClick={() => setOpenDropdown(!openDropdown)}
       >
-        <div className={Styles.dd_header_title}>{props.heading}</div>
+        <div className={Styles.dd_header_title}>{dropdownValue === "" ? props.heading : dropdownValue}</div>
         <div className={Styles.arrow} style={{width: `${props.arrow_width}`, height: `${props.arrow_height}`}}>
           <Image src="/arrow_forward_ios.svg" alt="" fill />
         </div>
       </div>
       {openDropdown && (
         <ul className={Styles.dd_list}>
-          <li className={Styles.dd_list_item}>Lorem ipsum</li>
-          <li className={Styles.dd_list_item}>Lorem ipsum</li>
-          <li className={Styles.dd_list_item}>Lorem ipsum</li>
+          <li onClick={()=> setDropdownValue("Lorem ipsum")} className={Styles.dd_list_item}>Lorem ipsum</li>
+          <li onClick={()=> setDropdownValue("Lorem ipsum")} className={Styles.dd_list_item}>Lorem ipsum</li>
+          <li onClick={()=> setDropdownValue("Lorem ipsum")} className={Styles.dd_list_item}>Lorem ipsum</li>
         </ul>
       )}
     </div>
