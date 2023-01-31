@@ -8,6 +8,11 @@
   [class*="track"] {
     align-items: center;
   }
+  @media screen and (max-width:450px) {
+    padding-top: 14.11vw;
+    height: 82vw;
+    justify-content: flex-start;
+  }
 }
 .react-multi-carousel-track {
   display: flex;
@@ -19,7 +24,11 @@
   flex-direction: column;
   align-items: flex-start;
   margin: 0px 0.83vw;
-  // width: 23.63vw !important;
+  @media screen and (max-width: 450px) {
+    width: 81.9vw !important;
+    height: 61.67vw !important;
+    margin: 0 2vw;
+  }
 }
 
 .item {
@@ -29,6 +38,9 @@
   color: #ededed;
   border-radius: 1.09vw;
   transition: transform 0.5s ease;
+  @media screen and (max-width: 450px) {
+    border-radius: 2.56vw;
+  }
 
   &:hover{
     transform: scale(1.1);
@@ -36,8 +48,13 @@
     color: #615E5E;
     border: 0.16vw solid #ABC0B5;
     // padding: 5vw 1.66vw 2.22vw 1.66vw;
-     font-size: 1.38vw;
+    font-size: 1.38vw;
     line-height: 1.80vw;
+    @media screen and (max-width: 450px) {
+      transform:none ;
+      font-size: inherit;
+      line-height: inherit;
+    }
 
     .line{
       border-top: 0.1vw solid #5C5B5B;
@@ -56,16 +73,33 @@
     bottom: 68.14%;
     border-radius: 50%;
     overflow: hidden;
+    @media screen and (max-width: 450px) {
+      width: 21.94vw;
+      height: 21.94vw;
+    }
   }
 
   .stars {
+    display: inline-flex;
     margin-right: 0.28vw;
     margin-bottom: 0.28vw;
+    width: 1.11vw;
+    height: 1.11vw;
+    position: relative;
+    @media screen and (max-width: 450px) {
+      width: 3.6vw;
+      height: 3.6vw;
+      margin-top: 6.67vw;
+    }
   }
 
   .content {
     font-size: 1.11vw;
     line-height: 132%;
+    @media screen and (max-width: 450px) {
+      font-size: 3.89vw;
+      line-height: 5vw;
+    }
   }
 
   .line {
@@ -75,5 +109,10 @@
     margin-top: 2.22vw;
     font-size: 0.97vw;
     line-height: 1.45vw;
+    @media screen and (max-width: 450px) {
+      margin-bottom: 6.67vw;
+      font-size: 3.33vw;
+      line-height: 5vw;
+    }
   }
 }

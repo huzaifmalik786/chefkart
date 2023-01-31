@@ -4,6 +4,7 @@ import Styles from "../../styles/components/homepage/homeblogs.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import useFetchData from "../../lib/api";
+import useWindowDimensions from "../WindowSize";
 
 type Props = {
 
@@ -12,6 +13,7 @@ type Props = {
 
 
 const HomeBlogs = (props: Props) => {
+  const {width}= useWindowDimensions();
   
   const router = useRouter();
 
@@ -20,7 +22,7 @@ const HomeBlogs = (props: Props) => {
     <div className={Styles.blogs_wrapper}>
       <div className={Styles.header}>
         <p>Blogs</p>
-        <h3>Cusines worth travelling, now {"\n"} at your fingertips</h3>
+        <h3>{width>472?`Cusines worth travelling, now at ${"\n"} your fingertips`:"Cusines worth travelling, now at your fingertips"}</h3>
       </div>
       <div>
         <BlogArticleCarousel

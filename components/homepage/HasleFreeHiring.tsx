@@ -8,7 +8,7 @@ const HasleFreeHiring = (props: Props) => {
   return (
     <div className={Styles.container}>
       <div className={Styles.phone_img}>
-        <Image src={"/phone.png"} alt="phone" fill />
+        <Image className={Styles.img} src={"/phone.png"} alt="phone" fill />
       </div>
       <div className={Styles.container_text}>
         <div className={Styles.heading}>
@@ -17,7 +17,6 @@ const HasleFreeHiring = (props: Props) => {
             <br /> reliable cooks
           </h2>
         </div>
-
         <div className={Styles.text}>
           <div className={Styles.para_1}>
             <p>
@@ -33,13 +32,14 @@ const HasleFreeHiring = (props: Props) => {
               <br /> starts here.
             </p>
           </div>
-        </div>
+          </div>
+        
         <div className={Styles.bottom_img}>
           <div className={Styles.app_icon}>
             <Image src={"/app-store-icon.svg"} alt="appstore" fill />
           </div>
           <div className={Styles.play_icon}>
-            <Image src={"/play-icon.svg"} alt="playstore" fill />
+            <Image className={Styles.play_image}src={"/play-icon.svg"} alt="playstore" fill />
           </div>
         </div>
       </div>

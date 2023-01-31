@@ -5,12 +5,21 @@
   display: flex;
   justify-content: center;
   gap: 8vw;
-
   padding: 2vw;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
 
   .video_text {
     width: 37.29vw;
     height: auto;
+    @media screen and (max-width: 450px) {
+      .image{
+        width: 6.67vw;
+      }
+    }
 
     .quote {
       color: #4a4a4a;
@@ -19,6 +28,16 @@
       line-height: 3.33vw;
       padding-top: 2.22vw;
       font-weight: 400;
+      @media screen and (max-width: 450px) {
+        width: 89.44vw;
+        font-size: 4.44vw;
+        line-height: 5.34vw;
+      }
+    }
+    .name{
+      @media screen and (max-width: 450px){
+        padding-top: 6.67vw;
+      }
     }
     p {
       color: #e76f51;
@@ -27,6 +46,10 @@
       font-family: var(tertiary_font);
       font-weight: 700;
       line-height: 1.75vw;
+      @media screen and (max-width: 450px) {
+        font-size: 4.44vw;
+        padding-top: 3.33vw;
+      }
     }
   }
 
@@ -34,9 +57,14 @@
     position: relative;
     height: 25.76vw;
     width: 38.93vw;
+    @media screen and (max-width: 450px) {
+      width: 91.11vw;
+      height: 65.83vw;
+    }
 
     .video_img {
       border-radius: 1.52vw;
+      
     }
   }
 }

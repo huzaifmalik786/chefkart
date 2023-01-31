@@ -24,6 +24,8 @@
   --bg-orange: #fff3e8;
   --orange: #e5871c;
   --content-color-dark: #242424;
+  /* --mobile_font: "Open Sans","normal"; */
+  --mobile_livvic: "Open Sans", "normal";
 }
 
 * {
@@ -49,4 +51,8 @@ button {
   border-radius: 0.55vw;
   background-color: #ff961f;
   color: white;
+}
+
+.hidden{
+  display: none;
 }

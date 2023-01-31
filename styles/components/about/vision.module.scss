@@ -4,16 +4,48 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.32vw 5.55vw 6.73vw 6.10vw;
+  @media screen and (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4.44vw;
+  }
 
   .left_section {
     width: 50%;
+    @media screen and (max-width: 450px){
+      width: 91vw;
+      text-align: center;
+      margin-top: 6vw;
+      button{
+        background: none;
+        span{
+          color: #FF8811;
+          font-size: 3.8vw;
+        }
+      }
+      .extracontent{
+        font-size: 3.89vw;
+        line-height: 150%;
+        font-family: var(--tertiary_font);
+        font-style: normal;
+        font-weight: 400;
+        color: #072125;
+      }
+      .hide{
+        display: none;
+      }
+    }
 
     span {
       font-weight: 700;
       font-size: 1.66vw;
       line-height: 2.01vw;
-
       color: #e76f51;
+      @media screen and (max-width: 450px){
+        font-size: 3.65vw;
+        color: #FF8811;
+      }
     }
 
     h2 {
@@ -22,6 +54,11 @@
       line-height: 2.64vw;
       color: #072125;
       margin: 1.11vw 0px 2.5vw 0px;
+      @media screen and (max-width: 450px){
+        font-size: 5.09vw;
+        line-height: 6.67vw;
+        margin-top: 2.22vw;
+      }
     }
 
     p {
@@ -31,6 +68,11 @@
       font-size: 1.25vw;
       line-height: 150%;
       color: #072125;
+      @media screen and (max-width: 450px){
+        font-size: 3.89vw;
+        line-height: 150%;
+        margin-top: 2.22vw;
+      }
     }
     
   }
@@ -46,6 +88,12 @@
         border-radius: 0.83vw;
         overflow: hidden;
         z-index: 1;
+        @media screen and (max-width: 450px){
+          width: 70vw;
+          height: 75.56vw;
+          border-radius: 2.22vw;
+          margin: 6vw 0;
+        }
 
         .bg_orange{
           position: absolute;
@@ -56,6 +104,11 @@
           left: 0;
           z-index: -1;
           border-radius: 0.83vw;
+          @media screen and (max-width: 450px){
+            width: 75.9vw;
+            height: 50.8vw;
+            background-color: #FF8811;
+          }
         }
       }
   }

@@ -7,6 +7,12 @@
   // padding: 8.328vw 6.66vw;
   gap: 1.66vw;
   z-index: 0;
+  @media screen and (max-width: 450px) {
+    flex-wrap:wrap;
+    gap: 8.9vw;
+    padding-top: 13.02vw !important;
+    padding-bottom: 13.78vw !important;
+  }
 
   .fact_title {
     font-weight: 700;
@@ -17,6 +23,10 @@
 
     text-align: center;
     letter-spacing: -0.02em;
+    @media screen and (max-width: 450px) {
+      font-size: 5.56vw;
+      margin-bottom: 2.22vw;
+    }
 
     // color: #000000;
   }
@@ -32,6 +42,11 @@
     align-items: center;
     text-align: center;
     letter-spacing: -0.01em;
+    @media screen and (max-width: 450px) {
+      font-size: 3.33vw;
+      width: 37.72vw;
+      line-height: 120%;
+    }
 
     // color: #000000;
   }

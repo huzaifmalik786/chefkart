@@ -9,69 +9,109 @@
   padding: 2vw;
   flex: none;
   order: 1;
-
-  .card_header {
-    text-align: center;
-
-    h4 {
-      flex: none;
-      order: 0;
-      flex-grow: 0;
-      font-weight: 700;
-      line-height: 1.94vw;
-      letter-spacing: -0.3px;
-      font-size: 2.22vw;
-    }
-    p {
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-      font-size: 1vw;
-      line-height: 1.38vw;
-      padding-top: 0.5vw;
-      white-space: pre-line;
-    }
+  @media screen and (max-width:450px) {
+    width: 91.11vw !important;
+    height: 89.16vw !important;
+    padding: 6.67vw 5.67vw;
   }
-
-  .header_white {
-    h4 {
-      color: #3d3d3d;
+  .heading_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2.77vw;
+    align-items: center;
+    @media screen and (max-width:450px) {
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
     }
-
-    p {
-      color: #484848;
-    }
-  }
-
-  .price_white {
-    h2 {
-      color: #e5871c;
-
-      span {
-        color: #242424;
+    .card_header {
+      text-align: center;
+      @media screen and (max-width:450px) {
+        text-align: left;
       }
-    }
-  }
-
-  .card_price {
-    text-align: center;
-    border-width: 1px 0px;
-    border-style: solid;
-    border-color: rgba(143, 45, 20, 0.24);
-    padding: 1vw 0.5vw;
-
-    h2 {
-      font-size: 3.88vw;
-      font-weight: 700;
-      line-height: 4.16vw;
-      span {
+    
+      h4 {
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        font-weight: 700;
+        line-height: 1.94vw;
+        letter-spacing: -0.3px;
+        font-size: 2.22vw;
+        @media screen and (max-width:450px) {
+          font-size: 6.11vw;
+          line-height: 6.67vw;
+        }
+      }
+      p {
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        font-size: 1vw;
         line-height: 1.38vw;
-        font-size: 1.25vw;
-        margin-left: -1vw;
-        font-weight: 400;
+        padding-top: 0.5vw;
+        white-space: pre-line;
+        @media screen and (max-width:450px) {
+          font-size: 3.34vw;
+          line-height: 4.72vw;
+          padding-top: 2.94vw;
+        }
+      }
+    }
+    .header_white {
+      h4 {
+        color: #3d3d3d;
+      }
+  
+      p {
+        color: #484848;
+      }
+    }
+  
+    .price_white {
+      h2 {
+        color: #e5871c;
+  
+        span {
+          color: #242424;
+          @media screen and (max-width: 450px) {
+            color: #e5871c;
+          }
+        }
+      }
+    }
+  
+    .card_price {
+      text-align: center;
+      border-width: 1px 0px;
+      border-style: solid;
+      border-color: rgba(143, 45, 20, 0.24);
+      padding: 1vw 0.5vw;
+      @media screen and (max-width: 450px) {
+        border: none;
+      }
+  
+      h2 {
+        font-size: 3.88vw;
+        font-weight: 700;
+        line-height: 4.16vw;
+        @media screen and (max-width:450px) {
+          font-size: 7.23vw;
+        }
+        span {
+          line-height: 1.38vw;
+          font-size: 1.25vw;
+          margin-left: -1vw;
+          font-weight: 400;
+          @media screen and (max-width:450px) {
+            font-size: 3.83vw;
+          }
+        }
       }
     }
   }
+
+
   .points_white {
     color: #3d3d3d;
   }
@@ -83,20 +123,33 @@
     flex-grow: 1;
     flex-direction: column;
     gap: 1.66vw;
+    @media screen and (max-width: 450px) {
+      padding-top: 6.67vw;
+      gap: 5.56vw;
+    }
     .point {
       display: flex;
       align-items: center;
       gap: 7.94px;
+      
       span {
         position: relative;
         height: 1.66vw;
         width: 1.66vw;
+        @media screen and (max-width: 450px) {
+          height: 4.72vw;
+          width: 4.72vw;
+        }
       }
       p {
         font-weight: 500;
         line-height: 1.8vw;
         letter-spacing: -0.2px;
         font-size: 1.25vw;
+        @media screen and (max-width: 450px) {
+          font-size: 4.45vw;
+          line-height: 6.11vw;
+        }
       }
     }
   }
@@ -110,6 +163,12 @@
       line-height: 1.66vw;
       padding-top: 1vw;
       padding-bottom: 1vw;
+      @media screen and (max-width: 450px) {
+        border-radius: 2.22vw;
+        padding: 16px 20px;
+        width: 82.2vw;
+        font-size: 3.89vw;
+      }
     }
   }
 }

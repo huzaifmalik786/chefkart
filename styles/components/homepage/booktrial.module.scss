@@ -1,7 +1,12 @@
 .container {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(../../../public/sample.png), linear-gradient(0deg, #e76f51, #e76f51),
     #ffffff;
+    background-position: center;
+    background-size: cover;
+    @media screen and (max-width: 450px) {
+      padding: 8vw 4.44vw;
+    }
 
   .content {
     display: flex;
@@ -10,17 +15,31 @@
     align-items: center;
     gap: 1.25vw;
     font-family: var(--secondary_font);
+    @media screen and (max-width: 450px) {
+      gap: 3.33vw;
+      padding: 0;
+    }
     p {
       color: white;
       font-size: 1.65vw;
       line-height: 2.05vw;
       font-weight: 500;
+      @media screen and (max-width: 450px) {
+        font-family: var(--mobile_livvic);
+        font-size: 4.44vw;
+        line-height: 5.56vw;
+      }
     }
     h1 {
       color: #ff8811;
       font-size: 3.3vw;
       font-weight: 700;
       line-height: 3.75vw;
+      @media screen and (max-width: 450px) {
+        font-family: var(--mobile_livvic);
+        font-size: 5.56vw;
+        line-height: 120%;
+      }
     }
 
     button {
@@ -31,6 +50,14 @@
       font-size: 1.25vw;
       font-weight: 700;
       padding: 1vw 2.55vw;
+      @media screen and (max-width: 450px) {
+        font-family: var(--mobile_livvic);
+        padding: 2.78vw 10vw;
+        font-size: 3.89vw;
+        border-radius: 2.22vw;
+        line-height: 150%;
+        height: 11.39vw;
+      }
 
       &:hover {
         background: #1a3b41;

@@ -4,6 +4,10 @@
   align-items: center;
   background-color: var(--bg-orange);
   padding: 3vw 7vw;
+  @media screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+    padding: 10vw 6.67vw;
+  }
 
   .heading {
     h2 {
@@ -13,12 +17,22 @@
       color: var(--content-color-dark);
       line-height: 3.8vw;
       letter-spacing: -1px;
+      @media screen and (max-width: 450px) {
+        font-family: var(--mobile_livvic);
+        text-align: center;
+        font-size: 5.36vw;
+        line-height: 6.94vw;
+        margin-bottom: 8.89vw;
+      }
 
     }
   }
   .btn {
     place-self: center;
     padding-left: 10vw;
+    @media screen and (max-width: 450px) {
+      padding-left: 0;
+    }
     button {
       padding: 1.3vw 5.5vw;
       background-color: #ff961f;
@@ -26,6 +40,13 @@
       line-height: 1.65vw;
       font-size: 1.4vw;
       font-weight: 700;
+      @media screen and (max-width: 450px) {
+        line-height: 5.55vw;
+        font-size: 4vw;
+        padding: 3.34vw 5.56vw;
+        border-radius: 2.22vw;
+        width: 87.23vw;
+      }
     }
   }
 }

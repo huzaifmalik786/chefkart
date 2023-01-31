@@ -1,13 +1,26 @@
 .blogcarousel_wrapper {
+  @media screen and (max-width: 450px) {
+    padding-left: 0 !important;
+  }
   .items {
     position: relative;
     background-color: white;
     height: 28vw;
     width: 31vw;
     border-radius: 12px;
+    @media screen and (max-width: 450px) {
+      width: 71.67vw ;
+      height: 66.67vw;
+      border-radius: 8px;
+      margin-right: 3.33vw;
+    }
 
     .img {
       border-radius: 12px;
+      @media screen and (max-width: 450px) {
+        object-fit: cover;
+      }
+      
     }
 
     .item_overlay {
@@ -22,6 +35,10 @@
         position: absolute;
         top: 50%;
         padding-left: 2.22vw;
+        @media screen and (max-width: 450px) {
+          padding-left: 4.44vw;
+          top: 60%;
+        }
 
         .item_label {
           display: flex;
@@ -34,6 +51,10 @@
             font-size: 0.76vw;
             line-height: 0.90vw;
             color: white;
+            @media screen and (max-width: 450px) {
+              font-size: 2.56vw;
+              line-height: 120%;
+            }
           }
 
           span {
@@ -41,10 +62,17 @@
             height: 4px;
             width: 4px;
             border-radius: 50%;
+            @media screen and (max-width: 450px) {
+              font-size: 5vw;
+              line-height: 120%;
+            }
           }
 
           button {
             padding: 5px 8px;
+            @media screen and (max-width: 450px) {
+              padding: 3.1px 4.5px;
+            }
           }
         }
 
@@ -56,6 +84,10 @@
             font-weight: 800;
             color: white;
             white-space: pre-line;
+            @media screen and (max-width: 450px) {
+              font-size: 5vw;
+              line-height: 120%;
+            }
           }
         }
       }
@@ -81,7 +113,6 @@
 
   button {
     background-color: transparent;
-
     position: relative;
   }
 

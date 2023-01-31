@@ -1,4 +1,7 @@
 .founder {
+  @media screen and (max-width: 450px) {
+    padding-left:4.44vw;
+  }
   h2 {
     font-family: var(--secondary_font);
     font-style: normal;
@@ -9,6 +12,12 @@
     letter-spacing: -0.10vw;
     color: #292929;
     padding: 2.78vw 0px 3.33vw 0px;
+    @media screen and (max-width: 450px) {
+      padding-top: 12.8vw;
+      font-size: 5.56vw;
+      letter-spacing: -0.45vw;
+      padding-bottom: 6.67vw ;
+    }
 
     span{
         font-family: var(--secondary_font);

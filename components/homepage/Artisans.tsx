@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import Styles from "../../styles/components/homepage/artisans.module.scss";
 import "react-multi-carousel/lib/styles.css";
 import useFetchData from "../../lib/api";
+import useWindowDimensions from "../WindowSize";
 
 type chef = {
   id: number;
@@ -66,6 +67,7 @@ const chef_array: chef[] = [
   },
 ];
 const Artisans = () => {
+  const {width}= useWindowDimensions();
   
   const responsive = {
     desktop: {
@@ -103,12 +105,12 @@ const Artisans = () => {
         rewindWithAnimation
         customTransition="transform 900ms ease-in"
         // ssr
-        centerMode
+        centerMode={width<=472?false:true}
         infinite
         arrows={false}
         containerClass={Styles.artisans}
         itemClass={Styles.item}
-        // partialVisbile
+        partialVisbile={width<=472?true:false}
       >
         {chef_array.map((c, key) => {
           return (
@@ -131,17 +133,47 @@ const Artisans = () => {
                 </p>
                 </div>
 
-                <div className={Styles.hover_overlay}>
+                <div className={width<=472?Styles.overlay: Styles.hover_overlay}>
                     <p className={Styles.specialize_heading}>Specializes in:</p>
-                    <div className={Styles.pills_container}>
-                    {
+                    {width<=472?(
+                      <div className={Styles.pills_container}>
+                      {
+                          (c.specialization).map((s, key)=>{
+                            if(key<3)
+                              return(
+                                  <span className={Styles.pills} key={key}>{s}</span>
+                              )
+                          })
+                      }
+                      <div>
+                        <button style={{background:"none"}}>
+                            {c.specialization.length>3?`+${c.specialization.length-3} more`:""}
+                        </button>
+                      </div>
+                      
+                      {/* {
                         (c.specialization).map((s, key)=>{
+                          if(key>=3)
                             return(
+                              <div>
                                 <span className={Styles.pills} key={key}>{s}</span>
+                              </div>
                             )
                         })
-                    }
-                    </div>
+                      } */}
+                      </div>
+                    ):(
+                      <div className={Styles.pills_container}>
+                      {
+                          (c.specialization).map((s, key)=>{
+                              return(
+                                  <span className={Styles.pills} key={key}>{s}</span>
+                              )
+                          })
+                      }
+                      </div>
+                    )}
+                    
                 </div>
               </div>
             </div>

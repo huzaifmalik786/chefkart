@@ -33,7 +33,7 @@ const HomeBanner = () => {
             <h4>
             Hire a verified and trained home chef for
               <br />
-              <span>1/3rd of the price</span> you spend ordering food online.
+              <span> 1/3rd of the price</span> you spend ordering food online.
             </h4>
           </div>
           <div className={Styles.btn}>
