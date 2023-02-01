@@ -7,7 +7,7 @@ const Mission = () => {
   const [hidden,sethidden]= useState("content");
 
   return (
-    <div className={Styles.vision_container} style={width<=472?{flexDirection: "column-reverse"}:{}}>
+    <div className={Styles.vision_container} style={width<=472?{flexDirection: "column-reverse", marginBottom:"5.56vw"}:{}}>
         <div className={Styles.right_section}>
             <div className={Styles.vison_image} style={width>472?{width: '29.36vw', height: '27.2vw'}:{height:"70vw"}}>
                 <Image src='/M_F_Home chef_refine 1.png' alt="mission_image" fill />

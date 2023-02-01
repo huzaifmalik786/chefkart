@@ -31,17 +31,6 @@ const HowChefkartWorks = () => {
   const {width}= useWindowDimensions();
   return (
     <div className={Styles.how_container}>
-      {width<=472?(
-        <div className={Styles.how_left}>
-        <h2>
-          How Chefkart works
-        </h2>
-        <p>
-          Tell us what you need, and we’ll get the best chefs 
-          <br/>around you to your place.
-        </p>
-      </div>
-      ):(
         <div className={Styles.how_left}>
         <h2>
           How Chefkart <br />
@@ -53,8 +42,6 @@ const HowChefkartWorks = () => {
           <br /> your place.
         </p>
       </div>
-      )}
-      
       <div className={Styles.how_right}>
         {Steps.map((step) => {
           return (

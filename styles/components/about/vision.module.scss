@@ -21,7 +21,8 @@
         background: none;
         span{
           color: #FF8811;
-          font-size: 3.8vw;
+          font-size: 4vw;
+          font-weight: 400;
         }
       }
       .extracontent{
@@ -44,7 +45,7 @@
       color: #e76f51;
       @media screen and (max-width: 450px){
         font-size: 3.65vw;
-        color: #FF8811;
+        color: #FF8811 !important;
       }
     }
 
@@ -71,7 +72,7 @@
       @media screen and (max-width: 450px){
         font-size: 3.89vw;
         line-height: 150%;
-        margin-top: 2.22vw;
+        margin-top: 3.33vw;
       }
     }
     
@@ -89,8 +90,8 @@
         overflow: hidden;
         z-index: 1;
         @media screen and (max-width: 450px){
-          width: 70vw;
-          height: 75.56vw;
+          width: 75.9vw;
+          height: 70.56vw;
           border-radius: 2.22vw;
           margin: 6vw 0;
         }
@@ -108,6 +109,7 @@
             width: 75.9vw;
             height: 50.8vw;
             background-color: #FF8811;
+            border-radius: 0;
           }
         }
       }

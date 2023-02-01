@@ -125,7 +125,7 @@ const BlogArticleCarousel = (props: Props) => {
         {Images.map((blog, key) => {
           return (
             <div key={key} className={Styles.items}>
-              <Image src={blog.img} alt="food" fill className={Styles.img} />
+              <Image src={blog.img} alt="food" fill/>
               <div className={Styles.item_overlay}>
                 <div className={Styles.item_content}>
                   <div className={Styles.item_label}>

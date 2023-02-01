@@ -17,6 +17,7 @@
     @media screen and (max-width: 450px){
       width: 91.11vw;
       height: 85vw;
+      border-radius: 8.89vw;
     }
   }
 
@@ -37,6 +38,7 @@
         font-size: 6.11vw;
         line-height: 120%;
         width: 91.1vw;
+        color: #484848;
       }
     }
 
@@ -47,8 +49,10 @@
       padding-top: 2.22vw;
       @media screen and (max-width: 450px){
         padding-top: 8.89vw;
-        font-size: 3.89vw;
+        font-size: 3.56vw;
         line-height: 120%;
+        letter-spacing: -0.005em;
+        padding-bottom: 3vw;
       }
     }
   }

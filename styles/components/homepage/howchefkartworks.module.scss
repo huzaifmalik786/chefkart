@@ -1,7 +1,7 @@
 .how_container {
   display: grid;
   grid-template-columns: 3fr 6fr;
-  padding: 8vw 1vw 5vw 1vw;
+  padding: 8vw 1vw 10vw 1vw;
   @media screen and (max-width: 450px) {
     grid-template-columns: 1fr;
     // padding: 12.78vw 4.44vw;
@@ -53,13 +53,14 @@
 
     .step {
       @media screen and (max-width: 450px) {
-        border: 1px solid #804B10;
+        border: 0.28vw solid #804B10;
         padding: 4.4vw 5.11vw;
         width: 91.67vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-radius: 2.23vw;
+        background: #FAFAFA;
       }
       .step_img {
         position: relative;
@@ -112,6 +113,8 @@
             @media screen and (max-width: 450px){
               font-size: 4.34vw;
               padding-left: 2vw;
+              font-weight: 500;
+              letter-spacing: -1px;
             }
           }
         }
@@ -127,6 +130,11 @@
           @media screen and (max-width: 450px) {
             justify-content: flex-start;
             gap: 3.33vw;
+            padding-top: 5.56vw;
+            img{
+              width: 5.5vw;
+              height: 6.5vw;
+            }
           }
         }
       }

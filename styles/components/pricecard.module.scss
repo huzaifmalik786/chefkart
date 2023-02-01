@@ -11,8 +11,9 @@
   order: 1;
   @media screen and (max-width:450px) {
     width: 91.11vw !important;
-    height: 89.16vw !important;
+    // height: 89.16vw !important;
     padding: 6.67vw 5.67vw;
+    gap:0 ;
   }
   .heading_wrapper{
     display: flex;
@@ -23,6 +24,7 @@
       align-items: flex-start;
       flex-direction: row;
       justify-content: space-between;
+      gap:0;
     }
     .card_header {
       text-align: center;
@@ -55,6 +57,7 @@
           font-size: 3.34vw;
           line-height: 4.72vw;
           padding-top: 2.94vw;
+          width: 44vw;
         }
       }
     }
@@ -124,7 +127,7 @@
     flex-direction: column;
     gap: 1.66vw;
     @media screen and (max-width: 450px) {
-      padding-top: 6.67vw;
+      padding: 8vw 0;
       gap: 5.56vw;
     }
     .point {
@@ -168,6 +171,7 @@
         padding: 16px 20px;
         width: 82.2vw;
         font-size: 3.89vw;
+        line-height: 5vw;
       }
     }
   }
