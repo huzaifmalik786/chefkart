@@ -6,8 +6,9 @@
     width: 31vw;
     border-radius: 12px;
 
-    .img {
+    img {
       border-radius: 12px;
+      object-fit: cover;
     }
 
     .item_overlay {

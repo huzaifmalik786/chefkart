@@ -14,7 +14,7 @@ const Chef = (props: Props) => {
       <div className={Styles.chef_content}>
         <h6>The new way to work</h6>
         <h2>
-          Ready to show your{"\n"} customers what you’ve {"\n"}got?
+          Ready to show your customers what you’ve got?
         </h2>
         <p>
           <span> Apply here</span> to join our nationwide network of private

@@ -5,6 +5,10 @@
   align-items: center;
   padding: 4.44vw 9.71vw;
   gap: 0.69vw;
+  @media screen and (max-width: 450px) {
+    padding: 4.44vw;
+    padding-top: 12.7vw;
+  }
 
   .faq_title {
     font-style: normal;
@@ -15,6 +19,12 @@
     text-align: center;
 
     color: #ff8811;
+    @media screen and (max-width: 450px) {
+      font-size: 6.5vw;
+      line-height: 150%;
+      letter-spacing: -0.5px;
+      padding-bottom: 4.44vw;
+    }
   }
 
   .questions {
@@ -32,6 +42,9 @@
       background: #ffffff;
       border-bottom: 1px solid #e7e7e7;
       cursor: pointer;
+      @media screen and (max-width: 450px) {
+        padding: 6.67vw 0;
+      }
 
       .accordion {
         display: flex;
@@ -43,11 +56,18 @@
         font-weight: 500;
         font-size: 1.38vw;
         line-height: 150%;
+        @media screen and (max-width: 450px) {
+          font-size: 3.89vw;
+        }
 
         .arrow {
           width: 1.66vw;
           height: 1.66vw;
           position: relative;
+          @media screen and (max-width: 450px) {
+            width: 4.44vw;
+            height: 4.44vw;
+          }
         }
       }
 
@@ -58,6 +78,9 @@
         font-weight: 500;
         font-size: 1.38vw;
         line-height: 150%;
+        @media screen and (max-width: 450px) {
+          font-size: 3.89vw;
+        }
       }
     }
   }

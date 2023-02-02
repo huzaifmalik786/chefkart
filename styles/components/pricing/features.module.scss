@@ -3,9 +3,17 @@
     align-items: center;
     width: 100vw;
     padding: 6.246vw 0.35vw 7.29vw 7.91vw;
+    @media screen and (max-width: 450px) {
+        flex-direction: column;
+        padding: 6.246vw 4.44vw 24vw 4.44vw;
+    }
 
     .heading{
         width: 31.36vw;
+        @media screen and (max-width: 450px) {
+            width: 100%;
+            text-align: center;;
+        }
 
         .main_title{
             font-family: var(--secondary_font);
@@ -16,6 +24,11 @@
             /* Dark */
 
             color: #072125;
+            @media screen and (max-width: 450px) {
+                font-size: 5.56vw;
+                line-height: 6.67vw;
+                margin-bottom: 3.33vw;
+            }
 
             .colored{
                 color: #E76F51;
@@ -29,6 +42,10 @@
             font-size: 1.66vw;
             line-height: 150%;
             color: #072125;
+            @media screen and (max-width: 450px) {
+                font-size: 3.89vw;
+                line-height: 5.6vw;
+            }
         }
     }
 
@@ -36,8 +53,12 @@
         display: flex;
         flex-grow: 1;
         justify-content: space-evenly;
-
         position: relative;
+        @media screen and (max-width: 450px) {
+            flex-wrap: wrap;
+            gap: 10.5vw;
+            margin-top: 6vw;
+        }
 
         .icons_item{
             position: relative;
@@ -45,11 +66,17 @@
             flex-direction: column;
             align-items: center;
             gap: 1.32vw;
+            @media screen and (max-width:450px) {
+                gap: 3.33vw;
+            }
 
             .icon{
                 position: relative;
                 width: 4.23vw;
                 aspect-ratio: 1/1;
+                @media screen and (max-width:450px) {
+                    width: 11.11vw;
+                }
 
             }
             .icon_title{
@@ -58,6 +85,10 @@
                 font-weight: 700;
                 font-size: 1.11vw;
                 line-height: 1.38vw;
+                @media screen and (max-width:450px) {
+                    font-size: 3.89vw;
+                    line-height: 5vw;
+                }
 
                 /* Dark */
 

@@ -3,11 +3,22 @@
   grid-template-columns: repeat(2, 1fr);
   background-color: #f1f1f1;
   padding-top: 3.5vw;
+  @media screen and (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vw;
+  }
 
   .text_content {
     color: #072125;
     place-self: center;
     width: 31.4vw;
+    @media screen and (max-width: 450px) {
+      text-align: center;
+      width: 84.72vw;
+      color: #090909;
+    }
     h2,
     p,
     button {
@@ -17,6 +28,10 @@
       font-weight: 700;
       font-size: 2.77vw;
       line-height: 3.5vw;
+      @media screen and (max-width: 450px) {
+        font-size: 5.56vw;
+        line-height: 120%;
+      }
 
 
       .colored{
@@ -28,6 +43,15 @@
       padding-top: 1.6vw;
       padding-bottom: 4.3vw;
       max-width: 29.7vw;
+      @media screen and (max-width: 450px) {
+        max-width: 78.61vw;
+        padding: 3.33vw 0;
+        margin:auto;
+        span{
+          font-size: 3.89vw;
+          line-height: 150%;
+        }
+      }
       .colored{
         color: #ff8811;
       }
@@ -42,6 +66,14 @@
     button {
       padding: 1vw 2.5vw;
       transition: all 0.5s ease-out;
+      @media screen and (max-width: 450px) {
+        font-size: 3.89vw;
+        line-height: 6.67vw;
+        letter-spacing: -0.02em;
+        padding: 2.5vw 8.3vw;
+        border-radius: 2.22vw;
+        font-weight: 700;
+      }
 
       &:hover{
         background-color: #242424;
@@ -54,5 +86,10 @@
     position: relative;
     height: 34.5vw;
     width: 55.5vw;
+    @media screen and (max-width: 450px) {
+      margin-top: 11.4vw;
+      width: 100%;
+      height: 65vw;
+    }
   }
 }
