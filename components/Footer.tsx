@@ -85,31 +85,47 @@ const Footer = (props: Props) => {
               <Link href={"/about-us"}>About Us</Link> */}
           </div>
           <div className={Styles.social_icons}>
-            <p>Follow Us</p>
+            <p>{props.data?.social_heading || "Follow Us"}</p>
             <div>
-              <span>
-                <button>
-                  {" "}
-                  <Image src={"/FaceBook.svg"} alt="fb" fill />
-                </button>
-              </span>
-              <span>
-                <button>
-                  <Image src={"/Twitter.svg"} alt="fb" fill />
-                </button>
-              </span>
+              {
+                (props.data.social_icons) ?
+                ((props.data.social_icons).map((item, key)=>{
+                  return(
+                    <span key={key}>
+                      <Link href={item.url}>
+                        {" "}
+                        <Image src={item.icon.data.attributes.url} alt={item.icon.data.attributes.alternativeText || ""} fill />
+                      </Link>
+                    </span>
+                  )
+                })) : (
+                  <>
+                  <span>
+                    <Link href="#">
+                      {" "}
+                      <Image src={"/FaceBook.svg"} alt="fb" fill />
+                    </Link>
+                  </span>
+                  <span>
+                    <button>
+                      <Image src={"/Twitter.svg"} alt="fb" fill />
+                    </button>
+                  </span>
 
-              <span>
-                <button>
-                  <Image src={"/Linkedin.svg"} alt="fb" fill />
-                </button>
-              </span>
-              <span>
-                <button>
-                  {" "}
-                  <Image src={"/Instagram.svg"} alt="fb" fill />
-                </button>{" "}
-              </span>
+                  <span>
+                    <button>
+                      <Image src={"/Linkedin.svg"} alt="fb" fill />
+                    </button>
+                  </span>
+                  <span>
+                    <button>
+                      {" "}
+                      <Image src={"/Instagram.svg"} alt="fb" fill />
+                    </button>{" "}
+                  </span>
+                  </>
+                )
+              }
             </div>
           </div>
           </div>

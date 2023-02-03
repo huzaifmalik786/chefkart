@@ -33,9 +33,12 @@
 
   .video_container {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     // height: 25.76vw;
     width: 38.93vw;
-    aspect-ratio: 3.2;
+    aspect-ratio: 3/2;
     border-radius: 1.52vw;
     overflow: hidden;
 
