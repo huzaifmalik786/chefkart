@@ -12,10 +12,11 @@ type Props = {
     }
     image: image_type
   }
+  py?:string;
 }
 const BookTrial = (props: Props) => {
   return (
-    <div className={Styles.container}>
+    <div className={Styles.container} style={{padding: `${props.py} 0`}}>
       <div className={Styles.banner}>
         <Image src={props.data.image.data.attributes.url || "/sample.png"} alt={props.data.image.data.attributes.alternativeText || "banner"} fill style={{ objectFit: 'cover' }} />
 

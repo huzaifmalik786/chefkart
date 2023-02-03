@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { PriceCard } from "../interfaces/interfaces";
 import Styles from "../styles/components/pricecard.module.scss";
+import UseWindowDimensions from "./WindowSize";
 
 type Props = {
   card: PriceCard;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 const PricingCard = (props: Props) => {
+  const {width}= UseWindowDimensions();
   return (
     <div
       className={Styles.card_wrapper}
@@ -18,6 +20,7 @@ const PricingCard = (props: Props) => {
         border: props.card.heading === "Popular" ? "1px solid #D9D9D9" : "none",
       }}
     >
+      <div className={Styles.heading_wrapper}>
       <div
         className={`${Styles.card_header} ${
           props.card.heading === "Popular" && Styles.header_white
@@ -35,6 +38,7 @@ const PricingCard = (props: Props) => {
           ₹{props.card.price} <span> /Month</span>
         </h2>
       </div>
+      </div>
       <div
         className={`${Styles.card_key_points} ${
           props.card.heading === "Popular" && Styles.points_white
@@ -44,6 +48,7 @@ const PricingCard = (props: Props) => {
         }}
       >
         {props.card.features.map((point, index) => {
+          if((width<=472 && index<3) || width>472){
           return (
             <div key={index} className={Styles.point}>
               <span className={Styles.check_img}>
@@ -52,6 +57,7 @@ const PricingCard = (props: Props) => {
               <p>{point.feature}</p>
             </div>
           );
+        }
         })}
       </div>
 

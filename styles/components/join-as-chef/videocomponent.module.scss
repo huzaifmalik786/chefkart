@@ -1,10 +1,23 @@
 .video_wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 450px){
+    grid-template-columns: 1fr;
+    background: white;
+    // ;
+  }
   
 
   .video_text {
     place-self: center;
+    @media screen and (max-width: 450px){
+      place-self: start;
+      padding: 3.33vw;
+      img{
+        width: 6.67vw;
+        height: 5.56vw;
+      }
+    }
 
     h2 {
       color: #4a4a4a;
@@ -13,6 +26,12 @@
       line-height: 4vw;
       padding-top: 2.22vw;
       font-weight: 400;
+      @media screen and (max-width: 450px) {
+        font-size: 4.44vw;
+        line-height: 5.56vw;
+        width: 100%;
+        padding-top: 4.44vw;
+      }
     }
     p {
       color: #e76f51;
@@ -20,6 +39,11 @@
       font-size: 1.38vw;
       font-family: var(tertiary_font);
       font-weight: 700;
+      @media screen and (max-width: 450px) {
+        font-size: 4.44vw;
+        line-height: 5.56vw;
+        padding: 3.33vw 0;
+      }
     }
   }
 
@@ -30,6 +54,16 @@
 
     .video{
       width: 100%;
+    }
+    @media screen and (max-width: 450px) {
+      place-self: center;
+      height: 51.4vw;
+      width: 100%;
+      img{
+        height: 51.4vw;
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }

@@ -10,6 +10,7 @@ import Social from '../../components/AboutUs/Social'
 import Gallery from '../../components/AboutUs/Gallery'
 import { GetStaticProps } from 'next'
 import { image_type, ProfileCardType } from '../../interfaces/interfaces'
+import UseWindowDimensions from '../../components/WindowSize'
 
 type Props = {
   header: {
@@ -102,12 +103,13 @@ type Props = {
 }
 
 const index = (props: Props) => {
+  const {width}=UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
         <Hero data={props.banner} />
         <Vision />
         <Mission />
-        <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py="5.55vw" />
+        <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py={width<=472?"13vw":"5.55vw"} />
         <Founder data={props.founders} />
         <Gallery />
         <ContactForm data={props.form} />

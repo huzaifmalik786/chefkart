@@ -1,6 +1,9 @@
 .review_section {
   background: #eeeff2;
   padding: 4.72vw 6.0px 4.62vw 0px;
+  @media screen and (max-width: 450px) {
+    padding: 6.67vw 4.44vw 10vw 4.44vw;
+  }
 
   h3 {
     font-family: var(--secondary_font);
@@ -10,10 +13,19 @@
     line-height: 3.33vw;
     text-align: center;
     color: #18181b;
+    @media screen and (max-width: 450px) {
+      font-family: var(--mobile_font);
+      font-size: 5.56vw;
+      line-height: 6.67vw;
+    }
   }
 
   .video_review {
     background-color: #ffffff;
     margin: 3.74vw 6.17vw 2.88vw 6.24vw;
+    @media screen and (max-width: 450px) {
+      background-color: inherit;
+      margin: 9vw 0 0 0;
+    }
   }
 }

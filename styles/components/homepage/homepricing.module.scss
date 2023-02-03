@@ -3,6 +3,10 @@
   display: grid;
   grid-template-columns: 1.2fr 2fr;
   padding: 4.5vw 6.5vw;
+  @media screen and (max-width:450px) {
+    grid-template-columns: 1fr;
+    padding: 6.67vw 3.61vw;
+  }
 
   .pricing_heading {
     place-self: center;
@@ -12,6 +16,13 @@
       font-weight: 700;
       line-height: 4.16vw; // 60px
       padding-bottom: 1.66vw;
+      @media screen and (max-width:450px) {
+        font-size: 6.27vw;
+        line-height: 8.05vw;
+        text-align: center;
+        padding-bottom: 4.4vw;
+        letter-spacing: -0.001em;
+      }
     }
 
     p {
@@ -19,6 +30,13 @@
       font-size: 1.38vw;
       font-weight: 400;
       line-height: 1.9vw;
+      @media screen and (max-width:450px) {
+        font-size: 3.89vw;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.001em;
+        padding-bottom: 5.56vw;
+      }
     }
   }
 
@@ -26,5 +44,12 @@
     padding-left: 2vw;
     display: flex;
     gap: 2vw;
+    @media screen and (max-width:450px) {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 6.67vw;
+      gap: 10vw;
+      padding-left: 0;
+    }
   }
 }

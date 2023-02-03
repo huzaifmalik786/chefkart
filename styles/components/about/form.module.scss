@@ -2,14 +2,23 @@
   margin: 7vw 0px 7vw 0px;
   display: flex;
   gap: 3.88vw;
-
   justify-content: center;
-
+  @media screen and (max-width: 450px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 14vw;
+    background: #F9F9F9;
+    padding-bottom: 6.67vw;
+  }
   .image {
     width: 42.33vw;
     height: 44.55vw;
     position: relative;
     border-radius: 1.11vw;
+    @media screen and (max-width: 450px) {
+      width:70.6vw;
+      height: 72.2vw;
+    }
   }
 
   .form_container {
@@ -19,6 +28,10 @@
     justify-content: center;
     padding: 0.34vw 0.34vw 0.34vw 3.88vw;
     gap: 2.22vw;
+    @media screen and (max-width: 450px) {
+      width: auto;
+      padding-left: 0;
+    }
 
     h2 {
       text-align: center;
@@ -31,18 +44,61 @@
       align-items: center;
       text-align: center;
       letter-spacing: -0.07vw;
-
       color: #242424;
+      @media screen and (max-width: 450px) {
+        padding-top: 4.89vw;
+        font-size: 4.44vw;
+        line-height: 6.4vw;
+        width: 90.5vw;
+        letter-spacing: -1px;
+        margin-bottom: 4.44vw;
+      }
     }
 
     form {
       display: flex;
       flex-direction: column;
       gap: 1.11vw;
+      @media screen and (max-width: 450px) {
+        gap: 8.89vw;
+        span{
+          font-size: 3.33vw;
+          line-height: 4.44vw;
+          margin-left: 1vw;
+        }
+        input{
+          padding: 1.6vw;
+          font-size: 3.33vw;
+          line-height: 4.44vw;
+          background: #F9F9F9;
+        }
+        textarea{
+          padding: 1.6vw;
+          font-size: 3.33vw;
+          line-height: 4.44vw;
+          background: #F9F9F9;
+        }
+        input::placeholder,textarea::placeholder{
+          color: #979797;
+        }
+        button{
+          font-size: 3.33vw;
+          padding: 2.74vw 4.44vw;
+          line-height: 6.67vw;
+          border-radius: 1.11vw;
+          background: #FF8811 !important;
+        }
+      }
 
       .two_input {
         display: flex;
         gap: 1.11vw;
+        // @media screen and (max-width: 450px) {
+        //   .PhoneInputCountry{
+        //     font-size: 50px !important;
+        //   }
+        // }
+        
 
         .dropdown {
           font-family: var(--secondary_font);
@@ -61,9 +117,7 @@
           align-items: center;
           padding: 0.83vw 1.11vw;
           gap: 0.83vw;
-
           width: 11.7vw;
-
           border: 0.1vw solid #e4e4e7;
           border-radius: 0.27vw;
         }
@@ -74,6 +128,9 @@
         width: 1.25vw;
         aspect-ratio: 1/1;
         margin-right: 0.76vw;
+        @media screen and (max-width: 450px) {
+          width: 4vw;
+        }
       }
       .checbox_container {
         display: flex;
@@ -87,6 +144,12 @@
         letter-spacing: -0.005em;
 
         color: #000000;
+        @media screen and (max-width: 450px){
+          margin-bottom: -5vw;
+          font-size: 3.65vw;
+          line-height: 120%;
+          margin-top: -5vw;
+        }
       }
     }
   }

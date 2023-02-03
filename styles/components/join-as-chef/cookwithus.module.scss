@@ -1,5 +1,13 @@
 .us_wrapper {
   padding: 5vw 0;
+  @media screen and (max-width: 450px) {
+    padding: 9vw 0 15vw 0;
+  }
+  @media screen and (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   h2 {
     font-weight: 600;
     font-family: var(--secondary_font);
@@ -7,6 +15,11 @@
     letter-spacing: -1.5px;
     font-size: 2.77vw;
     line-height: 3.48vw;
+    @media screen and (max-width: 450px) {
+      font-size: 5.56vw;
+      line-height: 6.67vw;
+      margin-bottom: 4vw;
+    }
   }
 
   .cards_wrapper {
@@ -15,15 +28,34 @@
     justify-content: center;
     gap: 8.26vw;
     padding: 4vw 0;
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+      gap: 12.7vw;
+    }
     .card {
       text-align: center;
       font-family: var(--secondary_font);
       width: 21vw;
       align-self: stretch;
+      @media screen and (max-width: 450px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 74.11vw;
+      }
 
       div {
         position: relative;
         height: 15.9vw;
+        @media screen and (max-width: 450px) {
+          width: 61.11vw;
+          height: 46.11vw;
+          border-radius: 1.5vw;
+          img{
+            object-fit: cover;
+            border-radius: 1.5vw;
+          }
+        }
       }
 
       h4 {
@@ -33,6 +65,13 @@
         padding-top: 1.45vw;
         font-weight: 600;
         letter-spacing: -1px;
+        @media screen and (max-width: 450px) {
+          font-size: 5vw;
+          line-height: 8.89vw;
+          padding-top: 4.44vw;
+          color: #484848;
+        }
+        
       }
 
       p {
@@ -44,6 +83,11 @@
         font-weight: 400;
         font-family: var(--secondary_font);
         letter-spacing: -0.005em;
+        @media screen and (max-width: 450px) {
+          font-size: 3.89vw;
+          line-height: 5vw;
+          padding-top: 2.22vw;
+        }
 
       }
     }

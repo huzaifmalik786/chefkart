@@ -5,6 +5,7 @@ import Styles from "../../styles/components/homepage/artisans.module.scss";
 import "react-multi-carousel/lib/styles.css";
 import useFetchData from "../../lib/api";
 import { chefType } from "../../interfaces/interfaces";
+import UseWindowDimensions from "../WindowSize";
 
 type Props={
   data: {
@@ -64,6 +65,7 @@ const chef_array: chefType[] = [
   },
 ];
 const Artisans = (props: Props) => {
+  const {width}= UseWindowDimensions();
   
   const responsive = {
     desktop: {
@@ -101,12 +103,12 @@ const Artisans = (props: Props) => {
         rewindWithAnimation
         customTransition="transform 900ms ease-in"
         // ssr
-        centerMode
+        centerMode={width<=472?false:true}
         infinite
         arrows={false}
         containerClass={Styles.artisans}
         itemClass={Styles.item}
-        // partialVisbile
+        partialVisbile={width<=472?true:false}
       >
         {(props.data.chef_array || chef_array).map((c, key) => {
           return (
@@ -129,17 +131,36 @@ const Artisans = (props: Props) => {
                 </div>
                 </div>
 
-                <div className={Styles.hover_overlay}>
+                <div className={width<=472?Styles.overlay: Styles.hover_overlay}>
                     <p className={Styles.specialize_heading}>Specializes in:</p>
-                    <div className={Styles.pills_container}>
-                    {
-                        (c.specialization).map((s, key)=>{
-                            return(
-                                <span className={Styles.pills} key={key}>{s.feature}</span>
-                            )
-                        })
-                    }
-                    </div>
+                    {width<=472?(
+                      <div className={Styles.pills_container}>
+                      {
+                          (c.specialization).map((s, key)=>{
+                            if(key<3)
+                              return(
+                                  <span className={Styles.pills} key={key}>{s.feature}</span>
+                              )
+                          })
+                      }
+                      <div>
+                        <button style={{background:"none"}}>
+                            {c.specialization.length>3?`+${c.specialization.length-3} more`:""}
+                        </button>
+                      </div>
+                      </div>
+                    ):(
+                      <div className={Styles.pills_container}>
+                      {
+                          (c.specialization).map((s, key)=>{
+                              return(
+                                  <span className={Styles.pills} key={key}>{s.feature}</span>
+                              )
+                          })
+                      }
+                      </div>
+                    )}
+                    
                 </div>
               </div>
             </div>

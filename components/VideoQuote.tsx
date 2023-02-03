@@ -32,10 +32,10 @@ const VideoQuote = (props: Props) => {
       style={(props.index)%2 ==  0 ? {} : {flexDirection: 'row-reverse'}}
     >
       <div className={Styles.video_text}>
-        <Image src={"/comma.svg"} alt="comma" height={33} width={41} />
+        <Image className={Styles.image} src={"/comma.svg"} alt="comma" height={33} width={41} />
         <p className={Styles.quote}>{props.card.review}</p>
 
-        <p> {props.card.name}</p>
+        <p className={Styles.name}> {props.card.name}</p>
       </div>
       <div className={Styles.video_container}>
         <video

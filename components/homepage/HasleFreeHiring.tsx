@@ -30,7 +30,6 @@ const HasleFreeHiring = (props: Props) => {
            
           </h2>
         </div>
-
         <div className={Styles.text}>
           <div className={Styles.para_1}>
             <p>
@@ -47,13 +46,14 @@ const HasleFreeHiring = (props: Props) => {
               
             </p>
           </div>
-        </div>
+          </div>
+        
         <div className={Styles.bottom_img}>
           <div className={Styles.app_icon}>
             <Image src={props.data?.download_icons[1]?.icon.data?.attributes?.url || "/app-store-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "appstore"} fill />
           </div>
           <div className={Styles.play_icon}>
-            <Image src={props.data?.download_icons[0]?.icon.data.attributes?.url || "/play-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "playstore"} fill />
+            <Image className={Styles.play_image} src={props.data?.download_icons[0]?.icon.data.attributes?.url || "/play-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "playstore"} fill />
           </div>
         </div>
       </div>

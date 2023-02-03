@@ -4,7 +4,8 @@ import ContactBanner from '../../components/contact-us/ContactBanner'
 import Map from '../../components/contact-us/Map'
 import Story from '../../components/contact-us/Story'
 import Layout from '../../components/layouts/Layout'
-import { image_type } from '../../interfaces/interfaces'
+import FAQ from "../../components/FAQ";
+import { image_type, QUESTIONS } from '../../interfaces/interfaces'
 
 type Props = {
   header: {
@@ -53,6 +54,10 @@ type Props = {
     }
     form_heading: string;
   }
+  // faq:{
+  //   heading : string;
+  //   Question_answer: QUESTIONS[]
+  // }
 }
 
 const index = (props: Props) => {
@@ -61,6 +66,7 @@ const index = (props: Props) => {
         <ContactBanner data={props.banner} />
         <Map />
         <Story />
+        {/* <FAQ data={props.faq} /> */}
     </Layout>
   )
 }
