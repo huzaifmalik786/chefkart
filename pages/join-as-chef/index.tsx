@@ -10,6 +10,7 @@ import Layout from "../../components/layouts/Layout";
 import Testimonial from "../../components/join-as-chef/Testimonial";
 import { GetStaticProps } from "next";
 import { image_type, QUESTIONS } from "../../interfaces/interfaces";
+import UseWindowDimensions from "../../components/WindowSize";
 
 type Props = {
   header: {
@@ -95,16 +96,20 @@ type Props = {
 };
 
 const index = (props: Props) => {
+  const {width}= UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
       <JoinHeroCarousel data={props.banner_slider} />
       <Metrics data={props.metrics} />
       <CookWithUs data={props.cook} />
+      <div style={width<=472?{background:"#EEEFF2",padding: "10vw 3.33vw",paddingBottom:"12.78vw"}:{}}>
       <VideoComponent data={props.review} />
       <Testimonial data={props.testimonies} />
-
       <Chef />
+      </div>
+      <div style={width<=472?{display:"none"}:{}}>
       <SimplifyWay />
+      </div>
       <FAQ data={props.faq} />
     </Layout>
   );

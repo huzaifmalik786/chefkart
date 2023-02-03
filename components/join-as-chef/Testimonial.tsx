@@ -1,6 +1,7 @@
 import React from "react";
 import { image_type } from "../../interfaces/interfaces";
 import TestimonialCarousel from "../TestimonialCarousel";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: {
@@ -12,8 +13,9 @@ type Props = {
 };
 
 const Testimonial = (props: Props) => {
+  const {width}= UseWindowDimensions();
   return (
-    <div style={{ paddingTop: "10vw", paddingBottom: "6.35vw" }}>
+    <div style={width>472?{ paddingTop: "10vw", paddingBottom: "6.35vw" }:{paddingTop: "10vw", paddingBottom: "15.35vw" }}>
       <TestimonialCarousel cards={props.data} />
     </div>
   );

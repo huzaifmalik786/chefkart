@@ -1,4 +1,7 @@
 .gallery_container {
+  @media screen and (max-width: 450px) {
+    padding-left: 4.44vw;
+  }
   h2 {
     font-family: var(--secondary_font);
     font-style: normal;
@@ -10,16 +13,28 @@
     margin-top: 5.5vw;
     letter-spacing: -0.025em;
     color: #111111;
+    @media screen and (max-width: 450px) {
+      font-size: 5.56vw;
+      margin-top: 13.39vw;
+      margin-bottom: 5.83vw;
+    }
   }
 }
 .gallery_carousel {
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 450px) {
+    justify-content: flex-start;
+  }
 
   [class*="track"] {
     justify-content: center;
     align-items: center;
     gap: 1.35vw;
+    @media screen and (max-width: 450px) {
+      justify-content: flex-start;
+      gap: 4.44vw;
+    }
   }
 
   .gallery_item {
@@ -30,5 +45,10 @@
     background-color: #d9d9d9;
     border-radius: 0.45vw;
     overflow: hidden;
+    @media screen and (max-width: 450px) {
+      width: 43.22vw !important;
+      height: 45vw !important;
+      border-radius: 1.11vw;
+    }
   }
 }

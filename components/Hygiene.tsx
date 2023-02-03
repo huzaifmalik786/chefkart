@@ -10,6 +10,8 @@ type Props = {
   description: string;
   colored_text: string;
   headingSize?: string;
+  fontweight?:string;
+  descsize?:string;
 
   data: {
     heading: string;
@@ -53,7 +55,7 @@ const Hygiene = (props: Props) => {
         {props.data?.heading || props.heading}
       </h3>
 
-      <p className={Styles.description} style={!props.center ? {} : {textAlign: 'center', width: '33.6vw'}}>
+      <p className={Styles.description} style={!props.center ? {} : {textAlign: 'center', width: '33.6vw', fontWeight: `${props.fontweight}`, fontSize:`${props.descsize}`}}>
         {
           props.data?.description ? (
             (props.data?.description).map((item, key)=>{

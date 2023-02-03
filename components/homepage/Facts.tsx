@@ -46,7 +46,9 @@ const Facts = (props: Props) => {
         return (
           <div key={index}>
             <p className={Styles.fact_title}>{item.heading}</p>
-            <p className={Styles.fact_description}>{item.description}</p>
+            <div className={Styles.description}>
+              <p className={Styles.fact_description}>{item.description}</p>
+            </div>
           </div>
         );
       })}

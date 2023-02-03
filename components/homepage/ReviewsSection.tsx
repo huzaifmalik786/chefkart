@@ -6,7 +6,7 @@ import Styles from "../../styles/components/homepage/ReviewsSection.module.scss"
 
 const ReviewsData: ReviewsCardType[] = [
   {
-    review: `Ever Since Geeta Didi has started Working my Kitchen is no longer a headache for me`,
+    review: "Ever Since Geeta Didi has started Working my Kitchen is no longer a headache for me",
     name: "Rishi",
     video: {
       data: {

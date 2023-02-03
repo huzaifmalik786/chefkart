@@ -103,14 +103,17 @@ const TestimonialCarousel = (props:Props) => {
   //   }
   function renderStars(s: number) {
     return Array.from({ length: s }, (v, i) => (
-      <Image
-        src="/Path.svg"
-        width={16}
-        height={16}
-        alt=""
-        key={i}
-        className={Styles.stars}
-      />
+      <div className={Styles.stars}>
+        <Image
+          src="/Path.svg"
+          fill
+          // width={16}
+          // height={16}
+          alt=""
+          key={i}
+          // className={Styles.stars}
+        />
+      </div>
     ));
   }
 

@@ -90,7 +90,6 @@ const HomeBanner = (props: Props) => {
               : 
                 <h4>Hire a verified and trained homechef for <br /> <span> 1/3rd of the price</span> you spend ordering food online.</h4>
             }
-            
           </div>
           <div className={Styles.btn}>
             <button onClick={()=> setOpenModal(true)} >{props.data?.button.button_text || "get in touch" }</button>

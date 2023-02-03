@@ -3,6 +3,7 @@ import React from 'react'
 import SocialIcon from '../SocialIcon'
 import Styles from '../../styles/components/about/social.module.scss'
 import { image_type } from '../../interfaces/interfaces'
+import UseWindowDimensions from '../WindowSize'
 type Props = {
   data: {
     heading: string;
@@ -13,6 +14,7 @@ type Props = {
   }
 }
 const Social = (props: Props) => {
+  const {width}= UseWindowDimensions()
   return (
     <div className={Styles.about_us_social}>
         <h2>{props.data.heading || "Lets get Social"}</h2>
@@ -20,7 +22,7 @@ const Social = (props: Props) => {
           {
             (props.data.icons).map((item, key)=>{
               return(
-                <SocialIcon key={key} image={item.icon.data.attributes.url || '/Vector.svg'} width='1.82vw' height='1.81vw' />
+                <SocialIcon key={key} image={item.icon.data.attributes.url || '/Vector.svg'} width={width<=472?"5.67vw":"1.82vw"} height={width<=472?"5.67vw":"1.82vw"} />
 
               )
             })

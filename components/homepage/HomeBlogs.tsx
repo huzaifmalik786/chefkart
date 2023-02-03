@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import useFetchData from "../../lib/api";
 import { blogType } from "../../interfaces/interfaces";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: {
@@ -20,6 +21,7 @@ type Props = {
 
 
 const HomeBlogs = (props: Props) => {
+  const {width}= UseWindowDimensions();
   
   const router = useRouter();
 

@@ -6,12 +6,22 @@
   width: 100vw;
   height: 44vw;
   margin-bottom: 6.6vw;
+  @media screen and (max-width: 450px){
+    flex-direction: column;
+    justify-content:flex-start;
+    height: 165vw;
+    background: none;
+    padding: 0 4.44vw;
+  }
 
   .description {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media screen and (max-width: 450px) {
+      margin-top: 8.89vw;
+    }
     .badge {
       font-weight: 700;
       font-size: 0.97vw;
@@ -22,6 +32,14 @@
       border-radius: 1.87vw;
       letter-spacing: -0.015em;
       color: #ffffff;
+      @media screen and (max-width: 450px) {
+        font-size: 3.33vw;
+        padding: 1.5vw 2.78vw;
+        border-radius: 7.5vw;
+        margin-top: 10vw;
+        line-height: 2.78vw;
+      }
+    
     }
 
     h2 {
@@ -31,12 +49,21 @@
       line-height: 4.16vw;
       letter-spacing: -0.025em;
       margin: 1.38vw 0px 1.66vw 0px;
+      @media screen and (max-width: 450px) {
+        font-size: 6.67vw;
+        margin-top: 6.67vw;
+        line-height: 8.33vw;
+        width: 91vw;
+      }
 
       color: #111111;
 
       .colored {
         font-family: var(--secondary_font);
         color: #214e34;
+        @media screen and (max-width: 450px) {
+          color: #000000;
+        }
       }
     }
     p {
@@ -46,6 +73,13 @@
       letter-spacing: -0.01em;
       margin-bottom: 4.44vw;
       color: #000000;
+      @media screen and (max-width: 450px) {
+        font-size: 3.89vw;
+        line-height: 9.75vw;
+        margin-top: 3.33vw;
+        width: 91vw;
+        margin-bottom: 0;
+      }
     }
 
     button {
@@ -57,8 +91,15 @@
       line-height: 1.66vw;
       letter-spacing: -0.005em;
       text-transform: uppercase;
-
       color: #ffffff;
+      @media screen and (max-width: 450px) {
+        width: 52.3vw;
+        margin: 6.67vw 0 10vw 0;
+        font-size: 3.33vw;
+        line-height: 3.89vw;
+        padding: 3.89vw 5.56vw;
+        border-radius: 2.22vw;
+      }
     }
   }
 
@@ -68,11 +109,20 @@
     display: flex;
     justify-content: flex-end;
     padding-top: 2.43vw;
+    @media screen and (max-width: 450px) {
+      width: 100%;
+      // justify-content: center;
+
+    }
 
     .rightmost {
       position: relative;
       width: 27.8vw;
       height: 27.6vw;
+      @media screen and (max-width: 450px) {
+        width: 50.30vw;
+        height: 50.3vw;
+      }
 
       .left_image_bg {
         background: url("/Rectangle 191.png") no-repeat;
@@ -87,11 +137,22 @@
         position: absolute;
         top: 10.54vw;
         right: 17.1vw;
+        @media screen and (max-width: 450px) {
+          object-fit: cover;
+          width: 58.8vw;
+          height: 65.8vw;
+          top: 25vw;
+          right: 33.09vw;
+        }
   
         .left_image {
           position: relative;
           width: 19.63vw;
           height: 29.45vw;
+          @media screen and (max-width: 450px) {
+            width: 46.9vw;
+            height: 70.4vw;
+          }
         }
       }
 
@@ -101,6 +162,12 @@
         aspect-ratio: 1/1;
         left: -10.06vw;
         top: 3.9vw;
+        @media screen and (max-width: 450px) {
+          width: 9.7vw;
+          height: 9.7vw;
+          top: 10vw;
+          left: -36vw;
+        }
       }
       .small_ellipse{
         width: 2.91vw;
@@ -108,6 +175,11 @@
         position: absolute;
         bottom: -4.5vw;
         left: 50%;
+        @media screen and (max-width: 450px) {
+          bottom: -26vw;
+          left: 40%;
+          width: 14vw;
+        }
 
       }
     }

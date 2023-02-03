@@ -7,7 +7,7 @@ import { PriceCard } from "../../interfaces/interfaces";
 const PricingCardData: PriceCard[] = [
   {
     heading: "Premium",
-    subheading: `Suitable for the foodies, with a \n huge apetite for various flavours`,
+    subheading: `Suitable for the foodies, with a huge apetite for various flavours`,
     price: "4500",
     features: [
       { feature: "Certified Home chefs" },

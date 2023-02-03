@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { image_type } from "../../interfaces/interfaces";
 import Styles from "../../styles/components/homepage/howchefkartworks.module.scss";
+import UseWindowDimensions from "../WindowSize";
 
 type HowItWorksSteps = {
   image: image_type;
@@ -61,9 +62,10 @@ type Props={
 }
 
 const HowChefkartWorks = (props: Props) => {
+  const {width}= UseWindowDimensions();
   return (
     <div className={Styles.how_container}>
-      <div className={Styles.how_left}>
+        <div className={Styles.how_left}>
         <h2>
           {
             props.data?.brief.heading || "How Chefkart works"
@@ -82,12 +84,15 @@ const HowChefkartWorks = (props: Props) => {
               <div className={Styles.step_img}>
                 <Image src={step.image.data.attributes.url} fill alt={step.image.data.attributes.alternativeText || "how-it-works"} />
               </div>
+              <div className={Styles.content}>
+              <div className={Styles.heading}>
               <div className={Styles.step_num}>
                 <p>{key+1}</p>
               </div>
               <div className={Styles.step_text}>
                 <p>{step.text}</p>
                 {key === 0 && (
+                  <div className={Styles.icons}>
                   <span>
                     <Image
                       src={props.data.download_icon[0].icon.data.attributes.url || "/apple-vector.svg"}
@@ -104,8 +109,41 @@ const HowChefkartWorks = (props: Props) => {
                       alt="google-play-icon"
                     />
                   </span>
+                  </div>
                 )}
               </div>
+              </div>
+              </div>
+              {/* <div className={Styles.content}>
+                <div className={Styles.heading}>
+                  <div className={Styles.step_num}>
+                        <p>{step.num}</p>
+                  </div>
+                  <div className={Styles.step_text}>
+                    <p>{step.text}</p>
+                  </div>
+                </div>
+                <div className={Styles.icons}>
+                  {step.num === 1 && (
+                    <span>
+                      <Image
+                        src={"/apple-vector.svg"}
+                          // fill
+                          width={24}
+                          height={29}
+                          alt="apple-icon"
+                      />
+                      <Image
+                        src={"/play-vector.svg"}
+                        width={24}
+                        height={29}
+                        // fill
+                        alt="google-play-icon"
+                      />
+                    </span>
+                  )}
+                </div>
+              </div> */}
             </div>
           );
         })}
