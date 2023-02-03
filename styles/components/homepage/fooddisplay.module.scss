@@ -15,6 +15,9 @@
     align-items: center;
     padding-top: 3.19vw;
     background-color: #ffffff;
+    @media screen and (max-width: 450px){
+      padding-top: 13.4vw;
+    }
   
     .food_heading {
       h3 {
@@ -36,7 +39,14 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-        text-align: center;
+          text-align: center;
+          @media screen and (max-width: 450px){
+            font-size: 5.56vw;
+            line-height: 6.67vw;
+            padding-bottom: 8.47vw;
+            letter-spacing: -0.005em;
+            // width: 91.1vw;
+          }
           // height: 4vw;
           // overflow: hidden;
           // transition: all 0.5s;
@@ -46,10 +56,17 @@
           overflow: hidden;
           position: relative;
           transition: margin-top 0.5s, width 0.5s ease-in-out;
+          @media screen and (max-width: 450px){
+            height: 8vw;
+            font-size: 7.58vw;
+          }
           }
 
           .slider_word{
              transition: all 0.5s;
+             @media screen and (max-width: 450px) {
+              font-family: var(--mobile_livvic);
+             }
           }
       }
   

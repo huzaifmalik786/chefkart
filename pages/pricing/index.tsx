@@ -10,6 +10,7 @@ import ProjectFeatures from "../../components/pricing/ProjectFeatures";
 import RestaurantLike from "../../components/pricing/RestaurantLike";
 import { GetServerSideProps, GetStaticProps } from "next";
 import { features_icon, image_type, QUESTIONS, table_content } from "../../interfaces/interfaces";
+import UseWindowDimensions from "../../components/WindowSize";
 
 type Props = {
   header: {
@@ -163,6 +164,7 @@ type Props = {
 }
 
 const index = (props: Props) => {
+  const {width}= UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
       <PricingBanner data={props.banner} />
@@ -173,13 +175,16 @@ const index = (props: Props) => {
         heading="WE ASSURE YOU OF THE BEST HYGIENE"
         description="At Chefkart, we are truly committed to"
         colored_text="simplifying the way India eats."
+        center={width<=472?true:false}
+        fontweight={width<=472?"400":""}
+        descsize={width<=472?"3.89vw":""}
       />
       <ProjectFeatures data={props.features} />
       <RestaurantLike data={props.restaurant} />
       <PricingSignUp data={props.pricing_signup} />
       <FAQ data={props.faq} />
 
-      <BookTrial data={props.book_trial} />
+      <BookTrial data={props.book_trial} py={width<=472?"15vw":""}/>
     </Layout>
   );
 };

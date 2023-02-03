@@ -6,6 +6,10 @@
   overflow-x: hidden;
   margin-left: -6.17vw;
   padding-left: 6.17vw;
+  @media  screen and (max-width:450px) {
+    width: auto;
+    margin-bottom: 12.78vw;
+  }
 
   .hygiene_container {
     width: 100vw;
@@ -32,8 +36,8 @@
     //   height: 100%;
       .video{
         position: absolute; 
-      top: 0; 
-      left: 0; 
+        top: 0; 
+        left: 0; 
         object-fit: cover;
         object-position: center;
         width: 100%;
@@ -41,6 +45,9 @@
         z-index: -1;
       }
     // }
+    @media screen and (max-width: 450px){
+      height: 55.28vw;
+    }
     .subheading {
       font-weight: 700;
       font-size: 1.66vw;
@@ -49,6 +56,9 @@
       letter-spacing: -0.0692vw;
       margin-bottom: 0.77vw;
       color: #ffffff;
+      @media screen and (max-width: 450px){
+        font-size: 2.78vw;
+      }
     }
   
     h3 {
@@ -59,6 +69,14 @@
       text-transform: uppercase;
       margin-bottom: 1.93vw;
       margin-top: 0.55vw;
+      @media screen and (max-width: 450px){
+        text-transform: none;
+        font-size: 5.56vw;
+        margin-bottom: 4.44vw;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.28vw;
+      }
     }
   
     p {
@@ -69,6 +87,11 @@
       white-space: pre-line;
       color: #d9d9d9;
       width: 43.2vw;
+      @media screen and (max-width: 450px){
+        font-size: 3.34vw;
+        line-height: 3.89vw;
+        width: 76.38vw !important;
+      }
   
       .colored {
         color: #ff8811;

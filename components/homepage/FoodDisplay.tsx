@@ -7,6 +7,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CircularCarousel from "./CircularCarousel";
 
+import UseWindowDimensions  from '../WindowSize';
+
 type Props = {};
 type styleType = {
   color: string;
@@ -26,6 +28,7 @@ const Images = [
 ];
 
 const FoodDisplay = (props: Props) => {
+  const { width, height } = UseWindowDimensions();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const wordElements = words.map((word, index) => {
@@ -56,7 +59,12 @@ const FoodDisplay = (props: Props) => {
       style.position = "relative";
       //  style.width = '13.3vw'
     } else {
-      style.marginTop = `${index > currentIndex ? "3.47vw" : `-3.47vw`}`;
+      if(width<=472){
+        style.marginTop = `${index > currentIndex ? "6.47vw" : `-6.47vw`}`;
+      }
+      else{
+        style.marginTop = `${index > currentIndex ? "3.47vw" : `-3.47vw`}`;
+      }
     }
 
     return (
@@ -105,13 +113,23 @@ const FoodDisplay = (props: Props) => {
           <br /> the ridiculous spends ordering online
         </h3> */}
           <div className={Styles.heading_text}>
+            
             <div style={{ display: "flex" }}>
               {" "}
               Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>
-              &nbsp; you got it, without
+              &nbsp; you got it,
+            </div>
+            without the ridiculous spends ordering online
+          </div>
+          {/* <div className={Styles.heading_text}>
+            
+            <div style={{ display: "flex" }}>
+              {" "}
+              Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>
+              &nbsp; you got
             </div>
             the ridiculous spends ordering online
-          </div>
+          </div> */}
         </div>
 
         {/* <div className={Styles.carousel_wrapper}>

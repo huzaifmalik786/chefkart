@@ -3,6 +3,7 @@ import Styles from "../../styles/components/homepage/homepricing.module.scss";
 import PricingCard from "../PricingCard";
 import { PriceCard } from "../../interfaces/interfaces";
 import useFetchData from "../../lib/api";
+import UseWindowDimensions  from '../WindowSize';
 
 const PricingCardData: PriceCard[] = [
   {
@@ -63,9 +64,25 @@ type Props = {
 }
 const HomePricing = (props:Props) => {
 
+  const { width} = UseWindowDimensions();
   
   return (
     <div className={Styles.pricing_wrapper}>
+      {width<=472?(
+        <div className={Styles.pricing_heading}>
+        <h2>
+          Gastronomical, economical &<br /> Phenomenal
+         
+        </h2>
+        <p>
+          Starting at just Rs.3000/- that’s 1/3 of 80 online
+          <br />
+          orders on a monthly basis.
+        
+
+        </p>
+      </div>
+      ):(
       <div className={Styles.pricing_heading}>
         <h2>
           {
@@ -81,6 +98,22 @@ const HomePricing = (props:Props) => {
           }
         </p>
       </div>
+      )}
+      {/* <div className={Styles.pricing_heading}>
+        <h2>
+          Gastronomical,
+          <br /> economical &<br /> Phenomenal
+         
+        </h2>
+        <p>
+          Starting at just Rs.3000/- that’s 1/3 of 80
+          <br />
+          online orders on a monthly basis. A simple
+          <br /> subscription to hire, manage your apetite
+          <br /> and home chefs on the go.
+
+        </p>
+      </div> */}
       <div className={Styles.pricecard_wrapper}>
         {(props.data.cards || PricingCardData).map((pricecard, key) => {
           return (

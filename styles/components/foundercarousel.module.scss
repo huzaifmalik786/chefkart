@@ -2,14 +2,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 450px) {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
 
     [class*="track"] {
       align-items: center;
       gap: 6.03vw;
+    @media screen and (max-width: 450px) {
+      gap: 4.44vw;
+    }
     }
 
     .founder_item{
       width: 16.28vw !important;
-
+      @media screen and (max-width: 450px) {
+        width: 43.33vw !important;
+      }
     }
   }

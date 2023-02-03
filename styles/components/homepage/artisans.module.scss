@@ -1,6 +1,9 @@
 .chef_container {
   background-color: #000000;
   padding: 2.77vw 0px 2.77vw 0px;
+  @media screen and (max-width: 450px){
+    padding: 10vw 4.4vw;
+  }
 
   h3 {
     font-family: var(--secondary_font);
@@ -11,6 +14,11 @@
     letter-spacing: -0.1vw;
     color: #ffffff;
     margin-bottom: 2.22vw;
+    @media screen and (max-width: 450px){
+      font-size: 5.56vw;
+      line-height: 6.67vw;
+      margin-bottom: 6.67vw;
+    }
   }
 }
 .item {
@@ -21,6 +29,12 @@
   background-color: #000000;
   border-radius: 0.55vw;
   overflow: hidden;
+  @media screen and (max-width: 450px){
+    border-radius: 1.12vw;
+    width: 51.94vw !important;
+    height: 75.83vw;
+    margin-right: 4.44vw;
+  }
 
   .inset {
     position: absolute;
@@ -39,6 +53,10 @@
     z-index: 1;
     left: 1.52vw;
     bottom: 1.66vw;
+    @media screen and (max-width: 450px){
+      bottom: 8vw;
+      left: 3vw;
+    }
 
     .name {
       font-family: var(--secondary_font);
@@ -50,10 +68,20 @@
       letter-spacing: -0.03vw;
       color: #ffffff;
       margin-bottom: 0.832vw;
+      @media screen and (max-width: 450px){
+        font-family: var(--moile_livvic);
+        font-size: 3.89vw;
+        line-height: 3.34vw;
+      }
     }
 
     .rating {
       display: flex;
+      @media screen and (max-width: 450px) {
+        align-items: center;
+        margin-top: 1vw;
+
+      }
 
       .badge {
         display: flex;
@@ -68,12 +96,24 @@
         font-weight: 700;
         font-size: 0.83vw;
         line-height: 1.04vw;
+        @media screen and (max-width: 450px){
+          padding: 0.27vw 0.66vw;
+          font-family: var(--mobile_livvic);
+          font-size: 2.22vw;
+          line-height: 3.33vw;
+          gap: 0.2vw;
+          border-radius: 0.88vw;
+        }
 
         .star {
           position: relative;
           display: flex;
           width: 0.95vw;
           height: 0.9vw;
+          @media screen and (max-width: 450px){
+            width: 2.58vw;
+            height: 2.6vw;
+          }
         }
       }
 
@@ -86,6 +126,11 @@
         display: flex;
         align-items: center;
         color: #ffffff;
+        @media screen and (max-width: 450px){
+          font-family: var(--mobile_livvic);
+          font-size: 3.33vw;
+          line-height: 3.34vw;
+        }
       }
     }
 
@@ -118,6 +163,7 @@
         display: flex;
         gap: 0.55vw;
         flex-wrap: wrap;
+        
         .pills {
           font-size: 0.97vw;
           line-height: 1.66vw;
@@ -127,6 +173,51 @@
           color: #ffffff;
           border-radius: 2.63vw;
           padding: 0.27vw 0.55vw;
+        }
+      }
+    }
+    .overlay{
+      .specialize_heading {
+        // margin-bottom: 0.69vw;
+        font-weight: 600;
+        font-family: var(--secondary_font);
+        font-size: 0.97vw;
+        line-height: 1.66vw;
+        /* identical to box height, or 171% */
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.03vw;
+
+        color: #ffffff;
+        @media screen and (max-width: 450px){
+          font-family: var(--mobile_livvic);
+          font-size: 2.78vw;
+          line-height: 3.33vw;
+          margin: 2.22vw 0;
+        }
+      }
+      .pills_container{
+        display: flex;
+        gap: 0.55vw;
+        flex-wrap: wrap;
+        @media screen and (max-width: 450px){
+          gap: 2.22vw;
+        }
+        .pills {
+          font-size: 0.97vw;
+          line-height: 1.66vw;
+          font-family: var(--secondary_font);
+          display: inline-flex;
+          background-color: #ff961f;
+          color: #ffffff;
+          border-radius: 2.63vw;
+          padding: 0.27vw 0.55vw;
+          @media screen and (max-width: 450px){
+          font-family: var(--mobile_livvic);  
+            font-size: 2.78vw;
+            line-height: 3.33vw;
+            padding: 1.11vw;
+          }
         }
       }
     }

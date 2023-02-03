@@ -14,6 +14,7 @@ import Hygiene from "../components/Hygiene";
 import ReviewsSection from "../components/homepage/ReviewsSection";
 import { GetStaticProps } from "next";
 import { blogType, chefType, image_type, ReviewsCardType } from "../interfaces/interfaces";
+import UseWindowDimensions from "../components/WindowSize";
 
 type Props = {
 
@@ -186,6 +187,7 @@ type Props = {
   };
 };
 export default function Home(props: Props) {
+  const {width}= UseWindowDimensions();
   return (
     <>
       <Layout header={props.header} footer={props.footer}>
@@ -200,7 +202,7 @@ export default function Home(props: Props) {
             bgcolor="#F9F9F9"
             color="#000000"
             px="4.44vw"
-            py="8.32vw"
+            py={width<=472?"16vw":"8.32vw"}
           />
         </div>
         <div style={{ marginTop: "-4.8vw" }}>
@@ -221,7 +223,7 @@ export default function Home(props: Props) {
         <Artisans data={props.homepage.artisans} />
         <JoinAsChef data={props.homepage.join_as_chef} />
         <HomeBlogs data={props.homepage.blog} />
-        <BookTrial data={props.homepage.last_banner} />
+        <BookTrial data={props.homepage.last_banner}/>
       </Layout>
     </>
   );

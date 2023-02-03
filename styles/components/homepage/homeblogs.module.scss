@@ -1,22 +1,39 @@
 .blogs_wrapper {
+  @media screen and (max-width: 450px) {
+    margin: 12.7vw 0;
+  }
   .header {
     padding: 3vw 0;
 
     text-align: center;
+    @media screen and (max-width: 450px) {
+      padding: 0 4.44vw !important;
+    }
 
     p {
       font-weight: 700;
       font-size: 1.66vw;
       line-height: 3.33vw;
       color: #858585;
+      @media screen and (max-width: 450px) {
+        font-size: 4.4vw !important;
+        line-height: 120% !important;
+        margin-bottom: 1.11vw;
+      }
     }
 
     h3 {
       color: #242424;
       font-weight: 700;
-
       font-size: 2.77vw;
       line-height: 4.44vw;
+      @media screen and (max-width: 450px) {
+        font-family: var(--mobile_livvic);
+        font-size: 6.37vw !important;
+        line-height: 8.34vw !important;
+        margin-bottom: 6.67vw;
+        letter-spacing: -1px;
+      }
     }
   }
 
@@ -58,10 +75,18 @@
 
     .footer {
       padding: 4vw;
+      padding-top: 6.67vw;
       button {
         font-size: 2.66vw;
         line-height: 4vw;
         padding: 1.8vw 4.5vw;
+        @media screen and (max-width: 450px){
+          font-family: var(--mobile_livvic);
+          padding:2.78vw 7vw ;
+          font-size: 3.89vw;
+          border-radius: 2.22vw;
+          line-height: 6.67vw;
+        }
       }
     }
   }

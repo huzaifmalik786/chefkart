@@ -4,6 +4,9 @@
   // background-position: center;
   height: 48vw;
   position: relative;
+  @media screen and (max-width: 450px){
+    height: 107.2vw;
+  }
 
   .banner_img{
     position: absolute;
@@ -23,9 +26,16 @@
       rgba(0, 0, 0, 0) 105.71%
     );
     z-index: 1;
+    @media screen and (max-width:450px) {
+      height: 107.2vw;
+    
+    }
     .content {
       padding-left: 7vw;
       padding-top: 8.5vw;
+      @media screen and (max-width: 450px) {
+        padding-top: 12.81vw;
+      }
       .toast {
         display: flex;
         align-items: center;
@@ -34,11 +44,20 @@
         gap: 4px;
         padding: 2px 12px 2px 2px;
         border-radius: 1.5vw;
+        @media screen and (max-width:450px){
+          width: 56.11vw;
+          height: 7.78vw;
+          border-radius: 6.11vw;
+        }
 
         .icon{
           width: 1.94vw;
           height: 1.94vw;
           position: relative;
+          @media screen and (max-width:450px){
+            width:6.67vw;
+            height: 6.67vw;
+          }
         }
 
         p {
@@ -46,11 +65,18 @@
           font-size: 1vw;
           font-weight: 600;
           color: white;
+          @media screen and (max-width:450px){
+            font-size: 2.91vw;
+            font-family: var(--mobile_livvic);
+          }
         }
       }
 
       .heading {
         padding-top: 2vw;
+        @media screen and (max-width:450px){
+          padding-top: 6.67vw;
+        }
         h2 {
           font-size: 3.33vw;
           font-weight: 700;
@@ -58,6 +84,11 @@
           color: white;
           width: 45vw;
           letter-spacing: -0.01em;
+          @media screen and (max-width:450px){
+            font-size: 6.36vw;
+            line-height: 8vw;
+            width: 88.26vw;
+          }
         }
       }
 
@@ -65,6 +96,9 @@
         padding-top: 2vw;
         width: 43vw;
 
+        @media screen and (max-width:450px){
+          padding-top: 6.67vw;
+        }
         h4 {
           font-size: 1.66vw;
           font-weight: 400;
@@ -74,11 +108,21 @@
             font-weight: 700;
             color: #ff961f;
           }
+          @media screen and (max-width:450px){
+            font-size: 3.79vw;
+            line-height: 120%;
+            width: 68.89vw;
+            color:#F7F7F7;
+          }
+     
         }
       }
 
       .btn {
         padding-top: 1.5vw;
+        @media screen and (max-width:450px){
+          padding-top: 14.45vw;
+        }
 
         button {
           font-weight: 800;
@@ -86,6 +130,12 @@
           line-height: 1.66vw;
           text-transform: uppercase;
           padding: 1.2vw 1.38vw;
+          @media screen and (max-width:450px){
+            border-radius: 2.23vw;
+            font-size: 3.34vw;
+            line-height: 120%;
+            padding: 3.89vw 5.56vw;
+          }
         }
       }
     }

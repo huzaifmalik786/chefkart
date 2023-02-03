@@ -6,6 +6,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 450px) {
+    height: 9vw !important;
+    width: 9vw !important;
+    padding: 1vw;
+  
+  }
 
   .icon {
     position: relative;
