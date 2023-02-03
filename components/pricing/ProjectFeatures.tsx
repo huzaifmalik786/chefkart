@@ -53,21 +53,43 @@ const ProjectFeatures = (props : Props) => {
         <p className={Styles.sub_heading}>{props.data?.subheading || "Get the details you need to purchase"}</p>
         <h4 className={Styles.heading}>{props.data?.heading || "An overview of what’s included"}</h4>
         {width<=472?(
+            <div className={Styles.container}>
             <div className={Styles.card}>
                 <div className={Styles.header}>
                     <h4>{props.data?.popular_col_heading || "Popular"}</h4>
                 </div>
+                <div className={Styles.cardpoints}>
                 {
                     (props.data?.features || feature_array).map((i,key)=>{
                         return(
-                            <div key={key} className={Styles.point}>
-                                {i.Popular &&  <div className={Styles.checked}><Image fill src='/Vector (9).png' alt="" /></div>}
+                            <div key={key} className={Styles.cardpoint}>
+                                {i.Popular &&  <div className={Styles.cardchecked}><Image fill src='/Vector (9).png' alt="" /></div>}
                                 <p>{i.content}</p>
                             </div>
                         )
                     })
                 }
-                <button className={Styles.get_started_premium}>{props.data?.button?.button_text || "Get Started"}</button>
+                </div>
+                <button className={Styles.get_started_popular} style={{backgroundColor:"#FFFFFF", color:"#2C2C2C"}}>{props.data?.button?.button_text || "Get Started"}</button>
+            </div>
+            <div className={Styles.card} style={{backgroundColor:"#2D4739", color:"white"}}>
+                <div className={Styles.header}>
+                    <h4>{props.data?.premium_col_heading || "Premium"}</h4>
+                </div>
+                <div className={Styles.cardpoints}>
+                {
+                    (props.data?.features || feature_array).map((i,key)=>{
+                        return(
+                            <div key={key} className={Styles.cardpoint}>
+                                {i.Premium &&  <div className={Styles.cardchecked}><Image fill src='/Vector (9).png' alt="" /></div>}
+                                <p>{i.content}</p>
+                            </div>
+                        )
+                    })
+                }
+                </div>
+                <button className={Styles.get_started_popular}>{props.data?.button?.button_text || "Get Started"}</button>
+            </div>
             </div>
             
         ):(
