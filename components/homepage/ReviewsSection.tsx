@@ -33,12 +33,14 @@ type Props={
 const ReviewsSection = (props:Props) => {
   return (
     <div className={Styles.review_section}>
-      <h3>{props.data.section_heading || "Don’t take our word for it"}</h3>
+      <h3>{props.data?.section_heading || "Don’t take our word for it"}</h3>
 
       <div className={Styles.video_review}>
-        <VideoQuote card={ props.data.video_review} index={0} />
+        <VideoQuote card={ props.data?.video_review} index={0} />
       </div>
-      <TestimonialCarousel cards={props.data.review_cards}  />
+      <div className={Styles.cards_review}>
+        <TestimonialCarousel cards={props.data?.review_cards}  />
+      </div>
     </div>
   );
 };

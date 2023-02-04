@@ -1,15 +1,39 @@
 .positionPage {
   padding: 5.13vw 6.69vw 6.8vw 6.69vw;
 
+  @media (max-width: 450px) {
+    padding: 6.67vw 4.44vw;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 450px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 6.7vw;
+      width: 100%;
+    }
     h1 {
       font-family: var(--open_sans);
       font-style: normal;
       font-weight: 700;
       font-size: 3.33vw;
       line-height: 122.68%;
+
+      @media (max-width: 450px) {
+        font-size: 6.67vw;
+        line-height: 122.68%;
+        /* or 29px */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: -0.278vw;
+
+        color: #000000;
+      }
     }
     p {
       font-family: var(--open_sans);
@@ -26,6 +50,17 @@
       color: #535353;
 
       margin: 1.32vw 0px 2.08vw 0px;
+
+      @media (max-width: 450px) {
+        font-weight: 400;
+        font-size: 4.44vw;
+        line-height: 6.11vw;
+        margin: 3.33vw 0 3.9vw 0;
+
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.278vw;
+      }
     }
     .type {
       display: flex;
@@ -38,10 +73,21 @@
 
       color: #a0a0a0;
 
+      @media (max-width: 450px) {
+        font-size: 3.9vw;
+        line-height: 4.44vw;
+        justify-content: center;
+      }
+
       .icon {
         position: relative;
         width: 1.66vw;
         height: 1.38vw;
+
+        @media (max-width: 450px) {
+          width: 4.76vw;
+          height: 3.97vw;
+        }
       }
     }
 
@@ -63,6 +109,19 @@
       text-transform: uppercase;
 
       color: #ffffff;
+
+      @media (max-width: 450px) {
+        width: 91vw;
+        border-radius: 1.11vw;
+        padding: 3.05vw 6.67vw;
+        gap: 3.33vw;
+        font-size: 3.9vw;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.005em;
+      }
     }
   }
 
@@ -70,15 +129,23 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 3vw;
 
     padding: 3.81vw 0.14vw 0px 0.14vw;
+
+    @media (max-width: 450px) {
+      gap: 12.78vw;
+      padding: 10.8vw 0;
+    }
 
     .section {
       display: flex;
       flex-direction: column;
       gap: 1.38vw;
+
+      @media (max-width: 450px) {
+        gap: 6.67vw;
+      }
 
       h2 {
         font-family: var(--open_sans);
@@ -93,10 +160,24 @@
         letter-spacing: -0.07vw;
 
         color: #000000;
+
+        @media (max-width: 450px) {
+          font-size: 5.56vw;
+          line-height: 7.50vw;
+          letter-spacing: -0.278vw;
+        }
       }
 
       ul {
         color: #000000;
+        padding: 0px 4.44vw;
+
+        @media (max-width: 450px) {
+          display: flex;
+          flex-direction: column;
+          gap: 4.44vw;
+          
+        }
         // list-style: circle !important;
 
         li {
@@ -110,6 +191,12 @@
           letter-spacing: -0.07vw;
 
           color: #575757;
+
+          @media (max-width: 450px) {
+            font-size: 3.9vw;
+            line-height: 150%;
+            letter-spacing: -0.278vw;
+          }
         }
       }
     }
@@ -124,6 +211,12 @@
       letter-spacing: -0.07vw;
 
       color: #575757;
+
+      @media (max-width: 450px) {
+        font-size: 3.9vw;
+        line-height: 150%;
+        letter-spacing: -0.27vw;
+      }
     }
     button {
       display: flex;
@@ -142,6 +235,19 @@
       text-transform: uppercase;
 
       color: #ffffff;
+
+      @media (max-width: 450px) {
+        width: 91vw;
+        border-radius: 1.11vw;
+        padding: 3.05vw 6.67vw;
+        gap: 3.33vw;
+        font-size: 3.9vw;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.005em;
+      }
     }
   }
 }

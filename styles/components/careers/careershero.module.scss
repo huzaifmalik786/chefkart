@@ -1,15 +1,43 @@
-.hero_wrapper {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  place-items: center;
-  padding: 3.88vw 0 2.36vw 3.88vw;
+.hero_wrapper{
+
+  @media (max-width: 450px) {    
+  display: flex;
+  // padding: 3.88vw 0 2.36vw 3.88vw;	    
+  flex-direction: column;
+    gap: 13.23vw;
+
+  }
+.subcontainer {
+ display: flex;
+  align-items: center;
+  gap: 2.36vw;
+  padding: 3.88vw 0 2.36vw 6.1vw;
+
+  @media screen and (max-width: 450px) {
+    flex-direction: row;
+    padding: 0;
+  }
 
   .hero_content {
+     width: 35.67vw;
+
+     @media screen and (max-width: 450px) {
+      width: 100%;
+      padding: 8.88vw 4.44vw;
+
+    }
     h2 {
       font-size: 3.33vw;
       line-height: 4vw;
       font-weight: 700;
       white-space: pre-line;
+      letter-spacing: -0.07vw;
+
+      @media screen and (max-width: 450px) {
+        font-size: 6.66vw;
+        letter-spacing: -0.27vw;
+        line-height: 122.68%;
+      }
     }
 
     h4 {
@@ -18,6 +46,13 @@
       font-weight: 400;
       padding-top: 1.31vw;
       padding-bottom: 3.81vw;
+
+       @media screen and (max-width: 450px) {
+        padding: 4.44vw 0 4.44vw 0;
+        font-size: 4.44vw;
+        line-height: 6.1vw;
+        letter-spacing: -0.27vw;
+      }
     }
 
     button {
@@ -26,15 +61,26 @@
       line-height: 1.66vw;
       text-transform: uppercase;
       padding: 1.11vw 1.38vw;
+      @media screen and (max-width: 450px) {
+        padding: 3.88vw 5.55vw;
+        border-radius: 2.22vw;
+        font-weight: 800;
+        font-size: 3.33vw;
+        line-height: 3.88vw;
+        letter-spacing: -0.5%;
+
+      }
     }
   }
 
   .img_container {
     place-self: end;
     display: flex;
-    gap: 38px;
+    gap: 2.63vw;
     align-items: center;
-
+      @media screen and (max-width: 450px) {
+      display: none;
+    }
     .img1 {
       position: relative;
       height: 33.95vw;
@@ -49,6 +95,20 @@
       position: relative;
       width: 10.97vw;
       height: 25.41vw;
+    }
+  }
+}
+
+.carousel{
+    display: none;
+    @media (max-width: 450px) {
+      display: flex;
+    }
+
+    .item{
+      position: relative;
+      width: 42.47vw;
+      height: 63.72vw;
     }
   }
 }

@@ -82,7 +82,7 @@ const TestimonialCarousel = (props:Props) => {
       breakpoint: { max: 3000, min: 1280 },
       items: 3,
       slidesToSlide: 1,
-      partialVisibilityGutter: 40,
+      // partialVisibilityGutter: 40,
     },
     tablet: {
       breakpoint: { max: 1280, min: 768 },
@@ -94,7 +94,7 @@ const TestimonialCarousel = (props:Props) => {
       breakpoint: { max: 540, min: 0 },
       items: 1,
       slidesToSlide: 1,
-      partialVisibilityGutter: 120,
+      partialVisibilityGutter: 10,
     },
   };
 
@@ -103,7 +103,7 @@ const TestimonialCarousel = (props:Props) => {
   //   }
   function renderStars(s: number) {
     return Array.from({ length: s }, (v, i) => (
-      <div className={Styles.stars}>
+      <div key={i} className={Styles.stars}>
         <Image
           src="/Path.svg"
           fill
@@ -127,7 +127,7 @@ const TestimonialCarousel = (props:Props) => {
         autoPlay={false}
         autoPlaySpeed={1000}
         arrows={false}
-        centerMode={true}
+        // centerMode={true}
         // infinite={true}
         customTransition="all .5"
         transitionDuration={500}

@@ -6,18 +6,39 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 450px) {
+    width: 43.3vw;
+    height: 54vw;
+    border-radius: 1.11vw;
+  }
   .card_text {
     padding: 1.38vw;
+     @media (max-width: 450px) {
+      padding: 3.15vw 2.68vw;
+    }
 
     h5 {
       font-size: 1.8vw;
       line-height: 2.16vw;
+      @media (max-width: 450px) {
+        font-size: 4.9vw;
+        font-weight: 700;
+        line-height: 6vw;
+      }
     }
 
     p {
       font-size: 1.61vw;
       line-height: 1.93vw;
       padding-top: 1.66vw;
+       @media (max-width: 450px) {
+        font-size: 3.87vw;
+        font-weight: 700;
+        line-height: 4.7vw;
+        padding-top: 3.6vw;
+      }
+
     }
 
     h5,
@@ -33,5 +54,10 @@
     justify-self: flex-end;
     width: 9.44vw;
     height: 9.44vw;
+
+     @media (max-width: 450px) {
+        width: 27.7vw;
+        height: 24.93vw;
+      }
   }
 }

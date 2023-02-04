@@ -1,16 +1,16 @@
 .carousel_container {
   display: flex;
   padding-top: 4vw;
-  justify-content: space-around;
+  // justify-content: space-around;
   align-items: center;
   gap: 0.98vw;
-  height: 28.9vw;
+  height: 29.3vw;
   [class*="track"] {
     align-items: center;
   }
   @media screen and (max-width:450px) {
     padding-top: 14.11vw;
-    height: 82vw;
+    height: 90vw;
     justify-content: flex-start;
   }
 }
@@ -22,13 +22,7 @@
 .items {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin: 0px 0.83vw;
-  @media screen and (max-width: 450px) {
-    width: 81.9vw !important;
-    height: auto !important;
-    margin: 0 2vw;
-  }
+  align-items: center;
 }
 
 .item {
@@ -38,7 +32,9 @@
   color: #ededed;
   border-radius: 1.09vw;
   transition: transform 0.5s ease;
+  width: 23.4vw;
   @media screen and (max-width: 450px) {
+    width: 82vw;
     border-radius: 2.56vw;
     padding: 4.96vw 4.44vw 0 4.44vw;
   }
@@ -49,10 +45,10 @@
     color: #615E5E;
     border: 0.16vw solid #ABC0B5;
     // padding: 5vw 1.66vw 2.22vw 1.66vw;
-    font-size: 1.38vw;
-    line-height: 1.80vw;
+    // font-size: 1.38vw;
+    // line-height: 1.80vw;
     @media screen and (max-width: 450px) {
-      transform:none ;
+      transform: scale(1.1);
       font-size: inherit;
       line-height: inherit;
       border: 0.5px solid #ABC0B5;
