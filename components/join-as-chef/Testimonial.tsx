@@ -15,7 +15,7 @@ type Props = {
 const Testimonial = (props: Props) => {
   const {width}= UseWindowDimensions();
   return (
-    <div style={width>472?{ paddingTop: "10vw", paddingBottom: "6.35vw" }:{paddingTop: "10vw", paddingBottom: "15.35vw" }}>
+    <div style={width>450?{ paddingTop: "10vw", paddingBottom: "6.35vw" }:{paddingTop: "10vw", paddingBottom: "15.35vw" }}>
       <TestimonialCarousel cards={props.data} />
     </div>
   );

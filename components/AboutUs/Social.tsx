@@ -22,7 +22,7 @@ const Social = (props: Props) => {
           {
             (props.data.icons).map((item, key)=>{
               return(
-                <SocialIcon key={key} image={item.icon.data.attributes.url || '/Vector.svg'} width={width<=472?"5.67vw":"1.82vw"} height={width<=472?"5.67vw":"1.82vw"} />
+                <SocialIcon key={key} image={item.icon.data.attributes.url || '/Vector.svg'} width={width<=450?"5.67vw":"1.82vw"} height={width<=450?"5.67vw":"1.82vw"} />
 
               )
             })

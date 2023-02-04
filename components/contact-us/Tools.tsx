@@ -9,7 +9,7 @@ type Props = {
 const Tools = (props: Props) => {
   return (
     <div className={Styles.tools_container} style={{left: `${props.left}`, top: `${props.top}`}}> 
-        <div className={Styles.tools_subcontainer}>
+        <div className={Styles.tools_subcontainer} style={{left: `${props.left}`, top: `${props.top}`}}>
             <div className={Styles.text}>
                 <span>lorem ipsum</span>
                 <p>lorem ipsum lorem ipsum </p>

@@ -6,6 +6,9 @@
     height: 45vw;
     position: relative;
     padding-top: 6.80vw;
+    @media screen and (max-width: 450px) {
+      height: 94.72vw;
+    }
 
     .banner_img{
       position: absolute;
@@ -15,6 +18,7 @@
       top: 0;
       left: 0;
       z-index: 0;
+
     }
 
     h2 {
@@ -26,6 +30,10 @@
       text-align: center;
       position: relative;
       z-index: 1;
+      @media screen and (max-width: 450px) {
+        font-size: 6.67vw;
+        line-height: 9.16vw;
+      }
     }
   }
 
@@ -40,5 +48,8 @@
     position: absolute;
     width: 100%;
     top: 16.65vw;
+    @media screen and (max-width: 450px) {
+      padding-top: 11.11vw;
+    }
   }
 }

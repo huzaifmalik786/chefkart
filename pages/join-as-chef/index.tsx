@@ -102,12 +102,12 @@ const index = (props: Props) => {
       <JoinHeroCarousel data={props.banner_slider} />
       <Metrics data={props.metrics} />
       <CookWithUs data={props.cook} />
-      <div style={width<=472?{background:"#EEEFF2",padding: "10vw 3.33vw",paddingBottom:"12.78vw"}:{}}>
+      <div style={width<=450?{background:"#EEEFF2",padding: "10vw 3.33vw",paddingBottom:"12.78vw"}:{}}>
       <VideoComponent data={props.review} />
       <Testimonial data={props.testimonies} />
       <Chef />
       </div>
-      <div style={width<=472?{display:"none"}:{}}>
+      <div style={width<=450?{display:"none"}:{}}>
       <SimplifyWay />
       </div>
       <FAQ data={props.faq} />

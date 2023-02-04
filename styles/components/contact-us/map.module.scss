@@ -2,4 +2,11 @@
     position: relative;
     width: 100vw;
     height: 53.3vw;
+    @media screen and (max-width: 450px) {
+        height: 170.7vw;
+        top: 52vw;
+        img{
+            object-fit:cover;
+        }
+    }
 }

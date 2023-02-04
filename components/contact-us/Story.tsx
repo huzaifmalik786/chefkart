@@ -1,25 +1,53 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React,{useState} from 'react'
 import Styles from '../../styles/components/contact-us/Story.module.scss'
+import UseWindowDimensions from '../WindowSize'
 const Story = () => {
+    const [hidden1,sethidden1]= useState("content");
+    const [hidden2,sethidden2]= useState("content");
+    const {width}= UseWindowDimensions();
+    const content1="Our mission is to provide at-home cooking services in a way that has never been experienced before by empowering millions of cooks across India"
+    const content2="ChefKart is a platform that connects home chefs and households seamlessly by building an ecosystem. Our professionals are handpicked to serve you hygienic and wholesome meals catered to your taste!"
   return (
     <div className={Styles.story_container}>
-        <div className={Styles.left_section}>
-            <p>Our mission is to provide <span>at-home cooking</span>  services in a way that has never been experienced before by empowering millions of cooks across India</p>
-
-            <span className={Styles.line}></span>
+        {width<=450?(
+            <div className={Styles.left_section} style={{flexDirection: "column-reverse"}}>
+                <span className={Styles.line}></span>
+                <div>
+                    <p>{content1.substring(0,62)}
+                    <button  onClick={()=>sethidden1("button")}><span>{hidden1!="button"?"...Read More":""}</span></button>
+                    <span className={Styles.extracontent}>{hidden1!="content"?`${content1.substring(62)}`:""}</span></p>
+                </div>
+          
             <div className={Styles.image}>
                 <Image src='/M_F_Home chef_refine 1.png' alt="chef_photo" fill />
-
                 <div className={Styles.bg_orange}></div>
             </div>
         </div>
-        <div className={Styles.right_section}>
+        ):(
+            <div className={Styles.left_section} >
+            <p>Our mission is to provide <span>at-home cooking</span>  services in a way that has never been experienced before by empowering millions of cooks across India</p>
+            <span className={Styles.line}></span>
+            <div className={Styles.image}>
+                <Image src='/M_F_Home chef_refine 1.png' alt="chef_photo" fill />
+                <div className={Styles.bg_orange}></div>
+            </div>
+        </div>
+        )}
+        <div className={Styles.right_section} >
             <div className={Styles.image}>
                 <Image src='/Image.png' alt="chef_photo" fill />
             </div>
+            {width<=450?(
+                <div>
+                    <p>{content2.substring(0,52)}
+                    <button  onClick={()=>sethidden2("button")}><span>{hidden2!="button"?"...Read More":""}</span></button>
+                    <span className={Styles.extracontent}>{hidden2!="content"?`${content2.substring(52)}`:""}</span></p>
+            </div>
+            ):(
             <p>ChefKart is a platform that connects home chefs and households seamlessly by building an ecosystem. Our professionals are handpicked to serve you hygienic and wholesome meals catered to your taste!</p>
+            )}
 
             <Link href='/'>Read about our story</Link>
         </div>
