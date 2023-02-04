@@ -38,7 +38,9 @@ const ReviewsSection = (props:Props) => {
       <div className={Styles.video_review}>
         <VideoQuote card={ props.data?.video_review} index={0} />
       </div>
-      <TestimonialCarousel cards={props.data?.review_cards}  />
+      <div className={Styles.cards_review}>
+        <TestimonialCarousel cards={props.data?.review_cards}  />
+      </div>
     </div>
   );
 };

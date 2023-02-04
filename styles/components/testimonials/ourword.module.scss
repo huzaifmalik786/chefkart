@@ -1,7 +1,13 @@
 .testimonial_wrapper {
-  padding-top: 3.75vw;
-  padding-bottom: 7vw;
+  // padding-top: 3.75vw;
+  // padding-bottom: 7vw;
+  padding: 3.75vw 11vw 7vw 11vw;
   background-color: #efefef;
+
+  @media (max-width: 450px) {
+    padding: 8.9vw 0;
+  }
+
 
   h2 {
     text-align: center;
@@ -10,5 +16,11 @@
     font-weight: 700;
     font-family: var(--secondary_font);
     padding-bottom: 2.88vw;
+
+    @media (max-width: 450px) {
+      font-size: 6.67vw;
+      line-height: 13.34vw;
+      padding-bottom: 6.11vw;
+    }
   }
 }

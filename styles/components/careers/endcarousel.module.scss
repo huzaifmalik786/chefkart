@@ -1,12 +1,23 @@
 .end_carousel {
   padding: 7.84vw 0;
   text-align: center;
+
+  @media (max-width: 450px) {
+    padding: 12.78vw 4.44vw 23.9vw 4.44vw;
+  }
+
   .carousel_header {
     h1 {
       font-size: 3.33vw;
       line-height: 4vw;
       font-weight: 700;
       font-family: var(--open_sans);
+
+      @media (max-width: 450px) {
+        font-weight: 700;
+        font-size: 5.56vw;
+        line-height: 122.68%;
+      }
     }
 
     p {
@@ -15,18 +26,38 @@
       font-weight: 400;
       font-family: var(--open_sans);
       padding-top: 1.66vw;
+
+      @media (max-width: 450px) {
+        font-weight: 400;
+        font-size: 3.9vw;
+        line-height: 5.28vw;
+        letter-spacing: -0.278vw;
+        padding-top: 3.33vw;
+        padding-bottom: 3vw;
+
+      }
     }
   }
 
   .carousel_wrapper {
+
+    
     .items {
       position: relative;
       background-color: white;
       height: 36.3vw;
       width: 85.97vw;
 
+      @media (max-width: 450px) {
+        width: 90.9vw;
+        height: 38.4vw;
+      }
+
       .img {
         border-radius: 12px;
+        @media (max-width: 450px) {
+          border-radius: 1.11vw;
+        }
       }
 
       .item_overlay {
@@ -37,10 +68,18 @@
         width: 100%;
         height: 100%;
 
+        
+
         .item_content {
           position: absolute;
           top: 50%;
-          padding-left: 4.22vw;
+          padding: 4.44vw;
+
+          @media (max-width: 450px) {
+            padding: 0;
+            bottom: 4.44vw;
+            padding-left: 4.44vw;
+          }
 
           .item_label {
             display: flex;
@@ -56,6 +95,21 @@
               font-size: 1vw;
               line-height: 1.41vw;
               color: white;
+
+              @media (max-width: 450px) {
+                padding: 1.11vw;
+                gap: 0.73vw;
+
+                width: 20.5vw;
+                height: 6.11vw;
+
+                background: #FF8811;
+                border-radius: 0.55vw;
+
+                font-weight: 700;
+                font-size: 2.78vw;
+                line-height: 3.89vw;
+              }
             }
           }
 
@@ -70,6 +124,13 @@
               white-space: pre-line;
               font-family: var(--open_sans);
               width: 33vw;
+              @media (max-width: 450px) {
+
+                width: 50.874vw;
+                font-weight: 700;
+                font-size: 3.33vw;
+                line-height: 4.44vw;
+              }
             }
           }
         }
@@ -80,6 +141,8 @@
 
 .carousel {
   padding-top: 3.22vw;
+  // position: relative;
+
 }
 
 .item {
@@ -93,6 +156,13 @@
   display: flex;
   justify-content: space-between;
   padding: 0 2.36vw;
+  @media (max-width: 450px) {
+    background-color: #000000;
+    bottom: -100px;
+    z-index: 99;
+
+  }
+ 
 
   button {
     background-color: transparent;

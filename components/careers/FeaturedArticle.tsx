@@ -14,7 +14,7 @@ const FeaturedArticle = (props: Props) => {
   return (
     <div className={Styles.article_wrapper}>
       <h3>{props.data.heading || "Featured Article"}</h3>
-      <div>
+      <div className={Styles.carousel_container}>
         <BlogArticleCarousel cards={props.data.array} isDots isArrow isFull isInfinite />
       </div>
     </div>

@@ -1,9 +1,14 @@
 .career_founder {
-    margin-top: 6.66vw;
-    display: flex;
-    flex-direction: column;
-    gap: 2.22vw;
-    
+  margin-top: 6.66vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.22vw;
+
+  @media (max-width: 450px) {
+    gap: 6.66vw;
+    margin-top: 12.8vw;
+  }
+
   .heading {
     display: flex;
     flex-direction: column;
@@ -20,9 +25,19 @@
       text-align: center;
       letter-spacing: -0.1vw;
 
-      .colored{
-      font-family: var(--secondary_font);
-        color: #E76F51;
+      @media (max-width: 450px) {
+        font-weight: 700;
+        font-size: 5.56vw;
+        line-height: 120%;
+        /* identical to box height, or 24px */
+
+        text-align: center;
+        letter-spacing: -0.41vw;
+      }
+
+      .colored {
+        font-family: var(--secondary_font);
+        color: #e76f51;
       }
     }
   }

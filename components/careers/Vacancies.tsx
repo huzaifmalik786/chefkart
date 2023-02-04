@@ -50,6 +50,13 @@ const Vacancies = () => {
               arrow_height="1.04vw"
             />
           </div>
+          <div className={`${Styles.dropdown} ${Styles.location}`}>
+            <Dropdown
+              heading="Location"
+              arrow_width="1.04vw"
+              arrow_height="1.04vw"
+            />
+          </div>
           <span className={Styles.viewAll}>View all openings &#62;</span>
         </div>
 
@@ -70,6 +77,21 @@ const Vacancies = () => {
               </div>
             );
           })}
+        </div>
+        <div className={Styles.body_rows_mobile_only}>
+          {
+            vacancy.map((item, key)=>{
+              return(
+                <div key={key} className={Styles.item}>
+                  <div className={Styles.left_section}>
+                    <p className={Styles.heading}>{item.department}</p>
+                    <p className={Styles.subheading}>{item.position}</p>
+                  </div>
+                  <button>Apply</button>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </div>

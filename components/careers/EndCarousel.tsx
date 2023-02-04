@@ -92,7 +92,7 @@ const EndCarousel = (props: Props) => {
       breakpoint: { max: 540, min: 0 },
       items: 1,
       slidesToSlide: 1,
-      partialVisibilityGutter: 120,
+      // partialVisibilityGutter: 120,
     },
   };
   return (

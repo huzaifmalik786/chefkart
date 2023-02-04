@@ -5,6 +5,11 @@
     margin-top: 6.66vw;
     gap: 5vw;
 
+    @media (max-width: 450px) {
+        gap: 6.67vw;
+        margin-top: 12.78vw;
+    }
+
     h2{
         font-family: var(--secondary_font);
         font-style: normal;
@@ -14,10 +19,30 @@
         text-align: center;
         letter-spacing: -0.1vw;
         color: #292929;
+
+        @media (max-width: 450px) {
+            font-weight: 700;
+            font-size: 5.56vw;
+            line-height: 120%;
+            /* identical to box height, or 24px */
+
+            text-align: center;
+            letter-spacing: -0.41vw;
+
+            /* #292929 */
+
+            color: #292929;
+        }
     }
     .leader_grid{
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 4.44vw;
+
+        @media (max-width: 450px) {
+            grid-template-columns: repeat(2, minmax(0,1fr));
+            row-gap: 12vw;
+            padding: 0px 4.44vw;
+        }
     }
 }

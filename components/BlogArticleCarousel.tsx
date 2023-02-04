@@ -114,6 +114,7 @@ const BlogArticleCarousel = (props: Props) => {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
       slidesToSlide: 1,
+      
     },
     tablet: {
       breakpoint: { max: 1024, min: 540 },
@@ -123,9 +124,9 @@ const BlogArticleCarousel = (props: Props) => {
     },
     mobile: {
       breakpoint: { max: 540, min: 0 },
-      items: 1,
+      items: 1.2,
       slidesToSlide: 1,
-      partialVisibilityGutter: 120,
+      // partialVisibilityGutter: 120,
     },
   };
 
