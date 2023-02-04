@@ -5,14 +5,19 @@
   align-items: flex-start;
   padding: 3.33vw 3.88vw 3.88vw;
   gap: 2.22vw;
-
   position: relative;
   width: 45.45vw;
   //   height: 604px;
-
   background: #ffffff;
   box-shadow: 0px 0.28vw 1.53vw rgba(0, 0, 0, 0.25);
   border-radius: 0.55vw;
+  @media screen and (max-width: 450px) {
+    width: 82.5vw;
+    border-radius: 2.22vw;
+    padding: 6.67vw 4.44vw;
+    width: 91.38vw;
+  }
+
 
   h2 {
     font-family: var(--secondary_font);
@@ -24,6 +29,11 @@
     text-align: center;
     letter-spacing: -0.07vw;
     color: #242424;
+    @media screen and (max-width: 450px) {
+      font-size: 4.44vw;
+      line-height: 6vw;  
+      padding-bottom: 6.67vw;    
+    }
   }
 
   form {
@@ -31,6 +41,30 @@
     flex-direction: column;
     width: 100%;
     gap: 1.11vw;
+    @media screen and (max-width: 450px) {
+      gap: 6.67vw;
+      span{
+        font-size: 3.33vw;
+        line-height: 4.44vw;
+        margin-left: 1vw;
+      }
+      input{
+        padding: 1.6vw;
+        font-size: 3.33vw;
+        line-height: 4.44vw;
+      }
+  
+      input::placeholder,textarea::placeholder{
+        color: #979797;
+      }
+      button{
+        font-size: 3.33vw;
+        padding: 2.74vw 4.44vw;
+        line-height: 6.67vw;
+        border-radius: 1.11vw;
+        background: #FF8811 !important;
+      }
+    }
 
 
     .input_container {
@@ -46,13 +80,13 @@
     font-size: 1.11vw;
     line-height: 1.38vw;
     letter-spacing: -0.005em;
-
     color: #979797;
-
+  
     span {
       border-right: 0.138vw solid #979797;
       margin-right: 0.42vw;
     }
+    
 
     input,
     textarea {
@@ -68,6 +102,16 @@
       outline: none;
       flex-grow: 1;
       border: none;
+    }
+    @media screen and (max-width: 450px) {
+      border: none;
+      textarea{
+        padding: 1.6vw;
+        font-size: 3.33vw;
+        line-height: 4.44vw;
+        box-shadow: 0 0 2px #e5e5e5;
+        border: 0.07vw solid #e5e5e5;
+      }
     }
   }
   }

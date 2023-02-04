@@ -13,6 +13,9 @@
     line-height: 1.38vw;
     letter-spacing: -0.005em;
     color: #979797;
+    @media screen and (max-width: 450px) {
+      box-shadow: 0 0 2px #e5e5e5;
+    }
 
     span {
       border-right: 0.138vw solid #979797;

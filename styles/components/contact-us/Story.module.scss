@@ -2,6 +2,26 @@
   padding: 8.53vw 6.73vw 6.80vw 6.73vw;
   display: flex;
   justify-content: space-around;
+  @media screen and (max-width: 450px) {
+    margin-top: 51vw;
+    flex-direction: column;
+    align-items: center;
+    padding: 12.7vw 11.3vw 0 11.3vw;
+    button{
+      background: none;
+      span{
+        color: #FF8811 !important;
+        font-size: 4vw;
+        font-weight: 500;
+      }
+    }
+    .extracontent{
+      font-size: 3.89vw;
+      line-height: 140%;
+      font-weight: 500;
+      color: #072125 !important;
+    }
+  }
 
   .left_section {
     max-width: 37.05vw;
@@ -10,6 +30,12 @@
     flex-direction: column;
     justify-content: space-between;
     margin-right: 3.82vw;
+    @media screen and (max-width: 450px) {
+      align-items: center;
+      justify-content: center;
+      max-width: 76.6vw;
+    }
+
 
     p {
       font-family: var(--tertiary_font);
@@ -19,6 +45,13 @@
       line-height: 2.08vw;
       color: #072125;
       margin: 0px 0.83vw;
+      @media screen and (max-width: 450px) {
+        font-size: 3.89vw;
+        line-height: 150%;
+        font-weight: 500;
+        margin: 6.67vw 0 4.44vw 0;
+        text-align: center;
+      }
 
       span {
         color: #e76f51;
@@ -30,6 +63,10 @@
       width: 37.05vw;
       height: 34.35vw;
       z-index: 1;
+      @media screen and (max-width: 450px){
+        width: 76.6vw;
+        height: 70.56vw;
+      }
 
       .bg_orange{
         position: absolute;
@@ -39,18 +76,35 @@
         bottom: 0;
         left: 2.36vw;
         z-index: -1;
+        @media screen and (max-width: 450px){
+          width: 76.6vw;
+          height: 50.8vw;
+          background-color: #FF8811;
+          left: 1vw;
+        }
       }
     }
     .line {
       width: 7.5vw;
       height: 0.55vw;
       background: #e76f51;
+      @media screen and (max-width: 450px) {
+        width: 30vw;
+        height: 1.6vw;
+        margin-bottom: 11.11vw;
+      }
     }
   }
 
   .right_section {
     max-width: 38.37vw;
     margin-left: 3.81vw;
+    @media screen and (max-width: 450px) {
+      align-items: center;
+      justify-content: center;
+      max-width: 76.6vw;
+    }
+    
 
     p {
       font-family: var(--tertiary_font);
@@ -59,16 +113,22 @@
       font-size: 1.25vw;
       line-height: 150%;
       margin: 2.5vw 0px 2.91vw 0px;
-      /* or 27px */
-
-      /* Dark */
-
       color: #072125;
+      @media screen and (max-width: 450px) {
+        font-size: 3.89vw;
+        font-weight: 500;
+        margin: 6.67vw 0 0 0;
+        text-align: center;
+      }
     }
     .image {
       position: relative;
       width: 38.37vw;
       height: 33.86vw;
+      @media screen and (max-width: 450px){
+        width: 73.6vw;
+        height: 64.44vw;
+      }
     }
 
     a {
@@ -78,8 +138,10 @@
       font-size: 1.25vw;
       line-height: 150%;
       text-decoration-line: underline;
-
       color: #e76f51;
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
     }
   }
 }

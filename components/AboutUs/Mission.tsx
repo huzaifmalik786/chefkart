@@ -20,7 +20,7 @@ const Mission = () => {
         <div className={Styles.left_section}>
             <span>Mission</span>
             <h2>Experience with at-home cooking services like never before!</h2>
-            {width<=472?(
+            {width<=450?(
               <div>
                 <p>{paragraph.substring(0,82)}
                   <button className={Styles.contentbutton} onClick={()=>sethidden("button")}><span>{hidden!="button"?"...Read More":""}</span></button>

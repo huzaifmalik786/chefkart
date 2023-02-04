@@ -65,7 +65,7 @@ export default function CircularCarousel() {
 
   return (
     <>
-      <div>
+      <div >
         <div className={Styles.myswiper}>
           {currentSlides.map((item: any, index: any) => (
             <div

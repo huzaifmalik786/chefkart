@@ -45,18 +45,20 @@ gsap.registerPlugin(ScrollTrigger);
   ];
 
   useEffect(()=>{
-
-    gsap.to('.show', { 
-      top: 0,
-      opacity:1,
+    gsap.fromTo(ref.current,{
+      top: -15,
+      opacity: 0
+    },{
+      top:0,
+      opacity: 1,
       paused: true,
-      duration: 0.5,
+      duration: 0.3,
       scrollTrigger: {
         start: 650,
         end: 9999,
         toggleActions: "play none none reverse"
       }
-    });
+    })
     
 
   })
@@ -113,7 +115,8 @@ gsap.registerPlugin(ScrollTrigger);
         <Sidebar show={openSidebar} hide={() => setOpenSidebar(false)} />
       )}
 
-      <nav className={`${Styles.navbar} ${Styles.show} show`}>
+{/* Animated Navbar */}
+      <nav ref={ref} className={`${Styles.navbar} ${Styles.show}`}>
         <div className={Styles.nav_left}>
           <Link href="/">
             {router.pathname === "/" ? (

@@ -1,5 +1,67 @@
 .project_feature_container {
   padding: 6.94vw 6.45vw 2.43vw 6.38vw;
+  @media screen and (max-width: 450px) {
+    padding: 0 0 12.78vw 0;
+    margin-top: -5vw;
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.22vw;
+      .card{
+        height: auto;
+        padding: 3.33vw 2.22vw;
+        padding-bottom: 6.11vw;
+        background-color: #EEEEEE;
+        align-self: center;
+        width: 45.56vw;
+        border-radius: 2.22vw;
+        .header{
+          font-size: 3.89vw;
+          line-height: 5vw;
+          text-align: center;
+          border-bottom: 1px solid #DBDBDB;
+          padding-bottom: 2vw;
+        }
+        .cardpoints{
+          display: flex;
+          flex-direction: column;
+          gap: 6.67vw;
+          padding-top: 3.33vw;
+          align-items: center;
+          .cardpoint{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2.22vw;
+            .cardchecked{
+              position: relative;
+              width: 3.05vw;
+              height: 3.05vw;
+              image{
+                width: 3.05vw;
+                height: 3.05vw;
+              }
+            }
+            p{
+              font-size: 3.33vw;
+              line-height: 150%;
+              width: 35.56vw;
+              font-weight: 400;
+            }
+          }
+        }
+        button{
+          font-size: 3.33vw;
+          line-height: 5vw;
+          padding: 2.78vw 10vw;
+          border-radius: 2.22vw;
+          margin-top: 6.67vw;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 
   .sub_heading {
     font-family: var(--tertiary_font);
@@ -8,6 +70,12 @@
     font-size: 1.25vw;
     line-height: 1.6vw;
     color: #2c2c2c;
+    @media screen and (max-width: 450px) {
+      font-size: 3.33vw;
+      line-height: 6.4vw;
+      text-align: center;
+      padding-bottom: 1vw;
+    }
   }
 
   .heading {
@@ -15,6 +83,12 @@
     font-size: 2.77vw;
     line-height: 3.33vw;
     color: #000000;
+    @media screen and (max-width: 450px) {
+      font-size: 5.56vw;
+      line-height: 6.67vw;
+      text-align: center;
+      padding-bottom: 6.67vw;
+    }
   }
 
   .table {
