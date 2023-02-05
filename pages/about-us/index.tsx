@@ -109,7 +109,7 @@ const index = (props: Props) => {
         <Hero data={props.banner} />
         <Vision />
         <Mission />
-        <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py={width<=472?"13vw":"5.55vw"} />
+        <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py={width<=450?"13vw":"5.55vw"} />
         <Founder data={props.founders} />
         <Gallery />
         <ContactForm data={props.form} />

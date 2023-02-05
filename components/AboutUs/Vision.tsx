@@ -12,7 +12,7 @@ const Vision = () => {
         <div className={Styles.left_section}>
             <span>Vision</span>
             <h2>We are dedicated to providing you with a smooth and safe experience.</h2>
-            {width<=472?(
+            {width<=450?(
               <div>
                 <p>{paragraph.substring(0,82)}
                   <button className={Styles.contentbutton} onClick={()=>sethidden("button")}><span>{hidden!="button"?"...Read More":""}</span></button>
