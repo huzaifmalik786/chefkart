@@ -45,14 +45,8 @@ const VideoComponent = (props: Props) => {
           className={Styles.video}
         />
         <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "5.55vw",
-            height: "5.55vw"
-          }}
+        className={Styles.pause_button}
+
           onClick={togglePause}
         >
           {paused ? <Image src={'/Play Button Circled.svg'} alt="" fill /> : ""}

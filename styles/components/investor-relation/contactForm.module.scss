@@ -5,6 +5,12 @@
   align-items: center;
   position: relative;
 
+  @media (max-width: 450px) {
+    padding: 10vw 8vw 0px 8vw;
+    height: 66.44vw;
+    flex-direction: column;
+  }
+
   .banner{
     position: absolute;
     width: 100%;
@@ -26,6 +32,13 @@
 
     color: #ffffff;
 
+    @media (max-width: 450px) {
+      font-size: 5.56vw;
+      line-height: 120%;
+      width: 83vw;
+      text-align: center;
+    }
+
     .colored{
         color: #FF961F;
         text-decoration: underline;
@@ -46,6 +59,17 @@
 
     width: 45.45vw;
 
+    @media (max-width: 450px) {
+      // position: absolute;
+      width: 85.06vw;
+      height: 125.1vw;
+      border-radius: 2.24vw;
+      padding: 6.67vw 4.44vw;
+      background: #FFFFFF;
+      box-shadow: 0px 1.11vw 6.11vw rgba(0, 0, 0, 0.25);
+      gap: 6.67vw;
+    }
+
     h3 {
       font-family: var(--secondary_font);
       font-style: normal;
@@ -57,6 +81,12 @@
       letter-spacing: -0.07vw;
 
       color: #212121;
+
+      @media (max-width: 450px) {
+        font-size: 4.44vw;
+        line-height: 6.11vw;
+        text-align: center;
+      }
     }
 
     form {

@@ -58,7 +58,7 @@ const BlogsSection = (props: Props) => {
     <div className={Styles.blog_wrapper}>
       <h2>{props.data?.heading || "Blogs"}</h2>
       <div className={Styles.cards_wrapper}>
-        {(props.data?.blogs_array || BlogData).map((card, index) => {
+        {(BlogData).map((card, index) => {
           return <BlogCard card={card} key={index} />;
         })}
       </div>

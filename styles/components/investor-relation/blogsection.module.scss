@@ -1,9 +1,19 @@
 .blog_wrapper {
   padding-top: 1.94vw;
   padding-bottom: 4vw;
+
+  @media (max-width: 450px) {
+    padding: 12.2vw 0 8.34vw 5.56vw;
+  }
   h2 {
     font-size: 2.77vw;
     padding-left: 6.38vw;
+
+    @media (max-width: 450px) {
+      font-size: 5.56vw;
+      line-height: 7.50vw;
+      text-align: center;
+    }
   }
   .cards_wrapper {
     display: flex;
@@ -11,5 +21,9 @@
     // justify-content: center;
     gap: 1.59vw;
     padding: 2.56vw 5.5vw 0vw 5.55vw;
+
+    @media (max-width: 450px) {
+      padding: 4.44vw 0 0 0 ;
+    }
   }
 }

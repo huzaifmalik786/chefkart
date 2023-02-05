@@ -3,10 +3,29 @@
   width: 100vw;
   height: 34.375vw;
 
+  img{
+
+    @media (max-width: 450px) {
+      object-fit: cover;
+      
+    }
+  }
+
+    @media (max-width: 450px) {
+    width: 100vw;
+    height: 83.4vw;
+  }
+
   .hero_heading {
     position: absolute;
     left: 6%;
     top: 53%;
+
+    @media (max-width: 450px) {
+      bottom: 25.85vw;
+      left: 5vw;
+      top: auto;
+    }
 
     h3 {
       font-size: 2.5vw;
@@ -16,6 +35,12 @@
       white-space: pre-line;
       font-family: var(--secondary_font);
       width: 40.6vw;
+
+      @media (max-width: 450px) {
+        width: 86.18vw;
+        font-size: 5.56vw;
+        line-height: 7.5vw;
+      }
       
       .colored {
         color: #ff8811;
