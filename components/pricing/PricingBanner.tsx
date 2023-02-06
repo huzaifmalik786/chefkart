@@ -3,7 +3,7 @@ import Image from "next/image";
 import Styles from "../../styles/components/pricing/pricingbanner.module.scss";
 import PricingCard from "../PricingCard";
 import { PriceCard } from "../../interfaces/interfaces";
-
+import Reveal from "../Reveal";
 const PricingCardData: PriceCard[] = [
   {
     heading: "Premium",
@@ -118,11 +118,13 @@ const PricingBanner = (props: Props) => {
           </div>
         </div>
       </div>
+      <Reveal>
       <div className={Styles.pricing_card}>
         {PricingCardData.map((card, index) => {
           return <PricingCard card={card} key={index} isWide />;
         })}
       </div>
+      </Reveal>
     </div>
   );
 };

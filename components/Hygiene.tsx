@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { CSSProperties, useEffect, useState } from "react";
 import useFetchData from "../lib/api";
 import Styles from "../styles/components/Hygiene.module.scss";
+import Reveal from "./Reveal";
 
 type Props = {
   center?: boolean;
@@ -47,6 +48,8 @@ const Hygiene = (props: Props) => {
           muted 
           playsInline />
       {/* </div> */}
+      <Reveal>
+      <div className={Styles.content}>
       <span className={Styles.subheading}>{props.data?.subheading || props.subheading}</span>
       <h3
         className={Styles.heading}
@@ -70,6 +73,8 @@ const Hygiene = (props: Props) => {
           
         }
       </p>
+      </div>
+      </Reveal>
     </div>
     </div>
     

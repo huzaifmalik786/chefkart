@@ -3,6 +3,7 @@ import React from "react";
 import { image_type } from "../../interfaces/interfaces";
 import Styles from "../../styles/components/homepage/howchefkartworks.module.scss";
 import UseWindowDimensions from "../WindowSize";
+import Reveal from "../Reveal";
 
 type HowItWorksSteps = {
   image: image_type;
@@ -65,6 +66,7 @@ const HowChefkartWorks = (props: Props) => {
   const {width}= UseWindowDimensions();
   return (
     <div className={Styles.how_container}>
+      <Reveal>
         <div className={Styles.how_left}>
         <h2>
           {
@@ -77,9 +79,11 @@ const HowChefkartWorks = (props: Props) => {
           }
         </p>
       </div>
+      </Reveal>
       <div className={Styles.how_right}>
         {(props.data.steps || Steps).map((step, key) => {
           return (
+            <Reveal>
             <div className={Styles.step} key={key}>
               <div className={Styles.step_img}>
                 <Image src={step.image.data.attributes.url} fill alt={step.image.data.attributes.alternativeText || "how-it-works"} />
@@ -145,6 +149,7 @@ const HowChefkartWorks = (props: Props) => {
                 </div>
               </div> */}
             </div>
+            </Reveal>
           );
         })}
       </div>

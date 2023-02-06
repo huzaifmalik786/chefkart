@@ -44,6 +44,7 @@ type Props = {
 };
 
 const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer }) => {
+  console.log({children});
   return (
     <div>
       <Head>

@@ -11,6 +11,7 @@ import Testimonial from "../../components/join-as-chef/Testimonial";
 import { GetStaticProps } from "next";
 import { image_type, QUESTIONS } from "../../interfaces/interfaces";
 import UseWindowDimensions from "../../components/WindowSize";
+import Reveal from "../../components/Reveal";
 
 type Props = {
   header: {
@@ -100,17 +101,29 @@ const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
       <JoinHeroCarousel data={props.banner_slider} />
+      <Reveal>
       <Metrics data={props.metrics} />
+      </Reveal>
       <CookWithUs data={props.cook} />
       <div style={width<=450?{background:"#EEEFF2",padding: "10vw 3.33vw",paddingBottom:"12.78vw"}:{}}>
+      <Reveal>
       <VideoComponent data={props.review} />
+      </Reveal>
+      <Reveal>
       <Testimonial data={props.testimonies} />
+      </Reveal>
+      <Reveal>
       <Chef />
+      </Reveal>
       </div>
+      <Reveal>
       <div style={width<=450?{display:"none"}:{}}>
       <SimplifyWay />
       </div>
+      </Reveal>
+      <Reveal>
       <FAQ data={props.faq} />
+      </Reveal>
     </Layout>
   );
 };

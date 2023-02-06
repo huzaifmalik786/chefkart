@@ -1,6 +1,9 @@
 .recomended_wrapper {
   background-color: var(--bg-orange);
   padding: 3vw 0vw;
+  @media screen and (max-width: 450px) {
+    padding: 10vw 0vw;
+  }
 
   h4 {
     font-family: var(--inter_font);
@@ -10,5 +13,12 @@
     letter-spacing: -2.5%;
     padding-bottom: 2.22vw;
     padding-left: 5vw;
+    @media screen and (max-width: 450px) {
+      font-size: 6.67vw;
+      line-height: 8.33vw;
+      text-align: center;
+      padding-left: 0;
+      padding-bottom: 6.67vw;
+    }
   }
 }

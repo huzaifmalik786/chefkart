@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React,{useState} from 'react'
 import Styles from '../../styles/components/contact-us/Story.module.scss'
 import UseWindowDimensions from '../WindowSize'
+import Reveal from '../Reveal'
 const Story = () => {
     const [hidden1,sethidden1]= useState("content");
     const [hidden2,sethidden2]= useState("content");
@@ -11,8 +12,9 @@ const Story = () => {
     const content2="ChefKart is a platform that connects home chefs and households seamlessly by building an ecosystem. Our professionals are handpicked to serve you hygienic and wholesome meals catered to your taste!"
   return (
     <div className={Styles.story_container}>
+        <Reveal>
         {width<=450?(
-            <div className={Styles.left_section} style={{flexDirection: "column-reverse"}}>
+        <div className={Styles.left_section} style={{flexDirection: "column-reverse"}}>
                 <span className={Styles.line}></span>
                 <div>
                     <p>{content1.substring(0,62)}
@@ -35,10 +37,13 @@ const Story = () => {
             </div>
         </div>
         )}
+      </Reveal>
+
         <div className={Styles.right_section} >
             <div className={Styles.image}>
                 <Image src='/Image.png' alt="chef_photo" fill />
             </div>
+            <Reveal>
             {width<=450?(
                 <div>
                     <p>{content2.substring(0,52)}
@@ -48,6 +53,8 @@ const Story = () => {
             ):(
             <p>ChefKart is a platform that connects home chefs and households seamlessly by building an ecosystem. Our professionals are handpicked to serve you hygienic and wholesome meals catered to your taste!</p>
             )}
+            </Reveal>
+
 
             <Link href='/'>Read about our story</Link>
         </div>

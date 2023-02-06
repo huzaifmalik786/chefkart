@@ -11,6 +11,7 @@ import Gallery from '../../components/AboutUs/Gallery'
 import { GetStaticProps } from 'next'
 import { image_type, ProfileCardType } from '../../interfaces/interfaces'
 import UseWindowDimensions from '../../components/WindowSize'
+import Reveal from '../../components/Reveal'
 
 type Props = {
   header: {
@@ -107,13 +108,25 @@ const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
         <Hero data={props.banner} />
+        <Reveal>
         <Vision />
+        </Reveal>
+        <Reveal>
         <Mission />
+        </Reveal>
         <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py={width<=450?"13vw":"5.55vw"} />
+        <Reveal>
         <Founder data={props.founders} />
+        </Reveal>
+        <Reveal>
         <Gallery />
+        </Reveal>
+        <Reveal>
         <ContactForm data={props.form} />
+        </Reveal>
+        <Reveal>
         <Social data={props.social} />
+        </Reveal>
     </Layout>
   )
 }

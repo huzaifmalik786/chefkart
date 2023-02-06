@@ -2,6 +2,7 @@ import { type } from "os";
 import React, { useEffect, useState } from "react";
 import useFetchData from "../../lib/api";
 import Styles from "../../styles/components/homepage/facts.module.scss";
+import Reveal from "../Reveal";
 
 type FactData = {
   heading: string;
@@ -44,12 +45,14 @@ const Facts = (props: Props) => {
     <div className={Styles.facts_container} style={{backgroundColor: `${props.bgcolor}`, color: `${props.color}`, padding: `${props.py} ${props.px}`}}>
       {(props.data || FactArr).map((item, index) => {
         return (
+          <Reveal>
           <div key={index}>
             <p className={Styles.fact_title}>{item.heading}</p>
             <div className={Styles.description}>
               <p className={Styles.fact_description}>{item.description}</p>
             </div>
           </div>
+          </Reveal>
         );
       })}
     </div>

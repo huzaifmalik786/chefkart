@@ -3,6 +3,7 @@ import { image_type, ReviewsCardType } from "../../interfaces/interfaces";
 import TestimonialCarousel from "../TestimonialCarousel";
 import VideoQuote from "../VideoQuote";
 import Styles from "../../styles/components/homepage/ReviewsSection.module.scss";
+import Reveal from "../Reveal";
 
 const ReviewsData: ReviewsCardType[] = [
   {
@@ -33,14 +34,19 @@ type Props={
 const ReviewsSection = (props:Props) => {
   return (
     <div className={Styles.review_section}>
+      <Reveal>
       <h3>{props.data?.section_heading || "Don’t take our word for it"}</h3>
-
+      </Reveal>
+      <Reveal>
       <div className={Styles.video_review}>
         <VideoQuote card={ props.data?.video_review} index={0} />
       </div>
+      </Reveal>
+      <Reveal>
       <div className={Styles.cards_review}>
         <TestimonialCarousel cards={props.data?.review_cards}  />
       </div>
+      </Reveal>
     </div>
   );
 };
