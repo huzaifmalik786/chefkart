@@ -3,6 +3,7 @@ import Styles from "../../styles/components/join-as-chef/cookwithus.module.scss"
 
 import Image from "next/image";
 import { image_type } from "../../interfaces/interfaces";
+import Reveal from "../Reveal";
 
 type CookWithUsData = {
   image: image_type;
@@ -59,10 +60,13 @@ type Props = {
 const CookWithUs = (props: Props) => {
   return (
     <div className={Styles.us_wrapper}>
+      <Reveal>
       <h2>{props.data.heading || "Why cook with us?"}</h2>
+      </Reveal>
       <div className={Styles.cards_wrapper}>
         {(props.data.cards || WhyUs).map((item, index) => {
           return (
+          <Reveal>
             <div key={index} className={Styles.card}>
               <div>
                 <Image src={item.image?.data?.attributes?.url} alt={item.image?.data?.attributes?.alternativeText || "img"} fill />
@@ -70,6 +74,7 @@ const CookWithUs = (props: Props) => {
               <h4>{item.heading}</h4>
               <p>{item.description}</p>
             </div>
+          </Reveal>
           );
         })}
       </div>

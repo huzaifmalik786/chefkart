@@ -15,6 +15,7 @@ import ReviewsSection from "../components/homepage/ReviewsSection";
 import { GetStaticProps } from "next";
 import { blogType, chefType, image_type, ReviewsCardType } from "../interfaces/interfaces";
 import UseWindowDimensions from "../components/WindowSize";
+import Reveal from "../components/Reveal";
 
 type Props = {
 
@@ -219,11 +220,21 @@ export default function Home(props: Props) {
         <HomePricing data={props.homepage.pricing} />
         <HowChefkartWorks data={props.homepage.how_it_works} />
         <ReviewsSection data={props.homepage.reviews} />
+        <Reveal>
         <HasleFreeHiring data={props.homepage.hiring} />
+        </Reveal>
+        <Reveal>
         <Artisans data={props.homepage.artisans} />
+        </Reveal>
+        <Reveal>
         <JoinAsChef data={props.homepage.join_as_chef} />
+        </Reveal>
+        <Reveal>
         <HomeBlogs data={props.homepage.blog} />
+        </Reveal>
+        <Reveal>
         <BookTrial data={props.homepage.last_banner}/>
+        </Reveal>
       </Layout>
     </>
   );

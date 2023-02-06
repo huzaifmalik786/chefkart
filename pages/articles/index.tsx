@@ -7,6 +7,7 @@ import AuthorBox from '../../components/articles/AuthorBox'
 import Recomended from '../../components/blogs/Recomended'
 import { GetStaticProps } from 'next'
 import { blogType, image_type } from '../../interfaces/interfaces'
+import Reveal from '../../components/Reveal'
 
 type Props = {
   header: {
@@ -52,10 +53,18 @@ const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
         <Article />
+        <Reveal>
         <CommentInput />
+        </Reveal>
+        <Reveal>
         <CommentBox />
+        </Reveal>
+        <Reveal>
         <AuthorBox />
+        </Reveal>
+        <Reveal>
         <Recomended data={props.recomended_article} />
+        </Reveal>
     </Layout>
   )
 }

@@ -6,6 +6,7 @@ import Story from '../../components/contact-us/Story'
 import Layout from '../../components/layouts/Layout'
 import FAQ from "../../components/FAQ";
 import { image_type, QUESTIONS } from '../../interfaces/interfaces'
+import Reveal from '../../components/Reveal'
 
 type Props = {
   header: {
@@ -63,7 +64,7 @@ type Props = {
 const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
-        <ContactBanner data={props.banner} />
+        <ContactBanner data={props.banner}/>
         <Map />
         <Story />
         {/* <FAQ data={props.faq} /> */}

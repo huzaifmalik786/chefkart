@@ -3,6 +3,7 @@ import React from 'react'
 import Styles from '../../styles/components/pricing/projectFeatures.module.scss'
 import { table_content } from '../../interfaces/interfaces'
 import UseWindowDimensions from '../WindowSize'
+import Reveal from '../Reveal'
 
 const feature_array:table_content[] = [
     {
@@ -50,9 +51,12 @@ const ProjectFeatures = (props : Props) => {
     const rows = ['Row 1', 'Row 2', 'Row 3', 'Row 4'];
   return (
     <div className={Styles.project_feature_container}>
+        <Reveal>
         <p className={Styles.sub_heading}>{props.data?.subheading || "Get the details you need to purchase"}</p>
         <h4 className={Styles.heading}>{props.data?.heading || "An overview of what’s included"}</h4>
+        </Reveal>
         {width<=472?(
+            <Reveal>
             <div className={Styles.container}>
             <div className={Styles.card}>
                 <div className={Styles.header}>
@@ -91,8 +95,9 @@ const ProjectFeatures = (props : Props) => {
                 <button className={Styles.get_started_popular}>{props.data?.button?.button_text || "Get Started"}</button>
             </div>
             </div>
-            
+            </Reveal>
         ):(
+        <Reveal>
         <table className={Styles.table}>
             <tbody>
                 <tr>
@@ -121,6 +126,7 @@ const ProjectFeatures = (props : Props) => {
                 </tr>
             </tbody>
         </table>
+        </Reveal>
         )}
     </div>
   )

@@ -6,7 +6,7 @@ import HeroVideo from "../../components/testimonials/HeroVideo";
 import OurWord from "../../components/testimonials/OurWord";
 import UserReviews from "../../components/testimonials/UserReviews";
 import { image_type, ReviewsCardType } from "../../interfaces/interfaces";
-
+import Reveal from "../../components/Reveal";
 type Props = {
   header: {
     nav_links: [],
@@ -59,8 +59,12 @@ const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
       <HeroVideo  />
+      <Reveal>
       <OurWord heading={props.section_heading} carousel_data={props.cards} />
+      </Reveal>
+      <Reveal>
       <UserReviews data={props.reviews} />
+      </Reveal>
       <Divider />
     </Layout>
   );

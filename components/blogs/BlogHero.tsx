@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/blogs/bloghero.module.scss";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: {
@@ -26,6 +27,8 @@ const words = ['Anniversary', 'Kitty Parties', 'House Parties', 'Birthday Partie
 
 const BlogHero = (props: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const {width}= UseWindowDimensions();
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -67,9 +70,17 @@ const BlogHero = (props: Props) => {
       style.color = '#2D4739'
        style.position= 'relative'
     }
-     else {
-      style.marginTop = `${index > currentIndex ? '3.47vw' : `-4.47vw`}`
+    else {
+      if(width<=450){
+        style.marginTop = `${index > currentIndex ? "7.47vw" : `-8.47vw`}`;
+      }
+      else{
+        style.marginTop = `${index > currentIndex ? "3.47vw" : `-4.47vw`}`;
+      }
     }
+    //  else {
+    //   style.marginTop = `${index > currentIndex ? '3.47vw' : `-4.47vw`}`
+    // }
 
     return <div className={Styles.slider_word} key={index} style={style}>{word}</div>;
   });

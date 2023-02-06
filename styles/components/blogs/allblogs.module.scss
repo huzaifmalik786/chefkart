@@ -6,6 +6,9 @@
     justify-content: center;
     gap: 0.83vw;
     // padding-bottom: 4vw;
+    @media screen and (max-width: 450px) {
+      gap:3.33vw;
+    }
 
     .button {
       font-family: var(--inter_font);
@@ -16,6 +19,13 @@
       font-weight: 500;
       font-size: 0.76vw;
       line-height: 1.06vw;
+      @media screen and (max-width: 450px) {
+        font-size: 3.33vw;
+        line-height: 140%;
+        padding: 2.5vw 3.33vw;
+        letter-spacing: -0.02em;
+        
+      }
     }
     .active_btn {
       font-family: var(--inter_font);
@@ -26,6 +36,12 @@
       font-size: 0.9vw;
       line-height: 1.26vw;
       background-color: #571c5e;
+      @media screen and (max-width: 450px) {
+        font-size: 3.33vw;
+        line-height: 140%;
+        padding: 2.5vw 3.33vw;
+        letter-spacing: -0.02em;
+      }
     }
   }
 

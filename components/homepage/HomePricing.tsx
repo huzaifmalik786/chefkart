@@ -4,6 +4,7 @@ import PricingCard from "../PricingCard";
 import { PriceCard } from "../../interfaces/interfaces";
 import useFetchData from "../../lib/api";
 import UseWindowDimensions  from '../WindowSize';
+import Reveal from "../Reveal";
 
 const PricingCardData: PriceCard[] = [
   {
@@ -68,22 +69,24 @@ const HomePricing = (props:Props) => {
   
   return (
     <div className={Styles.pricing_wrapper}>
-      {width<=472?(
+      {/* {width<=472?(
+        <Reveal>
         <div className={Styles.pricing_heading}>
         <h2>
-          Gastronomical, economical &<br /> Phenomenal
-         
+          {
+            props.data.brief?.heading || "Gastronomical, economical & Phenomenal"
+          }
         </h2>
         <p>
-          Starting at just Rs.3000/- that’s 1/3 of 80 online
-          <br />
-          orders on a monthly basis.
-        
-
+          {
+            props.data.brief?.subheading || "Starting at just Rs.3000/- that’s 1/3 of 80 online orders on a monthly basis. A simple subscription to hire, manage your apetite and home chefs on the go."
+          }
         </p>
       </div>
-      ):(
+      </Reveal>
+      ):( */}
       <div className={Styles.pricing_heading}>
+      <Reveal>
         <h2>
           {
             props.data.brief?.heading || "Gastronomical, economical & Phenomenal"
@@ -97,8 +100,9 @@ const HomePricing = (props:Props) => {
             props.data.brief?.subheading || "Starting at just Rs.3000/- that’s 1/3 of 80 online orders on a monthly basis. A simple subscription to hire, manage your apetite and home chefs on the go."
           }
         </p>
+      </Reveal>
       </div>
-      )}
+      {/* )} */}
       {/* <div className={Styles.pricing_heading}>
         <h2>
           Gastronomical,
@@ -114,6 +118,7 @@ const HomePricing = (props:Props) => {
 
         </p>
       </div> */}
+      <Reveal>
       <div className={Styles.pricecard_wrapper}>
         {(props.data.cards || PricingCardData).map((pricecard, key) => {
           return (
@@ -125,6 +130,7 @@ const HomePricing = (props:Props) => {
           );
         })}
       </div>
+      </Reveal>
     </div>
   );
 };

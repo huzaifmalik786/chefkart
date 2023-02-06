@@ -2,7 +2,7 @@
   background: #eeeff2;
   padding: 4.72vw 6.0px 4.62vw 0px;
   @media screen and (max-width: 450px) {
-    padding: 6.67vw 4.44vw 10vw 4.44vw;
+    padding: 6.67vw 0 10vw 0;
   }
 
   h3 {
@@ -17,6 +17,7 @@
       font-family: var(--mobile_font);
       font-size: 5.56vw;
       line-height: 6.67vw;
+      padding: 0 4.44vw;
     }
   }
 
@@ -26,9 +27,13 @@
     @media screen and (max-width: 450px) {
       background-color: inherit;
       margin: 9vw 0 0 0;
+      padding: 0 4.44vw;
     }
   }
   .cards_review{
     padding: 3.75vw 11vw 7vw 11vw;
+    @media screen and (max-width: 450px) {
+      padding:0;
+    }
   }
 }

@@ -11,6 +11,7 @@ import InvestorHero from "../../components/investor-relation/InvestorHero";
 import Layout from "../../components/layouts/Layout";
 import { GetStaticProps } from "next";
 import { BlogCardType, image_type, investor_type } from "../../interfaces/interfaces";
+import Reveal from "../../components/Reveal";
 
 type Props = {
   header: {
@@ -126,12 +127,24 @@ const index = (props: Props) => {
   return(
     <Layout header={props.header} footer={props.footer}>
       <InvestorHero data={props.banner} />
+      <Reveal>
       <Mission data={props.mission} />
+      </Reveal>
+      <Reveal>
       <PressRelease data={props.press_data} />
+      </Reveal>
+      <Reveal>
       <BlogsSection data={props.blogs} />
+      </Reveal>
+      <Reveal>
       <InvestorCarousel data={props.investors} />
+      </Reveal>
+      <Reveal>
       <ContactForm data={props.form} />
+      </Reveal>
+      <Reveal>
       <Banner data={props.last_banner} />
+      </Reveal>
       <Divider />
     </Layout>
   )
