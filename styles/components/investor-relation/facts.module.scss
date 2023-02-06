@@ -5,9 +5,20 @@
     align-items: flex-end;
     row-gap: 1.8vw;
     flex-wrap: wrap;
+
+    @media (max-width: 450px) {
+      row-gap: 10vw;
+    }
   
     div{
         width: 50%;
+
+        @media (max-width: 450px) {
+          display: flex;
+          flex-direction: column;
+          gap: 2.224vw;
+          
+        }
 
         .fact_title {
             font-weight: 700;
@@ -18,6 +29,11 @@
         
             text-align: center;
             letter-spacing: -0.02em;
+
+            @media (max-width: 450px) {
+              font-size: 6.67vw;
+              line-height: 120%;
+            }
         
             // color: #000000;
           }
@@ -36,6 +52,11 @@
             letter-spacing: -0.01em;
         
             // color: #000000;
+
+            @media (max-width: 450px) {
+              font-size: 3.33vw;
+              line-height: 120%;
+            }
           }
     }
     

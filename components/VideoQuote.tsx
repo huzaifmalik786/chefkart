@@ -28,11 +28,14 @@ const VideoQuote = (props: Props) => {
 
   return (
     <div
-      className={Styles.video_wrapper}
-      style={(props.index)%2 ==  0 ? {} : {flexDirection: 'row-reverse'}}
+      className={`${Styles.video_wrapper} ${(props.index)%2 ==  0 ? Styles.video_reverse : {}}`}
+      // style={(props.index)%2 ==  0 ? {} : {flexDirection: 'row-reverse'}}
     >
       <div className={Styles.video_text}>
-        <Image className={Styles.image} src={"/comma.svg"} alt="comma" height={33} width={41} />
+        <div className={Styles.image} >
+          <Image src={"/comma.svg"} alt="comma" fill />
+
+        </div>
         <p className={Styles.quote}>{props.card.review}</p>
 
         <p className={Styles.name}> {props.card.name}</p>
@@ -45,14 +48,7 @@ const VideoQuote = (props: Props) => {
           className={Styles.video}
         />
         <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "5.55vw",
-            height: "5.55vw"
-          }}
+        className={Styles.pause_button}
           onClick={togglePause}
         >
           {paused ? <Image src={'/Play Button Circled.svg'} alt="" fill /> : ""}

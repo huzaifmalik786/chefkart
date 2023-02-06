@@ -3,19 +3,42 @@
   padding-bottom: 2.91vw;
   padding-top: 5vw;
 
+  @media (max-width: 450px) {
+    background-color: #fff;
+    padding: 0 0 12.5vw 0;
+  }
+
   .card {
     display: grid;
     grid-template-columns: 2fr 1fr;
+
+    @media (max-width: 450px) {
+      grid-template-columns: 1fr;
+      place-items: center;
+      
+    }
     .investor_about {
       padding-left: 4.79vw;
       padding-bottom: 6.34vw;
 
       .heading {
+
+        @media (max-width: 450px) {
+          padding: 0 4.44vw 4.44vw 4.44vw ;
+          
+        }
         h2 {
           font-size: 2.77vw;
           font-family: var(--tertiary_font);
           line-height: 3.5vw;
           font-weight: 700;
+
+          @media (max-width: 450px) {
+            text-align: center;
+            font-size: 5.56vw;
+            line-height: 7.5vw;
+            letter-spacing: -0.01em;
+          }
         }
       }
 
@@ -32,6 +55,37 @@
       .desc {
         font-size: 1.38vw;
         width: 60%;
+
+        @media (max-width: 450px) {
+          letter-spacing: -1%;
+          padding: 0 4.44vw;
+          font-size: 3.89vw;
+          line-height: 150%;
+          text-align: center;
+          width: 90vw;
+          max-height: 11.67vw;
+          overflow: hidden;          
+        }
+
+        .overflow_text{
+        @media (max-width: 450px) {
+          display: none;
+
+        }
+      }
+
+      .read_more{
+      display: none;
+      font-size: 3.88vw;
+      font-weight: 700;
+      line-height: 5.83vw;
+      letter-spacing: -0.27vw;
+      cursor: pointer;
+
+      @media (max-width: 450px) {
+        display: inline;
+      }
+    }
       }
 
       .investor_name {
@@ -39,6 +93,9 @@
         padding-top: 2.98vw;
         padding-bottom: 3.54vw;
 
+        @media (max-width: 450px) {
+          display: none;
+        }
         h5 {
           font-size: 1.66vw;
         }
@@ -57,11 +114,29 @@
         align-items: center;
         gap: 2.91vw;
 
+        @media (max-width: 450px) {
+          padding-top: 11.67vw;
+          padding-bottom: 10vw;
+        }
+
+
         .logo {
           position: relative;
 
           width: 4.45vw;
           height: 1.49vw;
+
+          @media (max-width: 450px) {
+            width: 17.34vw;
+            height: 3.89vw;
+            // aspect-ratio: 3/2;
+            object-fit: contain;
+          }
+
+          img{
+            object-fit: contain;
+
+          }
         }
       }
     }
@@ -70,12 +145,50 @@
       position: relative;
       width: 26.94vw;
       height: 24.44vw;
+
+      @media (max-width: 450px) {
+      display: flex;
+      align-self: center;
+        width: 70.61vw;
+        height: 64vw;
+      }
+    }
+
+    .investor_name_mobile_only{
+      display: none;
+      padding-top: 4.44vw;
+
+      h5{
+        font-size: 4.44vw;
+        line-height: 6.11vw;
+        letter-spacing: -0.01em;
+        text-align: center;
+      }
+
+      p{
+        font-size: 4.44vw;
+        line-height: 5.28vw;
+        text-align: center;
+        letter-spacing: -0.01em;
+
+      }
+
+      @media (max-width: 450px) {
+        display: flex;
+        flex-direction: column;
+        gap: 2.22vw;
+
+      }
     }
   }
 
   [class*="dot"] {
     // position: inherit;
     gap: 10px;
+
+    @media (max-width: 450px) {
+      display: none;
+    }
   }
 }
 
@@ -87,6 +200,10 @@
   display: flex;
   justify-content: space-between;
   padding: 0 2.36vw;
+
+  @media (max-width: 450px) {
+    display: none;
+  }
 
   button {
     background-color: transparent;

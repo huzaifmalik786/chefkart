@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/investor-relation/investorcarousel.module.scss";
 
@@ -40,6 +40,27 @@ const InvestorsData: investor_type[] = [
           },
 
           },
+        {
+          attributes: {
+            url: "/uber.svg",
+            alternativeText: "logo"
+
+          }
+        },
+        {
+          attributes: {
+            url: "/walmart.svg",
+            alternativeText: "logo"
+          },
+
+          },
+        {
+          attributes: {
+            url: "/walmart.svg",
+            alternativeText: "logo"
+          },
+
+          },
       ],
     }
   },
@@ -69,6 +90,7 @@ const CustomDot = ({ onClick, ...rest }: any) => {
 };
 
 const ButtonGroup = ({ next, previous, ...rest }: any) => {
+
   const {
     carouselState: { currentSlide },
   } = rest;
@@ -89,6 +111,8 @@ const ButtonGroup = ({ next, previous, ...rest }: any) => {
 };
 
 const InvestorCarousel = (props: Props) => {
+  const [fullText, setFullText] = useState(false);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -105,7 +129,7 @@ const InvestorCarousel = (props: Props) => {
       breakpoint: { max: 540, min: 0 },
       items: 1,
       slidesToSlide: 1,
-      partialVisibilityGutter: 120,
+      // partialVisibilityGutter: 120,
     },
   };
   return (
@@ -138,8 +162,8 @@ const InvestorCarousel = (props: Props) => {
                 <div className={Styles.heading}>
                   <h2>{investor.heading}</h2>
                 </div>
-                <div className={Styles.desc}>
-                  <p>{investor.description}</p>
+                <div className={Styles.desc} style={fullText ? {maxHeight: "none"} : {}}>
+                  <p>{(investor.description).substring(0, 70)} <span style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} className={Styles.read_more}>..Read more</span> <span style={fullText ? {display: "inline"} : {}} className={Styles.overflow_text}>{(investor.description).substring(71)}</span></p>
                 </div>
                 <div className={Styles.investor_name}>
                   <h5>{investor.name}</h5>
@@ -155,8 +179,15 @@ const InvestorCarousel = (props: Props) => {
                   })}
                 </div>
               </div>
+              <div>
               <div className={Styles.investor_img}>
                 <Image src={investor.image?.data?.attributes?.url} alt={investor.image?.data?.attributes?.alternativeText || "investor-photo"} fill />
+              </div>
+              <div className={Styles.investor_name_mobile_only}>
+                  <h5>{investor.name}</h5>
+                  <p>{investor.designation}</p>
+                </div>
+
               </div>
             </div>
           );

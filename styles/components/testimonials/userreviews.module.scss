@@ -5,5 +5,10 @@
   padding: 3.26vw 0;
   gap: 4.44vw;
 
+  @media (max-width: 450px) {
+    padding: 10.84vw 4.44vw;
+    gap: 10vw;
+  }
+
   
 }
