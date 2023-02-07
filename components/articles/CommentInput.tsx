@@ -5,21 +5,15 @@ const CommentInput = () => {
   const {width}= UseWindowDimensions();
   return (
     <div className={Styles.comment_input_container}>
-      {width<=450?(
-    <>
       <div className={Styles.input_box}>
-        <input  type="text" placeholder='Be the first to comment' />
+        <div className={Styles.input}>
+          <input  type="text" placeholder='Be the first to comment' />
+          <button>Comment</button>
+        </div>
+          <div className={Styles.button}>
+          <button>Comment</button>
       </div>
-      <div className={Styles.button}>
-        <button>Comment</button>
       </div>
-    </>
-      ):(
-      <div className={Styles.input_box}>
-        <input  type="text" placeholder='Be the first to comment' />
-        <button>Comment</button>
-      </div>
-      )}
       
     </div>
   )

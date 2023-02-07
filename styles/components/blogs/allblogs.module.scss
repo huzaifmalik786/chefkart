@@ -1,13 +1,18 @@
 .blogs {
-  //   padding: 5vw;
 
   .filter_btns {
     display: flex;
     justify-content: center;
     gap: 0.83vw;
     // padding-bottom: 4vw;
+    // ::-webkit-scrollbar {
+    //   display: none !important;
+    // }
     @media screen and (max-width: 450px) {
+      justify-content: flex-start;
       gap:3.33vw;
+      overflow-x: scroll;
+      padding: 0 4.44vw;
     }
 
     .button {
@@ -24,6 +29,7 @@
         line-height: 140%;
         padding: 2.5vw 3.33vw;
         letter-spacing: -0.02em;
+        white-space: nowrap;
         
       }
     }
@@ -41,6 +47,7 @@
         line-height: 140%;
         padding: 2.5vw 3.33vw;
         letter-spacing: -0.02em;
+        white-space: nowrap;
       }
     }
   }
@@ -51,6 +58,14 @@
     justify-content: center;
     gap: 1.66vw;
     padding-top: 4vw;
+    @media (max-width: 450px) {
+      padding-top: 9vw;
+      flex-direction: column;
+      align-items: center;
+      gap:12.78vw;
+      margin-bottom: 8.89vw;
+
+    }
   }
 
   .pagination {
@@ -58,6 +73,9 @@
     justify-content: center;
     gap: 1vw;
     padding: 5vw 0;
+    @media (max-width: 450px) {
+      display: none;
+    }
 
     :first-child {
       color: black;
@@ -80,6 +98,37 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
+      }
+    }
+  }
+  .load_button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12.5vw;
+    @media (min-width: 451px) {
+      display: none;
+    }
+    button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3.05vw 12.22vw;
+      border-radius: 2.22vw;
+      background: #18181B;
+      gap: 3.33vw;
+      p{
+        font-weight: 700;
+        font-size: 3.89vw;
+        line-height: 6.67vw;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+      }
+      .more{
+        position: relative;
+        width: 4.44vw;
+        height: 4.44vw;
       }
     }
   }

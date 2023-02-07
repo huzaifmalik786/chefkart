@@ -100,20 +100,25 @@
         position: absolute;
       display: flex;
       flex-direction: column;
-      // justify-content: center;
       align-items: center;
       padding: 0px;
       gap: 2.77vw;
       @media screen and (max-width: 450px) {
         position: relative;
-        flex-direction: row;
-        justify-content: space-between;;
-        .right{
-          display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+      .right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:2.77vw;
+        @media (max-width: 450px) {
+          flex-direction: row-reverse;
           gap: 5.7vw;
-          align-items: center;
         }
       }
+      
 
       span {
         font-weight: 600;
@@ -123,6 +128,9 @@
         align-items: center;
 
         color: #656565;
+        @media (max-width: 450px) {
+          display: none;
+        }
       }
 
       .fb {
@@ -151,13 +159,16 @@
         @media screen and (max-width: 450px) {
           width: 6.67vw;
           height: 6.67vw;
-        
         }
       }
       .mail {
         position: relative;
         width: 1.96vw;
         height: 1.64vw;
+        @media screen and (max-width: 450px) {
+          width: 6.67vw;
+          height: 5.56vw;
+        }
       }
       .link {
         position: relative;

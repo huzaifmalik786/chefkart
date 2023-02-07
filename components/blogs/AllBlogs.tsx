@@ -3,6 +3,7 @@ import BlogCard from "./BlogCard";
 import Styles from "../../styles/components/blogs/allblogs.module.scss";
 import { BlogCardType } from "../../interfaces/interfaces";
 import Image from "next/image";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: BlogCardType[]
@@ -98,7 +99,9 @@ const BlogData: BlogCardType[] = [
 ];
 
 const AllBlogs = (props: Props) => {
+  const {width}= UseWindowDimensions();
   const [activeBtn, setActiveBtn] = useState<number>(0);
+  const [morecards,setmorecards]= useState(false);
   const handleFilter = (index: number) => {
     setActiveBtn(index);
   };
@@ -120,11 +123,25 @@ const AllBlogs = (props: Props) => {
           );
         })}
       </div>
-      <div className={Styles.cards_wrapper}>
-        {(props.data || BlogData).map((card, index) => {
-          return <BlogCard card={card} key={index} />;
-        })}
-      </div>
+      {width<=450?(
+        <div className={Styles.cards_wrapper}>
+          {(props.data || BlogData).map((card, index) => {
+            if(!morecards){
+              return index<4  && <BlogCard card={card} key={index} />;
+            }
+            else if(morecards){
+              return <BlogCard card={card} key={index} />;
+            }
+          })}
+        </div>
+      ):(
+        <div className={Styles.cards_wrapper}>
+          {(props.data || BlogData).map((card, index) => {
+            return <BlogCard card={card} key={index} />;
+          })}
+        </div>
+      )}
+      
       <div className={Styles.pagination}>
         {[1, 2, 3, 4].map((item, index) => {
           return <button key={index}>{item}</button>;
@@ -135,6 +152,18 @@ const AllBlogs = (props: Props) => {
           </div>
         </button>
       </div>
+      {props.data.length<4?(
+        <div></div>
+      ):(
+        <div className={Styles.load_button} style={morecards?{display:"none"}:{}}>
+        <button onClick={()=>setmorecards(true)}>
+          <p>Load More</p>
+          <div className={Styles.more}>
+            <Image src={"/arrow_more.svg"} alt="next" fill/>
+          </div>
+        </button>
+      </div>
+      )}
     </div>
   );
 };
