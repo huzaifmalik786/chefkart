@@ -3,6 +3,7 @@ import Styles from "../../styles/components/blogs/blogcard.module.scss";
 
 import Image from "next/image";
 import { BlogCardType } from "../../interfaces/interfaces";
+import Link from "next/link";
 
 type Props = {
   card: BlogCardType;
@@ -20,21 +21,23 @@ const BlogCard = (props: Props) => {
     return newDate
 }
   return (
+    <Link href={`/blogs/${props.card?.attributes?.slug}`}>
     <div className={Styles.blog_card}>
       <div className={Styles.blog_img}>
         <Image
-          alt={props.card.image.data.attributes.url || "blog-image"}
-          src={props.card.image.data.attributes.url}
+          alt={props.card?.attributes?.image?.data?.attributes?.alternativeText || "blog-image"}
+          src={props.card?.attributes?.image?.data?.attributes?.url}
           className={Styles.img}
           fill
         />
       </div>
       <div className={Styles.content}>
-        <p className={Styles.subheading}>{props.card.subheading}</p>
-        <h3 className={Styles.heading}>{props.card.heading}</h3>
-        <p className={Styles.date}>{changeFormat(props.card.date)}</p>
+        <p className={Styles.subheading}>{props.card?.attributes?.subtitle}</p>
+        <h3 className={Styles.heading}>{props.card?.attributes?.title}</h3>
+        <p className={Styles.date}>{changeFormat(props.card?.attributes?.release_date)}</p>
       </div>
     </div>
+    </Link>
   );
 };
 

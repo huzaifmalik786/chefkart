@@ -77,6 +77,24 @@ type Props = {
           text: string;
         }[]
   }
+  vacancy: {
+    header_data: {
+      heading: string;
+      description: string;
+      opening_heading: string;
+      viewAll: string;
+    }
+    all_openings: {
+      attributes: {
+        Position: string;
+        subheading: string;
+        location: string;
+        department: string;
+        slug: string;
+
+      }
+    }[]
+  }
   articles: {
     heading: string;
     array: blogType[]
@@ -112,7 +130,7 @@ const index = (props: Props) => {
       <CareersHero data={props.banner} />
       <Culture data={props.culture}  />
       <Perks data={props.perks} />
-      <Vacancies />
+      <Vacancies data={props.vacancy} />
       <FeaturedArticle data={props.articles} />
       <Founders data={props.founders} />
       <Leadership data={props.leaders} />
@@ -137,6 +155,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/career?populate=deep,10`);
     const career = await res2.json();
 
+  const temp_res = await fetch('http://localhost:1337/api/career?populate=deep,10')
+  const temp = await temp_res.json();
+
     return {
       props : {
         header: header_data.data.attributes.header,
@@ -147,6 +168,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
           profile: career.data.attributes.profile
         },
         perks: career.data.attributes.Perks,
+        vacancy: {
+          header_data: career.data.attributes.vacancies,
+          all_openings: temp.data.attributes.job_openings.data
+        },
         articles:{
           heading: career.data.attributes.article_heading,
           array:career.data.attributes.aticles, 
@@ -156,6 +181,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
           array: career.data.attributes.leaders_profile
         },
         end_carousel: career.data.attributes.carousel,
+
       footer: footer_data.data.attributes.Footer
 
       }

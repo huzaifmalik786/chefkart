@@ -28,7 +28,7 @@ const VideoQuote = (props: Props) => {
 
   return (
     <div
-      className={`${Styles.video_wrapper} ${(props.index)%2 ==  0 ? Styles.video_reverse : {}}`}
+      className={`${Styles.video_wrapper} ${(props.index)%2 !==  0 ? Styles.video_reverse : {}}`}
       // style={(props.index)%2 ==  0 ? {} : {flexDirection: 'row-reverse'}}
     >
       <div className={Styles.video_text}>

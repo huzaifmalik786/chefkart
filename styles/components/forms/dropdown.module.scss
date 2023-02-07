@@ -40,6 +40,7 @@
       border-bottom: 1px solid #adafae;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
       cursor: pointer;
 
       &:hover{

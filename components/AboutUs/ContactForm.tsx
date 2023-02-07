@@ -16,6 +16,8 @@ type Props = {
     }
 }
 
+const dropdown_location = ["lorem ipsum", "lorem ipsum"]
+
 const ContactForm = (props: Props) => {
     const {width}= UseWindowDimensions();
     const [openModal, setOpenModal] = useState<boolean>(false)
@@ -45,7 +47,7 @@ const ContactForm = (props: Props) => {
                     <Input placeholder="9987115132" type="text" name="mobile" />
                     {width<=450?(<div></div>):(
                     <div className={Styles.dropdown}>
-                        <Dropdown arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
+                        <Dropdown list={dropdown_location} arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
                     </div>
                     )}
                 </div>
@@ -67,7 +69,7 @@ const ContactForm = (props: Props) => {
                     <Input placeholder="9987115132" type="text" name="mobile" />
                     {width<=472?(<div></div>):(
                     <div className={Styles.dropdown}>
-                        <Dropdown arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
+                        <Dropdown list={dropdown_location} arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
                     </div>
                     )}
                 </div>

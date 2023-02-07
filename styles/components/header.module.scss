@@ -18,10 +18,15 @@
     ul {
       display: flex;
       gap: 2vw;
-      list-style: none;
-      font-weight: 500;
-      font-size: 1.25vw;
-      line-height: 1.5vw;
+
+      li{
+        list-style: none;
+        font-weight: 500;
+        font-size: 1.25vw;
+        line-height: 1.53vw;
+        letter-spacing: -0.01em;
+
+      }
     }
   }
 

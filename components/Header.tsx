@@ -46,7 +46,7 @@ gsap.registerPlugin(ScrollTrigger);
 
   useEffect(()=>{
     gsap.fromTo(ref.current,{
-      top: -15,
+      // top: -15,
       opacity: 0
     },{
       top:0,

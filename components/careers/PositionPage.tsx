@@ -23,7 +23,22 @@ const positionDetails = {
     "we reimagine the way the world moves for the better. The idea was born on a snowy night in Paris in 2008, and ever since then, our DNA of reimagination and reinvention carries on. We’ve grown into a global platform moving people and things in ever-expanding ways, taking on big problems to help drivers, riders, delivery partners, and eaters make movement happen at the push of a button for everyone, everywhere.We welcome people from all backgrounds who seek the opportunity to help build a future where everyone and everything can move independently. If you have the curiosity, passion, and collaborative spirit, work with us, and let’s move the world forward, together.Offices continue to be central to collaboration and Uber’s cultural identity. Unless formally approved to work fully remotely, Uber expects employees to spend at least half of their work time in their assigned office. For certain roles, such as those based at green-light hubs, employees are expected to be in-office for 100% of their time. Please speak with your recruiter to better understand in-office expectations for this role.",
 };
 
-const PositionPage = () => {
+type Props = {
+  data: {
+    Position: string;
+    subheading: string;
+    type: string;
+    location: string;
+    Content: {
+      heading: string;
+      content: string;
+    }[];
+    conclusion: string;
+  }
+
+}
+
+const PositionPage = (props: Props) => {
   const router = useRouter();
   const [openModal, setOpenModal] = useState<boolean>(false)
   const [secondModal, setSecondModal] = useState<boolean>(false)
@@ -47,13 +62,13 @@ const PositionPage = () => {
     <div className={Styles.positionPage}>
       <header>
         <div>
-          <h1>{positionDetails.position}</h1>
-          <p>{positionDetails.sub_heading}</p>
+          <h1>{props.data.Position || positionDetails.position}</h1>
+          <p>{props.data.subheading || positionDetails.sub_heading}</p>
           <div className={Styles.type}>
             <div className={Styles.icon}>
               <Image src="/Shape.png" alt="" fill />
             </div>
-            <span>{positionDetails.type}</span>
+            <span>{props.data.type || positionDetails.type}</span>
           </div>
         </div>
         <div>
@@ -61,7 +76,7 @@ const PositionPage = () => {
         </div>
       </header>
       <div className={Styles.main}>
-        <div className={Styles.section}>
+        {/* <div className={Styles.section}>
           <h2>About the Role</h2>
           <p>{positionDetails.about_the_role}</p>
         </div>
@@ -75,16 +90,39 @@ const PositionPage = () => {
               })}
               
           </ul>
-        </div>
-        <div className={Styles.section}>
+        </div> */}
+        {/* <div className={Styles.section}>
           <h2>Basic Qualifications</h2>
           <ul>
             {positionDetails.qualifications.split("\n").map((item, key) => {
               return <li key={key}>{item}</li>;
             })}
           </ul>
+        </div> */}
+        <div className={Styles.section}>
+        {
+          (props.data.Content).map((data, key)=>{
+            return(
+              <>
+              <h2>{data.heading}</h2>
+              
+              {
+                data.content.includes("\n-" || "\n -") ? (
+                  <ul>
+                  {data.content.split("\n").map((item, key) => {
+                    return <li key={key}>{item.trim().slice(1)}</li>;
+                  })}
+          </ul>
+                ) : (
+                    <p>{data.content}</p>
+                )
+              }
+              </>
+            )
+          })
+        }
         </div>
-        <p>{positionDetails.conclusion}</p>
+        <p>{props.data.conclusion || positionDetails.conclusion}</p>
         <button onClick={()=> setOpenModal(true)}>Apply now</button>
       </div>
       

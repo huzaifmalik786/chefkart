@@ -150,6 +150,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/investor-relation?populate=deep,10`);
     const investor_relation = await res2.json();
 
+  const temp_res = await fetch(
+    `http://localhost:1337/api/investor-relation?populate=deep,10`);
+    const temp = await temp_res.json();
+    console.log(temp)
+
     return {
       props : {
         header: header_data.data.attributes.header,
@@ -166,7 +171,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         blogs: {
           heading: investor_relation.data.attributes.blog_heading,
-          blogs_array: investor_relation.data.attributes.blogs
+          blogs_array: temp.data.attributes.blog_pages.data
         },
 
         investors: investor_relation.data.attributes.our_investor,

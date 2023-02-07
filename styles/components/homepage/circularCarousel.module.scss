@@ -6,7 +6,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    overflow-x: scroll;
     justify-content: space-between;
     // gap: 12vw;
   
@@ -14,6 +13,14 @@
   
     position: relative;
     overflow: hidden;
+
+    // .plate_image{
+    //   position: absolute;
+    //   height: 47.22vw;
+    //   width: 58.68vw;
+    //   object-position: center;
+
+    // }
   }
   .left_out{
     position: relative;
@@ -60,12 +67,13 @@
     height: 35vw;
     aspect-ratio: 1/1;
     width: 35vw;
+    opacity: 1vw;
     transform: translate(-35%, 0%);
     animation: slide-animation-active 1.5s ease-in-out;
   }
   @keyframes slide-animation-left-out {
     0%{
-      transform: translate(25%, 30%);
+      transform: translate(20%, 30%);
     }
     100%{
       transform: translate(-100%, 60%);

@@ -13,40 +13,55 @@ type Props = {
 
 const BlogData: BlogCardType[] = [
   {
-    heading: "11 ways to avoid the spread of COVID-191",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-1.png",
-          alternativeText: "blog-img"
+    attributes: {
+
+      title: "11 ways to avoid the spread of COVID-191",
+      subtitle: "Lorum Ipsum",
+      release_date: "November 18, 2022",
+      slug: "#",
+      category: "blogs",
+      image: {
+        data: {
+          attributes: {
+            url: "/blog-1.png",
+            alternativeText: "blog-img"
+          }
         }
       }
     }
   },
   {
-    heading: "Love in the times of Quarantine",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-2.png",
-          alternativeText: "blog-img"
+    attributes: {
+
+      title: "Love in the times of Quarantine",
+      subtitle: "Lorum Ipsum",
+      release_date: "November 18, 2022",
+      slug: "#",
+      category: "blogs",
+      image: {
+        data: {
+          attributes: {
+            url: "/blog-2.png",
+            alternativeText: "blog-img"
+          }
         }
       }
     }
   },
   {
-    heading: "A foodie next door",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-3.png",
-          alternativeText: "blog-img"
+    attributes: {
+
+      title: "A foodie next door",
+      subtitle: "Lorum Ipsum",
+      release_date: "November 18, 2022",
+      slug: "#",
+      category: "blogs",
+      image: {
+        data: {
+          attributes: {
+            url: "/blog-3.png",
+            alternativeText: "blog-img"
+          }
         }
       }
     }
@@ -54,11 +69,12 @@ const BlogData: BlogCardType[] = [
 ];
 
 const BlogsSection = (props: Props) => {
+
   return (
     <div className={Styles.blog_wrapper}>
       <h2>{props.data?.heading || "Blogs"}</h2>
       <div className={Styles.cards_wrapper}>
-        {(BlogData).map((card, index) => {
+        {(props.data.blogs_array || BlogData).map((card, index) => {
           return <BlogCard card={card} key={index} />;
         })}
       </div>

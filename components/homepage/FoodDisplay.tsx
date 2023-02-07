@@ -101,6 +101,9 @@ const FoodDisplay = (props: Props) => {
   }, [currentIndex]);
 
   return (
+    <div className={Styles.container_top}>
+
+    
     <div className={Styles.ellipse}>
       <div className={Styles.food_display_wrapper}>
         <div className={Styles.food_heading}>
@@ -163,6 +166,7 @@ const FoodDisplay = (props: Props) => {
       </div> */}
         <CircularCarousel />
       </div>
+    </div>
     </div>
   );
 };

@@ -86,9 +86,9 @@ const TestimonialCarousel = (props:Props) => {
     },
     tablet: {
       breakpoint: { max: 1280, min: 768 },
-      items: 2,
+      items: 3,
       slidesToSlide: 1,
-      partialVisibilityGutter: 160,
+      // partialVisibilityGutter: 160,
     },
     mobile: {
       breakpoint: { max: 540, min: 0 },

@@ -67,6 +67,9 @@ export default function CircularCarousel() {
     <>
       <div >
         <div className={Styles.myswiper}>
+          {/* <div className={Styles.plate_image}>
+            <Image src="/food-plate.png" alt="" fill />
+          </div> */}
           {currentSlides.map((item: any, index: any) => (
             <div
               key={item.id}

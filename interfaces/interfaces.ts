@@ -12,8 +12,9 @@ export interface PriceCard {
 }
 
 export interface BlogCardType {
-  heading: string;
-  subheading: string;
+  attributes: {
+  title: string;
+  subtitle: string;
   image: {
     data: {
       attributes: {
@@ -22,7 +23,10 @@ export interface BlogCardType {
       }
     }
   }
-  date: string;
+  release_date: string;
+  slug: string;
+  category: string
+}
 }
 
 export interface ProfileCardType {

@@ -1,4 +1,6 @@
-
+.container_top{
+  width: 100vw;
+  overflow: hidden !important;
 .ellipse{
     width: 111vw;
   position: relative;
@@ -151,4 +153,5 @@
     // border: 5px solid red;
   }
   
+}
 }

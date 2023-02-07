@@ -18,9 +18,10 @@ const FilterButtons: string[] = [
 
 const BlogData: BlogCardType[] = [
   {
-    heading: "11 ways to avoid the spread of COVID-191",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
+    attributes: {
+    title: "11 ways to avoid the spread of COVID-191",
+    subtitle: "Lorum Ipsum",
+    release_date: "November 18, 2022",
     image: {
       data: {
         attributes: {
@@ -28,12 +29,16 @@ const BlogData: BlogCardType[] = [
           alternativeText: ""
         }
       }
-    }
+    },
+    slug: "covid",
+    category: "News"
+  }
   },
   {
-    heading: "Love in the times of Quarantine",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
+    attributes: {
+    title: "Love in the times of Quarantine",
+    subtitle: "Lorum Ipsum",
+    release_date: "November 18, 2022",
     image: {
       data: {
         attributes: {
@@ -41,12 +46,16 @@ const BlogData: BlogCardType[] = [
           alternativeText: ""
         }
       }
-    }
+    },
+    slug: "covid",
+    category: "News"
+  }
   },
   {
-    heading: "A foodie next door",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
+    attributes: {
+    title: "A foodie next door",
+    subtitle: "Lorum Ipsum",
+    release_date: "November 18, 2022",
     image: {
       data: {
         attributes: {
@@ -54,12 +63,16 @@ const BlogData: BlogCardType[] = [
           alternativeText: ""
         }
       }
-    }
+    },
+    slug: "covid",
+    category: "News"
+  }
   },
   {
-    heading: "11 ways to avoid the spread of COVID-191",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
+    attributes: {
+    title: "11 ways to avoid the spread of COVID-191",
+    subtitle: "Lorum Ipsum",
+    release_date: "November 18, 2022",
     image: {
       data: {
         attributes: {
@@ -67,12 +80,16 @@ const BlogData: BlogCardType[] = [
           alternativeText: ""
         }
       }
-    }
+    },
+    slug: "covid",
+    category: "blogs"
+  }
   },
   {
-    heading: "Love in the times of Quarantine",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
+    attributes: {
+    title: "Love in the times of Quarantine",
+    subtitle: "Lorum Ipsum",
+    release_date: "November 18, 2022",
     image: {
       data: {
         attributes: {
@@ -80,12 +97,16 @@ const BlogData: BlogCardType[] = [
           alternativeText: ""
         }
       }
-    }
+    },
+    slug: "covid",
+    category: "blogs"
+  }
   },
   {
-    heading: "A foodie next door",
-    subheading: "Lorum Ipsum",
-    date: "November 18, 2022",
+    attributes: {
+    title: "A foodie next door",
+    subtitle: "Lorum Ipsum",
+    release_date: "November 18, 2022",
     image: {
       data: {
         attributes: {
@@ -93,12 +114,27 @@ const BlogData: BlogCardType[] = [
           alternativeText: ""
         }
       }
-    }
+    },
+    slug: "covid",
+    category: "blogs"
+  }
   },
 ];
 
 const AllBlogs = (props: Props) => {
   const [activeBtn, setActiveBtn] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
+
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const displayedItems = (props.data || BlogData).slice(startIndex, endIndex)
+  const totalBlogs = props.data.length
+  const totalPages = Math.ceil(totalBlogs/itemsPerPage)
+
   const handleFilter = (index: number) => {
     setActiveBtn(index);
   };
@@ -121,20 +157,30 @@ const AllBlogs = (props: Props) => {
         })}
       </div>
       <div className={Styles.cards_wrapper}>
-        {(props.data || BlogData).map((card, index) => {
+        {displayedItems.map((card, index) => {
           return <BlogCard card={card} key={index} />;
         })}
       </div>
-      <div className={Styles.pagination}>
-        {[1, 2, 3, 4].map((item, index) => {
-          return <button key={index}>{item}</button>;
-        })}
-        <button>
-          <div className={Styles.next}>
-            <Image src={"/arrow_next.svg"} alt="next" fill />
+      {
+        // itemsPerPage <= totalBlogs && (
+          <div className={Styles.pagination}>
+            {Array.from({length: totalPages}, (_, i) => i + 1).map((item, index) => {
+              return <button onClick={()=> handlePageChange(item)} key={index}>{item}</button>;
+            })}
+            {
+              endIndex < totalBlogs && (
+                <button onClick={() => handlePageChange(currentPage + 1)}>
+                  <div className={Styles.next}>
+                    <Image src={"/arrow_next.svg"} alt="next" fill />
+                  </div>
+                </button>
+
+              )
+            }
           </div>
-        </button>
-      </div>
+
+        // )
+      }
     </div>
   );
 };
