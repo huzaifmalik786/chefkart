@@ -1,5 +1,8 @@
 .article_container {
   padding: 0px 6.66vw 0px 6.10vw;
+  @media screen and (max-width: 450px) {
+    padding: 8.89vw 4.44vw 0 4.44vw;
+  }
   header {
     display: flex;
     flex-direction: column;
@@ -8,6 +11,10 @@
     gap: 3.33vw;
     border-radius: 1.52vw;
     margin: 4.37vw 0px 2vw 0px;
+    @media screen and (max-width: 450px) {
+      margin: 0;
+      gap: 6.67vw;
+    }
 
     .heading {
       display: flex;
@@ -15,6 +22,9 @@
       align-items: flex-start;
       padding: 0px;
       gap: 1.11vw;
+      @media screen and (max-width: 450px) {
+        gap: 2.22vw;
+      }
 
       h5 {
         font-weight: 700;
@@ -22,8 +32,11 @@
         line-height: 1.52vw;
         display: flex;
         align-items: center;
-
         color: #656565;
+        @media screen and (max-width: 450px) {
+          line-height: 4.72vw;
+          font-size: 3.89vw;
+        }
       }
 
       h1 {
@@ -33,6 +46,9 @@
         display: flex;
         align-items: center;
         color: #101728;
+        @media screen and (max-width: 450px) {
+          font-size: 6.67vw;
+        }
       }
     }
     p {
@@ -45,6 +61,10 @@
       align-items: center;
 
       color: #9a9da3;
+      @media screen and (max-width: 450px) {
+        font-size: 5vw;
+        padding-bottom: 8.89vw;
+      }
     }
   }
   .article_image {
@@ -52,6 +72,17 @@
     width: 100%;
     height: 39.4vw;
     border-radius: 1.4vw;
+    @media screen and (max-width: 450px) {
+      width: 91.11vw;
+      height: 101.6vw;
+      border-radius: 5.56vw;
+      img{
+        object-fit: cover;
+        width: 91.11vw;
+        height: 101.6vw;
+        border-radius: 5.56vw;
+      }
+    }
   }
 
   .main {
@@ -59,6 +90,11 @@
     gap: 10.23vw;
     margin-top: 9.43vw;
     position: relative;
+    @media screen and (max-width: 450px) {
+      flex-direction: column-reverse;
+      margin-top: 8.88vw;
+      gap: 12.22vw;
+    }
 
     .social {
         position: absolute;
@@ -68,6 +104,16 @@
       align-items: center;
       padding: 0px;
       gap: 2.77vw;
+      @media screen and (max-width: 450px) {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;;
+        .right{
+          display: flex;
+          gap: 5.7vw;
+          align-items: center;
+        }
+      }
 
       span {
         font-weight: 600;
@@ -83,16 +129,30 @@
         position: relative;
         width: 2.05vw;
         height: 2.04vw;
+        @media screen and (max-width: 450px) {
+          width: 6.67vw;
+          height: 6.67vw;
+       
+        }
       }
       .twitter {
         position: relative;
         width: 2.15vw;
         height: 1.74vw;
+        @media screen and (max-width: 450px) {
+          width: 6.67vw;
+          height: 5.4vw;
+        }
       }
       .linkedin {
         position: relative;
         width: 1.85vw;
         height: 1.85vw;
+        @media screen and (max-width: 450px) {
+          width: 6.67vw;
+          height: 6.67vw;
+        
+        }
       }
       .mail {
         position: relative;
@@ -103,11 +163,19 @@
         position: relative;
         width: 1.86vw;
         height: 1.51vw;
+        @media screen and (max-width: 450px) {
+          width: 6.67vw;
+          height: 5.4vw;
+        }
       }
       .fb_like {
         position: relative;
         width: 2.25vw;
         height: 2.25vw;
+        @media screen and (max-width: 450px) {
+          width: 6.67vw;
+          height: 6.67vw;
+        }
       }
     }
 
@@ -117,6 +185,10 @@
       display: flex;
       flex-direction: column;
       gap: 1.41vw;
+      @media screen and (max-width: 450px) {
+        width: 100%;
+        margin-left: 0;
+      }
       p {
         font-weight: 400;
         font-size: 1.25vw;
@@ -128,6 +200,10 @@
         align-items: center;
         justify-content: center;
         color: #5b5b5b;
+        @media screen and (max-width: 450px) {
+          font-size: 3.89vw;
+
+        }
       }
     }
   }

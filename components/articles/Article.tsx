@@ -1,7 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import Styles from "../../styles/components/articles/article.module.scss";
-import Reveal from "../Reveal";
+import Image from 'next/image'
+import React from 'react'
+import Styles from '../../styles/components/articles/article.module.scss'
+import Reveal from '../Reveal'
+import UseWindowDimensions from '../WindowSize'
 
 const content = {
 	article_content:
@@ -9,13 +10,14 @@ const content = {
 };
 
 const Article = () => {
-	return (
-		<div className={Styles.article_container}>
-			<header>
-				<div className={Styles.heading}>
-					<h5>Lorum Ipsum</h5>
-					<h1>Love in the Time of Quarantine</h1>
-				</div>
+    const {width}= UseWindowDimensions();
+  return (
+    <div className={Styles.article_container}>
+        <header>
+            <div className={Styles.heading}>
+                <h5>Lorum Ipsum</h5>
+                <h1>Love in the Time of Quarantine</h1>
+            </div>
 
 				<p>November 18, 2022</p>
 			</header>
@@ -28,64 +30,65 @@ const Article = () => {
 				/>
 			</div>
 
-			<div className={Styles.main}>
-				<div className={Styles.social}>
-					<span>Share</span>
-					<div className={Styles.fb}>
-						<Image
-							src="/fb.png"
-							alt=""
-							fill
-						/>
-					</div>
-					<div className={Styles.twitter}>
-						<Image
-							src="/Vector (11).png"
-							alt=""
-							fill
-						/>
-					</div>
-					<div className={Styles.linkedin}>
-						<Image
-							src="/Vector (12).png"
-							alt=""
-							fill
-						/>
-					</div>
-					<div className={Styles.mail}>
-						<Image
-							src="/Vector (13).png"
-							alt=""
-							fill
-						/>
-					</div>
-					<div className={Styles.link}>
-						<Image
-							src="/Vector (14).png"
-							alt=""
-							fill
-						/>
-					</div>
-					<div className={Styles.fb_like}>
-						<Image
-							src="/Facebook like.png"
-							alt=""
-							fill
-						/>
-					</div>
-				</div>
-				<article>
-					{content.article_content.split("\n").map((item, key) => {
-						return (
-							<Reveal key={key}>
-								<p>{item}</p>
-							</Reveal>
-						);
-					})}
-				</article>
-			</div>
-		</div>
-	);
-};
+        <div className={Styles.main}>
+            {width<=450?(
+            <div className={Styles.social}>
+                <div className={Styles.fb_like}>
+                    <Image src='/Facebook like.png' alt='' fill />
+                </div>
+                <div className={Styles.right}>
+                <div className={Styles.link}>
+                    <Image src='/Vector (14).png' alt='' fill />
+                </div>
+                <div className={Styles.fb}>
+                    <Image src='/fb.png' alt='' fill />
+                </div>
+                <div className={Styles.twitter}>
+                    <Image src='/Vector (11).png' alt='' fill />
+                </div>
+                <div className={Styles.linkedin}>
+                    <Image src='/Vector (12).png' alt='' fill />
+                </div>
+                </div>
+            </div>
+            ):(
+            <div className={Styles.social}>
+                <span>Share</span>
+                <div className={Styles.fb}>
+                    <Image src='/fb.png' alt='' fill />
+                </div>
+                <div className={Styles.twitter}>
+                    <Image src='/Vector (11).png' alt='' fill />
+                </div>
+                <div className={Styles.linkedin}>
+                    <Image src='/Vector (12).png' alt='' fill />
+                </div>
+                <div className={Styles.mail}>
+                    <Image src='/Vector (13).png' alt='' fill />
+                </div>
+                <div className={Styles.link}>
+                    <Image src='/Vector (14).png' alt='' fill />
+                </div>
+                <div className={Styles.fb_like}>
+                    <Image src='/Facebook like.png' alt='' fill />
+                </div>
+            </div>
+            )}
+            
+            <article>
+                {
+                    content.article_content.split('\n').map((item, key)=>{
+                        return(
+                            <Reveal>
+                            <p key={key}>{item}</p>
+                            </Reveal>
+                        )
+                    })
+                }
+            </article>
+        </div>
+    </div>
+  )
+}
 
 export default Article;

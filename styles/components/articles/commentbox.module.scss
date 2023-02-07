@@ -1,6 +1,10 @@
 .comment_box_container {
   padding: 0px 6.66vw 0px 6.10vw;
   margin: 4.58vw 0px 5.9vw 19vw;
+  @media screen and (max-width: 450px) {
+    margin: 0;
+    padding: 6.67vw 4.44vw 18.8vw 4.44vw;
+  }
 
   .comment_box {
     display: flex;
@@ -8,11 +12,29 @@
     align-items: flex-start;
     padding: 0px;
     gap: 2.08vw;
+    @media screen and (max-width: 450px) {
+      gap:4.44vw;
+    }
+    span {
+      font-weight: 400;
+      font-size: 0.83vw;
+      line-height: 150%;
+      display: flex;
+      align-items: flex-end;
+      color: #5b5b5b;
+      @media screen and (max-width: 450px) {
+        font-size: 2.78vw;
+      }
+    }
 
     .comment_profile {
       position: relative;
       width: 5.82vw;
       aspect-ratio: 1/1;
+      @media screen and (max-width: 450px) {
+        width: 11.11vw;
+        height: 11.11vw;
+      }
     }
 
     .comment {
@@ -22,8 +44,18 @@
       align-items: flex-start;
       padding: 0px;
       gap: 0.9vw;
-
       width: 45.8vw;
+      @media screen and (max-width: 450px) {
+        width: 75.27vw;
+        gap:0;
+        .bottom_content{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding-top: 4.44vw;
+        }
+      }
 
       .header {
         display: flex;
@@ -36,17 +68,12 @@
           line-height: 2vw;
           display: flex;
           align-items: center;
-
           color: #656565;
-        }
-        span {
-          font-weight: 400;
-          font-size: 0.83vw;
-          line-height: 150%;
-          display: flex;
-          align-items: flex-end;
-
-          color: #5b5b5b;
+          @media screen and (max-width: 450px) {
+            font-size: 5vw;
+            line-height: 6.11vw;
+            margin-bottom: 3.5vw;
+          }
         }
       }
 
@@ -60,11 +87,17 @@
         align-items: center;
 
         color: #5b5b5b;
+        @media screen and (max-width: 450px) {
+          font-size: 3.89vw;
+        }
       }
       .like_icon {
         position: relative;
         width: 1.45vw;
         aspect-ratio: 1/1;
+        @media screen and (max-width: 450px) {
+          width: 6.67vw;
+        }
       }
     }
   }

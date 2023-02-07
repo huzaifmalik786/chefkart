@@ -3,6 +3,7 @@ import Image from "next/image";
 import Styles from "../styles/components/footer.module.scss";
 import Link from "next/link";
 import { image_type } from "../interfaces/interfaces";
+import UseWindowDimensions from "./WindowSize";
 
 type Props={
   data: {
@@ -62,12 +63,31 @@ const footer_links = [
 
 ]
 const Footer = (props: Props) => {
+  const {width}= UseWindowDimensions();
   return (
     <footer className={Styles.footer}>
       <div className={Styles.footer_row_1}>
         <div className={Styles.footer_logo}>
           <Image src={props.data.logo.image.data.attributes.url || "/Logo-black.svg"} alt="chefkart-logo" fill />
         </div>
+        {width<=450?(
+            <div className={Styles.footer_row_2}>
+            <div className={Styles.row2_text}>
+              <p>{props.data.get_app_heading || "Get the app now!"}</p>
+            </div>
+            <div className={Styles.row2_img}>
+              {
+                (props.data.download_icon).map((item, key)=>{
+                  return(
+                    <div key={key}>
+                      <Image src={item.icon.data.attributes.url} alt={item.icon.data.attributes.url || "download-icon"} fill />
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </div>
+        ):(<div></div>)}
         <div className={Styles.left_section}>
           <div className={Styles.footer_content}>
             {
@@ -130,7 +150,10 @@ const Footer = (props: Props) => {
           </div>
           </div>
       </div>
-      <div className={Styles.footer_row_2}>
+      {width<=450?(
+        <div></div>
+      ):(
+        <div className={Styles.footer_row_2}>
         <div className={Styles.row2_text}>
           <p>{props.data.get_app_heading || "Get the app now!"}</p>
         </div>
@@ -144,14 +167,25 @@ const Footer = (props: Props) => {
               )
             })
           }
-          {/* <div>
-            <Image src={"/google-play.svg"} alt="google-play" fill />
-          </div>
-          <div>
-            <Image src={"/app-store.svg"} alt="app-store" fill />
-          </div> */}
         </div>
       </div>
+      )}
+      {/* <div className={Styles.footer_row_2}>
+        <div className={Styles.row2_text}>
+          <p>{props.data.get_app_heading || "Get the app now!"}</p>
+        </div>
+        <div className={Styles.row2_img}>
+          {
+            (props.data.download_icon).map((item, key)=>{
+              return(
+                <div key={key}>
+                  <Image src={item.icon.data.attributes.url} alt={item.icon.data.attributes.url || "download-icon"} fill />
+                </div>
+              )
+            })
+          }
+        </div>
+      </div> */}
       <div className={Styles.footer_row_3}>
         <div>
           <p>{props.data.copyright_text || "Copyright 2022 99xTechnologies LTD"}</p>

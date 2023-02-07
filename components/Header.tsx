@@ -47,11 +47,13 @@ gsap.registerPlugin(ScrollTrigger);
   useEffect(()=>{
     gsap.fromTo(ref.current,{
       top: -15,
-      opacity: 0
+      opacity: 0,
+      zIndex:-1
     },{
       top:0,
       opacity: 1,
-      paused: true,
+      // paused: true,
+      zIndex:100,
       duration: 0.3,
       scrollTrigger: {
         start: 650,
@@ -72,16 +74,12 @@ gsap.registerPlugin(ScrollTrigger);
               <Image
                 src={"/Logo.png"}
                 alt="chefkart-logo"
-                // width={192}
-                // height={56}
                 fill
               />
             ) : (
               <Image
                 src={"/Logo-yellow.svg"}
                 alt="chefkart-logo"
-                // width={192}
-                // height={56}
                 fill
               />
             )}
