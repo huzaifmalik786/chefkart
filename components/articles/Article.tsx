@@ -31,29 +31,9 @@ const Article = () => {
 			</div>
 
         <div className={Styles.main}>
-            {width<=450?(
-            <div className={Styles.social}>
-                <div className={Styles.fb_like}>
-                    <Image src='/Facebook like.png' alt='' fill />
-                </div>
-                <div className={Styles.right}>
-                <div className={Styles.link}>
-                    <Image src='/Vector (14).png' alt='' fill />
-                </div>
-                <div className={Styles.fb}>
-                    <Image src='/fb.png' alt='' fill />
-                </div>
-                <div className={Styles.twitter}>
-                    <Image src='/Vector (11).png' alt='' fill />
-                </div>
-                <div className={Styles.linkedin}>
-                    <Image src='/Vector (12).png' alt='' fill />
-                </div>
-                </div>
-            </div>
-            ):(
             <div className={Styles.social}>
                 <span>Share</span>
+				<div className={Styles.right}>
                 <div className={Styles.fb}>
                     <Image src='/fb.png' alt='' fill />
                 </div>
@@ -69,11 +49,13 @@ const Article = () => {
                 <div className={Styles.link}>
                     <Image src='/Vector (14).png' alt='' fill />
                 </div>
+				</div>
+				<div className={Styles.left}>
                 <div className={Styles.fb_like}>
                     <Image src='/Facebook like.png' alt='' fill />
                 </div>
+				</div>
             </div>
-            )}
             
             <article>
                 {

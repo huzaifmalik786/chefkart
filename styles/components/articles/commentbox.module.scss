@@ -15,17 +15,6 @@
     @media screen and (max-width: 450px) {
       gap:4.44vw;
     }
-    span {
-      font-weight: 400;
-      font-size: 0.83vw;
-      line-height: 150%;
-      display: flex;
-      align-items: flex-end;
-      color: #5b5b5b;
-      @media screen and (max-width: 450px) {
-        font-size: 2.78vw;
-      }
-    }
 
     .comment_profile {
       position: relative;
@@ -48,13 +37,22 @@
       @media screen and (max-width: 450px) {
         width: 75.27vw;
         gap:0;
-        .bottom_content{
+      }
+      .bottom_content{
+        span{
+          display: none;
+        }
+        @media (max-width: 450px) {
+          span{
+            display: block;
+          }
           display: flex;
           align-items: center;
           justify-content: space-between;
           width: 100%;
           padding-top: 4.44vw;
         }
+       
       }
 
       .header {
@@ -73,6 +71,17 @@
             font-size: 5vw;
             line-height: 6.11vw;
             margin-bottom: 3.5vw;
+          }
+        }
+        span {
+          font-weight: 400;
+          font-size: 0.83vw;
+          line-height: 150%;
+          display: flex;
+          align-items: flex-end;
+          color: #5b5b5b;
+          @media screen and (max-width: 450px) {
+            display: none;
           }
         }
       }

@@ -36,28 +36,6 @@ const ContactForm = (props: Props) => {
         <div className={Styles.image}>
             <Image src={props.data.url || '/iStock-495494292 1.png'} alt={props.data.alternativeText || ''} fill />
         </div>
-        {width<=450?(
-        <div className={Styles.form_container}>
-            <h2>Please fill out the form below and we will respond within 24hrs. </h2>
-            <form onSubmit={onSubmit}>
-                <Input left_section="Name" placeholder="" type="text" name="name" />
-                <div className={Styles.two_input}>
-                    <Input placeholder="9987115132" type="text" name="mobile" />
-                    {width<=450?(<div></div>):(
-                    <div className={Styles.dropdown}>
-                        <Dropdown arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
-                    </div>
-                    )}
-                </div>
-                <Input left_section="" placeholder="Email" type="email" name="email" />
-                <TextArea row={4}/>
-                <div className={Styles.checbox_container}>
-                    <input type="checkbox" name="" id="checkbox" /> I agree to Chefkart’s terms of service & Privacy Policy
-                </div>
-                <Button bgcolor="#E76F51" text="Submit" />
-            </form>
-        </div>
-        ):(
         <div className={Styles.form_container}>
             <h2>Please fill out the form below and we will respond within 24hrs. </h2>
             <form onSubmit={onSubmit}>
@@ -65,11 +43,12 @@ const ContactForm = (props: Props) => {
                 <Input left_section="" placeholder="Email" type="email" name="email" />
                 <div className={Styles.two_input}>
                     <Input placeholder="9987115132" type="text" name="mobile" />
-                    {width<=472?(<div></div>):(
                     <div className={Styles.dropdown}>
                         <Dropdown arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
                     </div>
-                    )}
+                </div>
+                <div className={Styles.textarea}>
+                    <TextArea row={4}/>
                 </div>
                 <div className={Styles.checbox_container}>
                     <input type="checkbox" name="" id="checkbox" /> I agree to Chefkart’s terms of service & Privacy Policy
@@ -77,7 +56,6 @@ const ContactForm = (props: Props) => {
                 <Button bgcolor="#E76F51" text="Submit" />
             </form>
         </div>
-        )}
     </div>
     </>
   )
