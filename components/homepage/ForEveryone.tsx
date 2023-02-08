@@ -4,6 +4,7 @@ import { image_type } from "../../interfaces/interfaces";
 import useFetchData from "../../lib/api";
 import Styles from "../../styles/components/homepage/foreveryone.module.scss";
 import ForEveryOneTab from "./ForEveryOneTab";
+import Reveal from "../Reveal";
 
 type Props={
   data: {
@@ -24,6 +25,7 @@ const ForEveryone = (props:Props) => {
 
   return (
     <div className={Styles.container}>
+      <Reveal>
       <div className={Styles.heading}>
         <h3>
           {
@@ -32,6 +34,8 @@ const ForEveryone = (props:Props) => {
         
         </h3>
       </div>
+      </Reveal>
+      <Reveal>
       <div className={Styles.link_wrapper}>
         <ul className={Styles.link_list}>
           <li
@@ -81,6 +85,7 @@ const ForEveryone = (props:Props) => {
           </li>
         </ul>
       </div>
+      </Reveal>
       <ForEveryOneTab tab_data={props.data?.tab} tab={openTab} />
     </div>
   );

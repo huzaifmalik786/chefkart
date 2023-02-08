@@ -59,9 +59,7 @@ gsap.registerPlugin(ScrollTrigger);
         toggleActions: "play none none reverse"
       }
     })
-    
-
-  })
+  },[])
 
 
 
@@ -72,7 +70,7 @@ gsap.registerPlugin(ScrollTrigger);
           <Link href="/">
             {router.pathname === "/" ? (
               <Image
-                src={"/Logo.svg"}
+                src={"/Logo.png"}
                 alt="chefkart-logo"
                 // width={192}
                 // height={56}
@@ -121,7 +119,7 @@ gsap.registerPlugin(ScrollTrigger);
           <Link href="/">
             {router.pathname === "/" ? (
               <Image
-                src={"/Logo.svg"}
+                src={"/Logo-black.svg"}
                 alt="chefkart-logo"
                 // width={192}
                 // height={56}
@@ -129,7 +127,7 @@ gsap.registerPlugin(ScrollTrigger);
               />
             ) : (
               <Image
-                src={"/Logo-yellow.svg"}
+                src={"/Logo-black.svg"}
                 alt="chefkart-logo"
                 // width={192}
                 // height={56}
@@ -153,7 +151,8 @@ gsap.registerPlugin(ScrollTrigger);
           <button onClick={() => router.push("/contact-us")}>{props.data?.button.button_text || "contact us"}</button>
           <div onClick={() => setOpenSidebar(true)}>
             <Image
-              src={props.data.avatar?.data?.attributes?.url || "/burger-icon.svg"}
+              // src={props.data.avatar?.data?.attributes?.url || "/burger-icon-black.svg"}
+              src="/burger-icon-black.svg"
               alt={props.data.avatar?.data?.attributes?.url || "menu-icon"}
               fill
             />

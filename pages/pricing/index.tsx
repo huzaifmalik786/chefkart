@@ -11,6 +11,7 @@ import RestaurantLike from "../../components/pricing/RestaurantLike";
 import { GetServerSideProps, GetStaticProps } from "next";
 import { features_icon, image_type, QUESTIONS, table_content } from "../../interfaces/interfaces";
 import UseWindowDimensions from "../../components/WindowSize";
+import Reveal from "../../components/Reveal";
 
 type Props = {
   header: {
@@ -168,7 +169,9 @@ const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
       <PricingBanner data={props.banner} />
+      <Reveal>
       <Features data={props.affordable_price} />
+      </Reveal>
       <Hygiene
         data={props.hygiene}
         subheading=""
@@ -180,11 +183,18 @@ const index = (props: Props) => {
         descsize={width<=472?"3.89vw":""}
       />
       <ProjectFeatures data={props.features} />
+      <Reveal>
       <RestaurantLike data={props.restaurant} />
+      </Reveal>
+      <Reveal>
       <PricingSignUp data={props.pricing_signup} />
+      </Reveal>
+      <Reveal>
       <FAQ data={props.faq} />
-
+      </Reveal>
+      <Reveal>
       <BookTrial data={props.book_trial} py={width<=472?"15vw":""}/>
+      </Reveal>
     </Layout>
   );
 };

@@ -8,6 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 import CircularCarousel from "./CircularCarousel";
 
 import UseWindowDimensions  from '../WindowSize';
+import Reveal from "../Reveal";
 
 type Props = {};
 type styleType = {
@@ -106,6 +107,7 @@ const FoodDisplay = (props: Props) => {
     
     <div className={Styles.ellipse}>
       <div className={Styles.food_display_wrapper}>
+        <Reveal>
         <div className={Styles.food_heading}>
           {/* <h3>
           Feeling <span style={{ color: "#FF8811" }}>Indian?</span> */}
@@ -134,6 +136,7 @@ const FoodDisplay = (props: Props) => {
             the ridiculous spends ordering online
           </div> */}
         </div>
+        </Reveal>
 
         {/* <div className={Styles.carousel_wrapper}>
         <Carousel

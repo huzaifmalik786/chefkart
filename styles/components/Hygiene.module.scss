@@ -48,6 +48,13 @@
     @media screen and (max-width: 450px){
       height: 55.28vw;
     }
+    .content{
+      display: flex;
+      flex-direction: column;
+      @media screen and (max-width: 450px) {
+      align-items: center;
+      }
+    }
     .subheading {
       font-weight: 700;
       font-size: 1.66vw;

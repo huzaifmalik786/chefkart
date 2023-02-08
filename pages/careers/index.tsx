@@ -12,9 +12,9 @@ import Perks from "../../components/careers/Perks";
 import Vacancies from "../../components/careers/Vacancies";
 import Divider from "../../components/Divider";
 import JoinOurTeam from "../../components/Forms/JoinOurTeam";
-
 import Layout from "../../components/layouts/Layout";
 import { blogType, CultureCardType, image_type, ProfileCardType } from "../../interfaces/interfaces";
+import Reveal from "../../components/Reveal";
 
 type Props = {
   header: {
@@ -128,13 +128,27 @@ const index = (props: Props) => {
   return (
     <Layout title="Careers" header={props.header} footer={props.footer}>
       <CareersHero data={props.banner} />
+      <Reveal>
       <Culture data={props.culture}  />
+      </Reveal>
+      <Reveal>
       <Perks data={props.perks} />
+      </Reveal>
+      <Reveal>
       <Vacancies data={props.vacancy} />
+      </Reveal>
+      <Reveal>
       <FeaturedArticle data={props.articles} />
+      </Reveal>
+      <Reveal>
       <Founders data={props.founders} />
+      </Reveal>
+      <Reveal>
       <Leadership data={props.leaders} />
+      </Reveal>
+      <Reveal>
       <EndCarousel data={props.end_carousel}  />
+      </Reveal>
       <Divider />
     </Layout>
   );

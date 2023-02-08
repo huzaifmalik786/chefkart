@@ -6,6 +6,7 @@ import Recomended from "../../components/blogs/Recomended";
 
 import Layout from "../../components/layouts/Layout";
 import { BlogCardType, blogType, image_type } from "../../interfaces/interfaces";
+import Reveal from "../../components/Reveal";
 
 type Props = {
   header: {
@@ -65,8 +66,12 @@ const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
       <BlogHero data={props.banner} />
+      <Reveal>
       <AllBlogs data={props.blogs} />
+      </Reveal>
+      <Reveal>
       <Recomended data={props.articles} />
+      </Reveal>
     </Layout>
   );
 };

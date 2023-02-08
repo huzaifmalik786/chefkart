@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Styles from '../../styles/components/contact-us/tools.module.scss'
+import Reveal from '../Reveal'
 
 type Props = {
     top: string;
@@ -8,6 +9,8 @@ type Props = {
 }
 const Tools = (props: Props) => {
   return (
+    <Reveal>
+
     <div className={Styles.tools_container} style={{left: `${props.left}`, top: `${props.top}`}}> 
         <div className={Styles.tools_subcontainer} style={{left: `${props.left}`, top: `${props.top}`}}>
             <div className={Styles.text}>
@@ -20,6 +23,8 @@ const Tools = (props: Props) => {
             </div>
         </div>
     </div>
+    </Reveal>
+
   )
 }
 

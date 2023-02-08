@@ -4,11 +4,19 @@
   // background-color: #e5e5e5;
   // place-items: center;
   padding: 4vw 0vw 4vw 6.66vw;
+  @media screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+    padding: 10vw 5.6vw;
+  }
 
   .hero_img {
     width: 40vw;
     position: relative;
     height: 37.29vw;
+    @media screen and (max-width: 450px) {
+      width: 88.33vw;
+      height: 81.94vw;
+    }
 
     .img {
       border-radius: 16px;
@@ -18,6 +26,9 @@
   .hero_content {
     font-weight: 700;
     place-self: center;
+    @media screen and (max-width: 450px) {
+      place-self: start;
+    }
 
     .label {
       font-size: 0.97vw;
@@ -29,6 +40,14 @@
       justify-content: center;
       padding: 0.27vw 0.7vw;
       border-radius: 1.875vw;
+      @media screen and (max-width: 450px) {
+        font-size: 3.33vw;
+        line-height: 5.56vw;
+        padding: 1.11vw 2.78vw;
+        border-radius: 7.5vw;
+        width: min-content;
+        letter-spacing: -0.015em;
+      }
     }
 
     .h2 {
@@ -40,6 +59,12 @@
       padding-top: 1.94vw;
       position: relative;
       display: block;
+      @media screen and (max-width: 450px) {
+        font-size: 6.67vw;
+        line-height: 8.33vw;
+        letter-spacing: -0.015em;
+        padding-top: 4.44vw;
+      }
 
 
       .slider{
@@ -49,9 +74,15 @@
         letter-spacing: -0.01em;
         font-size: inherit;
         display: flex;
-          height: 4vw;
-          overflow: hidden;
-          transition: margin-top 0.5s, width 0.5s ease-in-out;
+        height: 4vw;
+        overflow: hidden;
+        transition: margin-top 0.5s, width 0.5s ease-in-out;
+        @media screen and (max-width: 450px) {
+          left: 16vw;
+          top: 12.6vw;
+          font-size: 6.67vw;
+          height: 8vw;
+        }
       }
     }
 
@@ -62,6 +93,13 @@
       white-space: pre-line;
       padding: 1.66vw 0;
       width: 36.7vw;
+      @media screen and (max-width: 450px) {
+        font-size: 4.44vw;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        width: 90.5vw;
+        padding: 6.67vw 0;
+      }
 
       .colored {
         color: #e76f51;
@@ -75,6 +113,13 @@
       padding: 0.83vw 1.38vw;
       background-color: black;
       color: white;
+      @media screen and (max-width: 450px) {
+        font-size: 3.89vw;
+        line-height: 4.6vw;
+        padding: 3.33vw 5.56vw;
+        border-radius: 2.22vw;
+        margin-bottom: 8.33vw;
+      }
     }
   }
 }

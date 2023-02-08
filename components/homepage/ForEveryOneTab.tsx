@@ -3,6 +3,7 @@ import Image from "next/image";
 import Styles from "../../styles/components/homepage/foreveryonetab.module.scss";
 import useFetchData from "../../lib/api";
 import { image_type } from "../../interfaces/interfaces";
+import Reveal from "../Reveal";
 
 type Props = {
   tab: number;
@@ -19,6 +20,7 @@ const ForEveryOneTab = (props: Props) => {
     <div className={Styles.tab}>
       {props.tab === 1 && (
         <>
+        <Reveal>
           <div className={Styles.tab_img}>
             <Image
               src={props.tab_data[0].image.data.attributes.url || '/for-moms.png'}
@@ -28,6 +30,8 @@ const ForEveryOneTab = (props: Props) => {
               fill
             />
           </div>
+          </Reveal>
+          <Reveal>
           <div className={Styles.tab_text}>
             <h3>
               {
@@ -43,11 +47,13 @@ const ForEveryOneTab = (props: Props) => {
               
             </p>
           </div>
+          </Reveal>
         </>
       )}
 
       {props.tab === 2 && (
         <>
+        <Reveal>
           <div className={Styles.tab_img}>
             <Image
               src={props.tab_data[1].image.data.attributes.url || '/for-single.png'}
@@ -57,6 +63,8 @@ const ForEveryOneTab = (props: Props) => {
               fill
             />
           </div>
+          </Reveal>
+        <Reveal>
           <div className={Styles.tab_text}>
             <h3>
               {
@@ -71,11 +79,13 @@ const ForEveryOneTab = (props: Props) => {
               
             </p>
           </div>
+          </Reveal>
         </>
       )}
 
       {props.tab === 3 && (
         <>
+        <Reveal>
           <div className={Styles.tab_img}>
             <Image
               src={props.tab_data[2].image.data.attributes.url || '/for-family.png'}
@@ -85,6 +95,8 @@ const ForEveryOneTab = (props: Props) => {
               fill
             />
           </div>
+          </Reveal>
+        <Reveal>
           <div className={Styles.tab_text}>
             <h3>
               {
@@ -99,6 +111,7 @@ const ForEveryOneTab = (props: Props) => {
               
             </p>
           </div>
+          </Reveal>
         </>
       )}
     </div>

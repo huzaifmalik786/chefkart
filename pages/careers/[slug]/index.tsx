@@ -3,6 +3,7 @@ import React from "react";
 import PositionPage from "../../../components/careers/PositionPage";
 import Layout from "../../../components/layouts/Layout";
 import { image_type } from "../../../interfaces/interfaces";
+import Reveal from "../../../components/Reveal";
 
 type Props = {
   header: {
