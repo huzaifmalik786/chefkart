@@ -55,7 +55,7 @@ const ProjectFeatures = (props : Props) => {
         <p className={Styles.sub_heading}>{props.data?.subheading || "Get the details you need to purchase"}</p>
         <h4 className={Styles.heading}>{props.data?.heading || "An overview of what’s included"}</h4>
         </Reveal>
-        {width<=472?(
+        {width<=450?(
             <Reveal>
             <div className={Styles.container}>
             <div className={Styles.card}>

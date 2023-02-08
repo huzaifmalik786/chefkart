@@ -57,7 +57,7 @@ const FoodDisplay = (props: Props) => {
       style.position = "relative";
       //  style.width = '13.3vw'
     } else {
-      if(width<=472){
+      if(width<=450){
         style.marginTop = `${index > currentIndex ? "6.47vw" : `-6.47vw`}`;
       }
       else{

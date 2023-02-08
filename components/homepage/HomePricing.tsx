@@ -69,7 +69,7 @@ const HomePricing = (props:Props) => {
   
   return (
     <div className={Styles.pricing_wrapper}>
-      {/* {width<=472?(
+      {/* {width<=450?(
         <Reveal>
         <div className={Styles.pricing_heading}>
         <h2>

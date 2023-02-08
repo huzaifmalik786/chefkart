@@ -112,7 +112,6 @@ const Culture = (props: Props) => {
         customTransition="transform 900ms ease-in"
         ssr
         // infinite={false}
-        // infinite={width<=472? true: false}
         arrows={false}
         containerClass={Styles.carousel_container}
         itemClass={Styles.item}

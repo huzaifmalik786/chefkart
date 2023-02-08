@@ -203,7 +203,7 @@ export default function Home(props: Props) {
             bgcolor="#F9F9F9"
             color="#000000"
             px="4.44vw"
-            py={width<=472?"16vw":"8.32vw"}
+            py={width<=450?"16vw":"8.32vw"}
           />
         </div>
         <div style={{ marginTop: "-4.8vw" }}>
