@@ -178,9 +178,9 @@ const index = (props: Props) => {
         heading="WE ASSURE YOU OF THE BEST HYGIENE"
         description="At Chefkart, we are truly committed to"
         colored_text="simplifying the way India eats."
-        center={width<=472?true:false}
-        fontweight={width<=472?"400":""}
-        descsize={width<=472?"3.89vw":""}
+        center={width<=450?true:false}
+        fontweight={width<=450?"400":""}
+        descsize={width<=450?"3.89vw":""}
       />
       <ProjectFeatures data={props.features} />
       <Reveal>
@@ -193,7 +193,7 @@ const index = (props: Props) => {
       <FAQ data={props.faq} />
       </Reveal>
       <Reveal>
-      <BookTrial data={props.book_trial} py={width<=472?"15vw":""}/>
+      <BookTrial data={props.book_trial} py={width<=450?"15vw":""}/>
       </Reveal>
     </Layout>
   );

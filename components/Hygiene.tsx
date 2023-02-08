@@ -49,7 +49,7 @@ const Hygiene = (props: Props) => {
           playsInline />
       {/* </div> */}
       <Reveal>
-      <div className={Styles.content}>
+      <div className={Styles.content} style={!props.center?{}:{alignItems:"center"}}>
       <span className={Styles.subheading}>{props.data?.subheading || props.subheading}</span>
       <h3
         className={Styles.heading}

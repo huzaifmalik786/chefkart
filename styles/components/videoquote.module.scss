@@ -83,10 +83,9 @@
     overflow: hidden;
     @media screen and (max-width: 450px) {
       border-radius: 3vw;
-      // width: 91.11vw;
       width: 100%;
       aspect-ratio: 41/23;
-      // height: 65vw;
+      height: 60vw;
     }
 
     .video {
@@ -97,6 +96,7 @@
       @media screen and (max-width: 450px) {
         // height: 63vw;
         object-fit: cover;
+        height: 60vw;
       }
       // height: 100%;
     }

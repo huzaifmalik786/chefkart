@@ -6,6 +6,7 @@ import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { blogType } from "../interfaces/interfaces";
+import UseWindowDimensions from "./WindowSize";
 // import { isMobile, isDesktop, isTablet } from "react-device-detect";
 
 type Props = {
@@ -13,9 +14,8 @@ type Props = {
   isArrow: boolean;
   isFull: boolean;
   isInfinite: boolean;
-
+  isSmall?:boolean;
   cards: blogType[]
-  
 };
 const Images: blogType[] = [
   {
@@ -108,6 +108,7 @@ const ButtonGroup = ({ next, previous, ...rest }: any) => {
 };
 
 const BlogArticleCarousel = (props: Props) => {
+  const {width}= UseWindowDimensions();
   const [device, setDevice] = useState<string>();
   const responsive = {
     desktop: {
@@ -124,7 +125,7 @@ const BlogArticleCarousel = (props: Props) => {
     },
     mobile: {
       breakpoint: { max: 540, min: 0 },
-      items: 1.2,
+      items: props.isSmall?2:1.2,
       slidesToSlide: 1,
       // partialVisibilityGutter: 120,
     },
@@ -167,9 +168,9 @@ const BlogArticleCarousel = (props: Props) => {
       >
         {(props.cards || Images).map((blog, key) => {
           return (
-            <div key={key} className={Styles.items}>
-              <Image src={blog.image?.data?.attributes?.url} alt="food" fill className={Styles.img} />
-              <div className={Styles.item_overlay}>
+            <div key={key} className={Styles.items} style={props.isSmall && width<=450?{width:"43.33vw",height:"51.38vw", borderRadius:"1.1vw"}:{}}>
+              <Image src={blog.image?.data?.attributes?.url} alt="food" fill className={Styles.img} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}/>
+              <div className={Styles.item_overlay} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}>
                 <div className={Styles.item_content}>
                   <div className={Styles.item_label}>
                     <button>{blog.tag} </button>
@@ -177,7 +178,7 @@ const BlogArticleCarousel = (props: Props) => {
                     <p>{blog.read_time} min read</p>
                   </div>
                   <div className={Styles.item_heading}>
-                    <h2>{blog.heading}</h2>
+                    <h2 style={props.isSmall && width<=450?{fontSize:"3.33vw", width:"33.33vw"}:{}}>{blog.heading}</h2>
                   </div>
                 </div>
               </div>

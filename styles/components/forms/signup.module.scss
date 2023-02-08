@@ -11,6 +11,11 @@
   height: 28.6vw;
 
   background: #ffffff;
+  @media (max-width: 450px) {
+    width: 91.11vw;
+    height: max-content;
+    padding-top: 10vw;
+  }
 
   form{
     display: flex;
@@ -19,6 +24,36 @@
     padding: 0px;
     gap: 3.33vw;
     width: 100%;
+    @media screen and (max-width: 450px) {
+      span{
+        font-size: 3.33vw;
+        line-height: 4.44vw;
+        margin-left: 1vw;
+      }
+      input{
+        padding: 1.6vw;
+        font-size: 3.33vw;
+        line-height: 4.44vw;
+      }
+      .textarea{
+        display: block;
+        textarea{
+          padding: 1.6vw;
+          font-size: 3.33vw;
+          line-height: 4.44vw;
+        }
+      }
+      input::placeholder,textarea::placeholder{
+        color: #979797;
+      }
+      button{
+        font-size: 3.33vw;
+        padding: 2.74vw 4.44vw;
+        line-height: 6.67vw;
+        border-radius: 1.11vw;
+        background: #FF8811 !important;
+      }
+    }
 
     .inputs{
         display: flex;
@@ -27,6 +62,9 @@ align-items: flex-start;
 padding: 0px;
 gap: 1.11vw;
 width: 100%;
+@media (max-width: 450px) {
+  gap: 4.44vw;
+}
 
 .two_input {
     display: flex;
@@ -55,6 +93,9 @@ width: 100%;
 
       border: 0.1vw solid #e4e4e7;
       border-radius: 0.27vw;
+      @media (max-width: 450px) {
+        display: none;
+      }
     }
   }
   input[type="checkbox"] {
@@ -62,6 +103,9 @@ width: 100%;
     width: 1.25vw;
     aspect-ratio: 1/1;
     margin-right: 0.76vw;
+    @media screen and (max-width: 450px) {
+      width: 4vw;
+    }
   }
   .checbox_container {
     display: flex;
@@ -73,8 +117,12 @@ width: 100%;
     font-size: 0.97vw;
     line-height: 1.39vw;
     letter-spacing: -0.005em;
-
     color: #000000;
+    @media screen and (max-width: 450px){
+      font-size: 3vw;
+      line-height: 120%;
+      margin: 2.22vw 0;
+    }
   }
     }
   }

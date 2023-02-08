@@ -50,7 +50,7 @@ const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer 
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=0" />
       </Head>
       <Header data={header} />
       <main style={{ width: "100vw" }}>{children}</main>

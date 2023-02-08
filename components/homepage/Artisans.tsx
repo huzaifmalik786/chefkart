@@ -103,12 +103,12 @@ const Artisans = (props: Props) => {
         rewindWithAnimation
         customTransition="transform 900ms ease-in"
         // ssr
-        centerMode={width<=472?false:true}
+        centerMode={width<=450?false:true}
         infinite
         arrows={false}
         containerClass={Styles.artisans}
         itemClass={Styles.item}
-        partialVisbile={width<=472?true:false}
+        partialVisbile={width<=450?true:false}
       >
         {(props.data.chef_array || chef_array).map((c, key) => {
           return (
@@ -131,9 +131,9 @@ const Artisans = (props: Props) => {
                 </div>
                 </div>
 
-                <div className={width<=472?Styles.overlay: Styles.hover_overlay}>
+                <div className={width<=450?Styles.overlay: Styles.hover_overlay}>
                     <p className={Styles.specialize_heading}>Specializes in:</p>
-                    {width<=472?(
+                    {width<=450?(
                       <div className={Styles.pills_container}>
                       {
                           (c.specialization).map((s, key)=>{
