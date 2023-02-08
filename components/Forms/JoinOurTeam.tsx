@@ -52,12 +52,37 @@ const JoinOurTeam = (props: Props) => {
         <h2>Join Our Team</h2>
 
         <form action="" onSubmit={onSubmit}>
-            <Input name="name" left_section="Name" type="text"  />
-            <Input name="mobile" type="text"  />
+          <div className={Styles.input_label_container}>
+            <label className={Styles.label} htmlFor="">Name</label>
+            <Input name="name" placeholder="Name" type="text"  />
+          </div>
+          <div className={Styles.input_label_container}>
+            <label className={Styles.label} htmlFor="">Email</label>
             <Input name="email" type="email" placeholder="Email"  />
+          </div>
+
+          <div className={`${Styles.input_label_container} ${Styles.desktop_only}`}>
+            <label className={Styles.label} htmlFor="">Mobile</label>
+            <Input name="mobile" type="text"  />
+          </div>
+
+          <div className={Styles.input_label_container}>
+            <label className={Styles.label} htmlFor="">Current Location</label>
             <Input name="location" type="text" placeholder="Current Location"  />
+          </div>
+
+          <div className={Styles.input_label_container}>
+            <label className={Styles.label} htmlFor="">Linkedin url</label>
             <Input name="linkedIn" type="url" placeholder="Enter Linkedin url"  />
+          </div>
+
+          <div className={Styles.input_label_container}>
+            <label className={Styles.label} htmlFor="">Portfolio url</label>
             <Input name="portfolio" type="url" placeholder="Enter portfolio url"  />
+          </div>
+
+
+          
 
             <FileDropbox />
             <div className={Styles.button}>

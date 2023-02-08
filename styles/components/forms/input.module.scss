@@ -13,8 +13,14 @@
     line-height: 1.38vw;
     letter-spacing: -0.005em;
     color: #979797;
+    
     @media screen and (max-width: 450px) {
       box-shadow: 0 0 2px #e5e5e5;
+      border: 0.42vw solid #E4E4E7;
+      border-radius: 1.11vw;
+      font-size: 3.33vw;
+      line-height: 4.17vw;
+      padding: 2.7vw 3.33vw;
     }
 
     span {
@@ -42,6 +48,11 @@
       outline: none;
       flex-grow: 1;
       border: none;
+
+      @media (max-width: 450px) {
+        font-size: 3.33vw;
+        line-height: 4.17vw;
+      }
     }
     .link_icon{
       position: relative;

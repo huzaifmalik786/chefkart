@@ -132,7 +132,7 @@ const AllBlogs = (props: Props) => {
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
   const displayedItems = (props.data || BlogData).slice(startIndex, endIndex)
-  const totalBlogs = props.data.length
+  const totalBlogs = props.data?.length
   const totalPages = Math.ceil(totalBlogs/itemsPerPage)
 
   const handleFilter = (index: number) => {

@@ -130,18 +130,23 @@ const index = (props: Props) => {
       <Reveal>
       <Mission data={props.mission} />
       </Reveal>
+
       <Reveal>
       <PressRelease data={props.press_data} />
       </Reveal>
+
       <Reveal>
       <BlogsSection data={props.blogs} />
       </Reveal>
+
       <Reveal>
       <InvestorCarousel data={props.investors} />
       </Reveal>
+
       <Reveal>
       <ContactForm data={props.form} />
       </Reveal>
+      
       <Reveal>
       <Banner data={props.last_banner} />
       </Reveal>
@@ -163,10 +168,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/investor-relation?populate=deep,10`);
     const investor_relation = await res2.json();
 
-  const temp_res = await fetch(
-    `http://localhost:1337/api/investor-relation?populate=deep,10`);
-    const temp = await temp_res.json();
-    console.log(temp)
+  // const temp_res = await fetch(
+  //   `http://localhost:1337/api/investor-relation?populate=deep,10`);
+  //   const temp = await temp_res.json();
+  //   console.log(temp)
 
     return {
       props : {
@@ -184,7 +189,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         blogs: {
           heading: investor_relation.data.attributes.blog_heading,
-          blogs_array: temp.data.attributes.blog_pages.data
+          // blogs_array: temp.data.attributes.blog_pages.data
         },
 
         investors: investor_relation.data.attributes.our_investor,

@@ -169,8 +169,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/career?populate=deep,10`);
     const career = await res2.json();
 
-  const temp_res = await fetch('http://localhost:1337/api/career?populate=deep,10')
-  const temp = await temp_res.json();
+  // const temp_res = await fetch('http://localhost:1337/api/career?populate=deep,10')
+  // const temp = await temp_res.json();
 
     return {
       props : {
@@ -184,7 +184,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         perks: career.data.attributes.Perks,
         vacancy: {
           header_data: career.data.attributes.vacancies,
-          all_openings: temp.data.attributes.job_openings.data
+          // all_openings: temp.data.attributes.job_openings.data
         },
         articles:{
           heading: career.data.attributes.article_heading,

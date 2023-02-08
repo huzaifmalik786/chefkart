@@ -50,7 +50,7 @@ const ContactForm = (props: Props) => {
         </h3>
 
         <form action="">
-          <Input left_section="Name" type="text" />
+          <Input placeholder="Name" type="text" />
           <Input placeholder="9987115132" name="mobile" type='text' />
           <Input type='email' placeholder='Email'  />
           <TextArea row={2} />

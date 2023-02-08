@@ -1,14 +1,23 @@
 .banner_container {
   padding: 5.34vw 4.44vw 3.26vw 4.30vw;
 
-
-
+  @media (max-width: 450px) {
+    margin-top: 20.57vw;
+    padding: 0;
+   
+  }
   .banner {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5.41vw 0px 3.12vw 0px;
     position: relative;
+    min-height: 21.44vw;
+    @media (max-width: 450px) {
+      padding: 11vw 9.95vw 15vw 9.95vw;
+       width: 100%;
+      min-height: 40.31vw;
+    }
 
     .banner_img{
       position: absolute;
@@ -26,8 +35,17 @@
       line-height: 4.30vw;
       letter-spacing: -0.138vw;
       width: 60.5vw;
-      height: 13vw;
+      // height: 13vw;
       color: #ffffff;
+
+      @media (max-width: 450px) {
+        font-size: 6.67vw;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.152vw;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

@@ -1,0 +1,7 @@
+.phone_code{
+    width: 5.8vw;
+
+    @media (max-width: 450px) {
+        width: 17vw;
+    }
+}

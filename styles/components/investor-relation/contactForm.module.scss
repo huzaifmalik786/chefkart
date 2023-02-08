@@ -7,7 +7,7 @@
 
   @media (max-width: 450px) {
     padding: 10vw 8vw 0px 8vw;
-    height: 66.44vw;
+    height: auto;
     flex-direction: column;
   }
 
@@ -19,6 +19,10 @@
     top: 0;
     left: 0;
     z-index: -1;
+
+    @media (max-width: 450px) {
+      height: 66.44vw;
+    }
   }
 
   h2 {
@@ -60,7 +64,7 @@
     width: 45.45vw;
 
     @media (max-width: 450px) {
-      // position: absolute;
+      position: relative;
       width: 85.06vw;
       height: 125.1vw;
       border-radius: 2.24vw;
@@ -96,6 +100,10 @@
       padding: 0px;
       gap: 1.11vw;
       width: 100%;
+
+      @media (max-width: 450px) {
+        gap: 6.67vw;
+      }
     }
   }
 }

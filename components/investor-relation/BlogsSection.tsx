@@ -1,8 +1,10 @@
 import React from "react";
 import BlogCard from "../blogs/BlogCard";
 import { BlogCardType } from "../../interfaces/interfaces";
+import "react-multi-carousel/lib/styles.css";
 
 import Styles from "../../styles/components/investor-relation/blogsection.module.scss";
+import Carousel from "react-multi-carousel";
 
 type Props = {
   data: {
@@ -69,15 +71,56 @@ const BlogData: BlogCardType[] = [
 ];
 
 const BlogsSection = (props: Props) => {
-
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 540 },
+      items: 2,
+      slidesToSlide: 1,
+      partialVisibilityGutter: 160,
+    },
+    mobile: {
+      breakpoint: { max: 540, min: 0 },
+      items: 1.2,
+      slidesToSlide: 1,
+      // partialVisibilityGutter: 10,
+    },
+  }
   return (
     <div className={Styles.blog_wrapper}>
       <h2>{props.data?.heading || "Blogs"}</h2>
       <div className={Styles.cards_wrapper}>
-        {(props.data.blogs_array || BlogData).map((card, index) => {
+        {(props.data?.blogs_array || BlogData).map((card, index) => {
           return <BlogCard card={card} key={index} />;
         })}
       </div>
+      <Carousel
+        swipeable
+        draggable
+        responsive={responsive}
+        // autoPlay={true}
+        autoPlaySpeed={2000}
+        transitionDuration={900}
+        rewindWithAnimation
+        customTransition="transform 900ms ease-in"
+        ssr
+        infinite={false}
+        containerClass={Styles.carousel}
+        itemClass={Styles.item}
+        // deviceType={device}
+        arrows={false}
+        partialVisbile
+        partialVisible
+        // renderDotsOutside
+      >
+        {(props.data?.blogs_array || BlogData).map((card, index) => {
+          return <BlogCard card={card} key={index} />;
+        })}
+      </Carousel>
     </div>
   );
 };

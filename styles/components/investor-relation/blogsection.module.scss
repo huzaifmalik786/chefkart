@@ -23,7 +23,23 @@
     padding: 2.56vw 5.5vw 0vw 5.55vw;
 
     @media (max-width: 450px) {
+      display: none;
       padding: 4.44vw 0 0 0 ;
+    }
+  }
+
+  .carousel{
+    display: none;
+    padding: 4.44vw 0 4.44vw 0 ;
+    gap: 0.98vw;
+
+    [class*="track"] {
+    gap: 3.33vw;
+  }
+
+
+    @media (max-width: 450px) {
+      display: flex;
     }
   }
 }

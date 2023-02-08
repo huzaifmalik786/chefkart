@@ -6,4 +6,13 @@
     line-height: 1.66vw;
     background: #FF8811;
     border-radius: 0.28vw;
+
+    @media (max-width: 450px) {
+      padding: 2.5vw 4.44vw;
+      gap: 3.33vw;
+      border-radius: 1.11vw;
+      font-size: 3.33vw;
+      line-height: 6.67vw;
+      letter-spacing: -0.02em;
+    }
   }

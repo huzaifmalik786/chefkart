@@ -58,7 +58,7 @@ const ContactForm = (props: Props) => {
       <h2>{props.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
 
       <form onSubmit={onSubmit}>
-        <Input left_section="Name" placeholder="" type="text" name="name" />
+        <Input placeholder="Name" type="text" name="name" />
         {/* {errors.name && <p>Please enter your name</p>} */}
 
         <Input placeholder="9987115132" type="text" name="mobile" />
