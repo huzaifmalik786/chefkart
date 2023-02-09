@@ -79,9 +79,9 @@ const Article = (props: Props) => {
                 {
                     (props.data?.content || content.article_content).split('\n').map((item, key)=>{
                         return(
-							<Reveal key={key}>
-								<p>{item}</p>
-							</Reveal>
+                            <Reveal key={key}>
+                            <p key={key}>{item}</p>
+                            </Reveal>
                         )
                     })
                 }

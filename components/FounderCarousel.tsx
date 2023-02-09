@@ -4,7 +4,6 @@ import Carousel from 'react-multi-carousel'
 import "react-multi-carousel/lib/styles.css";
 import { ProfileCardType } from '../interfaces/interfaces';
 import Styles from '../styles/components/foundercarousel.module.scss'
-import UseWindowDimensions from './WindowSize';
 
   const founders : ProfileCardType[] = [
     {
@@ -128,7 +127,6 @@ import UseWindowDimensions from './WindowSize';
     data: ProfileCardType[]
   }
 const FounderCarousel = (props: Props) => {
-  const {width}= UseWindowDimensions();
 console.log(props.data)
     
 const responsive = {
@@ -164,7 +162,6 @@ const responsive = {
         customTransition="transform 900ms ease-in"
         ssr
         // infinite={false}
-        // infinite={width<=472? true: false}
         arrows={false}
         containerClass={Styles.founder_carousel}
         itemClass={Styles.founder_item}

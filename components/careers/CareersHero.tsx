@@ -106,7 +106,6 @@ const CareersHero = (props: Props) => {
         // centerSlidePercentage={33.33}
         ssr
         infinite
-        // infinite={width<=472? true: false}
         arrows={false}
         containerClass={Styles.carousel}
         itemClass={Styles.item}

@@ -48,7 +48,7 @@ const PricingCard = (props: Props) => {
         }}
       >
         {props.card.features.map((point, index) => {
-          if((width<=472 && index<3) || width>472){
+          if((width<=450 && index<3) || width>450){
           return (
             <div key={index} className={Styles.point}>
               <span className={Styles.check_img}>

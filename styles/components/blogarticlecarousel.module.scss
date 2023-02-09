@@ -11,15 +11,15 @@
     @media screen and (max-width: 450px) {
       width: 71.67vw ;
       height: 66.67vw;
-      border-radius: 8px;
+      border-radius: 2.22vw;
       margin-right: 3.33vw;
     }
 
     img {
       border-radius: 12px;
-      // object-fit: cover;
       @media screen and (max-width: 450px) {
         object-fit: cover;
+        border-radius: 2.22vw;
       }
       
     }
@@ -31,6 +31,9 @@
       border-radius: 12px;
       width: 100%;
       height: 100%;
+      @media (max-width: 450px) {
+        border-radius: 2.22vw;
+      }
 
       .item_content {
         position: absolute;
