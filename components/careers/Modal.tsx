@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import JoinOurTeam from "../Forms/JoinOurTeam";
 import Styles from "../../styles/components/careers/modal.module.scss";
+import Image from "next/image";
 
 type Props = {
   children: React.ReactNode;
@@ -45,8 +46,17 @@ const Modal: React.FC<Props> = ({ children, setOpenModal, openModal }) => {
       {openModal && (
         <div className={Styles.modal_container}>
           <div className={Styles.modal} ref={ref} id="modal">
-            {/* <JoinOurTeam /> */}
+            {/* <div> */}
+            <div className={Styles.modal_header}>
+              <button type="button" className={Styles.back_icon} onClick={()=> setOpenModal(false)}>
+                <Image src="/Icon (1).svg" alt="" fill />
+              </button>
+              <button type="button" className={Styles.cross_icon} onClick={()=> setOpenModal(false)}>
+                <Image src="/Icon.svg" alt="" fill />
+              </button>
+            </div>
             {children}
+          {/* </div> */}
           </div>
         </div>
       )}

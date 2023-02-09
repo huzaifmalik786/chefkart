@@ -123,8 +123,8 @@ const Vacancies = (props: Props) => {
               return(
                 <div key={key} className={Styles.item}>
                   <div className={Styles.left_section}>
-                    <p className={Styles.heading}>{item?.attributes?.department}</p>
-                    <p className={Styles.subheading}>{item?.attributes?.Position}</p>
+                    <p className={Styles.heading}>{item?.attributes?.department || "lorem ipsum"}</p>
+                    <p className={Styles.subheading}>{item?.attributes?.Position || "Lorem ipsum dolor sit amet dolor sit amet"}</p>
                   </div>
                   <button type="button" onClick={() => router.push(`/careers/${item.attributes.slug}`)}>Apply</button>
                 </div>

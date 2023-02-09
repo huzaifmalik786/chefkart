@@ -52,7 +52,7 @@ type Props = {
 const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
-        <Article />
+        {/* <Article data={props.data} /> */}
         <Reveal>
         <CommentInput />
         </Reveal>

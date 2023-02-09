@@ -87,7 +87,7 @@ const BlogsSection = (props: Props) => {
       breakpoint: { max: 540, min: 0 },
       items: 1.2,
       slidesToSlide: 1,
-      // partialVisibilityGutter: 10,
+      partialVisibilityGutter: 10,
     },
   }
   return (
@@ -113,7 +113,6 @@ const BlogsSection = (props: Props) => {
         itemClass={Styles.item}
         // deviceType={device}
         arrows={false}
-        partialVisbile
         partialVisible
         // renderDotsOutside
       >

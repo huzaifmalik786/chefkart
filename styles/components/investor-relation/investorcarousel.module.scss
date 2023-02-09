@@ -117,6 +117,9 @@
         @media (max-width: 450px) {
           padding-top: 11.67vw;
           padding-bottom: 10vw;
+          width: 100%;
+          overflow-x: auto;
+          flex-wrap: wrap;
         }
 
 

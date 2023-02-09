@@ -8,6 +8,9 @@ type Props = {
     setOpenModal: (open:boolean)=> void;
   }
 
+const dropdown_location = ["lorem ipsum", "lorem ipsum"]
+
+
 const SignupForm = (props:Props) => {
     const handleSubmit = (data: any) => {
         // send form data to server or perform other actions
@@ -25,7 +28,7 @@ const SignupForm = (props:Props) => {
                     <div className={Styles.two_input}>
                         <Input placeholder="9987115132" type="text" name="mobile" />
                         <div className={Styles.dropdown}>
-                            <Dropdown arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
+                            <Dropdown list={dropdown_location} arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
                         </div>
 
                     </div>

@@ -40,7 +40,7 @@ const ContactForm = (props: Props) => {
 
   const onSubmit = (data: any) => {
     data.preventDefault()
-    console.log(data);
+    // console.log(data);
     setOpenModal(true);
     if(props.setOpenModal_two){
       props.setOpenModal_two(false)

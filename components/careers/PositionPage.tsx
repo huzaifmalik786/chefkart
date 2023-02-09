@@ -62,13 +62,13 @@ const PositionPage = (props: Props) => {
     <div className={Styles.positionPage}>
       <header>
         <div>
-          <h1>{props.data.Position || positionDetails.position}</h1>
-          <p>{props.data.subheading || positionDetails.sub_heading}</p>
+          <h1>{props.data?.Position || positionDetails.position}</h1>
+          <p>{props.data?.subheading || positionDetails.sub_heading}</p>
           <div className={Styles.type}>
             <div className={Styles.icon}>
               <Image src="/Shape.png" alt="" fill />
             </div>
-            <span>{props.data.type || positionDetails.type}</span>
+            <span>{props.data?.type || positionDetails.type}</span>
           </div>
         </div>
         <div>
