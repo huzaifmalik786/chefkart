@@ -1,126 +1,107 @@
 .myswiper {
-    background: url('/food-plate.png') no-repeat;
-    background-size: 58.68vw 47.22vw;
-    height: 47.22vw;
-    background-position: center;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    // gap: 12vw;
-  
-    // gap: 12vw;
-  
-    position: relative;
-    overflow: hidden;
+	background: url("/food-plate.png") no-repeat;
+	background-size: 58.68vw 47.22vw;
+	height: 47.22vw;
+	background-position: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	overflow-x: scroll;
+	justify-content: space-between;
+	position: relative;
+	overflow: hidden;
+}
+.left_out {
+	position: relative;
+	width: 25vw;
+	height: 25vw;
+	aspect-ratio: 1/1;
+	opacity: 0.5;
+	transform: translate(-100%, 60%);
+	animation: slide-animation-left-out 1.5s ease-in-out;
+}
+.left {
+	position: relative;
+	height: 25vw;
+	width: 25vw;
+	opacity: 0.5;
+	aspect-ratio: 1/1;
+	top: 0;
+	left: 0;
+	transform: translate(-80%, 30%);
+	animation: slide-animation-left 1.5s ease-in-out;
+}
 
-    // .plate_image{
-    //   position: absolute;
-    //   height: 47.22vw;
-    //   width: 58.68vw;
-    //   object-position: center;
+.right {
+	position: relative;
+	height: 25vw;
+	width: 25vw;
+	aspect-ratio: 1/1;
+	opacity: 0.5;
+	top: 0;
+	left: 0;
+	transform: translate(-20%, 30%);
+	animation: slide-animation-right 1.5s ease-out;
+}
 
-    // }
-  }
-  .left_out{
-    position: relative;
-    width: 25vw;
-    height: 25vw;
-    aspect-ratio: 1/1;
-    opacity: 0.5;
-    transform: translate(-100%, 60%);
-    animation: slide-animation-left-out 1.5s ease-in-out;
-  
-  }
-  .left {
-    position: relative;
-    height: 25vw;
-    width: 25vw;
-    // top: 15%;
-    opacity: 0.5;
-    aspect-ratio: 1/1;
-    top: 0;
-    left: 0;
-    transform: translate(-80%, 30%);
-    animation: slide-animation-left 1.5s ease-in-out;
-  }
-  
-  .right {
-    position: relative;
-    height: 25vw;
-    width: 25vw;
-    // top: 15%;
-    opacity: 0.5;
-    aspect-ratio: 1/1;
-  
-    // position: absolute;
-    top: 0;
-    left: 0;
-    // width: 100%;
-    // height: 100%;
-    transform: translate(-20%, 30%);
-    animation: slide-animation-right 1.5s ease-out;
-  }
-  
-  .active {
-    position: relative;
-    height: 35vw;
-    aspect-ratio: 1/1;
-    width: 35vw;
-    opacity: 1vw;
-    transform: translate(-35%, 0%);
-    animation: slide-animation-active 1.5s ease-in-out;
-  }
-  @keyframes slide-animation-left-out {
-    0%{
-      transform: translate(20%, 30%);
-    }
-    100%{
-      transform: translate(-100%, 60%);
-    }
-  }
-  @keyframes slide-animation-left {
-    from {
-      transform: translate(36.6%, 0%);
-      width: 35vw;
-      height: 35vw;
-      opacity: 1;
-    }
-    to {
-      transform: translate(-80%, 30%);
-      width: 25vw;
-      height: 25vw;
-      opacity: 0.5;
-    }
-  }
-  
-  @keyframes slide-animation-active {
-    from {
-      transform: translate(80%, 30%);
-      width: 25vw;
-      height: 25vw;
-      opacity: 0.5;
-    }
-    to {
-      transform: translate(-35%, 0%);
-      width: 35vw;
-      height: 35vw;
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slide-animation-right {
-    from {
-      transform: translate(150%, 60%);
-      width: 25vw;
-      height: 25vw;
-      // opacity: 0.5;
-    }
-    to {
-      transform: translate(-20%, 30%);
-      width: 25vw;
-      height: 25vw;
-      opacity: 0.5;
-    }
-  }
-  
+.active {
+	position: relative;
+	height: 35vw;
+	aspect-ratio: 1/1;
+	opacity: 1;
+	width: 35vw;
+	transform: translate(-35%, 0%);
+	animation: slide-animation-active 1.5s ease-in-out;
+}
+@keyframes slide-animation-left-out {
+	0% {
+		transform: translate(20.5%, 30%);
+	}
+	100% {
+		transform: translate(-100%, 60%);
+	}
+}
+@keyframes slide-animation-left {
+	from {
+		transform: translate(36.7%, 0%);
+		width: 35vw;
+		height: 35vw;
+		opacity: 1;
+	}
+	to {
+		transform: translate(-80%, 30%);
+		width: 25vw;
+		height: 25vw;
+		opacity: 0.5;
+	}
+}
+
+@keyframes slide-animation-active {
+	from {
+		transform: translate(79.5%, 30%);
+		width: 25vw;
+		height: 25vw;
+		opacity: 0.5;
+	}
+	to {
+		transform: translate(-35%, 0%);
+		width: 35vw;
+		height: 35vw;
+		opacity: 1;
+	}
+}
+
+@keyframes slide-animation-right {
+	from {
+		transform: translate(150%, 60%);
+		width: 25vw;
+		height: 25vw;
+		opacity: 0.5;
+	}
+	to {
+		transform: translate(-20%, 30%);
+		width: 25vw;
+		height: 25vw;
+		opacity: 0.5;
+	}
+}

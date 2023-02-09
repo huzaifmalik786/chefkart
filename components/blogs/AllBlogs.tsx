@@ -3,6 +3,7 @@ import BlogCard from "./BlogCard";
 import Styles from "../../styles/components/blogs/allblogs.module.scss";
 import { BlogCardType } from "../../interfaces/interfaces";
 import Image from "next/image";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: BlogCardType[]
@@ -122,6 +123,7 @@ const BlogData: BlogCardType[] = [
 ];
 
 const AllBlogs = (props: Props) => {
+  const {width}= UseWindowDimensions();
   const [activeBtn, setActiveBtn] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 6
@@ -135,6 +137,7 @@ const AllBlogs = (props: Props) => {
   const totalBlogs = props.data?.length
   const totalPages = Math.ceil(totalBlogs/itemsPerPage)
 
+  const [morecards,setmorecards]= useState(false);
   const handleFilter = (index: number) => {
     setActiveBtn(index);
   };

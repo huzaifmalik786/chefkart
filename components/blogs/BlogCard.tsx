@@ -4,6 +4,7 @@ import Styles from "../../styles/components/blogs/blogcard.module.scss";
 import Image from "next/image";
 import { BlogCardType } from "../../interfaces/interfaces";
 import Link from "next/link";
+import Reveal from "../Reveal";
 
 type Props = {
   card: BlogCardType;
@@ -21,6 +22,7 @@ const BlogCard = (props: Props) => {
     return newDate
 }
   return (
+    <Reveal>
     <Link href={`/blogs/${props.card?.attributes?.slug}`}>
     <div className={Styles.blog_card}>
       <div className={Styles.blog_img}>
@@ -38,6 +40,7 @@ const BlogCard = (props: Props) => {
       </div>
     </div>
     </Link>
+    </Reveal>
   );
 };
 

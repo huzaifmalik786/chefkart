@@ -1,7 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import Styles from "../../styles/components/articles/article.module.scss";
-import Reveal from "../Reveal";
+import Image from 'next/image'
+import React from 'react'
+import Styles from '../../styles/components/articles/article.module.scss'
+import Reveal from '../Reveal'
+import UseWindowDimensions from '../WindowSize'
 import { image_type } from '../../interfaces/interfaces'
 
 const content = {
@@ -20,6 +21,8 @@ type Props = {
     }
 }
 const Article = (props: Props) => {
+    const {width}= UseWindowDimensions();
+
     console.log(props.data)
     function changeFormat(d: string){
         let date = new Date(d);
@@ -50,6 +53,7 @@ const Article = (props: Props) => {
         <div className={Styles.main}>
             <div className={Styles.social}>
                 <span>Share</span>
+				<div className={Styles.right}>
                 <div className={Styles.fb}>
                     <Image src='/fb.png' alt='' fill />
                 </div>
@@ -65,6 +69,8 @@ const Article = (props: Props) => {
                 <div className={Styles.link}>
                     <Image src='/Vector (14).png' alt='' fill />
                 </div>
+            </div>
+            <div className={Styles.left}>
                 <div className={Styles.fb_like}>
                     <Image src='/Facebook like.png' alt='' fill />
                 </div>
@@ -81,6 +87,7 @@ const Article = (props: Props) => {
                 }
             </article>
         </div>
+    </div>
     </div>
   )
 }

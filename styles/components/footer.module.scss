@@ -2,106 +2,194 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  .footer_row_1 {
+  border-top: 1px solid rgb(0, 0, 0, 0.2);
+  @media screen and (max-width: 450px) {
+    padding: 13.61vw 4.44vw 11.38vw 4.44vw;
+    border-top: none;
+  }
+  .columns{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2vw 6.1vw;
-
-    .footer_logo {
-      position: relative;
-      height: 4.1vw;
-      width: 15.5vw;
+    align-items: flex-start;
+    padding-top: 3.4vw;
+    @media (max-width: 450px) {
+      flex-direction: column;
+      padding-top: 0;
     }
-    .left_section{
+    .footer_col_1 {
       display: flex;
-      gap: 2.22vw;
-
-      .footer_content {
-        // display: flex;
-        // flex-wrap: wrap;
-        max-width: 700px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        // gap: 3vw;
-        row-gap: 1.25vw;
-        column-gap: 2.22vw;
-  
-        a {
-          // display: flex;
-          // flex-direction: column;
-          // flex-grow: 1;
-          font-weight: 500;
-          font-size: 1.25vw;
-          line-height: 1.5vw;
-          letter-spacing: -0.01em;
-          // gap: 1.25vw;
-          color: #292929;
-        }
-  
-      }
-      .social_icons {
-        display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-left:6.1vw;
+      @media screen and (max-width: 450px) {
         flex-direction: column;
-        align-items: center;
-        p {
-          font-weight: 700;
-          font-family: var(--secondary_font);
-          font-size: 1.25vw;
-          padding-bottom: 0.2vw;
-          align-self: flex-start;
-          padding-left: 0.5vw;
+        align-items: flex-start;
+        padding:0;
+      }
+  
+      .footer_logo {
+        position: relative;
+        height: 4.1vw;
+        width: 15.5vw;
+        @media screen and (max-width: 450px) {
+          width: 33.6vw;
+          height: 9.16vw;
         }
-  
-        div {
+      }
+      .footer_row_2 {
+        padding: 2vw 6.5vw 2vw 0;
+        @media screen and (max-width: 450px) {
+          padding: 4.44vw 0 6.67vw 0;
+        }
+        .row2_text {
+          p {
+            font-weight: 600;
+            font-family: var(--secondary_font);
+            font-size: 1.25vw;
+            @media screen and (max-width: 450px) {
+              font-size: 4.44vw;
+              letter-spacing: -0.01em;
+            }
+          }
+        }
+    
+        .row2_img {
           display: flex;
-          gap: 0.5vw;
-  
-          span {
+          gap: 1vw;
+          padding-top: 0.8vw;
+          @media screen and (max-width: 450px) {
+            padding-top: 3.33vw;
+            gap:3.33vw;
+          }
+    
+          div {
             position: relative;
-            height: 2.4vw;
-            width: 2.4vw;
+            height: 3.2vw;
+            width: 9.4vw;
+            @media screen and (max-width: 450px) {
+              width: 36.9vw;
+              height:12.5vw;
+            }
           }
         }
       }
     }
-
-  }
-
-  .footer_row_2 {
-    padding: 2vw 6.5vw 2vw 6.5vw;
-
-    .row2_text {
-      p {
-        font-weight: 600;
-        font-family: var(--secondary_font);
-        font-size: 1.25vw;
-      }
-    }
-
-    .row2_img {
+    .col_wrapper{
       display: flex;
-      gap: 1vw;
-      padding-top: 0.8vw;
+      align-items: center;
+      gap: 5.96vw;
+      @media (max-width: 450px) {
+        flex-direction: column;
+        width: 100%;
+      }
+      .footer_col_2{
+        display: flex;
+        gap: 2.22vw;
+        @media screen and (max-width: 450px) {
+          flex-direction: column;
+          gap: 6.67vw;
+        }
+  
+        .footer_content {
+          max-width: 700px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          row-gap: 1.25vw;
+          column-gap: 2.22vw;
+          @media screen and (max-width: 450px) {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 8.33vw !important;
+            gap:4.44vw;
+          }
+    
+          a {
+            font-weight: 500;
+            font-size: 1.25vw;
+            line-height: 1.5vw;
+            letter-spacing: -0.01em;
+            color: #292929;
+            @media screen and (max-width: 450px) {
+              font-size: 3.89vw;
+              line-height: 4.7vw;
+            }
+          }
+        }
+      }
+      .footer_col_3{
+        display: flex;
+        align-items: center;
+        @media (max-width:450px) {
+          width: 100%;
+        }
+        .social_icons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          @media screen and (max-width: 450px) {
+            border-top: 1px solid rgb(0, 0, 0, 0.2);
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 6.67vw 0;
+            width: 100%;
 
-      div {
-        position: relative;
-        height: 3.2vw;
-        width: 9.4vw;
+          }
+          p {
+            font-weight: 700;
+            font-family: var(--secondary_font);
+            font-size: 1.25vw;
+            padding-bottom: 0.2vw;
+            align-self: flex-start;
+            padding-left: 0.5vw;
+            @media screen and (max-width: 450px) {
+              align-self: center;
+              font-size: 3.89vw;
+              line-height: 4.7vw;    
+            }
+          }
+    
+          div {
+            display: flex;
+            gap: 0.5vw;
+            @media screen and (max-width: 450px) {
+              gap: 2.22vw;
+            }
+    
+            span {
+              position: relative;
+              height: 2.4vw;
+              width: 2.4vw;
+              @media screen and (max-width: 450px) {
+                width: 6.67vw;
+                height: 6.67vw;
+              }
+            }
+          }
+        }
       }
     }
   }
+
 
   .footer_row_3 {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid rgb(0, 0, 0, 0.2);
     padding: 0 0 2vw 0;
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+      padding: 6.67vw 0 0 0;
+      gap:4.44vw;
+    }
 
     div {
       display: flex;
 
       padding: 1vw 6.5vw 0vw 6.5vw;
+      @media screen and (max-width: 450px) {
+        flex-direction: column;
+        padding: 0;
+        gap: 4.44vw;
+      }
 
       p {
         font-weight: 500;
@@ -110,6 +198,11 @@
         line-height: 1.5vw;
         color: #331e06;
         padding-right: 4vw;
+        @media screen and (max-width: 450px) {
+          font-size: 3.89vw;
+          line-height: 4.7vw;
+          letter-spacing: -0.01em;
+        }
       }
     }
   }

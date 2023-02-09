@@ -64,11 +64,30 @@ const footer_links = [
 const Footer = (props: Props) => {
   return (
     <footer className={Styles.footer}>
-      <div className={Styles.footer_row_1}>
+      <div className={Styles.columns}>
+      <div className={Styles.footer_col_1}>
         <div className={Styles.footer_logo}>
           <Image src={props.data.logo.image.data.attributes.url || "/Logo-black.svg"} alt="chefkart-logo" fill />
         </div>
-        <div className={Styles.left_section}>
+          <div className={Styles.footer_row_2}>
+          <div className={Styles.row2_text}>
+            <p>{props.data.get_app_heading || "Get the app now!"}</p>
+          </div>
+          <div className={Styles.row2_img}>
+            {
+              (props.data.download_icon).map((item, key)=>{
+                return(
+                  <div key={key}>
+                    <Image src={item.icon.data.attributes.url} alt={item.icon.data.attributes.url || "download-icon"} fill />
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
+      </div>
+        <div className={Styles.col_wrapper}>
+        <div className={Styles.footer_col_2}>
           <div className={Styles.footer_content}>
             {
               (props.data.footer_links || footer_links).map((item, key)=>{
@@ -84,6 +103,8 @@ const Footer = (props: Props) => {
               <Link href={"/contact-us"}>Contact Us</Link>
               <Link href={"/about-us"}>About Us</Link> */}
           </div>
+        </div>
+        <div className={Styles.footer_col_3}>
           <div className={Styles.social_icons}>
             <p>{props.data?.social_heading || "Follow Us"}</p>
             <div>
@@ -128,29 +149,8 @@ const Footer = (props: Props) => {
               }
             </div>
           </div>
-          </div>
+        </div>
       </div>
-      <div className={Styles.footer_row_2}>
-        <div className={Styles.row2_text}>
-          <p>{props.data.get_app_heading || "Get the app now!"}</p>
-        </div>
-        <div className={Styles.row2_img}>
-          {
-            (props.data.download_icon).map((item, key)=>{
-              return(
-                <div key={key}>
-                  <Image src={item.icon.data.attributes.url} alt={item.icon.data.attributes.url || "download-icon"} fill />
-                </div>
-              )
-            })
-          }
-          {/* <div>
-            <Image src={"/google-play.svg"} alt="google-play" fill />
-          </div>
-          <div>
-            <Image src={"/app-store.svg"} alt="app-store" fill />
-          </div> */}
-        </div>
       </div>
       <div className={Styles.footer_row_3}>
         <div>

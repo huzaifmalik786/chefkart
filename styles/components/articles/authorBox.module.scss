@@ -4,6 +4,9 @@
   flex-direction: column;
   gap: 2.77vw;
   background: #fafafa;
+  @media screen and (max-width: 450px) {
+    padding: 6.67vw 4.44vw;
+  }
 
   .vector {
     width: 5.41vw;
@@ -11,6 +14,9 @@
     position: relative;
     border: 0.07vw solid #aaaaaa;
     background-color: #aaaaaa;
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
   }
 
   .author_details {
@@ -21,11 +27,21 @@
     gap: 1.66vw;
     border: 0.07vw solid #d0d0d0;
     width: 67.5vw;
+    @media screen and (max-width: 450px) {
+      border: 0;
+      width: 100%;
+      padding: 0;
+      gap:4.44vw;
+    }
 
     .author_image {
       position: relative;
       width: 7.5vw;
       height: 8.25vw;
+      @media screen and (max-width: 450px) {
+        width: 19.44vw;
+        height: 21.39vw;
+      }
     }
 
     .details_content {
@@ -34,6 +50,9 @@
       width: 55vw;
       padding: 0px;
       gap: 1.11vw;
+      @media screen and (max-width: 450px) {
+        width: 67.22vw;
+      }
 
       h4 {
         font-weight: 700;
@@ -41,8 +60,11 @@
         line-height: 2vw;
         display: flex;
         align-items: center;
-
         color: #656565;
+        @media screen and (max-width: 450px) {
+          font-size: 5vw;
+          line-height: 6.11vw;
+        }
       }
 
       p {
@@ -55,6 +77,9 @@
         align-items: center;
 
         color: #5b5b5b;
+        @media screen and (max-width: 450px) {
+          font-size: 3.89vw;
+        }
       }
     }
   }
@@ -66,14 +91,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     color: #5b5b5b;
+    @media screen and (max-width: 450px) {
+      font-size: 4.44vw;
+    }
 
     span {
       font-weight: 500;
       font-size: 1.25vw;
       line-height: 150%;
       color: #3d3d3d;
+      @media screen and (max-width: 450px) {
+        font-size: 4.44vw;
+        font-weight: 600;
+      }
     }
   }
 }
