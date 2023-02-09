@@ -6,7 +6,7 @@ import CommentBox from '../../../components/articles/CommentBox'
 import CommentInput from '../../../components/articles/CommentInput'
 import Recomended from '../../../components/blogs/Recomended'
 import Layout from '../../../components/layouts/Layout'
-import { image_type } from '../../../interfaces/interfaces'
+import { Footer_type, image_type } from '../../../interfaces/interfaces'
 
 type Props = {
     header: {
@@ -16,33 +16,7 @@ type Props = {
         }
         avatar: image_type
       };
-      footer: {
-        social_heading: string;
-        get_app_heading: string;
-        copyright_text: string;
-    
-        logo: {
-          name: string;
-          url: string;
-          image: image_type
-        }
-        footer_links: {
-          text: string;
-          url: string;
-        }[]
-        social_icons: {
-          url: string;
-          icon: image_type
-        }[]
-        download_icon: {
-          url: string;
-          icon: image_type
-        }[]
-        links: {
-          text: string;
-          url: string;
-        }[]
-      };    
+      footer: Footer_type    
     article: {
         subtitle: string;
         title: string;
@@ -66,7 +40,7 @@ const Blog = (props:Props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const res = await fetch('http://localhost:1337/api/blog-pages')
+    const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages`)
     const blogs = await res.json();
     console.log(blogs.data)
     const slugs = blogs.data.map((post:any) => post.attributes.slug);
@@ -94,7 +68,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     );
     const footer_data = await res3.json();
   
-    const blog = await fetch(`http://localhost:1337/api/blog-pages?filters[slug]=${params.slug}`);
+    const blog = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages?filters[slug]=${params.slug}`);
     const blog_data = await blog.json()
     console.log(blog_data)
 

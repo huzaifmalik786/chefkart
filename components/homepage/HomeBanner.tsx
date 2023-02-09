@@ -54,7 +54,7 @@ const HomeBanner = (props: Props) => {
     }
     <div className={Styles.banner}>
       <div className={Styles.banner_img}>
-        <Image priority src={props.data.image.data.attributes.url || '/home-main.png'} alt={props.data.image.data.attributes.alternativeText || "banner"} fill  style={{ objectFit: 'cover' }} />
+        <Image priority src={props.data?.image?.data?.attributes?.url || '/home-main.png'} alt={props.data?.image?.data?.attributes?.alternativeText || "banner"} fill  style={{ objectFit: 'cover' }} />
       </div>
       <div className={Styles.overlay}>
         <div className={Styles.content}>

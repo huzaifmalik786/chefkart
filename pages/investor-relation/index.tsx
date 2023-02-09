@@ -10,7 +10,7 @@ import InvestorHero from "../../components/investor-relation/InvestorHero";
 
 import Layout from "../../components/layouts/Layout";
 import { GetStaticProps } from "next";
-import { BlogCardType, image_type, investor_type } from "../../interfaces/interfaces";
+import { BlogCardType, Footer_type, image_type, investor_type } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
 
 type Props = {
@@ -21,33 +21,7 @@ type Props = {
     }
     avatar: image_type
   };
-  footer: {
-    social_heading: string;
-    get_app_heading: string;
-    copyright_text: string;
-
-    logo: {
-      name: string;
-      url: string;
-      image: image_type
-    }
-    footer_links: {
-      text: string;
-      url: string;
-    }[]
-    social_icons: {
-      url: string;
-      icon: image_type
-    }[]
-    download_icon: {
-      url: string;
-      icon: image_type
-    }[]
-    links: {
-      text: string;
-      url: string;
-    }[]
-  }
+  footer: Footer_type
   banner: {
     heading: {
       text: string;
@@ -189,7 +163,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         blogs: {
           heading: investor_relation.data.attributes.blog_heading,
-          // blogs_array: temp.data.attributes.blog_pages.data
+          blogs_array: investor_relation.data.attributes.blog_pages.data
         },
 
         investors: investor_relation.data.attributes.our_investor,

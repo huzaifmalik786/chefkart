@@ -13,7 +13,7 @@ import Vacancies from "../../components/careers/Vacancies";
 import Divider from "../../components/Divider";
 import JoinOurTeam from "../../components/Forms/JoinOurTeam";
 import Layout from "../../components/layouts/Layout";
-import { blogType, CultureCardType, image_type, ProfileCardType } from "../../interfaces/interfaces";
+import { blogType, CultureCardType, Footer_type, image_type, ProfileCardType } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
 
 type Props = {
@@ -24,33 +24,7 @@ type Props = {
     }
     avatar: image_type
   };
-  footer: {
-    social_heading: string;
-    get_app_heading: string;
-    copyright_text: string;
-
-    logo: {
-      name: string;
-      url: string;
-      image: image_type
-    }
-    footer_links: {
-      text: string;
-      url: string;
-    }[]
-    social_icons: {
-      url: string;
-      icon: image_type
-    }[]
-    download_icon: {
-      url: string;
-      icon: image_type
-    }[]
-    links: {
-      text: string;
-      url: string;
-    }[]
-  }
+  footer: Footer_type
   banner: {
     heading: string
     description: string;
@@ -169,8 +143,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/career?populate=deep,10`);
     const career = await res2.json();
 
-  const temp_res = await fetch('http://localhost:1337/api/career?populate=deep,10')
-  const temp = await temp_res.json();
+  // const temp_res = await fetch('http://localhost:1337/api/career?populate=deep,10')
+  // const temp = await temp_res.json();
 
     return {
       props : {
@@ -184,7 +158,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         perks: career.data.attributes.Perks,
         vacancy: {
           header_data: career.data.attributes.vacancies,
-          all_openings: temp.data.attributes.job_openings.data
+          all_openings: career.data.attributes.job_openings.data
         },
         articles:{
           heading: career.data.attributes.article_heading,

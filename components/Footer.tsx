@@ -13,7 +13,14 @@ type Props={
     logo: {
       name: string;
       url: string;
-      image: image_type
+      image: {
+        data: {
+          attributes: {
+            url: string;
+            alternativeText: string;
+          }
+        }[]
+      }
     }
     footer_links: {
       text: string;
@@ -67,7 +74,7 @@ const Footer = (props: Props) => {
       <div className={Styles.columns}>
       <div className={Styles.footer_col_1}>
         <div className={Styles.footer_logo}>
-          <Image src={props.data.logo.image.data.attributes.url || "/Logo-black.svg"} alt="chefkart-logo" fill />
+          <Image src={props.data?.logo?.image?.data[0]?.attributes?.url || "/Logo-black.svg"} alt="chefkart-logo" fill />
         </div>
           <div className={Styles.footer_row_2}>
           <div className={Styles.row2_text}>

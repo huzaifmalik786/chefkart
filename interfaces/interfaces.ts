@@ -145,3 +145,38 @@ export interface image_type{
     }
   }
 }
+
+export interface Footer_type{
+    social_heading: string;
+    get_app_heading: string;
+    copyright_text: string;
+
+    logo: {
+      name: string;
+      url: string;
+      image: {
+        data: {
+          attributes: {
+            url: string;
+            alternativeText: string;
+          }
+        }[]
+      }
+    }
+    footer_links: {
+      text: string;
+      url: string;
+    }[]
+    social_icons: {
+      url: string;
+      icon: image_type
+    }[]
+    download_icon: {
+      url: string;
+      icon: image_type
+    }[]
+    links: {
+      text: string;
+      url: string;
+    }[]
+}

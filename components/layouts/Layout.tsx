@@ -22,7 +22,14 @@ type Props = {
     logo: {
       name: string;
       url: string;
-      image: image_type
+      image: {
+        data: {
+          attributes: {
+            url: string;
+            alternativeText: string;
+          }
+        }[]
+      }
     }
     footer_links: {
       text: string;

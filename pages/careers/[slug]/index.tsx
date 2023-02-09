@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import PositionPage from "../../../components/careers/PositionPage";
 import Layout from "../../../components/layouts/Layout";
-import { image_type } from "../../../interfaces/interfaces";
+import { Footer_type, image_type } from "../../../interfaces/interfaces";
 import Reveal from "../../../components/Reveal";
 
 type Props = {
@@ -13,33 +13,7 @@ type Props = {
     }
     avatar: image_type
   };
-  footer: {
-    social_heading: string;
-    get_app_heading: string;
-    copyright_text: string;
-
-    logo: {
-      name: string;
-      url: string;
-      image: image_type
-    }
-    footer_links: {
-      text: string;
-      url: string;
-    }[]
-    social_icons: {
-      url: string;
-      icon: image_type
-    }[]
-    download_icon: {
-      url: string;
-      icon: image_type
-    }[]
-    links: {
-      text: string;
-      url: string;
-    }[]
-  };
+  footer: Footer_type
   job_data: {
     Position: string;
     subheading: string;
@@ -62,7 +36,7 @@ const index = (props: Props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://localhost:1337/api/job-openings')
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/job-openings`)
   const jobs = await res.json();
   // console.log(blogs.data)
   const slugs = jobs.data.map((post:any) => post.attributes.slug);
@@ -90,7 +64,7 @@ export const getStaticProps = async ({ params }: { params: { slug: string } }) =
   );
   const footer_data = await res3.json();
 
-  const job = await fetch(`http://localhost:1337/api/job-openings?filters[slug]=${params.slug}&populate=deep,10`);
+  const job = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/job-openings?filters[slug]=${params.slug}&populate=deep,10`);
   const job_data = await job.json()
   console.log(job_data)
 

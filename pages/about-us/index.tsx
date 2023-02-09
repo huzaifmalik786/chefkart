@@ -9,7 +9,7 @@ import Layout from '../../components/layouts/Layout'
 import Social from '../../components/AboutUs/Social'
 import Gallery from '../../components/AboutUs/Gallery'
 import { GetStaticProps } from 'next'
-import { image_type, ProfileCardType } from '../../interfaces/interfaces'
+import { Footer_type, image_type, ProfileCardType } from '../../interfaces/interfaces'
 import UseWindowDimensions from '../../components/WindowSize'
 import Reveal from '../../components/Reveal'
 
@@ -21,33 +21,7 @@ type Props = {
     }
     avatar: image_type
   };
-  footer: {
-    social_heading: string;
-    get_app_heading: string;
-    copyright_text: string;
-
-    logo: {
-      name: string;
-      url: string;
-      image: image_type
-    }
-    footer_links: {
-      text: string;
-      url: string;
-    }[]
-    social_icons: {
-      url: string;
-      icon: image_type
-    }[]
-    download_icon: {
-      url: string;
-      icon: image_type
-    }[]
-    links: {
-      text: string;
-      url: string;
-    }[]
-  }
+  footer: Footer_type
   banner: {
     badge: string;
         description: string;

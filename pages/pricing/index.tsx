@@ -9,7 +9,7 @@ import PricingSignUp from "../../components/pricing/PricingSignUp";
 import ProjectFeatures from "../../components/pricing/ProjectFeatures";
 import RestaurantLike from "../../components/pricing/RestaurantLike";
 import { GetServerSideProps, GetStaticProps } from "next";
-import { features_icon, image_type, QUESTIONS, table_content } from "../../interfaces/interfaces";
+import { features_icon, Footer_type, image_type, QUESTIONS, table_content } from "../../interfaces/interfaces";
 import UseWindowDimensions from "../../components/WindowSize";
 import Reveal from "../../components/Reveal";
 
@@ -21,33 +21,7 @@ type Props = {
     }
     avatar: image_type
   };
-  footer: {
-    social_heading: string;
-    get_app_heading: string;
-    copyright_text: string;
-
-    logo: {
-      name: string;
-      url: string;
-      image: image_type
-    }
-    footer_links: {
-      text: string;
-      url: string;
-    }[]
-    social_icons: {
-      url: string;
-      icon: image_type
-    }[]
-    download_icon: {
-      url: string;
-      icon: image_type
-    }[]
-    links: {
-      text: string;
-      url: string;
-    }[]
-  }
+  footer: Footer_type
 
   banner: {
     heading: {

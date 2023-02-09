@@ -13,7 +13,7 @@ import Layout from "../components/layouts/Layout";
 import Hygiene from "../components/Hygiene";
 import ReviewsSection from "../components/homepage/ReviewsSection";
 import { GetStaticProps } from "next";
-import { blogType, chefType, image_type, ReviewsCardType } from "../interfaces/interfaces";
+import { blogType, chefType, Footer_type, image_type, ReviewsCardType } from "../interfaces/interfaces";
 import UseWindowDimensions from "../components/WindowSize";
 import Reveal from "../components/Reveal";
 
@@ -26,33 +26,7 @@ type Props = {
     }
     avatar: image_type
   };
-  footer: {
-    social_heading: string;
-    get_app_heading: string;
-    copyright_text: string;
-
-    logo: {
-      name: string;
-      url: string;
-      image: image_type
-    }
-    footer_links: {
-      text: string;
-      url: string;
-    }[]
-    social_icons: {
-      url: string;
-      icon: image_type
-    }[]
-    download_icon: {
-      url: string;
-      icon: image_type
-    }[]
-    links: {
-      text: string;
-      url: string;
-    }[]
-  }
+  footer: Footer_type
 
   homepage: {
     // 1st component
