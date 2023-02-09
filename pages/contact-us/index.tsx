@@ -29,10 +29,10 @@ type Props = {
     }
     form_heading: string;
   }
-  // faq:{
-  //   heading : string;
-  //   Question_answer: QUESTIONS[]
-  // }
+  faq:{
+    heading : string;
+    Question_answer: QUESTIONS[]
+  }
 }
 
 const index = (props: Props) => {
@@ -41,7 +41,7 @@ const index = (props: Props) => {
         <ContactBanner data={props.banner}/>
         <Map />
         <Story />
-        {/* <FAQ data={props.faq} /> */}
+        <FAQ data={props.faq} />
     </Layout>
   )
 }
@@ -68,6 +68,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         banner_img: contact_data.data.attributes.contact_banner_img,
         form_heading: contact_data.data.attributes.form_heading
       },
+      faq: contact_data.data.attributes.faq,
       footer: footer_data.data.attributes.Footer
 
     }
