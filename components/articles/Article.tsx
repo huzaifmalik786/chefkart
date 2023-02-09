@@ -61,7 +61,7 @@ const Article = () => {
                 {
                     content.article_content.split('\n').map((item, key)=>{
                         return(
-                            <Reveal>
+                            <Reveal key={key}>
                             <p key={key}>{item}</p>
                             </Reveal>
                         )
