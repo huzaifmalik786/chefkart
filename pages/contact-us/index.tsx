@@ -5,17 +5,11 @@ import Map from '../../components/contact-us/Map'
 import Story from '../../components/contact-us/Story'
 import Layout from '../../components/layouts/Layout'
 import FAQ from "../../components/FAQ";
-import { Footer_type, image_type, QUESTIONS } from '../../interfaces/interfaces'
+import { Footer_type, Header_type, image_type, QUESTIONS } from '../../interfaces/interfaces'
 import Reveal from '../../components/Reveal'
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   banner: {
     banner_heading: string;

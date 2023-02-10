@@ -5,19 +5,20 @@ import Layout from "../../components/layouts/Layout";
 import HeroVideo from "../../components/testimonials/HeroVideo";
 import OurWord from "../../components/testimonials/OurWord";
 import UserReviews from "../../components/testimonials/UserReviews";
-import { Footer_type, image_type, ReviewsCardType } from "../../interfaces/interfaces";
+import { Footer_type, Header_type, image_type, ReviewsCardType } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   banner: {
-
+    heading: string;
+    video: {
+      data: {
+        attributes: {
+          url: string;
+        }
+      }
+    }
   }
   section_heading: string;
   cards: {
@@ -32,7 +33,7 @@ type Props = {
 const index = (props: Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
-      <HeroVideo  />
+      <HeroVideo data={props.banner}  />
       <Reveal>
       <OurWord heading={props.section_heading} carousel_data={props.cards} />
       </Reveal>

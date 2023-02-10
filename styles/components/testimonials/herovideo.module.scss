@@ -12,6 +12,18 @@
     padding-bottom: 23.9vw;
   }
 
+  .video{
+            position: absolute; 
+        top: 0; 
+        left: 0; 
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    
+  }
+
   .hero_heading {
     position: relative;
     z-index: 1;

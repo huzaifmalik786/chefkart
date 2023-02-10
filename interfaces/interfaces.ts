@@ -146,6 +146,25 @@ export interface image_type{
   }
 }
 
+export interface Header_type{
+  header: {
+    nav_links: {
+      text: string;
+      url: string;
+  }[],
+    button: {
+      button_text: string;
+    }
+    avatar: image_type
+  }
+  sidebar: {
+    links: {
+      text: string;
+      url: string;
+    }[]
+  }
+}
+
 export interface Footer_type{
     social_heading: string;
     get_app_heading: string;

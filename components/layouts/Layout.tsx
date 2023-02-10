@@ -2,18 +2,12 @@ import React from "react";
 import Head from "next/head";
 import Footer from "../Footer";
 import Header from "../Header";
-import { image_type } from "../../interfaces/interfaces";
+import { Header_type, image_type } from "../../interfaces/interfaces";
 
 type Props = {
   children: React.ReactNode;
   title?: string;
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  }
+  header: Header_type
   footer: {
     social_heading: string;
     get_app_heading: string;

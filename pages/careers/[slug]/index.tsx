@@ -2,17 +2,11 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import PositionPage from "../../../components/careers/PositionPage";
 import Layout from "../../../components/layouts/Layout";
-import { Footer_type, image_type } from "../../../interfaces/interfaces";
+import { Footer_type, image_type, Header_type } from "../../../interfaces/interfaces";
 import Reveal from "../../../components/Reveal";
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   job_data: {
     Position: string;

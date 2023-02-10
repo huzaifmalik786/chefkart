@@ -6,17 +6,11 @@ import CommentInput from '../../components/articles/CommentInput'
 import AuthorBox from '../../components/articles/AuthorBox'
 import Recomended from '../../components/blogs/Recomended'
 import { GetStaticProps } from 'next'
-import { blogType, Footer_type, image_type } from '../../interfaces/interfaces'
+import { blogType, Footer_type, Header_type, image_type } from '../../interfaces/interfaces'
 import Reveal from '../../components/Reveal'
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   recomended_article: {
     heading: string;

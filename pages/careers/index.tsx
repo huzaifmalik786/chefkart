@@ -13,17 +13,11 @@ import Vacancies from "../../components/careers/Vacancies";
 import Divider from "../../components/Divider";
 import JoinOurTeam from "../../components/Forms/JoinOurTeam";
 import Layout from "../../components/layouts/Layout";
-import { blogType, CultureCardType, Footer_type, image_type, ProfileCardType } from "../../interfaces/interfaces";
+import { blogType, CultureCardType, Footer_type, Header_type, image_type, ProfileCardType } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   banner: {
     heading: string

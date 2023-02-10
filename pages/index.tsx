@@ -13,19 +13,13 @@ import Layout from "../components/layouts/Layout";
 import Hygiene from "../components/Hygiene";
 import ReviewsSection from "../components/homepage/ReviewsSection";
 import { GetStaticProps } from "next";
-import { blogType, chefType, Footer_type, image_type, ReviewsCardType } from "../interfaces/interfaces";
+import { blogType, chefType, Footer_type, Header_type, image_type, ReviewsCardType } from "../interfaces/interfaces";
 import UseWindowDimensions from "../components/WindowSize";
 import Reveal from "../components/Reveal";
 
 type Props = {
 
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
 
   homepage: {
@@ -67,6 +61,13 @@ type Props = {
         text: string;
         highlight: string;
       }[];
+      video: {
+        data: {
+          attributes: {
+            url: string;
+          }
+        }
+      }
     };
 
     //5th component
@@ -241,7 +242,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     // Passed to the page component as props
     props: {
-      header: header_data.data.attributes.header,
+      header: header_data.data.attributes,
       homepage: {
         homebanner: homepage_data.data.attributes?.banner,
         for_everyone: homepage_data.data.attributes?.For_everyone,

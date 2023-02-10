@@ -10,17 +10,11 @@ import InvestorHero from "../../components/investor-relation/InvestorHero";
 
 import Layout from "../../components/layouts/Layout";
 import { GetStaticProps } from "next";
-import { BlogCardType, Footer_type, image_type, investor_type } from "../../interfaces/interfaces";
+import { BlogCardType, Footer_type, Header_type, image_type, investor_type } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   banner: {
     heading: {

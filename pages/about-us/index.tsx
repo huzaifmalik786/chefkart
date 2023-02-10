@@ -9,18 +9,12 @@ import Layout from '../../components/layouts/Layout'
 import Social from '../../components/AboutUs/Social'
 import Gallery from '../../components/AboutUs/Gallery'
 import { GetStaticProps } from 'next'
-import { Footer_type, image_type, ProfileCardType } from '../../interfaces/interfaces'
+import { Footer_type, Header_type, image_type, ProfileCardType } from '../../interfaces/interfaces'
 import UseWindowDimensions from '../../components/WindowSize'
 import Reveal from '../../components/Reveal'
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   banner: {
     badge: string;
@@ -48,6 +42,20 @@ type Props = {
             }
         }
   },
+  vision: {
+    subheading: string;
+    heading: string;
+    description: string;
+    image: {
+      data: {
+        attributes: {
+          url: string;
+          alternativeText: string;
+
+        }
+      }
+    }
+  }[]
   facts: {
     heading: string,
     description: string
@@ -83,11 +91,11 @@ const index = (props: Props) => {
     <Layout header={props.header} footer={props.footer}>
         <Hero data={props.banner} />
         <Reveal>
-        <Vision />
+        <Vision data={props.vision} />
         </Reveal>
-        <Reveal>
+        {/* <Reveal>
         <Mission />
-        </Reveal>
+        </Reveal> */}
         <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py={width<=450?"13vw":"5.55vw"} />
         <Reveal>
         <Founder data={props.founders} />
@@ -131,6 +139,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
           image_front: about_data.data.attributes.image_front,
           image_back: about_data.data.attributes.image_back
         },
+        vision: about_data.data.attributes.vision,
         facts: about_data.data.attributes.facts,
         founders: {
           heading: about_data.data.attributes.founder.heading,
