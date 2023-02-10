@@ -28,6 +28,7 @@ const Images = [
 const FoodDisplay = (props: Props) => {
   const { width, height } = UseWindowDimensions();
   const [currentIndex, setCurrentIndex] = useState(0);
+  
 
   const wordElements = words.map((word, index) => {
     const style: styleType = {
@@ -106,32 +107,16 @@ const FoodDisplay = (props: Props) => {
       <div className={Styles.food_display_wrapper}>
         <Reveal>
         <div className={Styles.food_heading}>
-          {/* <h3>
-          Feeling <span style={{ color: "#FF8811" }}>Indian?</span> */}
-          {/* <span style={{ color: "#FF6978" }}>Chinease?</span>
-            <span style={{ color: "#4F4789" }}>Italian?</span>
-            <span style={{ color: "#214E34" }}>Mexican?</span> */}
-          {/* you got it, without
-          <br /> the ridiculous spends ordering online
-        </h3> */}
           <div className={Styles.heading_text}>
             
             <div style={{ display: "flex" }}>
               {" "}
               Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>
-              &nbsp; you got it,
-            </div>
-            without the ridiculous spends ordering online
-          </div>
-          {/* <div className={Styles.heading_text}>
-            
-            <div style={{ display: "flex" }}>
-              {" "}
-              Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>
-              &nbsp; you got
+              &nbsp; you got it, without 
             </div>
             the ridiculous spends ordering online
-          </div> */}
+          </div>
+          
         </div>
         </Reveal>
 

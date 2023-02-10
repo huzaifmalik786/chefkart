@@ -169,7 +169,7 @@ export default function Home(props: Props) {
       <Layout header={props.header} footer={props.footer}>
         <HomeBanner data={props.homepage.homebanner} />
         <ForEveryone data={props.homepage.for_everyone} />
-        <FoodDisplay />
+        <FoodDisplay  />
         <div style={{ marginTop: "-4.8vw" }}>
           {/* px: padding x, py: padding y */}
 
@@ -246,6 +246,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       homepage: {
         homebanner: homepage_data.data.attributes?.banner,
         for_everyone: homepage_data.data.attributes?.For_everyone,
+        food_display: homepage_data.data.attributes.food_display,
         facts: homepage_data.data.attributes?.Facts,
         hygiene: homepage_data.data.attributes?.Hygiene,
 

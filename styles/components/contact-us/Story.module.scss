@@ -2,6 +2,7 @@
   padding: 8.53vw 6.73vw 6.80vw 6.73vw;
   display: flex;
   justify-content: space-around;
+
   @media screen and (max-width: 450px) {
     margin-top: 51vw;
     flex-direction: column;
@@ -88,10 +89,12 @@
       width: 7.5vw;
       height: 0.55vw;
       background: #e76f51;
+      margin-top: 2.77vw;
       @media screen and (max-width: 450px) {
         width: 30vw;
         height: 1.6vw;
-        margin-bottom: 11.11vw;
+        margin-top: 4.44vw;
+        margin-bottom: 4.44vw;
       }
     }
   }

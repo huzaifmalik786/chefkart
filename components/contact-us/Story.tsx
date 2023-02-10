@@ -15,12 +15,12 @@ const Story = () => {
         <Reveal>
         {width<=450?(
         <div className={Styles.left_section} style={{flexDirection: "column-reverse"}}>
-                <span className={Styles.line}></span>
                 <div>
                     <p>{content1.substring(0,62)}
                     <button  onClick={()=>sethidden1("button")}><span>{hidden1!="button"?"...Read More":""}</span></button>
                     <span className={Styles.extracontent}>{hidden1!="content"?`${content1.substring(62)}`:""}</span></p>
                 </div>
+                <span className={Styles.line}></span>
           
             <div className={Styles.image}>
                 <Image src='/M_F_Home chef_refine 1.png' alt="chef_photo" fill />
