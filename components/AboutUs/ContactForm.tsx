@@ -13,7 +13,8 @@ type Props = {
     data: {
         url: string;
         alternativeText: string;
-    }
+    },
+    showModal: (open: boolean) => void;
 }
 
 const dropdown_location = ["lorem ipsum", "lorem ipsum"]
@@ -25,15 +26,15 @@ const ContactForm = (props: Props) => {
     const onSubmit = (data: any) => {
         // send form data to server or perform other actions
         data.preventDefault()
-        setOpenModal(true)
+        props.showModal(true);
         console.log("submite",data.name, data.target.name.value)
     
       };
   return (
     <>
-    {
+    {/* {
         openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
-    }
+    } */}
     <div className={Styles.about_form}>
         <div className={Styles.image}>
             <Image src={props.data.url || '/iStock-495494292 1.png'} alt={props.data.alternativeText || ''} fill />

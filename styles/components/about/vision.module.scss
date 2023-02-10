@@ -17,28 +17,24 @@
       width: 91vw;
       text-align: center;
       margin-top: 6vw;
-      button{
-        background: none;
-        span{
-          color: #FF8811;
-          font-size: 4vw;
-          font-weight: 400;
-        }
+    }
+    .content_button{
+      display: none;
+      background: none;
+      color: #FF8811;
+      font-size: 4vw;
+      font-weight: 400;
+      @media (max-width:450px) {
+        display: inline;
       }
-      .extracontent{
-        font-size: 3.89vw;
-        line-height: 150%;
-        font-family: var(--tertiary_font);
-        font-style: normal;
-        font-weight: 400;
-        color: #072125 !important;
-      }
-      .hide{
+    }
+    .extracontent{
+      @media (max-width: 450px) {
         display: none;
       }
     }
 
-    span {
+    .heading{
       font-weight: 700;
       font-size: 1.66vw;
       line-height: 2.01vw;

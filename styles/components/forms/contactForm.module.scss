@@ -12,7 +12,6 @@
   box-shadow: 0px 0.28vw 1.53vw rgba(0, 0, 0, 0.25);
   border-radius: 0.55vw;
   @media screen and (max-width: 450px) {
-    width: 82.5vw;
     border-radius: 2.22vw;
     padding: 6.67vw 4.44vw;
     width: 91.38vw;
@@ -109,7 +108,8 @@
         padding: 1.6vw;
         font-size: 3.33vw;
         line-height: 4.44vw;
-        border: 0.4vw solid rgba(173, 175, 174,0.4);
+        box-shadow: 0 0 2px #e5e5e5;
+        border: 0.42vw solid #E4E4E7;
       }
     }
   }

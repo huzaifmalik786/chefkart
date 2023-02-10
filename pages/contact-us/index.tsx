@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import React from 'react'
+import React,{createContext, useState} from 'react'
 import ContactBanner from '../../components/contact-us/ContactBanner'
 import Map from '../../components/contact-us/Map'
 import Story from '../../components/contact-us/Story'
@@ -7,6 +7,21 @@ import Layout from '../../components/layouts/Layout'
 import FAQ from "../../components/FAQ";
 import { Footer_type, image_type, QUESTIONS } from '../../interfaces/interfaces'
 import Reveal from '../../components/Reveal'
+import Modal from '../../components/careers/Modal'
+import ThankYou from '../../components/Forms/ThankYou'
+import { ModalContext } from '../../components/ModalContext'
+
+// type contextprops={
+//   showModal: boolean;
+//   setShowopen: (open: boolean) => void;
+  
+// }
+// const contextDefaultValues: contextprops = {
+//   // showModal: false,
+//   setShowopen: () => {}
+// };
+// export const ModalContext= createContext<contextprops>({});
+
 
 type Props = {
   header: {
@@ -36,12 +51,22 @@ type Props = {
 }
 
 const index = (props: Props) => {
+
+  const [showModal,setShowModal]= useState(false);
   return (
     <Layout header={props.header} footer={props.footer}>
+      {
+        showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou /></Modal>
+      }
+      <ModalContext.Provider value={{ 
+            setModalOpen: (open: boolean) => setShowModal(open)}}>
         <ContactBanner data={props.banner}/>
+      </ModalContext.Provider>
         <Map />
         <Story />
+        <Reveal>
         <FAQ data={props.faq} />
+        </Reveal>
     </Layout>
   )
 }
