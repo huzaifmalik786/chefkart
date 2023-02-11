@@ -88,14 +88,14 @@ type Props = {
 }
 
 const index = (props: Props) => {
-  const [openModal, setOpenModal] = useState<boolean>(false)
+  // const [openModal, setOpenModal] = useState<boolean>(false)
 
   const {width}=UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
-       {
+       {/* {
         openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
-        }
+        } */}
         <Hero data={props.banner} />
         <Reveal>
         <Vision data={props.vision} />
@@ -113,7 +113,8 @@ const index = (props: Props) => {
         <Gallery />
         </Reveal>
         <Reveal>
-        <ContactForm data={props.form} showModal={setOpenModal}/>
+        <ContactForm data={props.form}/> 
+        {/* // showModal={setOpenModal} */}
         </Reveal>
         <Reveal>
         <Social data={props.social} />
@@ -142,7 +143,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         header: header_data.data.attributes.header,
         banner: {
           badge: about_data.data.attributes.badge,
-          heading_temp: about_data.data.attributes.heading,
+          heading: about_data.data.attributes.heading,
           description: about_data.data.attributes.description,
           button: about_data.data.attributes.button.button_text,
           image_front: about_data.data.attributes.image_front,

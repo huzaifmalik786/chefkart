@@ -36,14 +36,12 @@ const Blog = (props:Props) => {
 export const getStaticPaths: GetStaticPaths = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages`)
     const blogs = await res.json();
-    console.log(blogs.data)
     const slugs = blogs.data.map((post:any) => post.attributes.slug);
 
     const paths = slugs.map((slug: string) => ({
         params: { slug: slug.toString() },
       }));
 
-      console.log(paths)
 
     return {
       paths,
@@ -64,7 +62,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   
     const blog = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages?filters[slug]=${params.slug}`);
     const blog_data = await blog.json()
-    console.log(blog_data)
 
     return {
       // Passed to the page component as props

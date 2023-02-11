@@ -83,7 +83,7 @@ const HomeBanner = (props: Props) => {
               { props.data?.subheading ? <h4>{((props.data?.subheading).map((item, key)=>{
                 return(
                   <span key={key}>
-                  {item.highlight ? <span className={Styles.colored}><br/>{item.text} </span> : item.text }
+                  {item.highlight ? <span className={Styles.colored}><br />{item.text} </span> : item.text }
                   </span>
                 )
               }))}</h4> 

@@ -103,6 +103,8 @@
           display: inline;
         }
       }
+
+      
     }
   }
 
@@ -163,6 +165,19 @@
       @media screen and (max-width: 450px) {
         display: none;
       }
+    }
+  }
+
+  .desktop_only{
+    @media (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  .mobile_only{
+    display: none;
+    @media (max-width: 450px) {
+      display: inline-block;
     }
   }
 }

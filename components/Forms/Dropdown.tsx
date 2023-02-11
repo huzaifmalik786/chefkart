@@ -3,8 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Styles from "../../styles/components/forms/dropdown.module.scss";
 type Props = {
   heading : string;
-  arrow_width: string;
-  arrow_height: string;
+  arrow_size: string;
   list: string[];
 }
 const Dropdown = (props: Props) => {
@@ -33,7 +32,7 @@ const Dropdown = (props: Props) => {
         onClick={() => setOpenDropdown(!openDropdown)}
       >
         <div className={Styles.dd_header_title}>{dropdownValue === "" ? props.heading : dropdownValue}</div>
-        <div className={Styles.arrow} style={{width: `${props.arrow_width}`, height: `${props.arrow_height}`}}>
+        <div className={Styles.arrow} style={{width: `${props.arrow_size}`, height: `${props.arrow_size}`}}>
           <Image src="/arrow_forward_ios.svg" alt="" fill />
         </div>
       </div>

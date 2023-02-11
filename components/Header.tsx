@@ -33,7 +33,7 @@ type Props = {
 const Header = (props:Props) => {
 gsap.registerPlugin(ScrollTrigger);
   const ref=useRef(null);
-  console.log(props.data)
+  
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const router = useRouter();
 

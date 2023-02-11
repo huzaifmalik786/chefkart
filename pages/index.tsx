@@ -47,11 +47,20 @@ type Props = {
       }[];
     };
 
+    food_display: {
+      carousel_image_type: {
+        image: image_type
+        text: string;
+      } []
+      food_plate: image_type
+    }
     //3rd component
     facts: {
       heading: string;
       description: string;
     }[];
+
+
 
     //4th component
     hygiene: {
@@ -163,13 +172,14 @@ type Props = {
   };
 };
 export default function Home(props: Props) {
+
   const {width}= UseWindowDimensions();
   return (
     <>
       <Layout header={props.header} footer={props.footer}>
         <HomeBanner data={props.homepage.homebanner} />
         <ForEveryone data={props.homepage.for_everyone} />
-        <FoodDisplay  />
+        <FoodDisplay data={props.homepage.food_display} />
         <div style={{ marginTop: "-4.8vw" }}>
           {/* px: padding x, py: padding y */}
 

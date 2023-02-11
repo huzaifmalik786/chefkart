@@ -141,7 +141,6 @@ const BlogArticleCarousel = (props: Props) => {
   //   }
   // }, []);
 
-  // console.log(device);
 
   return (
     <div className={Styles.blogcarousel_wrapper}>

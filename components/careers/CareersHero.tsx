@@ -127,7 +127,6 @@ const CareersHero = (props: Props) => {
                 />
             </div>
             )
-            console.log(key)
 
           })
         }

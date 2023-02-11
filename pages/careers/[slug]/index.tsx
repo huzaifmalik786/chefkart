@@ -34,12 +34,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const jobs = await res.json();
   // console.log(blogs.data)
   const slugs = jobs.data.map((post:any) => post.attributes.slug);
-  console.log(slugs)
   const paths = slugs.map((slug: string) => ({
       params: { slug: slug.toString() },
     }));
 
-    console.log(paths)
 
   return {
     paths,

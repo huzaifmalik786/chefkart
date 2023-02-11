@@ -38,6 +38,18 @@ type Props = {
     }
     form_heading: string;
   }
+  stories: {
+    description: {
+      text: string;
+      highlight: boolean;
+    }[]
+
+    image: image_type
+  }[]
+  read_more: {
+    text: string;
+    url: string;
+  }
   faq:{
     heading : string;
     Question_answer: QUESTIONS[]
@@ -46,18 +58,12 @@ type Props = {
 
 const index = (props: Props) => {
 
-  const [showModal,setShowModal]= useState(false);
   return (
     <Layout header={props.header} footer={props.footer}>
-      {
-        showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou /></Modal>
-      }
-      <ModalContext.Provider value={{ 
-            setModalOpen: (open: boolean) => setShowModal(open)}}>
         <ContactBanner data={props.banner}/>
-      </ModalContext.Provider>
+      
         <Map />
-        <Story />
+        <Story data={props.stories} link={props.read_more} />
         <Reveal>
         <FAQ data={props.faq} />
         </Reveal>
@@ -87,6 +93,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
         banner_img: contact_data.data.attributes.contact_banner_img,
         form_heading: contact_data.data.attributes.form_heading
       },
+      stories: contact_data.data.attributes.stories,
+      read_more: contact_data.data.attributes.read_more,
       faq: contact_data.data.attributes.faq,
       footer: footer_data.data.attributes.Footer
 

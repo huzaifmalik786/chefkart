@@ -110,7 +110,7 @@ const PositionPage = (props: Props) => {
                 data.content.includes("\n-" || "\n -") ? (
                   <ul>
                   {data.content.split("\n").map((item, key) => {
-                    return <Reveal><li key={key}>{item.trim().slice(1)}</li></Reveal>;
+                    return <Reveal key={key}><li key={key}>{item.trim().slice(1)}</li></Reveal>;
                   })}
           </ul>
                 ) : (

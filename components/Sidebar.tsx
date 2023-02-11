@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Styles from "../styles/components/sidebar.module.scss";
+import UseWindowDimensions from "./WindowSize";
 
 type HeaderItems = {
   text: string;
@@ -38,6 +39,7 @@ const links: HeaderItems[] = [
 ];
 
 const Sidebar = (props: Props) => {
+  const { width } = UseWindowDimensions()
   function disableBodyScroll() {
     document.body.style.overflowY = "hidden";
   }

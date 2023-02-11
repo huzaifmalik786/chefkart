@@ -9,12 +9,27 @@ type Props = {
   data: BlogCardType[]
 };
 
-const FilterButtons: string[] = [
-  "Trending",
-  "Food Recipe",
-  "Blogs",
-  "Video",
-  "News",
+const FilterButtons = [
+  {
+  tag: "Trending",
+  },
+  {
+  tag: "Food Recipe",
+  },
+  {
+  tag: "Blogs",
+  },
+  {
+  tag: "Video",
+  },
+  {
+  tag: "News",
+  },
+
+  // "Food Recipe",
+  // "Blogs",
+  // "Video",
+  // "News",
 ];
 
 const BlogData: BlogCardType[] = [
@@ -145,13 +160,14 @@ const AllBlogs = (props: Props) => {
 
   const itemsPerPage = width>= 450 ? 6 : 4
 
-  const [activeBtn, setActiveBtn] = useState<number>(0);
+  const [activeBtn, setActiveBtn] = useState<string>("Trending");
   const [currentPage, setCurrentPage] = useState<number>(1)
   const startIndex = (currentPage - 1) * itemsPerPage
   var endIndex = startIndex + itemsPerPage
   const [displayedItems, setDisplayedItems] = useState((props.data || BlogData).slice(0, itemsPerPage))
   // const [startIndex, setStartIndex] = useState(0)
   // const [endIndex, setEndIndex] = useState(itemsPerPage)
+  
   const handlePageChange = (page: number) => {
     setCurrentPage(page)
   }
@@ -162,7 +178,7 @@ const AllBlogs = (props: Props) => {
   const totalPages = Math.ceil(totalBlogs/itemsPerPage)
 
   const [morecards,setmorecards]= useState<number>(0);
-  const handleFilter = (index: number) => {
+  const handleFilter = (index: string) => {
     setActiveBtn(index);
   };
 
@@ -170,7 +186,7 @@ const AllBlogs = (props: Props) => {
   
     width >= 450 ? setDisplayedItems((props.data || BlogData).slice(startIndex, endIndex)) : setDisplayedItems((props.data || BlogData).slice(0, endIndex+morecards))
 
-    if(componentRef && componentRef.current && width >= 450){
+    if(componentRef && componentRef.current && width > 450){
       componentRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     },
@@ -184,20 +200,21 @@ const AllBlogs = (props: Props) => {
         {FilterButtons.map((item, index) => {
           return (
             <button
-              onClick={() => handleFilter(index)}
+              onClick={() => handleFilter(item.tag)}
               key={index}
               className={
-                activeBtn === index ? Styles.active_btn : Styles.button
+                activeBtn === item.tag ? Styles.active_btn : Styles.button
               }
             >
-              {item}
+              {item.tag}
             </button>
           );
         })}
       </div>
       <div className={Styles.cards_wrapper}>
         {displayedItems.map((card, index) => {
-          return <BlogCard card={card} key={index} />;
+          // console.log(card.attributes.category)
+          return card.attributes.category === activeBtn && <BlogCard card={card} key={index} />;
         })}
       </div>
       {

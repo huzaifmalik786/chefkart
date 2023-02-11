@@ -71,7 +71,7 @@ export interface ReviewsCardType {
 
 export interface chefType {
   id: number;
-  image: string;
+  image: image_type;
   name: string;
   rating: number;
   experience: string;

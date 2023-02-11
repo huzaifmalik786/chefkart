@@ -1,17 +1,36 @@
 import Image from "next/image";
 import Styles from "../../styles/components/homepage/circularCarousel.module.scss";
 import React, { useState, useEffect } from "react";
+import { image_type } from "../../interfaces/interfaces";
 
-const items = [
-	{ id: 1, title: "Slide 1", src: "/food-1.png" },
-	{ id: 2, title: "Slide 2", src: "/food-2.png" },
-	{ id: 3, title: "Slide 3", src: "/food-3.png" },
-	{ id: 4, title: "Slide 4", src: "/food-4.png" },
-	{ id: 5, title: "Slide 5", src: "/food-5.png" },
-	{ id: 6, title: "Slide 3", src: "/food-3.png" },
-];
+// const items = [
+// 	{ id: 1, title: "Slide 1", src: "/food-1.png" },
+// 	{ id: 2, title: "Slide 2", src: "/food-2.png" },
+// 	{ id: 3, title: "Slide 3", src: "/food-3.png" },
+// 	{ id: 4, title: "Slide 4", src: "/food-4.png" },
+// 	{ id: 5, title: "Slide 5", src: "/food-5.png" },
+// 	{ id: 6, title: "Slide 3", src: "/food-3.png" },
+// ];
 
-export default function CircularCarousel() {
+type Props = {
+	data: {
+		image: image_type
+	}[]
+	plate: image_type
+}
+
+export default function CircularCarousel(props: Props) {
+
+	const items = props.data.map((i, key)=>{
+		return(
+			{
+				id: key+1,
+				title: i.image?.data?.attributes?.alternativeText || "",
+				src: i.image?.data?.attributes?.url
+			}
+		)
+	})
+	
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [slidesToShow, setSlidesToShow] = useState(4);
 	const [currentSlides, setCurrentSlides] = useState<any>([]);
@@ -57,10 +76,17 @@ export default function CircularCarousel() {
 		}
 	}, [autoPlay, handleNext]);
 
+
+// console.log(temp_array)
+
 	return (
 		<>
 			<div>
 				<div className={Styles.myswiper}>
+					<div className={Styles.plate}>
+						<Image src={props.plate.data.attributes.url || "/food-plate.png"} alt={props.plate.data.attributes.alternativeText || ""} fill />
+
+					</div>
 					{currentSlides.map((item: any, index: any) => (
 						<div
 							key={item.id}
