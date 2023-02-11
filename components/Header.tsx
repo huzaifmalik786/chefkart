@@ -15,17 +15,25 @@ type HeaderItems = {
 
 type Props = {
   data : {
-    nav_links: [],
-    button: {
-      button_text: string;
+
+    header: {
+      nav_links: HeaderItems[],
+      button: {
+        button_text: string;
+      }
+      avatar: image_type
+
     }
-    avatar: image_type
+    sidebar: {
+      links: HeaderItems[]
+    }
+
   }
 }
 const Header = (props:Props) => {
 gsap.registerPlugin(ScrollTrigger);
   const ref=useRef(null);
-  console.log(props.data)
+  
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const router = useRouter();
 
@@ -87,7 +95,7 @@ gsap.registerPlugin(ScrollTrigger);
         </div>
         <div className={Styles.nav_center}>
           <ul>
-            {(props.data?.nav_links || headerItems).map((item:HeaderItems, index:number) => {
+            {(props.data?.header?.nav_links || headerItems).map((item:HeaderItems, index:number) => {
               return (
                 <Link href={item.url} key={index}>
                   <li>{item.text}</li>
@@ -97,18 +105,18 @@ gsap.registerPlugin(ScrollTrigger);
           </ul>
         </div>
         <div className={Styles.nav_right}>
-          <button onClick={() => router.push("/contact-us")}>{props.data?.button.button_text || "contact us"}</button>
+          <button onClick={() => router.push("/contact-us")}>{props.data?.header?.button.button_text || "contact us"}</button>
           <div onClick={() => setOpenSidebar(true)}>
             <Image
-              src={props.data.avatar?.data?.attributes?.url || "/burger-icon.svg"}
-              alt={props.data.avatar?.data?.attributes?.url || "menu-icon"}
+              src={props.data?.header?.avatar?.data?.attributes?.url || "/burger-icon.svg"}
+              alt={props.data?.header?.avatar?.data?.attributes?.url || "menu-icon"}
               fill
             />
           </div>
         </div>
       </nav>
       {openSidebar && (
-        <Sidebar show={openSidebar} hide={() => setOpenSidebar(false)} />
+        <Sidebar links={props.data?.sidebar?.links} show={openSidebar} hide={() => setOpenSidebar(false)} />
       )}
 
 {/* Animated Navbar */}
@@ -136,7 +144,7 @@ gsap.registerPlugin(ScrollTrigger);
         </div>
         <div className={Styles.nav_center}>
           <ul>
-            {(props.data?.nav_links || headerItems).map((item:HeaderItems, index:number) => {
+            {(props.data?.header?.nav_links || headerItems).map((item:HeaderItems, index:number) => {
               return (
                 <Link href={item.url} key={index}>
                   <li>{item.text}</li>
@@ -146,19 +154,19 @@ gsap.registerPlugin(ScrollTrigger);
           </ul>
         </div>
         <div className={Styles.nav_right}>
-          <button onClick={() => router.push("/contact-us")}>{props.data?.button.button_text || "contact us"}</button>
+          <button onClick={() => router.push("/contact-us")}>{props.data?.header?.button.button_text || "contact us"}</button>
           <div onClick={() => setOpenSidebar(true)}>
             <Image
               // src={props.data.avatar?.data?.attributes?.url || "/burger-icon-black.svg"}
               src="/burger-icon-black.svg"
-              alt={props.data.avatar?.data?.attributes?.url || "menu-icon"}
+              alt={props.data?.header?.avatar?.data?.attributes?.url || "menu-icon"}
               fill
             />
           </div>
         </div>
       </nav>
       {openSidebar && (
-        <Sidebar show={openSidebar} hide={() => setOpenSidebar(false)} />
+        <Sidebar links={props.data?.sidebar?.links} show={openSidebar} hide={() => setOpenSidebar(false)} />
       )}
     </>
   );

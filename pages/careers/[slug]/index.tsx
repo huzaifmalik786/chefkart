@@ -2,17 +2,11 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import PositionPage from "../../../components/careers/PositionPage";
 import Layout from "../../../components/layouts/Layout";
-import { Footer_type, image_type } from "../../../interfaces/interfaces";
+import { Footer_type, image_type, Header_type } from "../../../interfaces/interfaces";
 import Reveal from "../../../components/Reveal";
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
   job_data: {
     Position: string;
@@ -40,12 +34,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const jobs = await res.json();
   // console.log(blogs.data)
   const slugs = jobs.data.map((post:any) => post.attributes.slug);
-  console.log(slugs)
   const paths = slugs.map((slug: string) => ({
       params: { slug: slug.toString() },
     }));
 
-    console.log(paths)
 
   return {
     paths,

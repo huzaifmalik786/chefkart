@@ -71,7 +71,7 @@ export interface ReviewsCardType {
 
 export interface chefType {
   id: number;
-  image: string;
+  image: image_type;
   name: string;
   rating: number;
   experience: string;
@@ -143,6 +143,25 @@ export interface image_type{
       url: string;
       alternativeText: string;
     }
+  }
+}
+
+export interface Header_type{
+  header: {
+    nav_links: {
+      text: string;
+      url: string;
+  }[],
+    button: {
+      button_text: string;
+    }
+    avatar: image_type
+  }
+  sidebar: {
+    links: {
+      text: string;
+      url: string;
+    }[]
   }
 }
 

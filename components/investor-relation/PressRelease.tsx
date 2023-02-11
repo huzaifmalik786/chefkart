@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import Styles from '../../styles/components/investor-relation/pressRelease.module.scss'
 
@@ -73,10 +74,10 @@ const PressRelease = (props: Props) => {
             {
                 (props.data?.news || news).map((n, key)=>{
                     return(
-                        <div key={key} className={Styles.item}>
+                        <Link href={n.news.url || '#'} key={key} className={Styles.item}>
                             <p className={Styles.date}>{changeFormat(n.date)}</p>
                             <p className={Styles.heading}>{n.news.text}</p>
-                        </div>
+                        </Link>
                     )
                 })
             }

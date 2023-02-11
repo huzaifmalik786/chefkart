@@ -127,7 +127,6 @@ import Styles from '../styles/components/foundercarousel.module.scss'
     data: ProfileCardType[]
   }
 const FounderCarousel = (props: Props) => {
-console.log(props.data)
     
 const responsive = {
     desktop: {

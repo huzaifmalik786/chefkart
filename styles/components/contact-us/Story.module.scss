@@ -2,6 +2,7 @@
   padding: 8.53vw 6.73vw 6.80vw 6.73vw;
   display: flex;
   justify-content: space-around;
+
   @media screen and (max-width: 450px) {
     margin-top: 51vw;
     flex-direction: column;
@@ -102,6 +103,8 @@
           display: inline;
         }
       }
+
+      
     }
   }
 
@@ -162,6 +165,19 @@
       @media screen and (max-width: 450px) {
         display: none;
       }
+    }
+  }
+
+  .desktop_only{
+    @media (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  .mobile_only{
+    display: none;
+    @media (max-width: 450px) {
+      display: inline-block;
     }
   }
 }

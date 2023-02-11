@@ -15,7 +15,6 @@ type Props={
   }
 }
 const Founders = (props: Props) => {
-  console.log(props.data.profile)
   return (
     <div className={Styles.career_founder}>
         <div className={Styles.heading}>

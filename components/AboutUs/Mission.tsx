@@ -7,7 +7,6 @@ const Mission = () => {
   const [hidden,sethidden]= useState(false);
 
   const paragraph="We’re doing things bigly, I mean really quite big. The way we operate is different from other companies because we disrupt. We break the code, we crack the code as well."
-  console.log(paragraph.substring(0,82));
   return (
     <div className={Styles.vision_container} style={width<=450?{flexDirection: "column-reverse", marginBottom:"5.56vw"}:{}}>
         <div className={Styles.right_section}>

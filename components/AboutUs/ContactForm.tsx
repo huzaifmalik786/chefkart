@@ -5,24 +5,29 @@ import Styles from '../../styles/components/about/form.module.scss'
 import Image from 'next/image'
 import Button from '../Forms/Button'
 import Dropdown from '../Forms/Dropdown'
+import { ModalContext } from '../ModalContext'
 
 type Props = {
     data: {
         url: string;
         alternativeText: string;
     },
-    showModal: (open: boolean) => void;
+    // showModal: (open: boolean) => void;
 }
 
 const dropdown_location = ["lorem ipsum", "lorem ipsum"]
 
 const ContactForm = (props: Props) => {
+    const modalContext= React.useContext(ModalContext);
 
     const onSubmit = (data: any) => {
         // send form data to server or perform other actions
         data.preventDefault()
-        props.showModal(true);
+        // props.showModal(true);
         console.log("submite",data.name, data.target.name.value)
+        if(modalContext.setModalOpen){
+            modalContext.setModalOpen(true);
+          }
     
       };
   return (
@@ -39,7 +44,7 @@ const ContactForm = (props: Props) => {
                 <div className={Styles.two_input}>
                     <Input placeholder="9987115132" type="text" name="mobile" />
                     <div className={Styles.dropdown}>
-                        <Dropdown list={dropdown_location} arrow_width='0.7vw' arrow_height='0.35vw' heading='location' />
+                        <Dropdown list={dropdown_location} arrow_size='0.7vw' heading='location' />
                     </div>
                 </div>
                 <div className={Styles.textarea}>

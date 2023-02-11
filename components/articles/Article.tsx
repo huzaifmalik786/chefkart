@@ -23,7 +23,6 @@ type Props = {
 const Article = (props: Props) => {
     const {width}= UseWindowDimensions();
 
-    console.log(props.data)
     function changeFormat(d: string){
         let date = new Date(d);
         let formatter = new Intl.DateTimeFormat('en-US', {
@@ -54,25 +53,27 @@ const Article = (props: Props) => {
             <div className={Styles.social}>
                 <span>Share</span>
 				<div className={Styles.right}>
-                <div className={Styles.fb}>
-                    <Image src='/fb.png' alt='' fill />
+                    <div className={Styles.fb}>
+                        <Image src='/fb.png' alt='' fill />
+                    </div>
+                    <div className={Styles.twitter}>
+                        <Image src='/Vector (11).png' alt='' fill />
+                    </div>
+                    <div className={Styles.linkedin}>
+                        <Image src='/Vector (12).png' alt='' fill />
+                    </div>
+                    <div className={Styles.mail}>
+                        <Image src='/Vector (13).png' alt='' fill />
+                    </div>
+                    <div className={Styles.link}>
+                        <Image src='/Vector (14).png' alt='' fill />
+                    </div>
                 </div>
-                <div className={Styles.twitter}>
-                    <Image src='/Vector (11).png' alt='' fill />
-                </div>
-                <div className={Styles.linkedin}>
-                    <Image src='/Vector (12).png' alt='' fill />
-                </div>
-                <div className={Styles.mail}>
-                    <Image src='/Vector (13).png' alt='' fill />
-                </div>
-                <div className={Styles.link}>
-                    <Image src='/Vector (14).png' alt='' fill />
-                </div>
-            </div>
-            <div className={Styles.left}>
-                <div className={Styles.fb_like}>
-                    <Image src='/Facebook like.png' alt='' fill />
+            
+                <div className={Styles.left}>
+                    <div className={Styles.fb_like}>
+                        <Image src='/Facebook like.png' alt='' fill />
+                    </div>
                 </div>
             </div>
             <article>
@@ -86,7 +87,7 @@ const Article = (props: Props) => {
                     })
                 }
             </article>
-        </div>
+        {/* </div> */}
     </div>
     </div>
   )

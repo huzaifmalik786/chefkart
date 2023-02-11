@@ -13,19 +13,13 @@ import Layout from "../components/layouts/Layout";
 import Hygiene from "../components/Hygiene";
 import ReviewsSection from "../components/homepage/ReviewsSection";
 import { GetStaticProps } from "next";
-import { blogType, chefType, Footer_type, image_type, ReviewsCardType } from "../interfaces/interfaces";
+import { blogType, chefType, Footer_type, Header_type, image_type, ReviewsCardType } from "../interfaces/interfaces";
 import UseWindowDimensions from "../components/WindowSize";
 import Reveal from "../components/Reveal";
 
 type Props = {
 
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
 
   homepage: {
@@ -53,11 +47,20 @@ type Props = {
       }[];
     };
 
+    food_display: {
+      carousel_image_type: {
+        image: image_type
+        text: string;
+      } []
+      food_plate: image_type
+    }
     //3rd component
     facts: {
       heading: string;
       description: string;
     }[];
+
+
 
     //4th component
     hygiene: {
@@ -67,6 +70,13 @@ type Props = {
         text: string;
         highlight: string;
       }[];
+      video: {
+        data: {
+          attributes: {
+            url: string;
+          }
+        }
+      }
     };
 
     //5th component
@@ -162,13 +172,14 @@ type Props = {
   };
 };
 export default function Home(props: Props) {
+
   const {width}= UseWindowDimensions();
   return (
     <>
       <Layout header={props.header} footer={props.footer}>
         <HomeBanner data={props.homepage.homebanner} />
         <ForEveryone data={props.homepage.for_everyone} />
-        <FoodDisplay />
+        <FoodDisplay data={props.homepage.food_display} />
         <div style={{ marginTop: "-4.8vw" }}>
           {/* px: padding x, py: padding y */}
 
@@ -241,10 +252,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     // Passed to the page component as props
     props: {
-      header: header_data.data.attributes.header,
+      header: header_data.data.attributes,
       homepage: {
         homebanner: homepage_data.data.attributes?.banner,
         for_everyone: homepage_data.data.attributes?.For_everyone,
+        food_display: homepage_data.data.attributes.food_display,
         facts: homepage_data.data.attributes?.Facts,
         hygiene: homepage_data.data.attributes?.Hygiene,
 

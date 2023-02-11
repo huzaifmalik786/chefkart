@@ -17,7 +17,14 @@ type Props={
 const chef_array: chefType[] = [
   {
     id: 0,
-    image: "/pricing_signup.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "chef"
+        }
+      }
+    },
     name: "Rajesh Rathod",
     rating: 4.2,
     experience: "10+",
@@ -25,7 +32,14 @@ const chef_array: chefType[] = [
   },
   {
     id: 1,
-    image: "/pricing_signup.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "chef"
+        }
+      }
+    },
     name: "Rajesh Rathod",
     rating: 4.2,
     experience: "10+",
@@ -33,7 +47,14 @@ const chef_array: chefType[] = [
   },
   {
     id: 2,
-    image: "/pricing_signup.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "chef"
+        }
+      }
+    },
     name: "Rajesh Rathod",
     rating: 4.2,
     experience: "10+",
@@ -41,7 +62,14 @@ const chef_array: chefType[] = [
   },
   {
     id: 3,
-    image: "/pricing_signup.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "chef"
+        }
+      }
+    },
     name: "Rajesh Rathod",
     rating: 4.2,
     experience: "10+",
@@ -49,7 +77,14 @@ const chef_array: chefType[] = [
   },
   {
     id: 4,
-    image: "/pricing_signup.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "chef"
+        }
+      }
+    },
     name: "Rajesh Rathod",
     rating: 4.2,
     experience: "10+",
@@ -57,7 +92,14 @@ const chef_array: chefType[] = [
   },
   {
     id: 4,
-    image: "/pricing_signup.png",
+    image: {
+      data: {
+        attributes: {
+          url: "/pricing_signup.png",
+          alternativeText: "chef"
+        }
+      }
+    },
     name: "Rajesh Rathod",
     rating: 4.2,
     experience: "10+",
@@ -114,7 +156,7 @@ const Artisans = (props: Props) => {
           return (
             
             <div key={key} className={Styles.item}>
-              <Image src={c.image} alt="" fill />
+              <Image src={c.image.data.attributes.url} alt="" fill />
               <div className={Styles.inset}></div>
               <div className={Styles.upper_content}>
                 <div className="">

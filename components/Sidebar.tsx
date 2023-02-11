@@ -2,35 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Styles from "../styles/components/sidebar.module.scss";
+import UseWindowDimensions from "./WindowSize";
+
+type HeaderItems = {
+  text: string;
+  url: string
+};
 
 type Props = {
   show: boolean;
   hide: () => void;
+
+  links: HeaderItems[]
 };
-const links = [
+const links: HeaderItems[] = [
   {
-    display: "Blog",
+    text: "Blog",
     url: "/blogs",
   },
   {
-    display: "Career",
+    text: "Career",
     url: "/careers",
   },
   {
-    display: "About Us",
+    text: "About Us",
     url: "/about-us",
   },
   {
-    display: "Investor Relation",
+    text: "Investor Relation",
     url: "/investor-relation",
   },
   {
-    display: "Testimonials",
+    text: "Testimonials",
     url: "/testimonials",
   },
 ];
 
 const Sidebar = (props: Props) => {
+  const { width } = UseWindowDimensions()
   function disableBodyScroll() {
     document.body.style.overflowY = "hidden";
   }
@@ -56,10 +65,10 @@ const Sidebar = (props: Props) => {
       </div>
       <div className={Styles.body}>
         <ul>
-          {links.map((link, key) => {
+          {(props.links || links).map((link, key) => {
             return (
               <li key={key}>
-                <Link href={link.url}>{link.display}</Link>
+                <Link href={link.url}>{link.text}</Link>
               </li>
             );
           })}

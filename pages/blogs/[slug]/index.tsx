@@ -6,16 +6,10 @@ import CommentBox from '../../../components/articles/CommentBox'
 import CommentInput from '../../../components/articles/CommentInput'
 import Recomended from '../../../components/blogs/Recomended'
 import Layout from '../../../components/layouts/Layout'
-import { Footer_type, image_type } from '../../../interfaces/interfaces'
+import { Footer_type, Header_type, image_type } from '../../../interfaces/interfaces'
 
 type Props = {
-    header: {
-        nav_links: [],
-        button: {
-          button_text: string;
-        }
-        avatar: image_type
-      };
+    header: Header_type
       footer: Footer_type    
     article: {
         subtitle: string;
@@ -42,14 +36,12 @@ const Blog = (props:Props) => {
 export const getStaticPaths: GetStaticPaths = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages`)
     const blogs = await res.json();
-    console.log(blogs.data)
     const slugs = blogs.data.map((post:any) => post.attributes.slug);
 
     const paths = slugs.map((slug: string) => ({
         params: { slug: slug.toString() },
       }));
 
-      console.log(paths)
 
     return {
       paths,
@@ -70,7 +62,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   
     const blog = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages?filters[slug]=${params.slug}`);
     const blog_data = await blog.json()
-    console.log(blog_data)
 
     return {
       // Passed to the page component as props

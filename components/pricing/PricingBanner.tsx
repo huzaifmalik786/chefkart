@@ -57,6 +57,7 @@ type Props = {
       }
     }
   };
+  cards: PriceCard[]
 };
 
 const PricingBanner = (props: Props) => {
@@ -76,7 +77,7 @@ const PricingBanner = (props: Props) => {
                       <span key={key}>
                         {item.highlight ? (
                           <span className={Styles.colored}>
-                            <br />
+                            {/* <br /> */}
                             {item.text}{" "}
                           </span>
                         ) : (
@@ -120,7 +121,7 @@ const PricingBanner = (props: Props) => {
       </div>
       <Reveal>
       <div className={Styles.pricing_card}>
-        {PricingCardData.map((card, index) => {
+        {(props.cards || PricingCardData).map((card, index) => {
           return <PricingCard card={card} key={index} isWide />;
         })}
       </div>

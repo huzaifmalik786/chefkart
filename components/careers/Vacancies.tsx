@@ -3,6 +3,7 @@ import Styles from "../../styles/components/careers/vacancies.module.scss";
 import Dropdown from "../Forms/Dropdown";
 import JoinOurTeam from "../Forms/JoinOurTeam";
 import { useRouter } from "next/router";
+import UseWindowDimensions from "../WindowSize";
 
 
 type vacancyType = {
@@ -51,6 +52,7 @@ type Props = {
 }
 
 const Vacancies = (props: Props) => {
+  const {width} = UseWindowDimensions();
 
   const [departments, setDepartments] = useState<Set<string>>(new Set());
   const [location, setLocation] = useState<Set<string>>(new Set());
@@ -67,7 +69,6 @@ const Vacancies = (props: Props) => {
 
 
   const router = useRouter();
-  console.log(props.data?.header_data)
   return (
     <div className={Styles.vacancy_container}>
       <div className={Styles.heading}>
@@ -84,16 +85,15 @@ const Vacancies = (props: Props) => {
             <Dropdown
             list={Array.from(departments)}
               heading="Select Department"
-              arrow_width="1.04vw"
-              arrow_height="1.04vw"
+              arrow_size={width > 450 ? '1.04vw' : '3.6vw'}
+              
             />
           </div>
           <div className={`${Styles.dropdown} ${Styles.location}`}>
             <Dropdown
             list={Array.from(location)}
               heading="Location"
-              arrow_width="1.04vw"
-              arrow_height="1.04vw"
+              arrow_size={width > 450 ? '1.04vw' : '3.6vw'}
             />
           </div>
           <span className={Styles.viewAll}>{props.data?.header_data?.viewAll || "View all openings"} &#62;</span>

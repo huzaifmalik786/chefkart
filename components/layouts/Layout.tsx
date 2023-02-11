@@ -1,19 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Footer from "../Footer";
 import Header from "../Header";
-import { image_type } from "../../interfaces/interfaces";
+import { Header_type, image_type } from "../../interfaces/interfaces";
+import { ModalContext } from "../ModalContext";
+import Modal from "../careers/Modal";
+import ThankYou from "../Forms/ThankYou";
 
 type Props = {
   children: React.ReactNode;
   title?: string;
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  }
+  header: Header_type
   footer: {
     social_heading: string;
     get_app_heading: string;
@@ -51,7 +48,8 @@ type Props = {
 };
 
 const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer }) => {
-  console.log({children});
+  const [showModal,setShowModal]= useState<boolean>(false);
+
   return (
     <div>
       <Head>
@@ -60,7 +58,16 @@ const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer 
         <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=0" />
       </Head>
       <Header data={header} />
-      <main style={{ width: "100vw" }}>{children}</main>
+
+      <main style={{ width: "100vw" }}>
+      <ModalContext.Provider value={{ 
+      setModalOpen: (open: boolean) => setShowModal(open)}}>
+        {
+        showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou /></Modal>
+      }
+        {children}
+        </ModalContext.Provider>
+      </main>
       <Footer data={footer} />
     </div>
   );

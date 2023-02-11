@@ -98,6 +98,10 @@
 
         @media screen and (max-width:450px){
           padding-top: 6.67vw;
+
+          br{
+            display: none;
+          }
         }
         h4 {
           font-size: 1.66vw;

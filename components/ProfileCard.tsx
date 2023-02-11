@@ -9,7 +9,6 @@ type Props = {
 };
 
 const ProfileCard = (props: Props) => {
-  console.log(props.card)
   return (
     <div className={Styles.profile_item}>
       <div className={Styles.image}>

@@ -9,18 +9,12 @@ import VideoComponent from "../../components/join-as-chef/VideoComponent";
 import Layout from "../../components/layouts/Layout";
 import Testimonial from "../../components/join-as-chef/Testimonial";
 import { GetStaticProps } from "next";
-import { Footer_type, image_type, QUESTIONS } from "../../interfaces/interfaces";
+import { Footer_type, Header_type, image_type, QUESTIONS } from "../../interfaces/interfaces";
 import UseWindowDimensions from "../../components/WindowSize";
 import Reveal from "../../components/Reveal";
 
 type Props = {
-  header: {
-    nav_links: [],
-    button: {
-      button_text: string;
-    }
-    avatar: image_type
-  };
+  header: Header_type
   footer: Footer_type
 
   banner_slider: {
@@ -64,6 +58,26 @@ type Props = {
     stars: number;
     image: image_type
   }[]
+  apply_here: {
+    subheading: string;
+    heading: string;
+    link_text: string;
+    apply_link: {
+      text: string;
+      url: string;
+    }
+    button: {
+      button_text: string;
+    }
+    image: image_type
+  }
+  join_us: {
+    heading: {
+      text: string;
+      highlight: boolean;
+    }[]
+    description: string;
+  }
   faq: {
     heading : string;
     Question_answer: QUESTIONS[]
@@ -87,12 +101,12 @@ const index = (props: Props) => {
       <Testimonial data={props.testimonies} />
       </Reveal>
       <Reveal>
-      <Chef />
+      <Chef data={props.apply_here} />
       </Reveal>
       </div>
       <Reveal>
       <div style={width<=450?{display:"none"}:{}}>
-      <SimplifyWay />
+      <SimplifyWay data={props.join_us} />
       </div>
       </Reveal>
       <Reveal>
@@ -124,6 +138,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
         cook: join_chef.data.attributes.why_us,
         review: join_chef.data.attributes.review,
         testimonies: join_chef.data.attributes.testimonial_carousel,
+        apply_here: join_chef.data.attributes.Apply,
+        join_us: {
+          heading: join_chef.data.attributes.join_us_heading,
+          description: join_chef.data.attributes.description
+        },
         faq: join_chef.data.attributes.FAQ,
       footer: footer_data.data.attributes.Footer
       }
