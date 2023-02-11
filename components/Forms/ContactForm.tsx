@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm, Resolver } from "react-hook-form";
 import Styles from '../../styles/components/forms/contactForm.module.scss'
-import Modal from "../careers/Modal";
 import Button from "./Button";
 import Input from "./Input";
-import ThankYou from "./ThankYou";
+import { ModalContext} from "../ModalContext";
+
 
 type FormValues = {
     name: string;
@@ -34,14 +34,15 @@ type FormValues = {
     setOpenModal_two ?: (open:boolean)=> void;
   }
 const ContactForm = (props: Props) => {
+  const modalContext= React.useContext(ModalContext);
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
-  const [openModal, setOpenModal] = useState<boolean>(false)
 
 
   const onSubmit = (data: any) => {
     data.preventDefault()
-    // console.log(data);
-    setOpenModal(true);
+    if(modalContext.setModalOpen){
+      modalContext.setModalOpen(true);
+    }
     if(props.setOpenModal_two){
       props.setOpenModal_two(false)
 
@@ -51,9 +52,6 @@ const ContactForm = (props: Props) => {
 
   return (
     <>
-    {
-      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
-    }
     <div className={Styles.contact_form}>
       <h2>{props.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Founder from '../../components/AboutUs/Founder'
 import Hero from '../../components/AboutUs/Hero'
 import Mission from '../../components/AboutUs/Mission'
@@ -12,6 +12,8 @@ import { GetStaticProps } from 'next'
 import { Footer_type, Header_type, image_type, ProfileCardType } from '../../interfaces/interfaces'
 import UseWindowDimensions from '../../components/WindowSize'
 import Reveal from '../../components/Reveal'
+import Modal from '../../components/careers/Modal'
+import ThankYou from '../../components/Forms/ThankYou'
 
 type Props = {
   header: Header_type
@@ -86,9 +88,14 @@ type Props = {
 }
 
 const index = (props: Props) => {
+  const [openModal, setOpenModal] = useState<boolean>(false)
+
   const {width}=UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
+       {
+        openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
+        }
         <Hero data={props.banner} />
         <Reveal>
         <Vision data={props.vision} />
@@ -96,7 +103,9 @@ const index = (props: Props) => {
         {/* <Reveal>
         <Mission />
         </Reveal> */}
+        <Reveal>
         <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py={width<=450?"13vw":"5.55vw"} />
+        </Reveal>
         <Reveal>
         <Founder data={props.founders} />
         </Reveal>
@@ -104,7 +113,7 @@ const index = (props: Props) => {
         <Gallery />
         </Reveal>
         <Reveal>
-        <ContactForm data={props.form} />
+        <ContactForm data={props.form} showModal={setOpenModal}/>
         </Reveal>
         <Reveal>
         <Social data={props.social} />

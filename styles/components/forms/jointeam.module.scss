@@ -10,7 +10,7 @@
   padding: 3.4vw 0px 6.24vw 0px;
 
   @media (max-width: 450px) {
-    height: 100%;
+    height: max-content;
     width: 100vw;
     padding: 0 4.44vw;
     gap: 2.5vw;
@@ -71,6 +71,9 @@
 
     .button{
         margin-top: 1.11vw;
+        @media (max-width: 450px) {
+          padding-bottom: 10vw;
+        }
     }
 
     .desktop_only{

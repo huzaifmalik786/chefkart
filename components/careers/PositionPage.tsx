@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Modal from "./Modal";
 import JoinOurTeam from "../Forms/JoinOurTeam";
 import ThankYou from "../Forms/ThankYou";
+import Reveal from "../Reveal";
 
 const positionDetails = {
   position: "Software Engineer",
@@ -105,16 +106,17 @@ const PositionPage = (props: Props) => {
             return(
               <>
               <h2>{data.heading}</h2>
-              
               {
                 data.content.includes("\n-" || "\n -") ? (
                   <ul>
                   {data.content.split("\n").map((item, key) => {
-                    return <li key={key}>{item.trim().slice(1)}</li>;
+                    return <Reveal><li key={key}>{item.trim().slice(1)}</li></Reveal>;
                   })}
           </ul>
                 ) : (
+                  <Reveal>
                     <p>{data.content}</p>
+                  </Reveal>
                 )
               }
               </>

@@ -4,7 +4,7 @@ import Styles from '../../styles/components/about/vision.module.scss'
 import UseWindowDimensions from '../WindowSize'
 const Mission = () => {
   const {width}= UseWindowDimensions();
-  const [hidden,sethidden]= useState("content");
+  const [hidden,sethidden]= useState(false);
 
   const paragraph="We’re doing things bigly, I mean really quite big. The way we operate is different from other companies because we disrupt. We break the code, we crack the code as well."
   console.log(paragraph.substring(0,82));
@@ -18,19 +18,11 @@ const Mission = () => {
             </div>
         </div>
         <div className={Styles.left_section}>
-            <span>Mission</span>
+            <span className={Styles.heading}>Mission</span>
             <h2>Experience with at-home cooking services like never before!</h2>
-            {width<=450?(
-              <div>
-                <p>{paragraph.substring(0,82)}
-                  <button className={Styles.contentbutton} onClick={()=>sethidden("button")}><span>{hidden!="button"?"...Read More":""}</span></button>
-                  <span className={Styles.extracontent}>{hidden!="content"?`${paragraph.substring(82)}`:""}</span></p>
-              </div>
-            ):(
-              <div>
-                <p>{paragraph}</p>
-              </div>
-            )}
+            <div>
+                <p>{(paragraph).substring(0, 82)}<span style={hidden? {display: "none"} : {}} onClick={()=> sethidden(true)} className={Styles.content_button}>..Read more</span><span style={hidden ? {display: "inline"} : {}} className={Styles.extracontent}>{(paragraph).substring(82)}</span></p>
+            </div>
         </div>
     </div>
   )
