@@ -141,7 +141,10 @@
 
 .carousel {
   padding-top: 3.22vw;
-  // position: relative;
+  @media (max-width: 450px) {
+    height: 52vw;
+    align-items: flex-start;
+  }
 
 }
 
@@ -155,28 +158,33 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 2.36vw;
   @media (max-width: 450px) {
-    background-color: #000000;
-    bottom: -100px;
-    z-index: 99;
-
+    width: 100%;
+    justify-content: center;
+    gap:2.5vw;
+    bottom:0;
   }
- 
-
   button {
     background-color: transparent;
-
     position: relative;
   }
-
   .prev {
     width: 3.88vw;
     height: 3.88vw;
+    @media (max-width: 450px) {
+      width: 6.67vw;
+      height: 6.67vw;
+    }
   }
 
   .next {
     width: 3.88vw;
     height: 4.72vw;
+    @media (max-width: 450px) {
+      width: 6.67vw;
+      height: 8.2vw;
+    }
   }
 }

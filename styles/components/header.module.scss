@@ -40,6 +40,9 @@
     display: flex;
     align-items: center;
     gap: 1vw;
+    @media (max-width: 450px) {
+      gap: 2.22vw;
+    }
     div {
       position: relative;
       height: 4vw;
@@ -59,7 +62,10 @@
       line-height: 1.4vw;
       letter-spacing: 0.005em;
       @media screen and (max-width: 450px) {
-        display: none;
+        font-size: 3.33vw;
+        line-height: 120%;
+        padding: 2.5vw 5.56vw;
+        border-radius: 1.11vw;
       }
     }
   }

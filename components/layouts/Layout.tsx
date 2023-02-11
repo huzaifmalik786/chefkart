@@ -6,6 +6,7 @@ import { Header_type, image_type } from "../../interfaces/interfaces";
 import { ModalContext } from "../ModalContext";
 import Modal from "../careers/Modal";
 import ThankYou from "../Forms/ThankYou";
+import SignupForm from "../Forms/SignupForm";
 
 type Props = {
   children: React.ReactNode;
@@ -49,7 +50,12 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer }) => {
   const [showModal,setShowModal]= useState<boolean>(false);
-
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [secondModal, setSecondModal] = useState<boolean>(false);
+  const handlemodalClosed = (closed:boolean)=>{
+    setOpenModal(closed);
+    setSecondModal(!closed)
+  }
   return (
     <div>
       <Head>
@@ -61,12 +67,20 @@ const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer 
 
       <main style={{ width: "100vw" }}>
       <ModalContext.Provider value={{ 
-      setModalOpen: (open: boolean) => setShowModal(open)}}>
-        {
+      setModalOpen: (open: boolean) => setShowModal(open),
+      setSecondModal: (open:boolean)=>setOpenModal(open)}}>
+      {
         showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou /></Modal>
+      }
+      {
+        secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+      }
+      {
+        openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
       }
         {children}
         </ModalContext.Provider>
+
       </main>
       <Footer data={footer} />
     </div>

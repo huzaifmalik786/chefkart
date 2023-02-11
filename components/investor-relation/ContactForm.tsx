@@ -4,6 +4,7 @@ import Styles from "../../styles/components/investor-relation/contactForm.module
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import TextArea from "../Forms/TextArea";
+import { ModalContext } from '../ModalContext'
 
 type Props = {
   data: {
@@ -21,13 +22,15 @@ type Props = {
       }
     }
   },
-  showModal: (open: boolean) => void;
 }
 const ContactForm = (props: Props) => {
+  const modalContext= React.useContext(ModalContext);
   const onSubmit = (data: any) => {
     data.preventDefault()
-    props.showModal(true);
     console.log("submite",data.name, data.target.name.value)
+    if(modalContext.setModalOpen){
+      modalContext.setModalOpen(true);
+    }
 
   };
   return (

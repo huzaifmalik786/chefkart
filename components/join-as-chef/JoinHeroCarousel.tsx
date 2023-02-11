@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 import Styles from "../../styles/components/join-as-chef/joinherocarousel.module.scss";
 import Image from "next/image";
-
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Modal from "../careers/Modal";
@@ -65,6 +63,7 @@ const CustomDot = ({ onClick, ...rest }: any) => {
 const JoinHeroCarousel = (props: Props) => {
   const [openModal, setOpenModal] = useState<boolean>(false)
   const [secondModal, setSecondModal] = useState<boolean>(false)
+  
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
