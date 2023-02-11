@@ -9,7 +9,7 @@
     padding: 10vw 5.6vw;
   }
 
-  .hero_img {
+  .video_container {
     width: 40vw;
     position: relative;
     height: 37.29vw;
@@ -17,10 +17,31 @@
       width: 88.33vw;
       height: 81.94vw;
     }
+    .video {
+      border-radius: 1.52vw;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
 
-    .img {
-      border-radius: 16px;
     }
+    .pause_button{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5.55vw;
+      height: 5.55vw;
+      cursor: pointer;
+      @media (max-width: 450px) {
+        width: 11.67vw;
+        height: 11.67vw;
+      }
+    }
+
+    // .img {
+    //   border-radius: 16px;
+    // }
   }
 
   .hero_content {

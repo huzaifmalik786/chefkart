@@ -5,9 +5,6 @@ import Styles from '../../styles/components/about/form.module.scss'
 import Image from 'next/image'
 import Button from '../Forms/Button'
 import Dropdown from '../Forms/Dropdown'
-import Modal from '../careers/Modal'
-import ThankYou from '../Forms/ThankYou'
-import UseWindowDimensions from '../WindowSize'
 
 type Props = {
     data: {
@@ -20,8 +17,6 @@ type Props = {
 const dropdown_location = ["lorem ipsum", "lorem ipsum"]
 
 const ContactForm = (props: Props) => {
-    const {width}= UseWindowDimensions();
-    const [openModal, setOpenModal] = useState<boolean>(false)
 
     const onSubmit = (data: any) => {
         // send form data to server or perform other actions
@@ -32,9 +27,6 @@ const ContactForm = (props: Props) => {
       };
   return (
     <>
-    {/* {
-        openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
-    } */}
     <div className={Styles.about_form}>
         <div className={Styles.image}>
             <Image src={props.data.url || '/iStock-495494292 1.png'} alt={props.data.alternativeText || ''} fill />

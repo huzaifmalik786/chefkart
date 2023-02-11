@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/blogs/bloghero.module.scss";
 import UseWindowDimensions from "../WindowSize";
@@ -28,6 +28,21 @@ const words = ['Anniversary', 'Kitty Parties', 'House Parties', 'Birthday Partie
 const BlogHero = (props: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const {width}= UseWindowDimensions();
+  const [paused, setPaused] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const togglePause = () => {
+    if(videoRef.current){
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setPaused(false)
+      } else {
+        videoRef.current.pause();
+        setPaused(true)
+  
+      }
+
+    }
+  };
 
 
   useEffect(() => {
@@ -110,8 +125,22 @@ const BlogHero = (props: Props) => {
         </h4>
         <button>{props.data.button.button_text || "Read More"}</button>
       </div>
-      <div className={Styles.hero_img}>
+      {/* <div className={Styles.hero_img}>
         <Image src={"/blogs_hero.png"} className={Styles.img} alt="chef" fill />
+      </div> */}
+      <div className={Styles.video_container}>
+        <video
+          ref={videoRef}
+          src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+          loop
+          className={Styles.video}
+        />
+        <div
+        className={Styles.pause_button}
+          onClick={togglePause}
+        >
+          {paused ? <Image src={'/Play Button Circled.svg'} alt="" fill /> : ""}
+        </div>
       </div>
     </div>
   );

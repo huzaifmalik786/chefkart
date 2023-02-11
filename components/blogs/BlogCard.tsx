@@ -8,6 +8,7 @@ import Reveal from "../Reveal";
 
 type Props = {
   card: BlogCardType;
+  small?: boolean;
 };
 
 const BlogCard = (props: Props) => {
@@ -24,8 +25,8 @@ const BlogCard = (props: Props) => {
   return (
     <Reveal>
     <Link href={`/blogs/${props.card?.attributes?.slug}`}>
-    <div className={Styles.blog_card}>
-      <div className={Styles.blog_img}>
+    <div className={Styles.blog_card} style={props.small?{minHeight: "65.83vw",width:"66.11vw", borderRadius:"1.67vw"}:{}}>
+      <div className={Styles.blog_img} style={props.small?{height:"35vw"}:{}}>
         <Image
           alt={props.card?.attributes?.image?.data?.attributes?.alternativeText || "blog-image"}
           src={props.card?.attributes?.image?.data?.attributes?.url}
@@ -33,10 +34,10 @@ const BlogCard = (props: Props) => {
           fill
         />
       </div>
-      <div className={Styles.content}>
+      <div className={Styles.content} style={props.small?{padding: "3.33vw"}:{}}>
         <p className={Styles.subheading}>{props.card?.attributes?.subtitle}</p>
-        <h3 className={Styles.heading}>{props.card?.attributes?.title}</h3>
-        <p className={Styles.date}>{changeFormat(props.card?.attributes?.release_date)}</p>
+        <h3 className={Styles.heading} style={props.small?{fontSize:"3.89vw"}:{}}>{props.card?.attributes?.title}</h3>
+        <p className={Styles.date} style={props.small?{fontSize:"2.78vw"}:{}}>{changeFormat(props.card?.attributes?.release_date)}</p>
       </div>
     </div>
     </Link>

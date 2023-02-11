@@ -20,9 +20,16 @@ type Props = {
         }
       }
     }
-  }
+  },
+  showModal: (open: boolean) => void;
 }
 const ContactForm = (props: Props) => {
+  const onSubmit = (data: any) => {
+    data.preventDefault()
+    props.showModal(true);
+    console.log("submite",data.name, data.target.name.value)
+
+  };
   return (
     <div className={Styles.investor_contactForm}>
       <div className={Styles.banner}>
@@ -49,7 +56,7 @@ const ContactForm = (props: Props) => {
           {props.data?.form_heading || "Please fill out the form below and we will respond within 24hrs."}
         </h3>
 
-        <form action="">
+        <form onSubmit={onSubmit}>
           <Input placeholder="Name" type="text" />
           <Input placeholder="9987115132" name="mobile" type='text' />
           <Input type='email' placeholder='Email'  />

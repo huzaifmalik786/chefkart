@@ -3,6 +3,7 @@ import React from 'react'
 import Carousel from 'react-multi-carousel'
 import "react-multi-carousel/lib/styles.css";
 import Styles from '../../styles/components/about/gallery.module.scss'
+import GalleryVideo from './GalleryVideo';
 
 type gallery_vids = {
     image: string;
@@ -10,19 +11,19 @@ type gallery_vids = {
 
 const gallery : gallery_vids[] = [
     {
-        image: '/Rectangle 159.png'
+        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
     },
     {
-        image: '/Rectangle 155.png'
+        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
     },
     {
-        image: '/Rectangle 154.png'
+        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
     },
     {
-        image: '/Rectangle 156.png'
+        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
     },
     {
-        image: '/iStock-1223383996 1.png'
+        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
     },
 ]
 
@@ -74,7 +75,8 @@ const Gallery = () => {
         gallery.map((g, key)=>{
             return (
                 <div key={key} className={Styles.gallery_item}>
-                    <Image src={g.image} alt="gallery images" fill />
+                    {/* <Image src={g.image} alt="gallery images" fill /> */}
+                    <GalleryVideo video={g.image}/>
                 </div>
             )
         })

@@ -117,7 +117,7 @@ const BlogsSection = (props: Props) => {
         // renderDotsOutside
       >
         {(props.data?.blogs_array || BlogData).map((card, index) => {
-          return <BlogCard card={card} key={index} />;
+          return <BlogCard card={card} key={index} small/>;
         })}
       </Carousel>
     </div>

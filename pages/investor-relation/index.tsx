@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Divider from "../../components/Divider";
 import Banner from "../../components/investor-relation/Banner";
 import ContactForm from "../../components/investor-relation/ContactForm";
@@ -12,6 +12,8 @@ import Layout from "../../components/layouts/Layout";
 import { GetStaticProps } from "next";
 import { BlogCardType, Footer_type, image_type, investor_type } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
+import Modal from '../../components/careers/Modal'
+import ThankYou from '../../components/Forms/ThankYou'
 
 type Props = {
   header: {
@@ -98,8 +100,12 @@ type Props = {
 };
 
 const index = (props: Props) => {
+  const [openModal, setOpenModal] = useState<boolean>(false)
   return(
     <Layout header={props.header} footer={props.footer}>
+      {
+        openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ThankYou /></Modal>
+      }
       <InvestorHero data={props.banner} />
       <Reveal>
       <Mission data={props.mission} />
@@ -118,7 +124,7 @@ const index = (props: Props) => {
       </Reveal>
 
       <Reveal>
-      <ContactForm data={props.form} />
+      <ContactForm data={props.form} showModal={setOpenModal}/>
       </Reveal>
       
       <Reveal>
