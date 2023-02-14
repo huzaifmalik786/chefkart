@@ -180,6 +180,7 @@ const index = (props: Props) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const res1 = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/header?populate=deep`)
   const header_data = await res1.json();
+  console.log(header_data)
 
   const res3 = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/footer?populate=deep,10`
@@ -192,7 +193,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     return {
       props : {
-        header: header_data.data.attributes.header,
+        header: header_data.data.attributes,
 
         banner : pricing_data.data.attributes.banner,
         cards: pricing_data?.data?.attributes?.pricing_cards,

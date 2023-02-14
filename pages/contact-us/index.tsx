@@ -86,7 +86,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const contact_data = await res2.json()
   return {
     props: {
-      header: header_data.data.attributes.header,
+      header: header_data.data.attributes,
 
       banner: {
         banner_heading: contact_data.data.attributes.banner_heading,

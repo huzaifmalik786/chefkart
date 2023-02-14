@@ -82,11 +82,15 @@ export interface chefType {
 }
 
 export interface blogType{
-  image: image_type;
-  heading: string;
-  read_time: string;
-  tag: string;
-  id: number;
+  attributes: {
+    slug: string;
+    image: image_type;
+    tags: {
+      feature: string;
+    }[];
+    title: string;
+    time_to_read: string;
+  }
 }
 
 export interface features_icon{

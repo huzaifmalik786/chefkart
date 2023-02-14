@@ -6,25 +6,43 @@ import Styles from '../../styles/components/about/gallery.module.scss'
 import GalleryVideo from './GalleryVideo';
 
 type gallery_vids = {
-    image: string;
+    attributes: {
+      url: string;
+    }
 }
-
+type Props = {
+  data: {
+    heading: string;
+    videos: gallery_vids[]
+  }
+}
 const gallery : gallery_vids[] = [
     {
-        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      attributes: {
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      }
     },
     {
-        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      attributes: {
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      }
     },
     {
-        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      attributes: {
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      }
     },
     {
-        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      attributes: {
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      }
     },
     {
-        image: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      attributes: {
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      }
     },
+
 ]
 
 const responsive = {
@@ -47,10 +65,11 @@ const responsive = {
     },
   };
 
-const Gallery = () => {
+
+const Gallery = (props: Props) => {
   return (
     <div className={Styles.gallery_container}>
-        <h2>Gallery</h2>
+        <h2>{props.data.heading || "Gallery"}</h2>
 
         <Carousel
         swipeable
@@ -72,11 +91,11 @@ const Gallery = () => {
       >
     
     {
-        gallery.map((g, key)=>{
+        (props.data.videos || gallery).map((g, key)=>{
             return (
                 <div key={key} className={Styles.gallery_item}>
                     {/* <Image src={g.image} alt="gallery images" fill /> */}
-                    <GalleryVideo video={g.image}/>
+                    <GalleryVideo video={g.attributes.url}/>
                 </div>
             )
         })

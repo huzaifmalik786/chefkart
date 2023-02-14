@@ -2,7 +2,7 @@
   padding: 3.95vw 0;
 
    @media (max-width: 450px) {
-    padding: 0 4.32vw;
+    padding: 0;
   }
 
   h3 {
@@ -17,6 +17,14 @@
       line-height: 122.68%;
       text-align: center;
       padding: 7.56vw 0;
+    }
+  }
+
+  .carousel_container{
+    padding: 0 1.25vw;
+
+    @media (max-width: 450px) {
+      padding: 0 4.44vw;
     }
   }
 }

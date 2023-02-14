@@ -31,6 +31,7 @@ type Props = {
   }
 }
 const Header = (props:Props) => {
+  console.log(props.data)
 gsap.registerPlugin(ScrollTrigger);
   const ref=useRef(null);
   
@@ -95,7 +96,8 @@ gsap.registerPlugin(ScrollTrigger);
         </div>
         <div className={Styles.nav_center}>
           <ul>
-            {(props.data?.header?.nav_links || headerItems).map((item:HeaderItems, index:number) => {
+            {(props.data?.header?.nav_links ).map((item:HeaderItems, index:number) => {
+              // console.log(props.data.header.nav_links)
               return (
                 <Link href={item.url} key={index}>
                   <li>{item.text}</li>
@@ -166,7 +168,7 @@ gsap.registerPlugin(ScrollTrigger);
         </div>
       </nav>
       {openSidebar && (
-        <Sidebar links={props.data?.sidebar?.links} show={openSidebar} hide={() => setOpenSidebar(false)} />
+        <Sidebar links={props.data?.sidebar?.links} show={openSidebar}  hide={() => setOpenSidebar(false)} />
       )}
     </>
   );

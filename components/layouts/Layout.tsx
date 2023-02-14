@@ -49,6 +49,7 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer }) => {
   const [showModal,setShowModal]= useState<boolean>(false);
+  console.log(header)
 
   return (
     <div>

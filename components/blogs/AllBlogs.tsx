@@ -7,6 +7,11 @@ import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: BlogCardType[]
+  buttons: {
+    attributes: {
+      category: string;
+    }
+  }[]
 };
 
 const FilterButtons = [
@@ -160,7 +165,7 @@ const AllBlogs = (props: Props) => {
 
   const itemsPerPage = width>= 450 ? 6 : 4
 
-  const [activeBtn, setActiveBtn] = useState<string>("Trending");
+  const [activeBtn, setActiveBtn] = useState<string>(props.buttons[0].attributes.category);
   const [currentPage, setCurrentPage] = useState<number>(1)
   const startIndex = (currentPage - 1) * itemsPerPage
   var endIndex = startIndex + itemsPerPage
@@ -197,16 +202,16 @@ const AllBlogs = (props: Props) => {
   return (
     <div className={Styles.blogs}  ref={componentRef}>
       <div className={Styles.filter_btns}>
-        {FilterButtons.map((item, index) => {
+        {(props.buttons || FilterButtons).map((item, index) => {
           return (
             <button
-              onClick={() => handleFilter(item.tag)}
+              onClick={() => handleFilter(item.attributes.category)}
               key={index}
               className={
-                activeBtn === item.tag ? Styles.active_btn : Styles.button
+                activeBtn === item.attributes.category ? Styles.active_btn : Styles.button
               }
             >
-              {item.tag}
+              {item.attributes.category}
             </button>
           );
         })}

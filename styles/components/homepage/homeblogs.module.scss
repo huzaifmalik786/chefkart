@@ -55,6 +55,14 @@
       padding: 1vw 1.5vw;
     }
   }
+
+  .carousel_wrapper{
+    padding-left: 6.94vw;
+
+    @media (max-width: 450px) {
+      padding-left: 4.44vw;
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {

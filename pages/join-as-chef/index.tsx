@@ -132,7 +132,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     return {
       props : {
-        header: header_data.data.attributes.header,
+        header: header_data.data.attributes,
         banner_slider: join_chef.data.attributes.banner_slider,
         metrics: join_chef.data.attributes.Metrics,
         cook: join_chef.data.attributes.why_us,

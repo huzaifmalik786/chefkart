@@ -15,14 +15,17 @@ const Recomended = (props: Props) => {
 
   return (
     <div className={Styles.recomended_wrapper}>
-      <h4>Recommended Articles</h4>
-      <BlogArticleCarousel
-      cards={props.data.carousel}
-        isArrow={false}
-        isDots={false}
-        isFull={false}
-        isInfinite={false}
-      />
+      <h4>{props.data.heading || "Recommended Articles"}</h4>
+      <div className={Styles.carousel_container}>
+        <BlogArticleCarousel
+        cards={props.data.carousel}
+          isArrow={false}
+          isDots={false}
+          isFull={false}
+          isInfinite={false}
+        />
+
+      </div>
     </div>
   );
 };

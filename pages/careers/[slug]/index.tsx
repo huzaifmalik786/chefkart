@@ -62,7 +62,7 @@ export const getStaticProps = async ({ params }: { params: { slug: string } }) =
 
     return {
       props : {
-        header: header_data.data.attributes.header,
+        header: header_data.data.attributes,
         footer: footer_data.data.attributes.Footer,
         job_data: job_data?.data[0]?.attributes,
 

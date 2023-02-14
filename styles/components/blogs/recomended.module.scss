@@ -21,4 +21,12 @@
       padding-bottom: 6.67vw;
     }
   }
+
+  .carousel_container{
+    padding-left: 5vw;
+
+    @media (max-width: 450px) {
+      padding-left: 4.44vw;
+    }
+  }
 }

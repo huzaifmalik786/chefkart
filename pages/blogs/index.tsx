@@ -24,6 +24,11 @@ type Props = {
     }
   }
   blogs: BlogCardType[]
+  filter_buttons: {
+    attributes: {
+      category: string;
+    }
+  }[]
   articles: {
     heading: string;
     carousel: blogType[]
@@ -35,7 +40,7 @@ const index = (props: Props) => {
     <Layout header={props.header} footer={props.footer}>
       <BlogHero data={props.banner} />
       <Reveal>
-      <AllBlogs data={props.blogs} />
+      <AllBlogs data={props.blogs} buttons={props.filter_buttons} />
       </Reveal>
       <Reveal>
       <Recomended data={props.articles} />
@@ -61,14 +66,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
     // const temp_res = await fetch(`http://localhost:1337/api/blog?populate=deep,10`)
     // const temp_array = await temp_res.json()
 
+    const res4 = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blogs-categories?populate=deep,10`)
+    const button = await res4.json();
+
     return {
       props : {
-        header: header_data.data?.attributes?.header,
+        header: header_data.data?.attributes,
         banner: blogs?.data?.attributes?.banner,
         blogs: blogs?.data?.attributes?.blog_pages.data,
+        filter_buttons: button.data,
         articles:{
-          heading: blogs?.data?.attributes?.heading,
-          carousel: blogs?.data?.attributes?.carousel
+          heading: blogs?.data?.attributes?.articles_heading,
+          carousel: blogs?.data?.attributes?.article_carousel?.blog_pages?.data
         },
       footer: footer_data.data.attributes.Footer
       }

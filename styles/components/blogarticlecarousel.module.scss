@@ -6,10 +6,10 @@
     position: relative;
     background-color: white;
     height: 28vw;
-    width: 31vw;
+    width: 31vw !important;
     border-radius: 12px;
     @media screen and (max-width: 450px) {
-      width: 71.67vw ;
+      width: 71.67vw !important;
       height: 66.67vw;
       border-radius: 2.22vw;
       margin-right: 3.33vw;
@@ -123,6 +123,7 @@
   }
 
   .prev {
+    position: relative;
     width: 3.88vw;
     height: 3.88vw;
   }

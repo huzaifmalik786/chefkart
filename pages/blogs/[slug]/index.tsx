@@ -6,11 +6,20 @@ import CommentBox from '../../../components/articles/CommentBox'
 import CommentInput from '../../../components/articles/CommentInput'
 import Recomended from '../../../components/blogs/Recomended'
 import Layout from '../../../components/layouts/Layout'
-import { Footer_type, Header_type, image_type } from '../../../interfaces/interfaces'
+import { blogType, Footer_type, Header_type, image_type } from '../../../interfaces/interfaces'
 
 type Props = {
     header: Header_type
-      footer: Footer_type    
+      footer: Footer_type
+      social_icon: {
+        heading: string;
+        icons: {
+            url: string;
+            icon: image_type
+        }[]
+
+        like: image_type
+      }
     article: {
         subtitle: string;
         title: string;
@@ -18,17 +27,21 @@ type Props = {
         content: string;
         release_date: string;
         slug: string;
+    };
+    article_carousel: {
+      heading: string;
+    carousel: blogType[]
     }
 }
 const Blog = (props:Props) => {
     // console.log("inside")
   return (
     <Layout header={props.header} footer={props.footer}>
-        <Article data={props.article} />
+        <Article social_icon={props.social_icon} data={props.article} />
         <CommentInput />
         <CommentBox />
         <AuthorBox />
-        {/* <Recomended data={props.recomended_article} /> */}
+        <Recomended data={props.article_carousel} />
     </Layout>
   )
 }
@@ -63,11 +76,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const blog = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages?filters[slug]=${params.slug}`);
     const blog_data = await blog.json()
 
+    const articles_res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-single?populate=deep,10`)
+    const articles = await articles_res.json();
+
     return {
       // Passed to the page component as props
       props: { 
-        header: header_data.data.attributes.header,
+        header: header_data.data.attributes,
         article: blog_data.data[0].attributes,
+
+        article_carousel: {
+          heading: articles.data.attributes.article_carousel_heading,
+          carousel: articles.data.attributes.blog_pages.data,
+        },
+        social_icon: {
+          heading: articles.data.attributes.share_heading,
+          icons: articles.data.attributes.icons,
+          like: articles.data.attributes.like_button
+        },
 
         footer: footer_data.data.attributes.Footer
 

@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     return {
       props : {
-        header: header_data.data.attributes.header,
+        header: header_data.data.attributes,
 
         banner : testimonial_data.data.attributes.banner,
         section_heading: testimonial_data.data.attributes.section_heading,

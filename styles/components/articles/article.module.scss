@@ -135,8 +135,12 @@
 
       .fb {
         position: relative;
-        width: 2.05vw;
-        height: 2.04vw;
+        // width: 2.05vw;
+        // height: 2.04vw;
+        width: 2.22vw;
+        height: 2.22vw;
+        background-size: contain;
+        background-repeat: no-repeat;
         @media screen and (max-width: 450px) {
           width: 6.67vw;
           height: 6.67vw;

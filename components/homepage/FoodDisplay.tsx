@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Styles from "../../styles/components/homepage/fooddisplay.module.scss";
 
 import "react-multi-carousel/lib/styles.css";
@@ -11,6 +11,8 @@ import { image_type } from "../../interfaces/interfaces";
 type Props = {
 
   data: {
+    heading_before_slider: string;
+    heading_after_slider: string;
 
     carousel_image_type: {
       image: image_type
@@ -46,7 +48,9 @@ const FoodDisplay = (props: Props) => {
   })
   
   const { width, height } = UseWindowDimensions();
-  const [currentIndex, setCurrentIndex] = useState(0);  
+  const [currentIndex, setCurrentIndex] = useState(0); 
+  const divRef = useRef<HTMLDivElement>(null);
+  const [overflowText, setOverflowText] = React.useState<string>("");
 
   const wordElements = words.map((word, index) => {
     const style: styleType = {
@@ -117,6 +121,19 @@ const FoodDisplay = (props: Props) => {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
+  React.useEffect(() => {
+    const div = divRef.current;
+    if (!div) {
+      return;
+    }
+
+    if (div.offsetWidth < div.scrollWidth) {
+      setOverflowText(div.innerText.substring(div.innerText.length * (div.offsetWidth / div.scrollWidth)));
+      div.innerText = div.innerText.substring(0, div.innerText.length * (div.offsetWidth / div.scrollWidth));
+      console.log("inner")
+    }
+  }, []);
+
   return (
     <div className={Styles.container_top}>
 
@@ -127,12 +144,12 @@ const FoodDisplay = (props: Props) => {
         <div className={Styles.food_heading}>
         <div className={Styles.heading_text}>
             
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "inline" }} >
               {" "}
-              Feeling &nbsp; <div className={Styles.slider}>{wordElements}</div>
-              &nbsp; you got it, without
+              {props.data.heading_before_slider || "Feeling "}<div className={Styles.slider}>{wordElements}</div>
+            {props.data.heading_after_slider || "you got it, without the ridiculous spends ordering online"}
             </div>
-             the ridiculous spends ordering online
+
           </div>
           </div>
           

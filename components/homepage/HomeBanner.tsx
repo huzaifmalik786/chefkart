@@ -5,6 +5,7 @@ import useFetchData from '../../lib/api'
 import Modal from "../careers/Modal";
 import ThankYou from "../Forms/ThankYou";
 import ContactForm from "../Forms/ContactForm";
+import { image_type } from "../../interfaces/interfaces";
 
 type Props = {
   data : {
@@ -18,14 +19,7 @@ type Props = {
     button_text: string
   }
 
-  image : {
-    data:{
-      attributes:{
-        url: string;
-        alternativeText: string;
-      }
-    }
-  }
+  banner_image : image_type
   }
 }
 
@@ -54,7 +48,7 @@ const HomeBanner = (props: Props) => {
     }
     <div className={Styles.banner}>
       <div className={Styles.banner_img}>
-        <Image priority src={props.data?.image?.data?.attributes?.url || '/home-main.png'} alt={props.data?.image?.data?.attributes?.alternativeText || "banner"} fill  style={{ objectFit: 'cover' }} />
+        <Image priority src={props.data?.banner_image?.data?.attributes?.url || '/home-main.png'} alt={props.data?.banner_image?.data?.attributes?.alternativeText || "banner"} fill  style={{ objectFit: 'cover' }} />
       </div>
       <div className={Styles.overlay}>
         <div className={Styles.content}>

@@ -142,7 +142,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     return {
       props : {
-        header: header_data.data.attributes.header,
+        header: header_data.data.attributes,
         banner: career.data.attributes.banner,
         culture: career.data.attributes.culture,
         founders: {
@@ -156,7 +156,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         articles:{
           heading: career.data.attributes.article_heading,
-          array:career.data.attributes.aticles, 
+          array: career.data.attributes.aticles?.blog_pages?.data,
         } ,
         leaders: {
           heading: career.data.attributes.leadership_heading,

@@ -34,7 +34,7 @@ type Props = {
       button: {
         button_text: string;
       };
-      image : image_type
+      banner_image : image_type
     };
     //2nd component
     for_everyone: {
@@ -48,6 +48,8 @@ type Props = {
     };
 
     food_display: {
+      heading_before_slider: string;
+    heading_after_slider: string;
       carousel_image_type: {
         image: image_type
         text: string;
@@ -154,7 +156,11 @@ type Props = {
     blog: {
       section_name: string;
       heading: string;
-      blog_carousel: blogType[],
+      blog_carousel: {
+        blog_pages: {
+          data: blogType[]
+        }
+      } ,
       button: {
         button_text: string
       }
@@ -248,6 +254,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/homepage?populate=deep,10`
   );
   const homepage_data = await res2.json();
+
+  // const temp_res = await fetch(
+  //   `http://localhost:1337/api/homepage?populate=deep,10`
+  // );
+  // const temp = await temp_res.json();
 
   return {
     // Passed to the page component as props

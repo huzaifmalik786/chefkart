@@ -18,8 +18,71 @@ type Props = {
         content: string;
         release_date: string;
         slug: string
+    };
+    social_icon: {
+        heading: string;
+        icons: {
+            url: string;
+            icon: image_type
+        }[]
+
+        like: image_type
     }
+    // like: image_type
 }
+
+const icons_array = [
+    {
+        url: "#",
+        icons: {
+            data: {
+                attributes: {
+                    url: '/fb.png'
+                }
+            }
+        }
+    },
+    {
+        url: "#",
+        icons: {
+            data: {
+                attributes: {
+                    url: '/Vector (11).png'
+                }
+            }
+        }
+    },
+    {
+        url: "#",
+        icons: {
+            data: {
+                attributes: {
+                    url: '/Vector (12).png'
+                }
+            }
+        }
+    },
+    {
+        url: "#",
+        icons: {
+            data: {
+                attributes: {
+                    url: '/Vector (13).png'
+                }
+            }
+        }
+    },
+    {
+        url: "#",
+        icons: {
+            data: {
+                attributes: {
+                    url: '/Vector (14).png'
+                }
+            }
+        }
+    },
+]
 const Article = (props: Props) => {
     const {width}= UseWindowDimensions();
 
@@ -51,9 +114,9 @@ const Article = (props: Props) => {
 
         <div className={Styles.main}>
             <div className={Styles.social}>
-                <span>Share</span>
+                <span>{props.social_icon.heading || "Share"}</span>
 				<div className={Styles.right}>
-                    <div className={Styles.fb}>
+                    {/* <div className={Styles.fb}>
                         <Image src='/fb.png' alt='' fill />
                     </div>
                     <div className={Styles.twitter}>
@@ -67,12 +130,21 @@ const Article = (props: Props) => {
                     </div>
                     <div className={Styles.link}>
                         <Image src='/Vector (14).png' alt='' fill />
-                    </div>
+                    </div> */}
+                    {
+                        icons_array.map((item, key)=>{
+                            return(
+                                <div key={key} className={Styles.fb} style={{ backgroundImage: `url("${item.icons.data.attributes.url}")`}}>
+                                    {/* <Image src={item.icons.attributes.data.url} alt="" fill /> */}
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             
                 <div className={Styles.left}>
                     <div className={Styles.fb_like}>
-                        <Image src='/Facebook like.png' alt='' fill />
+                        <Image src={props.social_icon?.like?.data?.attributes?.url || '/Facebook like.png'} alt='' fill />
                     </div>
                 </div>
             </div>
