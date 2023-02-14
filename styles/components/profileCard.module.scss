@@ -1,5 +1,9 @@
 .profile_item {
   display: inline-block;
+  margin-left: 8vw ;
+  @media (max-width: 450px) {
+    margin: 0;
+  }
   .image {
     width: 16.28vw;
     height: 20.38vw;

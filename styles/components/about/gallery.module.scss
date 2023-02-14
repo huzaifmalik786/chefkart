@@ -1,4 +1,8 @@
 .gallery_container {
+  // padding: 0 4vw;
+  @media (max-width: 1024px) {
+    
+  }
   @media screen and (max-width: 450px) {
     padding-left: 4.44vw;
   }
@@ -45,10 +49,15 @@
     background-color: #d9d9d9;
     border-radius: 0.45vw;
     overflow: hidden;
+    margin-left: 1vw;
+    @media (max-width: 1024px) {
+      margin-left: 8vw;
+    }
     @media screen and (max-width: 450px) {
       width: 43.22vw !important;
       height: 45vw !important;
       border-radius: 1.11vw;
+      margin-left: 0;
     }
   }
 }

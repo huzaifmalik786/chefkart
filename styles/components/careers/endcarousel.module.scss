@@ -3,7 +3,7 @@
   text-align: center;
 
   @media (max-width: 450px) {
-    padding: 12.78vw 4.44vw 23.9vw 4.44vw;
+    padding: 12.78vw 4.44vw 13.9vw 4.44vw;
   }
 
   .carousel_header {
@@ -46,7 +46,7 @@
       position: relative;
       background-color: white;
       height: 36.3vw;
-      width: 85.97vw;
+      width: 85.97vw !important;
 
       @media (max-width: 450px) {
         width: 90.9vw;

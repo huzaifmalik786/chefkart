@@ -6,7 +6,7 @@
   .items {
 
     .carousel_img {
-      position: relative;
+      position: absolute;
       width: 100vw;
       height: 46.5vw;
       @media screen and (max-width: 450px){
@@ -18,14 +18,17 @@
     }
 
     .carousel_text {
-      position: absolute;
-      top: 40%;
+      position: relative;
+      margin-top: 18.6vw;
       left: 5%;
       color: white;
+      margin-bottom: 9.6vw;
       @media screen and (max-width: 450px) {
-        top: 35%;
+        width: 87.22vw;
+        margin-top: 37.5vw;
         left: 8%;
         margin-right: 4vw;
+        margin-bottom: 25.5vw;
       }
 
       h1 {
@@ -74,7 +77,7 @@
 
   [class*="dot"] {
     gap: 10px;
-    padding-bottom: 3.4vw;
+    padding-bottom: 30.4vw;
   }
 }
 

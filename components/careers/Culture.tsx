@@ -6,6 +6,9 @@ import CultureCard from "./CultureCard";
 import { CultureCardType } from "../../interfaces/interfaces";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 type Props = {
   data: {
@@ -64,25 +67,40 @@ const CultureCardData: CultureCardType[] = [
 const colors = ["#ff961f", "#571C5E", "#000000", "#2D4739"]
 const Culture = (props: Props) => {
   const [fullText, setFullText] = useState(false);
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      slidesToSlide: 1,
+  const [slide,setslide]= useState(props.data.culture_cards.length)
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 4,
+  //     slidesToSlide: 1,
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 540 },
+  //     items: 4,
+  //     slidesToSlide: 1,
+  //     // partialVisibilityGutter: 160,
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 540, min: 0 },
+  //     items: 2,
+  //     slidesToSlide: 1,
+  //     // partialVisibilityGutter: 120,
+  //   },
+  // };
+  const responsive=[
+    {
+      breakpoint: 3000,
+      settings: {
+        slidesToShow:slide>3?4:slide,
+      }
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 540 },
-      items: 4,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 160,
-    },
-    mobile: {
-      breakpoint: { max: 540, min: 0 },
-      items: 2,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 120,
-    },
-  };
+    {
+      breakpoint: 450,
+      settings: {
+        slidesToShow: slide>1?2:1
+      }
+    }
+  ]
   
   
   const text = "Our values outline who we are, what we hope to accomplish, and most crucially, how we intend to carry it out. They lay out our collective course and direct each and every move we make."
@@ -100,7 +118,22 @@ const Culture = (props: Props) => {
           return <CultureCard card={card} key={key} bg_color={colors[key]} index={key+1} />;
         })} */}
       </div>
-      <Carousel
+      <Slider
+         draggable
+         responsive={responsive}
+         autoplay
+         infinite={true}
+         arrows={false}
+         speed={1000}
+         autoplaySpeed={2000}
+         slidesToScroll={1}
+         className={Styles.carousel_container}
+      >
+        {(props.data.culture_cards || CultureCardData).map((card, key) => {
+          return <CultureCard card={card} key={key} bg_color={colors[key]} index={key+1} />;
+        })}
+      </Slider>
+      {/* <Carousel
         swipeable
         draggable
         showDots={false}
@@ -121,7 +154,7 @@ const Culture = (props: Props) => {
         {(props.data.culture_cards || CultureCardData).map((card, key) => {
           return <CultureCard card={card} key={key} bg_color={colors[key]} index={key+1} />;
         })}
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };

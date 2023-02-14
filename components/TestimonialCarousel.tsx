@@ -4,6 +4,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { image_type } from "../interfaces/interfaces";
 import useFetchData from "../lib/api";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 import Styles from "../styles/components/testimonial.module.scss";
 
@@ -50,6 +53,34 @@ const testimonies = [
       }
     }
   },
+  {
+    stars: 5,
+    review:
+      "“Staying away from home, my friends are my family. We often have parties at home and explored their Chef for the first time. Needless to say, I loved every bit of the experience.”",
+    name: "Diwakar, Media Head",
+    image: {
+      data: {
+        attributes: {
+          url: "/image 15.png",
+          alternativeText: "review-image"
+        }
+      }
+    }
+  },
+  {
+    stars: 5,
+    review:
+      "“Staying away from home, my friends are my family. We often have parties at home and explored their Chef for the first time. Needless to say, I loved every bit of the experience.”",
+    name: "Diwakar, Media Head",
+    image: {
+      data: {
+        attributes: {
+          url: "/image 15.png",
+          alternativeText: "review-image"
+        }
+      }
+    }
+  },
 ];
 
 type Props = {
@@ -62,41 +93,42 @@ type Props = {
 }
 
 const TestimonialCarousel = (props:Props) => {
-  
-  const [activeSlide, setActiveSlide] = useState(1);
-  
-  const activeStyle = {
-    width: "26.49vw !important",
-    // height: "25.81vw",
-    backgroundColor: "#f9f9f9",
-    borderRadius: "0.16vw solid #ABC0B5",
-    border: "0.16vw solid #ABC0B5",
-    color: "#615E5E",
-    fontSize: "1.38vw",
-    lineHeight: "1.80vw",
-    padding: "5vw 1.66vw 2.22vw 1.66vw",
-  };
+  const [slide,setslide]= useState(props.cards.length);
 
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1280 },
-      items: 3,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 40,
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1280 },
+  //     items: 3,
+  //     slidesToSlide: 1,
+  //     // partialVisibilityGutter: 40,
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1280, min: 768 },
+  //     items: 3,
+  //     slidesToSlide: 1,
+  //     // partialVisibilityGutter: 160,
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 540, min: 0 },
+  //     items: 1,
+  //     slidesToSlide: 1,
+  //     partialVisibilityGutter: 10,
+  //   },
+  // };
+  const responsive=[
+    {
+      breakpoint: 3000,
+      settings: {
+        slidesToShow:slide<4?slide:3,
+      }
     },
-    tablet: {
-      breakpoint: { max: 1280, min: 768 },
-      items: 3,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 160,
-    },
-    mobile: {
-      breakpoint: { max: 540, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-      partialVisibilityGutter: 10,
-    },
-  };
+    {
+      breakpoint: 450,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
 
   //   const handleOnChange = (e) => {
   //     setActiveIndex(e.item);
@@ -119,7 +151,60 @@ const TestimonialCarousel = (props:Props) => {
 
   return (
     <div className={Styles.testimonials_section}>
-      <Carousel
+      <Slider
+        infinite={true}
+        arrows={false}
+        speed={1000}
+        autoplaySpeed={2000}
+        slidesToScroll={1}
+        draggable
+        autoplay
+        pauseOnHover={false}
+        responsive= {responsive}
+        className={Styles.carousel_container}
+      >
+      {(props.cards || testimonies).map((t, key) => {
+          return (
+            <div
+              key={key}
+              className={Styles.item}
+              // style={activeSlide === key ? activeStyle : {}}
+            >
+              <div className={Styles.image}>
+                <Image src={(t.image?.data?.attributes?.url)} fill alt={t.image?.data?.attributes?.alternativeText || ""} />
+              </div>
+              <div>
+                {renderStars(t.stars)}
+                <p
+                  className={Styles.content}
+                  // style={
+                  //   activeSlide === key
+                  //     ? { fontSize: "1.38vw", lineHeight: "1.80vw" }
+                  //     : {}
+                  // }
+                >
+                  {t.review}
+                </p>
+              </div>
+              <Image
+                src="/Vector-3.svg"
+                alt=""
+                width={53}
+                height={0}
+                className={Styles.line}
+                // style={activeSlide === key ? { borderColor: "#2d4739" } : {}}
+              />
+              <p
+                className={Styles.name}
+                // style={activeSlide === key ? { color: "#262626" } : {}}
+              >
+                {t.name}
+              </p>
+            </div>
+          );
+        })}
+      </Slider>
+      {/* <Carousel
         ssr={true} // means to render carousel on server-side.
         responsive={responsive}
         draggable={true}
@@ -177,7 +262,7 @@ const TestimonialCarousel = (props:Props) => {
             </div>
           );
         })}
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };

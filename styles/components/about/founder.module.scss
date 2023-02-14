@@ -1,6 +1,6 @@
 .founder {
   @media screen and (max-width: 450px) {
-    padding-left:4.44vw;
+    // padding-left:4.44vw;
   }
   h2 {
     font-family: var(--secondary_font);
@@ -23,5 +23,11 @@
         font-family: var(--secondary_font);
         color: #E76F51;
     }
+  }
+}
+.carousel{
+  padding: 0 8vw 0 8vw;
+  @media (max-width: 450px) {
+    padding: 0;
   }
 }

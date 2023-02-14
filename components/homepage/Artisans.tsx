@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import Styles from "../../styles/components/homepage/artisans.module.scss";
 import "react-multi-carousel/lib/styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import useFetchData from "../../lib/api";
 import { chefType } from "../../interfaces/interfaces";
 import UseWindowDimensions from "../WindowSize";
+import Slider from "react-slick";
 
 type Props={
   data: {
@@ -107,51 +110,47 @@ const chef_array: chefType[] = [
   },
 ];
 const Artisans = (props: Props) => {
+  const [slide,setslides]= useState<number>((props.data.chef_array).length);
+  // const slide= props.data.chef_array.length;
   const {width}= UseWindowDimensions();
-  
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 1,
+  const responsive=[
+    {
+      breakpoint: 3000,
+      settings: {
+        slidesToShow:slide>3?3.6:slide,
+      }
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 540 },
-      items: 3,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 60,
+    {
+      breakpoint: 450,
+      settings: {
+        slidesToShow: 1.1,
+      }
     },
-    mobile: {
-      breakpoint: { max: 540, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 120,
-    },
-  };
+    {
+      breakpoint: 310,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
 
 
   return (
     <div className={Styles.chef_container}>
       <h3>{props.data.heading || "Meet the Food Artisans"}</h3>
-      <Carousel
-        swipeable
-        draggable
-        showDots={false}
-        responsive={responsive}
-        autoPlay={true}
-        autoPlaySpeed={2000}
-        transitionDuration={900}
-        rewindWithAnimation
-        customTransition="transform 900ms ease-in"
-        // ssr
-        centerMode={width<=450?false:true}
-        infinite
+
+      <Slider
+        infinite={true}
         arrows={false}
-        containerClass={Styles.artisans}
-        itemClass={Styles.item}
-        partialVisbile={width<=450?true:false}
+        speed={1000}
+        autoplay
+        centerMode
+        autoplaySpeed={2000}
+        slidesToScroll={1}
+        draggable
+        responsive= {responsive}
       >
-        {(props.data.chef_array || chef_array).map((c, key) => {
+       {(props.data.chef_array || chef_array).map((c, key) => {
           return (
             
             <div key={key} className={Styles.item}>
@@ -184,8 +183,8 @@ const Artisans = (props: Props) => {
                               )
                           })
                       }
-                      <div>
-                        <button style={{background:"none"}}>
+                      <div className={Styles.button}>
+                        <button style={{background:"none",fontSize:"2.7vw"}}>
                             {c.specialization.length>3?`+${c.specialization.length-3} more`:""}
                         </button>
                       </div>
@@ -207,7 +206,7 @@ const Artisans = (props: Props) => {
             </div>
           );
         })}
-      </Carousel>
+      </Slider>
     </div>
   );
 };

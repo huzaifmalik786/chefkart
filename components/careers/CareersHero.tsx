@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import Styles from "../../styles/components/careers/careershero.module.scss";
 import { image_type } from "../../interfaces/interfaces";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const carouselData = [
   {
@@ -35,25 +38,46 @@ type Props = {
 };
 
 const CareersHero = (props: Props) => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 1,
+  const [slide,setslide]= useState(carouselData.length);
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 3,
+  //     slidesToSlide: 1,
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 540 },
+  //     items: 2,
+  //     slidesToSlide: 1,
+  //     // partialVisibilityGutter: 160,
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 540, min: 0 },
+  //     items: 2,
+  //     slidesToSlide: 1,
+  //     // partialVisibilityGutter: 120,
+  //   },
+  // };
+  const responsive=[
+    {
+      breakpoint: 450,
+      settings: {
+        slidesToShow:1.6,
+      }
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 540 },
-      items: 2,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 160,
+    {
+      breakpoint: 350,
+      settings: {
+        slidesToShow: 1.5,
+      }
     },
-    mobile: {
-      breakpoint: { max: 540, min: 0 },
-      items: 2,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 120,
-    },
-  };
+    {
+      breakpoint: 300,
+      settings: {
+        slidesToShow: 1.4,
+      }
+    }
+  ]
 
   return (
     <div className={Styles.hero_wrapper}>
@@ -93,7 +117,36 @@ const CareersHero = (props: Props) => {
         </div>
       </div>
       </div>
-      <Carousel
+      <Slider
+        draggable
+        responsive={responsive}
+        autoplay={false}
+        infinite={true}
+        arrows={false}
+        speed={1000}
+        autoplaySpeed={2000}
+        slidesToScroll={1}
+        className={Styles.carousel}
+        centerMode
+      >
+        {
+          (carouselData).map((item, key)=>{
+            return(
+              <div key={key} className={Styles.item}>
+                <Image
+                  src={item.image}
+                  alt="img"
+                  // height={489}
+                  // width={326}
+                  fill
+                />
+            </div>
+            )
+
+          })
+        }
+      </Slider>
+      {/* <Carousel
         swipeable
         draggable
         showDots={false}
@@ -130,7 +183,7 @@ const CareersHero = (props: Props) => {
 
           })
         }
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };
