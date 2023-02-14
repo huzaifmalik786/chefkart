@@ -36,6 +36,7 @@ gsap.registerPlugin(ScrollTrigger);
   const ref=useRef(null);
   
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
+  const [openAnimatedSidebar, setOpenAnimatedSidebar] = useState<boolean>(false);
   const router = useRouter();
 
   const headerItems: HeaderItems[] = [
@@ -61,7 +62,6 @@ gsap.registerPlugin(ScrollTrigger);
     },{
       top:0,
       opacity: 1,
-      // paused: true,
       zIndex:100,
       duration: 0.3,
       scrollTrigger: {
@@ -118,10 +118,10 @@ gsap.registerPlugin(ScrollTrigger);
         </div>
       </nav>
       {openSidebar && (
-        <Sidebar links={props.data?.sidebar?.links} show={openSidebar} hide={() => setOpenSidebar(false)} />
+        <Sidebar links={props.data?.sidebar?.links} navlinks={props.data?.header?.nav_links} show={openSidebar} hide={() => setOpenSidebar(false)} />
       )}
 
-{/* Animated Navbar */}
+  {/* Animated Navbar */}
       <nav ref={ref} className={`${Styles.navbar} ${Styles.show}`}>
         <div className={Styles.nav_left}>
           <Link href="/">
@@ -157,7 +157,7 @@ gsap.registerPlugin(ScrollTrigger);
         </div>
         <div className={Styles.nav_right}>
           <button onClick={() => router.push("/contact-us")}>{props.data?.header?.button.button_text || "contact us"}</button>
-          <div onClick={() => setOpenSidebar(true)}>
+          <div onClick={() => setOpenAnimatedSidebar(true)}>
             <Image
               // src={props.data.avatar?.data?.attributes?.url || "/burger-icon-black.svg"}
               src="/burger-icon-black.svg"
@@ -167,8 +167,8 @@ gsap.registerPlugin(ScrollTrigger);
           </div>
         </div>
       </nav>
-      {openSidebar && (
-        <Sidebar links={props.data?.sidebar?.links} show={openSidebar}  hide={() => setOpenSidebar(false)} />
+      {openAnimatedSidebar && (
+        <Sidebar links={props.data?.sidebar?.links} navlinks={props.data?.header?.nav_links} show={openAnimatedSidebar} hide={() => setOpenAnimatedSidebar(false)} />
       )}
     </>
   );

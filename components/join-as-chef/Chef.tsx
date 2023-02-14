@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "../../styles/components/join-as-chef/chef.module.scss";
-
+import { ModalContext } from "../ModalContext";
 import Image from "next/image";
 import Link from "next/link";
 import { image_type } from "../../interfaces/interfaces";
@@ -22,6 +22,13 @@ type Props = {
 };
 
 const Chef = (props: Props) => {
+  const modalContext= React.useContext(ModalContext);
+  const handleClick=()=>{
+    if(modalContext.setSecondModal){
+      modalContext.setSecondModal(true);
+    }
+  }
+
   return (
     <div className={Styles.chef_wrapper}>
       <div className={Styles.chef_img}>
@@ -35,7 +42,7 @@ const Chef = (props: Props) => {
         <p>
           <Link href={props.data?.apply_link?.url || "#"}>{props.data.apply_link.text || "Apply here"}</Link> {props.data?.link_text || "to join our network of private chefs."}
         </p>
-        <button>{props.data?.button.button_text || "Sign up now"}</button>
+        <button onClick={()=>handleClick()}>{props.data?.button.button_text || "Sign up now"}</button>
       </div>
     </div>
   );

@@ -75,6 +75,23 @@ const ButtonGroup = ({ next, previous, ...rest }: any) => {
   );
 };
 
+const MobileButtonGroup = ({ next, previous, ...rest }: any) => {
+  const {
+    carouselState: { currentSlide },
+  } = rest;
+  return (
+    <div className={Styles.carousel_buttons}>
+      <button onClick={() => previous()} className={Styles.prev}>
+        <Image src={"/prev_big.svg"} fill alt="prev" />
+      </button>
+
+      <button onClick={() => next()} className={Styles.next}>
+        <Image src={"/next_big.svg"} fill alt="prev" />
+      </button>
+    </div>
+  );
+};
+
 const EndCarousel = (props: Props) => {
   const responsive = {
     desktop: {
@@ -84,9 +101,9 @@ const EndCarousel = (props: Props) => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 540 },
-      items: 2,
+      items: 1,
       slidesToSlide: 1,
-      partialVisibilityGutter: 160,
+      // partialVisibilityGutter: 160,
     },
     mobile: {
       breakpoint: { max: 540, min: 0 },
@@ -141,6 +158,7 @@ const EndCarousel = (props: Props) => {
             );
           })}
         </Carousel>
+        {/* <MobileButtonGroup/> */}
       </div>
     </div>
   );

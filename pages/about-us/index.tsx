@@ -1,24 +1,17 @@
-import React, { useState } from "react";
-import Founder from "../../components/AboutUs/Founder";
-import Hero from "../../components/AboutUs/Hero";
-import Mission from "../../components/AboutUs/Mission";
-import Vision from "../../components/AboutUs/Vision";
-import ContactForm from "../../components/AboutUs/ContactForm";
-import Facts from "../../components/homepage/Facts";
-import Layout from "../../components/layouts/Layout";
-import Social from "../../components/AboutUs/Social";
-import Gallery from "../../components/AboutUs/Gallery";
-import { GetStaticProps } from "next";
-import {
-  Footer_type,
-  Header_type,
-  image_type,
-  ProfileCardType,
-} from "../../interfaces/interfaces";
-import UseWindowDimensions from "../../components/WindowSize";
-import Reveal from "../../components/Reveal";
-import Modal from "../../components/careers/Modal";
-import ThankYou from "../../components/Forms/ThankYou";
+import React,{useState} from 'react'
+import Founder from '../../components/AboutUs/Founder'
+import Hero from '../../components/AboutUs/Hero'
+import Mission from '../../components/AboutUs/Mission'
+import Vision from '../../components/AboutUs/Vision'
+import ContactForm from '../../components/AboutUs/ContactForm'
+import Facts from '../../components/homepage/Facts'
+import Layout from '../../components/layouts/Layout'
+import Social from '../../components/AboutUs/Social'
+import Gallery from '../../components/AboutUs/Gallery'
+import { GetStaticProps } from 'next'
+import { Footer_type, Header_type, image_type, ProfileCardType } from '../../interfaces/interfaces'
+import UseWindowDimensions from '../../components/WindowSize'
+import Reveal from '../../components/Reveal'
 
 type Props = {
   header: Header_type;
@@ -103,29 +96,23 @@ const index = (props: Props) => {
   const { width } = UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
-      <Hero data={props.banner} />
-      <Reveal>
+        <Hero data={props.banner} />
+        <Reveal>
         <Vision data={props.vision} />
-      </Reveal>
-      <Reveal>
-        <Facts
-          data={props.facts}
-          bgcolor="#2D4739"
-          color="#ffffff"
-          px="4.44vw"
-          py={width <= 450 ? "13vw" : "5.55vw"}
-        />
-      </Reveal>
-      <Reveal>
+        </Reveal>
+        <Reveal>
+        <Facts data={props.facts} bgcolor='#2D4739' color='#ffffff' px="4.44vw" py={width<=450?"13vw":"5.55vw"} />
+        </Reveal>
+        <Reveal>
         <Founder data={props.founders} />
-      </Reveal>
-      <Reveal>
-        <Gallery data={props.gallery} />
-      </Reveal>
-      <Reveal>
-        <ContactForm data={props.form} />
-      </Reveal>
-      <Reveal>
+        </Reveal>
+        <Reveal>
+        <Gallery />
+        </Reveal>
+        <Reveal>
+        <ContactForm data={props.form}/> 
+        </Reveal>
+        <Reveal>
         <Social data={props.social} />
       </Reveal>
     </Layout>

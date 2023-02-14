@@ -12,8 +12,8 @@ type HeaderItems = {
 type Props = {
   show: boolean;
   hide: () => void;
-
-  links: HeaderItems[]
+  links: HeaderItems[],
+  navlinks: HeaderItems[];
 };
 const links: HeaderItems[] = [
   {
@@ -35,6 +35,21 @@ const links: HeaderItems[] = [
   {
     text: "Testimonials",
     url: "/testimonials",
+  },
+];
+
+const headerItems: HeaderItems[] = [
+  {
+    text: "Chef On-Demand",
+    url: "/chef-on-demand",
+  },
+  {
+    text: "Monthly Subscriptions",
+    url: "/pricing",
+  },
+  {
+    text: "Join as Chef",
+    url: "/join-as-chef",
   },
 ];
 
@@ -65,6 +80,13 @@ const Sidebar = (props: Props) => {
       </div>
       <div className={Styles.body}>
         <ul>
+        {width<=450 && (props.navlinks || headerItems).map((link, key) => {
+            return (
+              <li key={key}>
+                <Link href={link.url}>{link.text}</Link>
+              </li>
+            );
+          })}
           {(props.links || links).map((link, key) => {
             return (
               <li key={key}>
