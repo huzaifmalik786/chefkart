@@ -7,7 +7,7 @@ type Props = {
   data: {
     badge: string
     heading: string;
-    subheading: {
+    description: {
       text: string;
       highlight: boolean;
     }[]
@@ -127,8 +127,8 @@ const items = props.data.slider.map((item, key)=>{
         </div>
         <h4>
         {
-            (props.data?.subheading) ? (
-              (props.data?.subheading).map((item, key)=>{
+            (props.data?.description) ? (
+              (props.data?.description).map((item, key)=>{
                 return(
                   <span key={key}>
                     {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }

@@ -53,7 +53,16 @@
           // height: 4vw;
           // overflow: hidden;
           // transition: all 0.5s;
+          .slider_wrapper{
+            height: 4vw;
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            @media screen and (max-width: 450px){
+            height: 8vw;
+          }
 
+          }
           .slider{
           height: 4vw;
           overflow: hidden;

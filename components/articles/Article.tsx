@@ -34,7 +34,7 @@ type Props = {
 const icons_array = [
     {
         url: "#",
-        icons: {
+        icon: {
             data: {
                 attributes: {
                     url: '/fb.png'
@@ -44,7 +44,7 @@ const icons_array = [
     },
     {
         url: "#",
-        icons: {
+        icon: {
             data: {
                 attributes: {
                     url: '/Vector (11).png'
@@ -54,7 +54,7 @@ const icons_array = [
     },
     {
         url: "#",
-        icons: {
+        icon: {
             data: {
                 attributes: {
                     url: '/Vector (12).png'
@@ -64,7 +64,7 @@ const icons_array = [
     },
     {
         url: "#",
-        icons: {
+        icon: {
             data: {
                 attributes: {
                     url: '/Vector (13).png'
@@ -74,7 +74,7 @@ const icons_array = [
     },
     {
         url: "#",
-        icons: {
+        icon: {
             data: {
                 attributes: {
                     url: '/Vector (14).png'
@@ -85,6 +85,7 @@ const icons_array = [
 ]
 const Article = (props: Props) => {
     const {width}= UseWindowDimensions();
+    console.log(props.social_icon)
 
     function changeFormat(d: string){
         let date = new Date(d);
@@ -132,9 +133,9 @@ const Article = (props: Props) => {
                         <Image src='/Vector (14).png' alt='' fill />
                     </div> */}
                     {
-                        icons_array.map((item, key)=>{
+                        (props.social_icon.icons || icons_array).map((item, key)=>{
                             return(
-                                <div key={key} className={Styles.fb} style={{ backgroundImage: `url("${item.icons.data.attributes.url}")`}}>
+                                <div key={key} className={Styles.fb} style={{ backgroundImage: `url("${item.icon.data.attributes.url}")`}}>
                                     {/* <Image src={item.icons.attributes.data.url} alt="" fill /> */}
                                 </div>
                             )

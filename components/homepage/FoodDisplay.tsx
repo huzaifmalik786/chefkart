@@ -146,7 +146,7 @@ const FoodDisplay = (props: Props) => {
             
             <div style={{ display: "inline" }} >
               {" "}
-              {props.data.heading_before_slider || "Feeling "}<div className={Styles.slider}>{wordElements}</div>
+              {props.data.heading_before_slider || "Feeling "} <div className={Styles.slider_wrapper}> <div className={Styles.slider}>{wordElements}</div></div>
             {props.data.heading_after_slider || "you got it, without the ridiculous spends ordering online"}
             </div>
 

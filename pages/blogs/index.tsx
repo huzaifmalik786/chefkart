@@ -15,7 +15,7 @@ type Props = {
   banner: {
     badge: string
     heading: string;
-    subheading: {
+    description: {
       text: string;
       highlight: boolean;
     }[]
