@@ -107,7 +107,7 @@ const index = (props: Props) => {
         <Founder data={props.founders} />
         </Reveal>
         <Reveal>
-        <Gallery />
+        <Gallery data={props.gallery} />
         </Reveal>
         <Reveal>
         <ContactForm data={props.form}/> 

@@ -133,7 +133,6 @@ const Artisans = (props: Props) => {
   return (
     <div className={Styles.chef_container}>
       <h3>{props.data.heading || "Meet the Food Artisans"}</h3>
-
       <Carousel
         swipeable
         draggable

@@ -22,6 +22,16 @@ type Props = {
     button: {
       button_text: string;
     }
+    slider: {
+      text: string
+  }[]
+  video: {
+    data: {
+      attributes: {
+        url: string;
+      }
+    }
+  }
   }
   blogs: BlogCardType[]
   filter_buttons: {

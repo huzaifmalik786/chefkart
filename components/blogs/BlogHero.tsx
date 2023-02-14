@@ -14,6 +14,16 @@ type Props = {
     button: {
       button_text: string;
     }
+    slider: {
+        text: string
+    }[]
+    video: {
+      data: {
+        attributes: {
+          url: string;
+        }
+      }
+    }
   }
 };
 
@@ -23,10 +33,18 @@ type styleType = {
   position: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky';
   transition: string;
 }
-const words = ['Anniversary', 'Kitty Parties', 'House Parties', 'Birthday Parties', 'Special Ocassions', 'Something Special'];
 
 const BlogHero = (props: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+const words = ['Anniversary', 'Kitty Parties', 'House Parties', 'Birthday Parties', 'Special Ocassions', 'Something Special'];
+const items = props.data.slider.map((item, key)=>{
+  return(
+    {
+      word: item.text
+    }
+  )
+})
+
   const {width}= UseWindowDimensions();
   const [paused, setPaused] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -47,40 +65,40 @@ const BlogHero = (props: Props) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % words.length);
+      setCurrentIndex((currentIndex + 1) % items.length);
     }, 3000)
 
     return () => clearInterval(interval)
   }, [currentIndex])
 
 
-  const wordElements = words.map((word, index) => {
+  const wordElements = (items).map((word, index) => {
     const style : styleType = {
       color: '#FF8811',
       marginTop: '',
       position: 'absolute',
       transition: 'margin-top 0.7s, width 0.5s ease-in-out'
     };
-    if (index === currentIndex && index===0) {
+    if (index === currentIndex && index%6 ===0) {
       style.marginTop = '0px'
       style.position= 'relative'
-    } else if(index === currentIndex && index === 1){
+    } else if(index === currentIndex && index%6 === 1){
       style.marginTop = '0px'
       style.color = '#FF6978'
        style.position= 'relative'
-    } else if(index === currentIndex && index === 2){
+    } else if(index === currentIndex && index%6 === 2){
       style.marginTop = '0px'
       style.color = '#4F4789'
        style.position= 'relative'
-    } else if(index === currentIndex && index === 3){
+    } else if(index === currentIndex && index%6 === 3){
       style.marginTop = '0px'
       style.color = '#214E34'
        style.position= 'relative'
-    } else if(index === currentIndex && index === 4){
+    } else if(index === currentIndex && index%6 === 4){
       style.marginTop = '0px'
       style.color = '#571c5e'
        style.position= 'relative'
-    } else if(index === currentIndex && index === 5){
+    } else if(index === currentIndex && index%6 === 5){
       style.marginTop = '0px'
       style.color = '#2D4739'
        style.position= 'relative'
@@ -97,7 +115,7 @@ const BlogHero = (props: Props) => {
     //   style.marginTop = `${index > currentIndex ? '3.47vw' : `-4.47vw`}`
     // }
 
-    return <div className={Styles.slider_word} key={index} style={style}>{word}</div>;
+    return <div className={Styles.slider_word} key={index} style={style}>{word.word}</div>;
   });
 
   return (
@@ -131,7 +149,7 @@ const BlogHero = (props: Props) => {
       <div className={Styles.video_container}>
         <video
           ref={videoRef}
-          src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+          src={props.data.video.data.attributes.url || 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}
           loop
           className={Styles.video}
         />

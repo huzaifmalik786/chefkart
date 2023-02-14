@@ -52,111 +52,18 @@ const BlogData: BlogCardType[] = [
       }
     },
     slug: "covid",
-    category: "News"
-  }
-  },
-  {
-    attributes: {
-    title: "Love in the times of Quarantine",
-    subtitle: "Lorum Ipsum",
-    release_date: "November 18, 2022",
-    image: {
-      data: {
+    blogs_categories: {
+      data: [
+        {
         attributes: {
-          url: "/blog-2.png",
-          alternativeText: ""
+          category: "News"
         }
       }
-    },
-    slug: "covid",
-    category: "News"
+    ]
+    }
   }
   },
-  {
-    attributes: {
-    title: "A foodie next door",
-    subtitle: "Lorum Ipsum",
-    release_date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-3.png",
-          alternativeText: ""
-        }
-      }
-    },
-    slug: "covid",
-    category: "News"
-  }
-  },
-  {
-    attributes: {
-    title: "11 ways to avoid the spread of COVID-191",
-    subtitle: "Lorum Ipsum",
-    release_date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-4.png",
-          alternativeText: ""
-        }
-      }
-    },
-    slug: "covid",
-    category: "blogs"
-  }
-  },
-  {
-    attributes: {
-    title: "Love in the times of Quarantine",
-    subtitle: "Lorum Ipsum",
-    release_date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-5.png",
-          alternativeText: ""
-        }
-      }
-    },
-    slug: "covid",
-    category: "blogs"
-  }
-  },
-  {
-    attributes: {
-    title: "A foodie next door",
-    subtitle: "Lorum Ipsum",
-    release_date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-1.png",
-          alternativeText: ""
-        }
-      }
-    },
-    slug: "covid",
-    category: "blogs"
-  }
-  },
-  {
-    attributes: {
-    title: "A foodie next door",
-    subtitle: "Lorum Ipsum",
-    release_date: "November 18, 2022",
-    image: {
-      data: {
-        attributes: {
-          url: "/blog-1.png",
-          alternativeText: ""
-        }
-      }
-    },
-    slug: "covid",
-    category: "blogs"
-  }
-  },
+  
 ];
 
 const AllBlogs = (props: Props) => {
@@ -199,6 +106,15 @@ const AllBlogs = (props: Props) => {
   );
 
 
+  const checkBlogCategory = (card: BlogCardType, filter: string) =>{
+    const categories = card.attributes.blogs_categories.data
+    for (let i = 0; i < categories.length; i++) {
+      if(categories[i].attributes.category === filter)
+      return true;
+    }
+    return false;
+  }
+
   return (
     <div className={Styles.blogs}  ref={componentRef}>
       <div className={Styles.filter_btns}>
@@ -217,9 +133,10 @@ const AllBlogs = (props: Props) => {
         })}
       </div>
       <div className={Styles.cards_wrapper}>
-        {displayedItems.map((card, index) => {
+        {displayedItems
+        .map((card, index) => {
           // console.log(card.attributes.category)
-          return card.attributes.category === activeBtn && <BlogCard card={card} key={index} />;
+          return checkBlogCategory(card, activeBtn) && <BlogCard card={card} key={index} />
         })}
       </div>
       {

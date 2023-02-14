@@ -65,7 +65,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // `getStaticPaths` requires using `getStaticProps`
   export const getStaticProps = async ({ params }: { params: { slug: string } }) => {
 
-    const res1 = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/header?populate=deep`)
+    const res1 = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/header?populate=deep,10`)
     const header_data = await res1.json();
     
     const res3 = await fetch(

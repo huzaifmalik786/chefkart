@@ -25,7 +25,13 @@ export interface BlogCardType {
   }
   release_date: string;
   slug: string;
-  category: string
+  blogs_categories: {
+    data: {
+      attributes: {
+        category: string;
+      }
+    }[]
+  }
 }
 }
 
@@ -159,7 +165,14 @@ export interface Header_type{
     button: {
       button_text: string;
     }
-    avatar: image_type
+    logo: {
+      white_logo: image_type;
+      black_logo: image_type;
+      yellow_logo: image_type;
+    };
+    white_burger_icon: image_type;
+    black_burger_icon: image_type
+
   }
   sidebar: {
     links: {

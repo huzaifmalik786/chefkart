@@ -21,7 +21,13 @@ type Props = {
       button: {
         button_text: string;
       }
-      avatar: image_type
+      logo: {
+        white_logo: image_type;
+        black_logo: image_type;
+        yellow_logo: image_type;
+      };
+      white_burger_icon: image_type;
+      black_burger_icon: image_type
 
     }
     sidebar: {
@@ -31,8 +37,7 @@ type Props = {
   }
 }
 const Header = (props:Props) => {
-  console.log(props.data)
-gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
   const ref=useRef(null);
   
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
@@ -71,7 +76,7 @@ gsap.registerPlugin(ScrollTrigger);
       }
     })
   },[])
-
+console.log(props.data.header)
 
 
   return (
@@ -81,13 +86,13 @@ gsap.registerPlugin(ScrollTrigger);
           <Link href="/">
             {router.pathname === "/" ? (
               <Image
-                src={"/Logo.png"}
+                src={props.data.header.logo.white_logo.data.attributes.url || "/Logo.png"}
                 alt="chefkart-logo"
                 fill
               />
             ) : (
               <Image
-                src={"/Logo-yellow.svg"}
+                src={props.data.header.logo.yellow_logo.data.attributes.url || "/Logo-yellow.svg"}
                 alt="chefkart-logo"
                 fill
               />
@@ -110,8 +115,8 @@ gsap.registerPlugin(ScrollTrigger);
           <button onClick={() => router.push("/contact-us")}>{props.data?.header?.button.button_text || "contact us"}</button>
           <div onClick={() => setOpenSidebar(true)}>
             <Image
-              src={props.data?.header?.avatar?.data?.attributes?.url || "/burger-icon.svg"}
-              alt={props.data?.header?.avatar?.data?.attributes?.url || "menu-icon"}
+              src={props.data?.header?.white_burger_icon?.data?.attributes?.url || "/burger-icon.svg"}
+              alt={props.data?.header?.white_burger_icon?.data?.attributes?.url || "menu-icon"}
               fill
             />
           </div>
@@ -127,7 +132,7 @@ gsap.registerPlugin(ScrollTrigger);
           <Link href="/">
             {router.pathname === "/" ? (
               <Image
-                src={"/Logo-black.svg"}
+                src={props.data.header.logo.black_logo.data.attributes.url || "/Logo-black.svg"}
                 alt="chefkart-logo"
                 // width={192}
                 // height={56}
@@ -135,7 +140,7 @@ gsap.registerPlugin(ScrollTrigger);
               />
             ) : (
               <Image
-                src={"/Logo-black.svg"}
+                src={props.data.header.logo.black_logo.data.attributes.url || "/Logo-black.svg"}
                 alt="chefkart-logo"
                 // width={192}
                 // height={56}
@@ -160,8 +165,8 @@ gsap.registerPlugin(ScrollTrigger);
           <div onClick={() => setOpenAnimatedSidebar(true)}>
             <Image
               // src={props.data.avatar?.data?.attributes?.url || "/burger-icon-black.svg"}
-              src="/burger-icon-black.svg"
-              alt={props.data?.header?.avatar?.data?.attributes?.url || "menu-icon"}
+              src={props.data?.header?.black_burger_icon?.data?.attributes?.url || "/burger-icon-black.svg"}
+              alt={props.data?.header?.black_burger_icon?.data?.attributes?.url || "menu-icon"}
               fill
             />
           </div>

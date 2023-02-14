@@ -21,7 +21,15 @@ const BlogData: BlogCardType[] = [
       subtitle: "Lorum Ipsum",
       release_date: "November 18, 2022",
       slug: "#",
-      category: "blogs",
+      blogs_categories: {
+        data: [
+          {
+          attributes: {
+            category: "News"
+          }
+        }
+      ]
+      },
       image: {
         data: {
           attributes: {
@@ -39,7 +47,15 @@ const BlogData: BlogCardType[] = [
       subtitle: "Lorum Ipsum",
       release_date: "November 18, 2022",
       slug: "#",
-      category: "blogs",
+      blogs_categories: {
+        data: [
+          {
+          attributes: {
+            category: "News"
+          }
+        }
+      ]
+      },
       image: {
         data: {
           attributes: {
@@ -57,7 +73,15 @@ const BlogData: BlogCardType[] = [
       subtitle: "Lorum Ipsum",
       release_date: "November 18, 2022",
       slug: "#",
-      category: "blogs",
+      blogs_categories: {
+        data: [
+          {
+          attributes: {
+            category: "News"
+          }
+        }
+      ]
+      },
       image: {
         data: {
           attributes: {

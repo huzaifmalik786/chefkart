@@ -217,7 +217,47 @@ const BlogArticleCarousel = (props: Props) => {
 
   return (
     <div className={Styles.blogcarousel_wrapper}>
-     <Slider
+      {
+        slides < 3 && width > 450 ? (
+          <div style={{display: "grid", placeContent: "center"}}>
+            <Slider
+     infinite={false}
+     arrows = {props.isArrow}
+     prevArrow= {<PrevArrow  />}
+     nextArrow={<NextArrow />}
+     speed={500}
+     slidesToShow = {slides <= 2? slides : 2.8}
+     slidesToScroll={1}
+     responsive={responsive}
+    //  style={{width: "70vw", }}
+     >
+     {(props.cards || Images).map((blog, key) => {
+          return (
+            <Link href={`/blogs/${blog.attributes.slug}`} key={key}>
+            <div className={Styles.items} style={props.isSmall && width<=450?{width:"43.33vw",height:"51.38vw", borderRadius:"1.1vw"}:{
+              marginRight: "0.7vw"
+            }}>
+              <Image src={blog.attributes.image?.data?.attributes?.url} alt="food" fill className={Styles.img} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}/>
+              <div className={Styles.item_overlay} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}>
+                <div className={Styles.item_content}>
+                  <div className={Styles.item_label}>
+                    <button>{blog.attributes.tags[0].feature} </button>
+                    <span />
+                    <p>{blog.attributes.time_to_read} min read</p>
+                  </div>
+                  <div className={Styles.item_heading}>
+                    <h2 style={props.isSmall && width<=450?{fontSize:"3.33vw", width:"33.33vw"}:{}}>{blog.attributes.title}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </Link>
+          );
+        })}
+     </Slider>
+          </div>
+        ) : (
+          <Slider
      infinite={false}
      arrows = {props.isArrow}
      prevArrow= {<PrevArrow  />}
@@ -249,6 +289,9 @@ const BlogArticleCarousel = (props: Props) => {
           );
         })}
      </Slider>
+        ) 
+      }
+     
         
       
     </div>

@@ -17,6 +17,7 @@
 
     img {
       border-radius: 12px;
+      object-fit: cover;
       @media screen and (max-width: 450px) {
         object-fit: cover;
         border-radius: 2.22vw;
