@@ -1,10 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import BlogCard from "../blogs/BlogCard";
 import { BlogCardType } from "../../interfaces/interfaces";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "react-multi-carousel/lib/styles.css";
 
 import Styles from "../../styles/components/investor-relation/blogsection.module.scss";
 import Carousel from "react-multi-carousel";
+
+import Slider from "react-slick";
 
 type Props = {
   data: {
@@ -71,25 +75,26 @@ const BlogData: BlogCardType[] = [
 ];
 
 const BlogsSection = (props: Props) => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 540 },
-      items: 2,
-      slidesToSlide: 1,
-      partialVisibilityGutter: 160,
-    },
-    mobile: {
-      breakpoint: { max: 540, min: 0 },
-      items: 1.2,
-      slidesToSlide: 1,
-      partialVisibilityGutter: 10,
-    },
-  }
+  const [slide,setslide]= useState(props.data?.blogs_array.length);
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 1,
+  //     slidesToSlide: 1,
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 540 },
+  //     items: 2,
+  //     slidesToSlide: 1,
+  //     partialVisibilityGutter: 160,
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 540, min: 0 },
+  //     items: 1.2,
+  //     slidesToSlide: 1,
+  //     partialVisibilityGutter: 10,
+  //   },
+  // }
   return (
     <div className={Styles.blog_wrapper}>
       <h2>{props.data?.heading || "Blogs"}</h2>
@@ -98,7 +103,22 @@ const BlogsSection = (props: Props) => {
           return <BlogCard card={card} key={index} />;
         })}
       </div>
-      <Carousel
+      <Slider
+         draggable
+         slidesToShow={slide>1?1.3:1}
+         autoplay
+         infinite={true}
+         arrows={false}
+         speed={1000}
+         autoplaySpeed={2000}
+         slidesToScroll={1}
+         className={Styles.carousel}
+      >
+        {(props.data?.blogs_array || BlogData).map((card, index) => {
+            return <BlogCard card={card} key={index} small/>;
+        })}
+      </Slider>
+      {/* <Carousel
         swipeable
         draggable
         responsive={responsive}
@@ -119,7 +139,7 @@ const BlogsSection = (props: Props) => {
         {(props.data?.blogs_array || BlogData).map((card, index) => {
           return <BlogCard card={card} key={index} small/>;
         })}
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };

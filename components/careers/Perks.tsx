@@ -4,6 +4,9 @@ import { image_type } from '../../interfaces/interfaces'
 import Styles from '../../styles/components/careers/Perks.module.scss'
 import Carousel from 'react-multi-carousel'
 import "react-multi-carousel/lib/styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 type perksType = {
     image: image_type,
@@ -98,25 +101,39 @@ type Props = {
     }
 }
 
-const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      slidesToSlide: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 540 },
-      items: 4,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 160,
-    },
-    mobile: {
-      breakpoint: { max: 540, min: 0 },
-      items: 2.3,
-      slidesToSlide: 1,
-      // partialVisibilityGutter: 120,
-    },
-  };
+// const responsive = {
+//     desktop: {
+//       breakpoint: { max: 3000, min: 1024 },
+//       items: 4,
+//       slidesToSlide: 1,
+//     },
+//     tablet: {
+//       breakpoint: { max: 1024, min: 540 },
+//       items: 4,
+//       slidesToSlide: 1,
+//       // partialVisibilityGutter: 160,
+//     },
+//     mobile: {
+//       breakpoint: { max: 540, min: 0 },
+//       items: 2.3,
+//       slidesToSlide: 1,
+//       // partialVisibilityGutter: 120,
+//     },
+//   };
+// const responsive=[
+//     {
+//       breakpoint: 3000,
+//       settings: {
+//         slidesToShow:4
+//       }
+//     },
+//     {
+//       breakpoint: 450,
+//       settings: {
+//         slidesToShow: 2.3
+//       }
+//     }
+//   ]
 
 
 const Perks = (props: Props) => {
@@ -142,7 +159,31 @@ const Perks = (props: Props) => {
                 }
             </div>
             </div>
-            <Carousel
+            <Slider
+                 draggable
+                 slidesToShow={2.1}
+                 autoplay
+                 infinite={true}
+                 arrows={false}
+                 speed={1000}
+                 autoplaySpeed={2000}
+                 slidesToScroll={1}
+                 className={Styles.carousel_container}
+            >
+            {
+                (props.data.perks || perks).map((perk, key) =>{
+                    return(
+                        <div key={key} className={Styles.perk_item}>
+                            <div className={Styles.logo}>
+                                <Image src={perk.image.data.attributes.url} alt={perk.image.data.attributes.alternativeText || "perk logo"} fill />
+                            </div>
+                            <p>{perk.text}</p>
+                        </div>
+                    )
+                })
+            }
+            </Slider>
+            {/* <Carousel
             swipeable
             draggable
             showDots={false}
@@ -172,7 +213,7 @@ const Perks = (props: Props) => {
                         )
                     })
                 }
-      </Carousel>
+      </Carousel> */}
     </div>
   )
 }

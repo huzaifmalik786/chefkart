@@ -1,28 +1,13 @@
 .carousel_container {
   display: flex;
-  padding-top: 4vw;
-  // justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   gap: 0.98vw;
-  height: 29.3vw;
-  [class*="track"] {
-    align-items: center;
-  }
+  height: 32vw;
   @media screen and (max-width:450px) {
     padding-top: 14.11vw;
     height: 90vw;
-    justify-content: flex-start;
   }
-}
-.react-multi-carousel-track {
-  display: flex;
-  align-items: center;
-  background-color: #2d4739 !important;
-}
-.items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .item {
@@ -32,11 +17,15 @@
   color: #ededed;
   border-radius: 1.09vw;
   transition: transform 0.5s ease;
-  width: 23.4vw;
+  width: 23.4vw !important;
+  margin: 6vw 0;
+  margin-left: 2vw;
   @media screen and (max-width: 450px) {
-    width: 82vw;
+    width: 82vw !important;
     border-radius: 2.56vw;
     padding: 4.96vw 4.44vw 0 4.44vw;
+    margin: 15vw 0;
+    margin-left: 8.3vw;
   }
 
   &:hover{
@@ -74,6 +63,7 @@
     @media screen and (max-width: 450px) {
       width: 21.94vw;
       height: 21.94vw;
+      left: 36%;
     }
   }
 
@@ -95,9 +85,11 @@
   .content {
     font-size: 1.11vw;
     line-height: 132%;
+    margin-bottom: 1vw;
     @media screen and (max-width: 450px) {
       font-size: 3.89vw;
       line-height: 5vw;
+      margin-bottom: 3.33vw;
     }
   }
 

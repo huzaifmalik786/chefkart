@@ -7,6 +7,9 @@ import Modal from "../careers/Modal";
 import SignupForm from "../Forms/SignupForm";
 import ThankYou from "../Forms/ThankYou";
 import { image_type } from "../../interfaces/interfaces";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 type Props = {
   data: {
@@ -64,23 +67,6 @@ const JoinHeroCarousel = (props: Props) => {
   const [openModal, setOpenModal] = useState<boolean>(false)
   const [secondModal, setSecondModal] = useState<boolean>(false)
   
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-  };
   const handlemodalClosed = (closed:boolean)=>{
     setOpenModal(closed);
     setSecondModal(!closed)
@@ -95,7 +81,61 @@ const JoinHeroCarousel = (props: Props) => {
       openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
     }
     <div className={Styles.carousel_wrapper}>
-      <Carousel
+      <Slider
+           infinite={true}
+           arrows={false}
+           speed={1000}
+           autoplaySpeed={2000}
+           slidesToScroll={1}
+           draggable
+           autoplay
+          //  dots
+          //  dotsClass={Styles.dots}
+      >
+      {(props.data || Images).map((img, key) => {
+          return (
+            <div key={key} className={Styles.items}>
+              <div className={Styles.carousel_img}>
+                <Image src={img.image.data.attributes.url} alt={img.image.data.attributes.alternativeText || "food"} fill />
+              </div>
+              <div className={Styles.carousel_text}>
+                <h1>
+                {
+            (img.heading) ? (
+              (img.heading).map((item, key)=>{
+                return(
+                  <span key={key}>
+                    {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
+                  </span>
+                )
+              })
+            ) : (
+              <span>Lorem Ipsum,</span>
+            )
+          }
+                  </h1>
+                <p>
+                  {
+                (img.description) ? (
+              (img.description).map((item, key)=>{
+                return(
+                  <span key={key}>
+                    {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
+                  </span>
+                )
+              })
+            ) : (
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span>
+            )
+          }
+                </p>
+                <button onClick={()=>setOpenModal(true)}>{img.button.button_text || "Sign up now"}</button>
+              </div>
+            </div>
+          );
+        })}
+      </Slider>
+      {/* <Carousel
         swipeable={false}
         draggable={false}
         showDots
@@ -158,7 +198,7 @@ const JoinHeroCarousel = (props: Props) => {
             </div>
           );
         })}
-      </Carousel>
+      </Carousel> */}
     </div>
     </>
   );

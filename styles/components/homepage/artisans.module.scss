@@ -23,9 +23,8 @@
 }
 .item {
   position: relative;
-  background-color: white;
   height: 31.92vw;
-  width: 22.48vw;
+  width: 22.48vw !important;
   background-color: #000000;
   border-radius: 0.55vw;
   overflow: hidden;
@@ -212,8 +211,7 @@
           color: #ffffff;
           border-radius: 2.63vw;
           padding: 0.27vw 0.55vw;
-          @media screen and (max-width: 450px){
-          font-family: var(--mobile_livvic);  
+          @media screen and (max-width: 450px){  
             font-size: 2.78vw;
             line-height: 3.33vw;
             padding: 1.11vw;
@@ -222,16 +220,21 @@
       }
     }
   }
+  &:hover .hover_overlay{
+    height: 6.66vw !important;
+    display: flex;
+    opacity: 1 !important;
+    transform: translateY(0%);
+    transition: all 0.5s ease-in-out;
+  }
 }
-
-.item:hover .item:hover .hover_overlay {
-  height: 6.66vw;
+.button{
   display: flex;
-  opacity: 1;
-  transform: translateY(0%);
-  transition: all 0.5s ease-in-out;
-
+  align-items: center;
+  justify-content: center;
+  height: inherit;
 }
+
 
 @keyframes slide-up {
   0% {

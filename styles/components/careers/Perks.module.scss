@@ -99,12 +99,12 @@
 
     .perk_item{
       position: relative;
-      width: 39.42vw;
+      width: 39.42vw !important;
       height: 41vw;
       border: 0.81vw solid #efefef;
       border-radius: 6.48vw;
       padding: 6.48vw 2.16vw;
-      display: flex;
+      display: flex !important;
       flex-direction: column;
       align-items: center;
       gap: 5.23vw;

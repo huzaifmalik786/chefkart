@@ -33,7 +33,7 @@ const Founder = (props: Props) => {
           }
           </h2>
 
-        <div>
+        <div className={Styles.carousel}>
           <FounderCarousel data={props.data.array} />
         </div>
     </div>
