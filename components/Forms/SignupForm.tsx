@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Dropdown from './Dropdown'
 import Input from './Input'
 import Styles from '../../styles/components/forms/signup.module.scss'
@@ -12,6 +12,8 @@ const dropdown_location = ["lorem ipsum", "lorem ipsum"]
 
 
 const SignupForm = (props:Props) => {
+    const [location, setlocation] = useState<string>("")
+
     const handleSubmit = (data: any) => {
         // send form data to server or perform other actions
         props.setOpenModal(false)
@@ -28,7 +30,7 @@ const SignupForm = (props:Props) => {
                     <div className={Styles.two_input}>
                         <Input placeholder="9987115132" type="text" name="mobile" />
                         <div className={Styles.dropdown}>
-                            <Dropdown list={dropdown_location} arrow_size='0.7vw' heading='location' />
+                            <Dropdown list={dropdown_location} arrow_size='0.7vw' heading='location' setValue={setlocation} />
                         </div>
 
                     </div>

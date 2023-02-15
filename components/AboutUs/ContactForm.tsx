@@ -18,6 +18,7 @@ type Props = {
 const dropdown_location = ["lorem ipsum", "lorem ipsum"]
 
 const ContactForm = (props: Props) => {
+    const [location, setlocation] = useState<string>("")
     const modalContext= React.useContext(ModalContext);
 
     const onSubmit = (data: any) => {
@@ -44,7 +45,7 @@ const ContactForm = (props: Props) => {
                 <div className={Styles.two_input}>
                     <Input placeholder="9987115132" type="text" name="mobile" />
                     <div className={Styles.dropdown}>
-                        <Dropdown list={dropdown_location} arrow_size='0.7vw' heading='location' />
+                        <Dropdown list={dropdown_location} arrow_size='0.7vw' heading='location' setValue={setlocation} />
                     </div>
                 </div>
                 <div className={Styles.textarea}>

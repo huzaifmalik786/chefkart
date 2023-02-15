@@ -30,6 +30,16 @@ const vacancy: vacancyType[] = [
   },
 ];
 
+type openingType = {
+  attributes: {
+    Position: string;
+    subheading: string;
+    location: string;
+    department: string;
+    slug: string;
+
+  }
+}
 type Props = {
   data: {
     header_data: {
@@ -47,7 +57,8 @@ type Props = {
         slug: string;
 
       }
-    }[]
+    }[];
+    button: string;
   }
 }
 
@@ -56,6 +67,12 @@ const Vacancies = (props: Props) => {
 
   const [departments, setDepartments] = useState<Set<string>>(new Set());
   const [location, setLocation] = useState<Set<string>>(new Set());
+
+  const [departmentFilter, setDepartmentFilter] = useState<string>("")
+  const [locationFilter, setLocationFilter] = useState<string>("")
+  const [filterData, setFilteredData] = useState<openingType[]>([])
+
+  
 
   useEffect(() => {
     const departmentsSet = new Set<string>();
@@ -67,7 +84,34 @@ const Vacancies = (props: Props) => {
     setLocation(locationSet);
   }, [props.data]);
 
+  useEffect(()=>{
+    if(departmentFilter === "" && locationFilter === ""){
+      setFilteredData(props.data.all_openings)
+    }
+    else if(departmentFilter !== "" && locationFilter === ""){
+        let filteredData = props.data.all_openings.filter((item)=>{
+          return item.attributes.department.toLowerCase() === departmentFilter
+        })
+    
+        setFilteredData(filteredData)
 
+    }
+    else if(departmentFilter === "" && locationFilter !== ""){
+        let filteredData = props.data.all_openings.filter((item)=>{
+          return item.attributes.location.toLowerCase() === locationFilter
+        })
+    
+        setFilteredData(filteredData)
+    }
+    else if(departmentFilter !== "" && locationFilter !== ""){
+      let filteredData = props.data.all_openings.filter((item)=>{
+        return item.attributes.location.toLowerCase()  === locationFilter && item.attributes.department.toLowerCase() === departmentFilter
+      })
+  
+      setFilteredData(filteredData)
+    }
+  }, [departmentFilter, props.data.all_openings, locationFilter])
+  console.log(departmentFilter)
   const router = useRouter();
   return (
     <div className={Styles.vacancy_container}>
@@ -86,6 +130,8 @@ const Vacancies = (props: Props) => {
             list={Array.from(departments)}
               heading="Select Department"
               arrow_size={width > 450 ? '1.04vw' : '3.6vw'}
+              setValue = {setDepartmentFilter}
+
               
             />
           </div>
@@ -94,13 +140,14 @@ const Vacancies = (props: Props) => {
             list={Array.from(location)}
               heading="Location"
               arrow_size={width > 450 ? '1.04vw' : '3.6vw'}
+              setValue = {setLocationFilter}
             />
           </div>
           <span className={Styles.viewAll}>{props.data?.header_data?.viewAll || "View all openings"} &#62;</span>
         </div>
 
         <div className={Styles.body_rows}>
-          {(props.data?.all_openings || vacancy).map((v, key) => {
+          {(filterData || vacancy).map((v, key) => {
             return (
               <div key={key} className={Styles.row_item}>
                 <div className={Styles.name}>{v?.attributes?.Position || "Lorem ipsum dolor sit amet dolor sit amet"}</div>
@@ -110,7 +157,7 @@ const Vacancies = (props: Props) => {
                     <span>City location </span>
                   </div>
                   <button type="button" onClick={() => router.push(`/careers/${v?.attributes?.slug}`)}>
-                    Apply
+                  {props.data.button || "Apply"}
                   </button>
                 </div>
               </div>
@@ -119,14 +166,14 @@ const Vacancies = (props: Props) => {
         </div>
         <div className={Styles.body_rows_mobile_only}>
           {
-            (props.data?.all_openings || vacancy).map((item, key)=>{
+            (filterData ||  vacancy).map((item, key)=>{
               return(
                 <div key={key} className={Styles.item}>
                   <div className={Styles.left_section}>
                     <p className={Styles.heading}>{item?.attributes?.department || "lorem ipsum"}</p>
                     <p className={Styles.subheading}>{item?.attributes?.Position || "Lorem ipsum dolor sit amet dolor sit amet"}</p>
                   </div>
-                  <button type="button" onClick={() => router.push(`/careers/${item.attributes.slug}`)}>Apply</button>
+                  <button type="button" onClick={() => router.push(`/careers/${item.attributes.slug}`)}>{props.data.button || "Apply"}</button>
                 </div>
               )
             })

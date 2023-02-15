@@ -5,6 +5,7 @@ type Props = {
   heading : string;
   arrow_size: string;
   list: string[];
+  setValue: (item: string)=> void
 }
 const Dropdown = (props: Props) => {
 
@@ -41,7 +42,7 @@ const Dropdown = (props: Props) => {
           {
             (props.list).map((item, key)=> {
               return(
-                <li key={key} onClick={()=> setDropdownValue(item)} className={Styles.dd_list_item}>{item}</li>
+                <li key={key} onClick={()=> {setDropdownValue(item), props.setValue(item)}} className={Styles.dd_list_item}>{item}</li>
 
               )
             })

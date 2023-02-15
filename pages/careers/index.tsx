@@ -62,6 +62,7 @@ type Props = {
 
       }
     }[]
+    button: string;
   }
   articles: {
     heading: string;
@@ -152,7 +153,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
         perks: career.data.attributes.Perks,
         vacancy: {
           header_data: career.data.attributes.vacancies,
-          all_openings: career.data.attributes.job_openings.data
+          all_openings: career.data.attributes.job_openings.data,
+          button: career.data.attributes.apply_button_text
         },
         articles:{
           heading: career.data.attributes.article_heading,
