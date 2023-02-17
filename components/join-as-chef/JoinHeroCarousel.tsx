@@ -71,6 +71,15 @@ const JoinHeroCarousel = (props: Props) => {
     setOpenModal(closed);
     setSecondModal(!closed)
   }
+  const settings={
+    customPaging:(i:any)=>{
+      return(
+        <div className="customdot">
+          <p style={{width:"5.5vw",height:"4px", borderRadius:"2px"}}></p>
+        </div>
+      )
+    }
+  }
 
   return (
     <>
@@ -85,12 +94,14 @@ const JoinHeroCarousel = (props: Props) => {
            infinite={true}
            arrows={false}
            speed={1000}
-           autoplaySpeed={2000}
+           autoplaySpeed={3000}
            slidesToScroll={1}
            draggable
            autoplay
-          //  dots
-          //  dotsClass={Styles.dots}
+           dots
+           {...settings}
+           dotsClass={`slick-dots ${Styles.customdots}`}
+           pauseOnHover={false}
       >
       {(props.data || Images).map((img, key) => {
           return (
