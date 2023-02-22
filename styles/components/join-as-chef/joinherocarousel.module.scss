@@ -75,25 +75,21 @@
     }
   }
 
-  [class*="dot"] {
-    gap: 10px;
-    padding-bottom: 30.4vw;
+}
+
+
+.customdots{
+  position: absolute !important;
+  top:40vw;
+  @media (max-width: 450px) {
+    top:100vw;
   }
-}
-
-.active,
-.inactive {
-  p {
-    height: 4px;
-    width: 5.5vw;
-    border-radius: 2px;
+  li{
+    width:5.5vw !important;
+    height: 4px !important;
+    background-color: #fff !important;
+    .slick-active{
+      background-color: black !important;
+    }
   }
-}
-
-.active {
-  background-color: #ff8811;
-}
-
-.inactive {
-  background-color: #fff;
 }

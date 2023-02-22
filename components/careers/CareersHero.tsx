@@ -126,13 +126,13 @@ const CareersHero = (props: Props) => {
         speed={1000}
         autoplaySpeed={2000}
         slidesToScroll={1}
-        className={Styles.carousel}
+        className={`careercarousel ${Styles.carousel}`}
         centerMode
       >
         {
           (carouselData).map((item, key)=>{
             return(
-              <div key={key} className={Styles.item}>
+              <div key={key} className={`item ${Styles.item}`}>
                 <Image
                   src={item.image}
                   alt="img"

@@ -97,8 +97,8 @@ const Gallery = (props: Props) => {
         <Slider
           draggable
           responsive={responsive}
-          autoplay
-          infinite={true}
+          // autoplay
+          // infinite={true}
           arrows={false}
           speed={1000}
           autoplaySpeed={2000}
@@ -109,7 +109,7 @@ const Gallery = (props: Props) => {
         (props.data.videos || gallery).map((g, key)=>{
             return (
                 <div key={key} className={Styles.gallery_item}>
-                    {/* <Image src={g.image} alt="gallery images" fill /> */}
+                    {/* <Image src={g.attributes.url} alt="gallery images" fill /> */}
                     <GalleryVideo video={g.attributes.url}/>
                 </div>
             )

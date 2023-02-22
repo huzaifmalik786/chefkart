@@ -261,7 +261,7 @@ const BlogArticleCarousel = (props: Props) => {
         ) : (
           <Slider
      infinite={false}
-     arrows = {props.isArrow}
+     arrows = {props.isArrow && width>450}
      prevArrow= {<PrevArrow  />}
      nextArrow={<NextArrow />}
      speed={500}
@@ -276,14 +276,14 @@ const BlogArticleCarousel = (props: Props) => {
             <div className={Styles.items} style={props.isSmall && width<=450?{width:"43.33vw !important",height:"51.38vw", borderRadius:"1.1vw"}:{}}>
               <Image src={blog.attributes.image?.data?.attributes?.url} alt="food" fill className={Styles.img} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}/>
               <div className={Styles.item_overlay} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}>
-                <div className={Styles.item_content}>
+                <div className={Styles.item_content} style={props.isSmall && width<=450?{paddingLeft:"3.33vw"}:{}}>
                   <div className={Styles.item_label}>
                     <button>{blog.attributes.tags[0].feature} </button>
                     <span />
                     <p>{blog.attributes.time_to_read} min read</p>
                   </div>
                   <div className={Styles.item_heading}>
-                    <h2 style={props.isSmall && width<=450?{fontSize:"3.33vw", width:"33.33vw"}:{}}>{blog.attributes.title}</h2>
+                    <h2 style={props.isSmall && width<=450?{fontSize:"3.33vw", width:"33.33vw",fontWeight:"500",letterSpacing:"-0.02em"}:{}}>{blog.attributes.title}</h2>
                   </div>
                 </div>
               </div>

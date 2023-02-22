@@ -1,8 +1,8 @@
 .carousel_container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.98vw;
+  // display: flex;
+  // justify-content: center;
+  // align-items: flex-start;
+  // gap: 0.98vw;
   height: 32vw;
   @media screen and (max-width:450px) {
     padding-top: 14.11vw;
@@ -19,13 +19,13 @@
   transition: transform 0.5s ease;
   width: 23.4vw !important;
   margin: 6vw 0;
-  margin-left: 2vw;
+  // margin-left: 2vw;
   @media screen and (max-width: 450px) {
     width: 82vw !important;
     border-radius: 2.56vw;
     padding: 4.96vw 4.44vw 0 4.44vw;
     margin: 15vw 0;
-    margin-left: 8.3vw;
+    // margin-left: 8.3vw;
   }
 
   &:hover{
