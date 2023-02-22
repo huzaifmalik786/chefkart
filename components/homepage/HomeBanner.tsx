@@ -6,6 +6,7 @@ import Modal from "../careers/Modal";
 import ThankYou from "../Forms/ThankYou";
 import ContactForm from "../Forms/ContactForm";
 import { image_type } from "../../interfaces/interfaces";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data : {
@@ -20,6 +21,26 @@ type Props = {
   }
 
   banner_image : image_type
+  mobile_banner_image : image_type
+  }
+  form: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+  }
+  thankYou: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+
   }
 }
 
@@ -30,6 +51,7 @@ type subheading = {
 const HomeBanner = (props: Props) => {
   const [openModal, setOpenModal] = useState<boolean>(false)
   const [secondModal, setSecondModal] = useState<boolean>(false)
+  const { width } = UseWindowDimensions()
 
   const handlemodalClosed = (closed:boolean)=>{
     setOpenModal(closed);
@@ -41,14 +63,14 @@ const HomeBanner = (props: Props) => {
   return (
     <>
     {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} /></Modal>
     }
     {
-      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm setOpenModal_two={handlemodalClosed} openModal_two={openModal} /></Modal>
+      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} /></Modal>
     }
     <div className={Styles.banner}>
       <div className={Styles.banner_img}>
-        <Image priority src={props.data?.banner_image?.data?.attributes?.url || '/home-main.png'} alt={props.data?.banner_image?.data?.attributes?.alternativeText || "banner"} fill  style={{ objectFit: 'cover' }} />
+        <Image priority src={(width>450 ?  props.data?.banner_image?.data?.attributes?.url : props.data?.mobile_banner_image?.data?.attributes?.url) || '/home-main.png'} alt={props.data?.banner_image?.data?.attributes?.alternativeText || "banner"} fill  style={{ objectFit: 'cover' }} />
       </div>
       <div className={Styles.overlay}>
         <div className={Styles.content}>

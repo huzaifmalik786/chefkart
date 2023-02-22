@@ -19,6 +19,8 @@ type Props = {
 
   banner_slider: {
     image: image_type
+    mobile_banner_image: image_type
+
     
     heading: {
       text: string;
@@ -82,13 +84,32 @@ type Props = {
     heading : string;
     Question_answer: QUESTIONS[]
   }
+  form: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+      terms_condition_check: string;
+  }
+  thank_you: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+  }
 };
 
 const index = (props: Props) => {
   const {width}= UseWindowDimensions();
   return (
-    <Layout header={props.header} footer={props.footer}>
-      <JoinHeroCarousel data={props.banner_slider} />
+    <Layout header={props.header} footer={props.footer} sign_up_form={props.form} thankYou={props.thank_you} >
+      <JoinHeroCarousel data={props.banner_slider} form={props.form} thankYou={props.thank_you}  />
       <Reveal>
       <Metrics data={props.metrics} />
       </Reveal>
@@ -130,10 +151,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/join-as-chef?populate=deep,10`);
     const join_chef = await res2.json();
 
+    // const temp_res = await fetch(
+    //   `http://localhost:1337/api/join-as-chef?populate=deep,10`
+    // );
+    // const temp = await temp_res.json()
+
     return {
       props : {
         header: header_data.data.attributes,
         banner_slider: join_chef.data.attributes.banner_slider,
+        form: join_chef.data.attributes.sign_up,
         metrics: join_chef.data.attributes.Metrics,
         cook: join_chef.data.attributes.why_us,
         review: join_chef.data.attributes.review,
@@ -144,7 +171,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
           description: join_chef.data.attributes.description
         },
         faq: join_chef.data.attributes.FAQ,
-      footer: footer_data.data.attributes.Footer
+      footer: footer_data.data.attributes.Footer,
+      thank_you: join_chef.data.attributes.thank_you_modal
       }
     }
   }

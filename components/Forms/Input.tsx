@@ -10,7 +10,7 @@ const Input = (props: any) => {
         {props.left_section && <span>{props.left_section} &nbsp;&nbsp;</span> }
         {props.name === 'mobile' && <PhoneCode />}
         <input  name={props.name} placeholder={props.placeholder} type={props.type} />
-        {props.type === 'url' && <div className={Styles.link_icon}><Image src='/Link.png' alt="" fill /></div>}
+        {props.type === 'url' && <div className={Styles.link_icon}><Image src={ props.icon || '/Link.png'} alt="" fill /></div>}
     </div>
   )
 }

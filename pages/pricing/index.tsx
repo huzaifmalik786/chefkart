@@ -26,14 +26,9 @@ type Props = {
       text: string
       highlight: boolean
     }[]
-    image : {
-      data: {
-        attributes: {
-          url: string
-          alternativeText: string
-        }
-      }
-    }
+    image : image_type
+    mobile_banner_image : image_type
+
   }
 
   cards: PriceCard[]
@@ -180,7 +175,6 @@ const index = (props: Props) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const res1 = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/header?populate=deep,10`)
   const header_data = await res1.json();
-  console.log(header_data)
 
   const res3 = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/footer?populate=deep,10`

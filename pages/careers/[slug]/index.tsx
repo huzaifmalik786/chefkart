@@ -19,12 +19,39 @@ type Props = {
     }[];
     conclusion: string;
   }
+  career_page: {
+    apply_button: string;
+
+    join_form: {
+      heading: string;
+    inputs: {
+      label: string;
+      placeholder: string;
+      name: string;
+      type: string;
+      icon: image_type
+    }[]
+    submit_button: string;
+    }
+
+    thank_you: {
+      heading: string;
+      subheading: string;
+      link: {
+        text: string;
+        url: string;
+      }
+      icon: image_type
+    }
+    
+  }
+  
 };
 
 const index = (props: Props) => {
   return (
-    <Layout header={props.header} footer={props.footer}>
-      <PositionPage data={props.job_data} />
+    <Layout header={props.header} footer={props.footer} >
+      <PositionPage data={props.job_data} career={props.career_page} />
     </Layout>
   );
 };
@@ -58,13 +85,18 @@ export const getStaticProps = async ({ params }: { params: { slug: string } }) =
 
   const job = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/job-openings?filters[slug]=${params.slug}&populate=deep,10`);
   const job_data = await job.json()
-  console.log(job_data)
+
+  const temp_res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/career-single?populate=deep,10`)
+  const temp = await temp_res.json()
 
     return {
       props : {
         header: header_data.data.attributes,
         footer: footer_data.data.attributes.Footer,
         job_data: job_data?.data[0]?.attributes,
+        
+        career_page: temp.data.attributes,
+        // thank_you: temp.data.attributes.thank_you
 
       }
     }

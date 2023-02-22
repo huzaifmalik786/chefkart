@@ -22,14 +22,8 @@ type Props = {
       text: string;
       highlight: boolean;
     }[]
-    image: {
-      data: {
-        attributes: {
-          url: string;
-          alternativeText: string;
-        }
-      }
-    }
+    image: image_type
+    mobile_banner_image: image_type
   }
   mission: {
     subheading: string;
@@ -76,6 +70,24 @@ type Props = {
       }
     }
   }
+  form_data: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+  };
+  thank_you: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+  }
   last_banner: {
     heading: {
       text: string;
@@ -94,7 +106,7 @@ type Props = {
 
 const index = (props: Props) => {
   return(
-    <Layout header={props.header} footer={props.footer}>
+    <Layout header={props.header} footer={props.footer} thankYou={props.thank_you}>
       
       <InvestorHero data={props.banner} />
       <Reveal>
@@ -114,7 +126,7 @@ const index = (props: Props) => {
       </Reveal>
 
       <Reveal>
-      <ContactForm data={props.form} />
+      <ContactForm data={props.form} form={props.form_data} />
       </Reveal>
       
       <Reveal>
@@ -138,6 +150,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/investor-relation?populate=deep,10`);
     const investor_relation = await res2.json();
 
+    // const temp_res = await fetch(
+    //   `http://localhost:1337/api/investor-relation?populate=deep,10`
+    // );
+    // const temp = await temp_res.json()
+
     return {
       props : {
         header: header_data.data.attributes,
@@ -145,6 +162,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         banner:{
             heading: investor_relation.data.attributes.banner_heading,
             image: investor_relation.data.attributes.banner_img,
+            mobile_banner_image: investor_relation.data.attributes.mobile_banner_image
         },
         mission: investor_relation.data.attributes.Facts,
 
@@ -159,10 +177,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
         investors: investor_relation.data.attributes.our_investor,
         form: investor_relation.data.attributes.form_banner,
+        form_data: investor_relation.data.attributes.contact_form,
         last_banner: {
           heading: investor_relation.data.attributes.ending_banner_heading,
           img: investor_relation.data.attributes.last_banner_img
         },
+        thank_you: investor_relation.data.attributes.thank_you,
         footer: footer_data.data.attributes.Footer
 
       }

@@ -79,6 +79,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const articles_res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-single?populate=deep,10`)
     const articles = await articles_res.json();
 
+   
+
     return {
       // Passed to the page component as props
       props: { 

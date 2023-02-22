@@ -78,24 +78,41 @@ type Props = {
     array: ProfileCardType[];
   };
 
-  form: {
+  form_image: {
     url: string;
     alternativeText: string;
   };
-
+form: {
+  heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+}
   social: {
     heading: string;
     icons: {
       icon: image_type;
     }[];
   };
+  thank_you: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+  }
 };
 
 const index = (props: Props) => {
 
   const { width } = UseWindowDimensions();
   return (
-    <Layout header={props.header} footer={props.footer}>
+    <Layout header={props.header} footer={props.footer} thankYou={props.thank_you}>
         <Hero data={props.banner} />
         <Reveal>
         <Vision data={props.vision} />
@@ -110,7 +127,7 @@ const index = (props: Props) => {
         <Gallery data={props.gallery} />
         </Reveal>
         <Reveal>
-        <ContactForm data={props.form}/> 
+        <ContactForm data={props.form_image} form={props.form} /> 
         </Reveal>
         <Reveal>
         <Social data={props.social} />
@@ -135,6 +152,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   );
   const about_data = await res2.json();
 
+  // const temp_res = await fetch(
+  //   `http://localhost:1337/api/about?populate=deep,10`
+  // );
+  // const temp = await temp_res.json()
+
   return {
     props: {
       header: header_data.data.attributes,
@@ -156,11 +178,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
         heading: about_data.data.attributes.founder.heading,
         array: about_data.data.attributes.profile,
       },
-      form: about_data.data.attributes.form_image.data.attributes,
+      form_image: about_data.data.attributes.form_image.data.attributes,
+      form: about_data.data.attributes.contact_form,
       social: {
         heading: about_data.data.attributes.social_heading,
         icons: about_data.data.attributes.icons,
       },
+      thank_you: about_data.data.attributes.thank_you,
       footer: footer_data.data.attributes.Footer,
     },
   };

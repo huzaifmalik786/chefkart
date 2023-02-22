@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 
 import Styles from "../../styles/components/investor-relation/investorhero.module.scss";
+import { image_type } from "../../interfaces/interfaces";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: {
@@ -9,20 +11,16 @@ type Props = {
       text: string;
       highlight: boolean;
     }[]
-    image: {
-      data: {
-        attributes: {
-          url: string;
-          alternativeText: string;
-        }
-      }
-    }
+    image: image_type
+    mobile_banner_image: image_type
+    
   }
 }
 const InvestorHero = (props: Props) => {
+  const { width } = UseWindowDimensions()
   return (
     <div className={Styles.hero_wrapper}>
-      <Image src={props.data?.image?.data?.attributes?.url || "/investor_hero.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "investor-hero"} fill />
+      <Image src={(width > 450 ? props.data?.image?.data?.attributes?.url : props.data?.mobile_banner_image?.data?.attributes?.url) || "/investor_hero.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "investor-hero"} fill />
       <div className={Styles.hero_heading}>
         <h3>
         {

@@ -6,6 +6,7 @@ import Modal from "./Modal";
 import JoinOurTeam from "../Forms/JoinOurTeam";
 import ThankYou from "../Forms/ThankYou";
 import Reveal from "../Reveal";
+import { image_type } from "../../interfaces/interfaces";
 
 const positionDetails = {
   position: "Software Engineer",
@@ -36,6 +37,30 @@ type Props = {
     }[];
     conclusion: string;
   }
+  career: {
+    apply_button: string;
+
+    join_form: {
+      heading: string;
+    inputs: {
+      label: string;
+      placeholder: string;
+      name: string;
+      type: string;
+      icon: image_type
+    }[]
+    submit_button: string;
+    };
+    thank_you: {
+      heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+    }
+  }
 
 }
 
@@ -54,11 +79,11 @@ const PositionPage = (props: Props) => {
   return (
     <>
     {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.career.thank_you} /></Modal>
     }
 
     {
-      openModal && <Modal setOpenModal={setOpenModal} openModal={openModal}><JoinOurTeam setOpenModal={handlemodalClosed} openModal={openModal} /> </Modal>
+      openModal && <Modal setOpenModal={setOpenModal} openModal={openModal}><JoinOurTeam form={props.career.join_form} setOpenModal={handlemodalClosed} openModal={openModal} /> </Modal>
     }
     <div className={Styles.positionPage}>
       <header>
@@ -73,7 +98,7 @@ const PositionPage = (props: Props) => {
           </div>
         </div>
         <div>
-          <button onClick={()=> setOpenModal(true)}>Apply now</button>
+          <button onClick={()=> setOpenModal(true)}>{props.career.apply_button || "Apply now"}</button>
         </div>
       </header>
       <div className={Styles.main}>
@@ -125,7 +150,7 @@ const PositionPage = (props: Props) => {
         }
         </div>
         <p>{props.data.conclusion || positionDetails.conclusion}</p>
-        <button onClick={()=> setOpenModal(true)}>Apply now</button>
+        <button onClick={()=> setOpenModal(true)}>{props.career.apply_button || "Apply now"}</button>
       </div>
       
     </div>

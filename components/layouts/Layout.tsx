@@ -46,9 +46,30 @@ type Props = {
       url: string;
     }[]
   }
+
+  sign_up_form?: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+      terms_condition_check: string;
+
+  }
+  thankYou?: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+  }
 };
 
-const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer }) => {
+const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer, sign_up_form, thankYou }) => {
   const [showModal,setShowModal]= useState<boolean>(false);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [secondModal, setSecondModal] = useState<boolean>(false);
@@ -70,13 +91,14 @@ const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer 
       setModalOpen: (open: boolean) => setShowModal(open),
       setSecondModal: (open:boolean)=>setOpenModal(open)}}>
       {
-        showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou /></Modal>
+        thankYou && showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou data={thankYou} /></Modal>
       }
       {
-        secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+        thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={thankYou} /></Modal>
       }
+      
       {
-        openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
+       sign_up_form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm form={sign_up_form} setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
       }
         {children}
         </ModalContext.Provider>

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import JoinOurTeam from "../Forms/JoinOurTeam";
 import Styles from "../../styles/components/careers/modal.module.scss";
 import Image from "next/image";
 

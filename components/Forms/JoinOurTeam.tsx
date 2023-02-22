@@ -6,6 +6,7 @@ import FileDropbox from './FileDropbox';
 import Button from './Button';
 import Modal from '../careers/Modal';
 import ThankYou from './ThankYou';
+import { image_type } from '../../interfaces/interfaces';
 
 type FormValues = {
     name: string;
@@ -33,6 +34,18 @@ type FormValues = {
 type Props = {
   openModal: boolean;
   setOpenModal: (open:boolean)=> void;
+
+  form: {
+    heading: string;
+    inputs: {
+      label: string;
+      placeholder: string;
+      name: string;
+      type: string;
+      icon: image_type
+    }[]
+    submit_button: string;
+  }
 }
 const JoinOurTeam = (props: Props) => {
   const { handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
@@ -49,10 +62,20 @@ const JoinOurTeam = (props: Props) => {
     <>
 
     <div className={Styles.join_team_form}>
-        <h2>Join Our Team</h2>
+        <h2>{props.form.heading || "Join Our Team"}</h2>
 
         <form action="" onSubmit={onSubmit}>
-          <div className={Styles.input_label_container}>
+          {
+            props.form.inputs.map((item, key)=>{
+              return(
+                <div key={key} className={Styles.input_label_container}>
+                  <label className={Styles.label} htmlFor="">{item.label || "Name"}</label>
+                  <Input name={item.name || "name"} placeholder={item.placeholder || "Name"} type={item.type || "text"} icon={item?.icon?.data?.attributes?.url}  />
+                </div>
+              )
+            })
+          }
+          {/* <div className={Styles.input_label_container}>
             <label className={Styles.label} htmlFor="">Name</label>
             <Input name="name" placeholder="Name" type="text"  />
           </div>
@@ -79,14 +102,14 @@ const JoinOurTeam = (props: Props) => {
           <div className={Styles.input_label_container}>
             <label className={Styles.label} htmlFor="">Portfolio url</label>
             <Input name="portfolio" type="url" placeholder="Enter portfolio url"  />
-          </div>
+          </div> */}
 
 
           
 
             <FileDropbox />
             <div className={Styles.button}>
-                <Button  text="Submit" />
+                <Button  text={props.form.submit_button || "Submit"} />
             </div>
         </form>
     </div>

@@ -10,10 +10,12 @@ import { image_type } from "../../interfaces/interfaces";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import UseWindowDimensions from "../WindowSize";
 
 type Props = {
   data: {
     image: image_type
+    mobile_banner_image: image_type
     heading: {
       text: string;
       highlight: string;
@@ -28,6 +30,26 @@ type Props = {
     }
 
   }[]
+  form: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+      terms_condition_check: string;
+
+  };
+  thankYou: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+  }
 };
 
 const Images = [
@@ -64,6 +86,7 @@ const CustomDot = ({ onClick, ...rest }: any) => {
 };
 
 const JoinHeroCarousel = (props: Props) => {
+  const { width } = UseWindowDimensions()
   const [openModal, setOpenModal] = useState<boolean>(false)
   const [secondModal, setSecondModal] = useState<boolean>(false)
   
@@ -75,10 +98,10 @@ const JoinHeroCarousel = (props: Props) => {
   return (
     <>
     {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou /></Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} /></Modal>
     }
     {
-      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
+      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm form={props.form} setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
     }
     <div className={Styles.carousel_wrapper}>
       <Slider
@@ -96,7 +119,7 @@ const JoinHeroCarousel = (props: Props) => {
           return (
             <div key={key} className={Styles.items}>
               <div className={Styles.carousel_img}>
-                <Image src={img.image.data.attributes.url} alt={img.image.data.attributes.alternativeText || "food"} fill />
+                <Image src={(width>450 ? img.image.data.attributes.url : img.mobile_banner_image.data.attributes.url)} alt={img.image.data.attributes.alternativeText || "food"} fill />
               </div>
               <div className={Styles.carousel_text}>
                 <h1>

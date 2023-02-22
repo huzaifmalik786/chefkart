@@ -34,7 +34,9 @@ type Props = {
       button: {
         button_text: string;
       };
-      banner_image : image_type
+      banner_image : image_type;
+      mobile_banner_image : image_type;
+
     };
     //2nd component
     for_everyone: {
@@ -175,15 +177,38 @@ type Props = {
       }
       image: image_type
     }
+
+    contactForm: {
+      heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+    }
+    thank_you: {
+      heading: string;
+      subheading: string;
+      link: {
+        text: string;
+        url: string;
+      }
+      icon: image_type
+  
+    }
   };
+  
 };
 export default function Home(props: Props) {
+
+  console.log(props.homepage.thank_you)
 
   const {width}= UseWindowDimensions();
   return (
     <>
-      <Layout header={props.header} footer={props.footer}>
-        <HomeBanner data={props.homepage.homebanner} />
+      <Layout header={props.header} footer={props.footer} thankYou={props.homepage.thank_you}>
+        <HomeBanner data={props.homepage.homebanner} form={props.homepage.contactForm} thankYou={props.homepage.thank_you} />
         <ForEveryone data={props.homepage.for_everyone} />
         <FoodDisplay data={props.homepage.food_display} />
         <div style={{ marginTop: "-4.8vw" }}>
@@ -266,6 +291,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       header: header_data.data.attributes,
       homepage: {
         homebanner: homepage_data.data.attributes?.banner,
+        contactForm: homepage_data.data.attributes.get_in_touch_form,
         for_everyone: homepage_data.data.attributes?.For_everyone,
         food_display: homepage_data.data.attributes.food_display,
         facts: homepage_data.data.attributes?.Facts,
@@ -287,9 +313,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         join_as_chef: homepage_data.data.attributes?.join_as_chef,
         blog: homepage_data.data.attributes?.blog_section,
-        last_banner: homepage_data.data.attributes?.banner_last
+        last_banner: homepage_data.data.attributes?.banner_last,
+
+      thank_you: homepage_data.data.attributes.thank_you
+
       },
-      footer: footer_data.data.attributes.Footer
+      footer: footer_data.data.attributes.Footer,
     },
   };
 };

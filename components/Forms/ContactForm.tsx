@@ -4,6 +4,7 @@ import Styles from '../../styles/components/forms/contactForm.module.scss'
 import Button from "./Button";
 import Input from "./Input";
 import { ModalContext} from "../ModalContext";
+import TextArea from "./TextArea";
 
 
 type FormValues = {
@@ -29,9 +30,18 @@ type FormValues = {
   };
 
   type Props={
-    heading?: string
+
     openModal_two?: boolean;
     setOpenModal_two ?: (open:boolean)=> void;
+    data: {
+      heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+    }
   }
 const ContactForm = (props: Props) => {
   const modalContext= React.useContext(ModalContext);
@@ -53,22 +63,32 @@ const ContactForm = (props: Props) => {
   return (
     <>
     <div className={Styles.contact_form}>
-      <h2>{props.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
+      <h2>{props.data.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
 
       <form onSubmit={onSubmit}>
-        <Input placeholder="Name" type="text" name="name" />
+
+        {
+          props.data.inputs.map((item, key)=>{
+            return(
+        item.type !== "textarea" ? <Input key={key} placeholder={item.placeholder || "Name"} type={item.type || "text"} name={item.name || "name"} /> : <TextArea key={key} placeholder={item.placeholder || "Message"} name={item.name || "message"} row={4}/>
+
+            )
+          })
+        }
+        {/* <Input placeholder="Name" type="text" name="name" /> */}
         {/* {errors.name && <p>Please enter your name</p>} */}
 
-        <Input placeholder="9987115132" type="text" name="mobile" />
+        {/* <Input placeholder="9987115132" type="text" name="mobile" /> */}
 
-        <Input left_section="" placeholder="Email" type="email" name="email" />
+        {/* <Input left_section="" placeholder="Email" type="email" name="email" /> */}
 
-        <div className={Styles.input_container}>
+        {/* <div className={Styles.input_container}>
           <textarea name="message" placeholder="Message" rows={4} />
-        </div>
+        </div> */}
+
         {/* {errors.message && <p>Please enter a message</p>} */}
 
-        <Button text="Submit" />
+        <Button text={props.data.submit_button || "Submit"} />
       </form>
 
       

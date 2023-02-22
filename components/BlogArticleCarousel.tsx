@@ -153,7 +153,7 @@ const PrevArrow: React.FC<ArrowProps> = ({onClick}) => {
         position: "absolute",
         width: "3.88vw",
         zIndex: '1',
-        top: "10vw",
+        top: "40%",
         aspectRatio: "1/1",
         left: "1.31vw"
       }}
@@ -172,7 +172,7 @@ const NextArrow: React.FC<ArrowProps> = ({onClick}) => {
         position: "absolute",
         width: "3.88vw",
         zIndex: '1',
-        top: "10vw",
+        top: "40%",
         right: "1.31vw",
         aspectRatio: "1/1"
       }}
@@ -221,7 +221,7 @@ const BlogArticleCarousel = (props: Props) => {
         slides < 3 && width > 450 ? (
           <div style={{display: "grid", placeContent: "center"}}>
             <Slider
-     infinite={false}
+     infinite={true}
      arrows = {props.isArrow}
      prevArrow= {<PrevArrow  />}
      nextArrow={<NextArrow />}
@@ -229,6 +229,8 @@ const BlogArticleCarousel = (props: Props) => {
      slidesToShow = {slides <= 2? slides : 2.8}
      slidesToScroll={1}
      responsive={responsive}
+     autoplay={true}
+
     //  style={{width: "70vw", }}
      >
      {(props.cards || Images).map((blog, key) => {
@@ -266,6 +268,7 @@ const BlogArticleCarousel = (props: Props) => {
      slidesToShow = {slides <= 2? slides : 2.8}
      slidesToScroll={1}
      responsive={responsive}
+     autoplay={true}
      >
      {(props.cards || Images).map((blog, key) => {
           return (

@@ -22,6 +22,15 @@ type Props = {
       }
     }
   },
+  form: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+  }
 }
 const ContactForm = (props: Props) => {
   const modalContext= React.useContext(ModalContext);
@@ -56,15 +65,22 @@ const ContactForm = (props: Props) => {
 
       <div className={Styles.form_container}>
         <h3>
-          {props.data?.form_heading || "Please fill out the form below and we will respond within 24hrs."}
+          {props.form?.heading || "Please fill out the form below and we will respond within 24hrs."}
         </h3>
 
         <form onSubmit={onSubmit}>
-          <Input placeholder="Name" type="text" />
+          {
+            props.form.inputs.map((item, key)=> {
+              return(
+                item.type !== "textarea" ? <Input key={key} placeholder={item.placeholder || "Name"} type={item.type || "text"} name={item.name || "name"} /> : <TextArea placeholder={item.placeholder || "Name"} name={item.name || "name"} row={2} />
+              )
+            })
+          }
+          {/* <Input placeholder="Name" type="text" />
           <Input placeholder="9987115132" name="mobile" type='text' />
-          <Input type='email' placeholder='Email'  />
-          <TextArea row={2} />
-          <Button text="Submit" />
+          <Input type='email' placeholder='Email'  /> */}
+          
+          <Button text={props.form.submit_button || "Submit"} />
         </form>
       </div>
     </div>

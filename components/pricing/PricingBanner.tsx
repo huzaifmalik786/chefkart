@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/pricing/pricingbanner.module.scss";
 import PricingCard from "../PricingCard";
-import { PriceCard } from "../../interfaces/interfaces";
+import { image_type, PriceCard } from "../../interfaces/interfaces";
 import Reveal from "../Reveal";
+import UseWindowDimensions from "../WindowSize";
 const PricingCardData: PriceCard[] = [
   {
     heading: "Premium",
@@ -48,24 +49,19 @@ type Props = {
       text: string
       highlight: boolean
     }[]
-    image : {
-      data: {
-        attributes: {
-          url: string
-          alternativeText: string
-        }
-      }
-    }
+    image : image_type
+    mobile_banner_image : image_type
   };
   cards: PriceCard[]
 };
 
 const PricingBanner = (props: Props) => {
+  const { width } = UseWindowDimensions()
   return (
     <div className={Styles.pricing_wrapper}>
       <div className={Styles.banner}>
         <div className={Styles.banner_img}>
-          <Image src={props.data.image.data.attributes.url || '/pricing-banner.png'} alt={props.data.image.data.attributes.alternativeText || "banner"} fill style={{objectFit: "cover"}} />
+          <Image src={(width>450 ? props.data?.image?.data?.attributes?.url : props.data?.mobile_banner_image?.data.attributes?.url) || '/pricing-banner.png'} alt={props.data.image.data.attributes.alternativeText || "banner"} fill style={{objectFit: "cover"}} />
         </div>
         <div className={Styles.overlay}>
           <div className={Styles.content}>
