@@ -17,8 +17,8 @@ type Props = {
 const OurWord = (props: Props) => {
   return (
     <div className={Styles.testimonial_wrapper}>
-      <h2>{props.heading || "Don’t take our word for it"}</h2>
-      <TestimonialCarousel cards={props.carousel_data} />
+      <h2>{props?.heading || "Don’t take our word for it"}</h2>
+      <TestimonialCarousel cards={props?.carousel_data} />
     </div>
   );
 };

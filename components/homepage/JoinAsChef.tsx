@@ -17,14 +17,14 @@ const JoinAsChef = (props: Props) => {
       <div className={Styles.heading}>
         <h2>
           {
-            props.data.heading || "Be your own boss, earn money doing what you love"
+            props.data?.heading || "Be your own boss, earn money doing what you love"
           }
           
         </h2>
       </div>
       <div className={Styles.btn}>
         <button type="button" onClick={() => router.push("/join-as-chef")}>
-          {props.data.button.button_text || "Join As Chef"}
+          {props.data?.button?.button_text || "Join As Chef"}
         </button>
       </div>
     </div>

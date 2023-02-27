@@ -20,7 +20,7 @@ type Props={
 }
 
 const ForEveryone = (props:Props) => {
-  const [openTab, setOpenTab] = useState<number>(1);
+  const [openTab, setOpenTab] = useState<number>(0);
 
 
   return (
@@ -38,19 +38,56 @@ const ForEveryone = (props:Props) => {
       <Reveal>
       <div className={Styles.link_wrapper}>
         <ul className={Styles.link_list}>
-          <li
+          {
+            props.data.tab.map((i, key)=>{
+              return(
+                <li
+                key={key}
             className={`${Styles.link_list_item} ${
-              openTab === 1 ? Styles.link_list_active_item : ""
+              openTab === key ? Styles.link_list_active_item : ""
             }`}
           >
             <Link
               href={"#for-the-moms"}
               onClick={(e) => {
                 // e.preventDefault();
-                setOpenTab(1);
+                setOpenTab(key);
               }}
             >
               {props.data?.tab[0].title || "For the Moms" }
+            </Link>
+                </li>
+              )
+            })
+          }
+          {/* <li
+            className={`${Styles.link_list_item} ${
+              openTab === 0 ? Styles.link_list_active_item : ""
+            }`}
+          >
+            <Link
+              href={"#for-the-moms"}
+              onClick={(e) => {
+                // e.preventDefault();
+                setOpenTab(0);
+              }}
+            >
+              {props.data?.tab[0].title || "For the Moms" }
+            </Link>
+          </li>
+          <li
+            className={`${Styles.link_list_item} ${
+              openTab === 1 ? Styles.link_list_active_item : ""
+            }`}
+          >
+            <Link
+              href={"#for-the-singles"}
+              onClick={(e) => {
+                // e.preventDefault();
+                setOpenTab(1);
+              }}
+            >
+             {props.data?.tab[1].title || "For the Singles"}
             </Link>
           </li>
           <li
@@ -59,30 +96,15 @@ const ForEveryone = (props:Props) => {
             }`}
           >
             <Link
-              href={"#for-the-singles"}
+              href={"#for-the-families"}
               onClick={(e) => {
                 // e.preventDefault();
                 setOpenTab(2);
               }}
             >
-             {props.data?.tab[1].title || "For the Singles"}
-            </Link>
-          </li>
-          <li
-            className={`${Styles.link_list_item} ${
-              openTab === 3 ? Styles.link_list_active_item : ""
-            }`}
-          >
-            <Link
-              href={"#for-the-families"}
-              onClick={(e) => {
-                // e.preventDefault();
-                setOpenTab(3);
-              }}
-            >
               {props.data?.tab[2].title || "For the Families"}
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       </Reveal>

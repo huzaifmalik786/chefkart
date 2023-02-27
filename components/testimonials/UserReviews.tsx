@@ -57,7 +57,7 @@ const ReviewsData: ReviewsCardType[] = [
 const UserReviews = (props: Props) => {
   return (
     <div className={Styles.reviews}>
-      {(props.data || ReviewsData).map((card, index) => {
+      {(props?.data || ReviewsData).map((card, index) => {
         return <VideoQuote card={card} key={index} index={index} />
       })}
     </div>
