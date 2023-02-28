@@ -54,7 +54,7 @@ const ForEveryone = (props:Props) => {
                 setOpenTab(key);
               }}
             >
-              {props.data?.tab[0].title || "For the Moms" }
+              {i.title || "For the Moms" }
             </Link>
                 </li>
               )
