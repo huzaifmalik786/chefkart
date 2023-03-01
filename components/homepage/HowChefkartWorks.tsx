@@ -68,9 +68,9 @@ const HowChefkartWorks = (props: Props) => {
 		<div className={Styles.how_container}>
 			<Reveal>
 				<div className={Styles.how_left}>
-					<h2>{props.data?.brief.heading || "How Chefkart works"}</h2>
+					<h2>{props.data?.brief?.heading || "How Chefkart works"}</h2>
 					<p>
-						{props.data.brief.description ||
+						{props.data?.brief?.description ||
 							"Tell us what you need, and we’ll get the best chefs around you to your place."}
 					</p>
 				</div>
@@ -82,10 +82,10 @@ const HowChefkartWorks = (props: Props) => {
 							<div className={Styles.step}>
 								<div className={Styles.step_img}>
 									<Image
-										src={step.image.data.attributes.url}
+										src={step?.image?.data?.attributes?.url}
 										fill
 										alt={
-											step.image.data.attributes.alternativeText ||
+											step?.image?.data?.attributes?.alternativeText ||
 											"how-it-works"
 										}
 									/>
@@ -100,10 +100,9 @@ const HowChefkartWorks = (props: Props) => {
 											{key === 0 && (
 												<div className={Styles.icons}>
 													<span>
-														<Image
+														{/* <Image
 															src={
-																props.data.download_icon[0].icon.data.attributes
-																	.url || "/apple-vector.svg"
+																props.data?.download_icon[0]?.icon?.data?.attributes?.url || "/apple-vector.svg"
 															}
 															// fill
 															width={24}
@@ -112,14 +111,23 @@ const HowChefkartWorks = (props: Props) => {
 														/>
 														<Image
 															src={
-																props.data.download_icon[1].icon.data.attributes
-																	.url || "/play-vector.svg"
+																props.data?.download_icon[1]?.icon?.data?.attributes?.url || "/play-vector.svg"
 															}
 															width={24}
 															height={29}
 															// fill
 															alt="google-play-icon"
-														/>
+														/> */}
+														{
+															props.data?.download_icon.map((item, key)=>{
+																return(
+																	<Image key={key} src={item?.icon?.data?.attributes?.url} alt={item?.icon?.data?.attributes?.alternativeText || ""}
+																	width={24}
+																	height={29}
+															 		/>
+																)
+															})
+														}
 													</span>
 												</div>
 											)}

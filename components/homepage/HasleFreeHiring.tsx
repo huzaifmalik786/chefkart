@@ -25,7 +25,7 @@ const HasleFreeHiring = (props: Props) => {
         <div className={Styles.heading}>
           <h2>
             {
-              props.data.heading || " Hassle free hiring of reliable cooks"
+              props.data?.heading || " Hassle free hiring of reliable cooks"
             }
            
           </h2>
@@ -34,14 +34,14 @@ const HasleFreeHiring = (props: Props) => {
           <div className={Styles.para_1}>
             <p>
               {
-                props.data.subheading1 || "It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here."
+                props.data?.subheading1 || "It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here."
               }
             </p>
           </div>
           <div className={Styles.para_2}>
             <p>
               {
-                props.data.subheading2 || "It all starts here. Get us close to your fingertips It all starts here."
+                props.data?.subheading2 || "It all starts here. Get us close to your fingertips It all starts here."
               }
               
             </p>
@@ -49,12 +49,21 @@ const HasleFreeHiring = (props: Props) => {
           </div>
         
         <div className={Styles.bottom_img}>
-          <div className={Styles.app_icon}>
+          {
+            props.data?.download_icons.map((item, key)=>{
+              return(
+                <div key={key} className={Styles.app_icon}>
+            <Image src={item?.icon.data?.attributes?.url || "/app-store-icon.svg"} alt={item?.icon?.data?.attributes?.alternativeText || "appstore"} fill />
+          </div>
+              )
+            })
+          }
+          {/* <div className={Styles.app_icon}>
             <Image src={props.data?.download_icons[1]?.icon.data?.attributes?.url || "/app-store-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "appstore"} fill />
           </div>
-          <div className={Styles.play_icon}>
-            <Image className={Styles.play_image} src={props.data?.download_icons[0]?.icon.data.attributes?.url || "/play-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "playstore"} fill />
-          </div>
+          <div className={Styles.app_icon}>
+            <Image className={Styles.play_image} src={props.data?.download_icons[0]?.icon?.data?.attributes?.url || "/play-icon.svg"} alt={props.data?.download_icons[0]?.icon?.data?.attributes?.alternativeText || "playstore"} fill />
+          </div> */}
         </div>
       </div>
     </div>

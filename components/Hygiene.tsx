@@ -50,7 +50,7 @@ const Hygiene = (props: Props) => {
       }
     >
       {/* <div className={Styles.video_container}> */}
-        <video className={Styles.video} src={props.data.video.data.attributes.url}
+        <video className={Styles.video} src={props.data?.video?.data?.attributes?.url}
           autoPlay 
           loop 
           muted 

@@ -84,12 +84,12 @@ export default function CircularCarousel(props: Props) {
 			<div>
 				<div className={Styles.myswiper}>
 					<div className={Styles.plate}>
-						<Image src={props.plate.data.attributes.url || "/food-plate.png"} alt={props.plate.data.attributes.alternativeText || ""} fill />
+						<Image src={props.plate?.data?.attributes?.url || "/food-plate.png"} alt={props.plate?.data?.attributes?.alternativeText || ""} fill />
 
 					</div>
 					{currentSlides.map((item: any, index: any) => (
 						<div
-							key={item.id}
+							key={item?.id}
 							className={
 								index === 2
 									? `${Styles.active}`
@@ -101,8 +101,8 @@ export default function CircularCarousel(props: Props) {
 							}
 						>
 							<Image
-								src={item.src}
-								alt={item.title}
+								src={item?.src}
+								alt={item?.title}
 								fill
 							/>
 						</div>

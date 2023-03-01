@@ -76,7 +76,6 @@ const Header = (props:Props) => {
       }
     })
   },[])
-console.log(props.data.header)
 
 
   return (
@@ -86,13 +85,13 @@ console.log(props.data.header)
           <Link href="/">
             {router.pathname === "/" ? (
               <Image
-                src={props.data.header.logo.white_logo.data.attributes.url || "/Logo.png"}
+                src={props.data?.header?.logo?.white_logo?.data?.attributes?.url || "/Logo.png"}
                 alt="chefkart-logo"
                 fill
               />
             ) : (
               <Image
-                src={props.data.header.logo.yellow_logo.data.attributes.url || "/Logo-yellow.svg"}
+                src={props.data?.header?.logo?.yellow_logo?.data?.attributes?.url || "/Logo-yellow.svg"}
                 alt="chefkart-logo"
                 fill
               />
@@ -132,7 +131,7 @@ console.log(props.data.header)
           <Link href="/">
             {router.pathname === "/" ? (
               <Image
-                src={props.data.header.logo.black_logo.data.attributes.url || "/Logo-black.svg"}
+                src={props.data?.header?.logo?.black_logo?.data?.attributes?.url || "/Logo-black.svg"}
                 alt="chefkart-logo"
                 // width={192}
                 // height={56}
@@ -140,7 +139,7 @@ console.log(props.data.header)
               />
             ) : (
               <Image
-                src={props.data.header.logo.black_logo.data.attributes.url || "/Logo-black.svg"}
+                src={props.data?.header?.logo?.black_logo?.data?.attributes?.url || "/Logo-black.svg"}
                 alt="chefkart-logo"
                 // width={192}
                 // height={56}

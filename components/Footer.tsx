@@ -85,7 +85,7 @@ const Footer = (props: Props) => {
               (props.data.download_icon).map((item, key)=>{
                 return(
                   <div key={key}>
-                    <Image src={item.icon.data.attributes.url} alt={item.icon.data.attributes.url || "download-icon"} fill />
+                    <Image src={item?.icon?.data?.attributes?.url} alt={item?.icon?.data?.attributes?.url || "download-icon"} fill />
                   </div>
                 )
               })

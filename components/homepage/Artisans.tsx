@@ -150,11 +150,11 @@ const Artisans = (props: Props) => {
         draggable
         responsive= {responsive}
       >
-       {(props.data.chef_array || chef_array).map((c, key) => {
+       {(props.data?.chef_array || chef_array).map((c, key) => {
           return (
             
             <div key={key} className={Styles.item}>
-              <Image src={c.image.data.attributes.url} alt="" fill />
+              <Image src={c.image?.data?.attributes?.url} alt="" fill />
               <div className={Styles.inset}></div>
               <div className={Styles.upper_content}>
                 <div className="">
@@ -167,7 +167,7 @@ const Artisans = (props: Props) => {
                       <Image src="/star.png" fill alt="" />
                     </div>
                   </div>{" "}
-                  <span className={Styles.experience}>&nbsp; • &nbsp;{c.experience} yrs experience</span>
+                  <span className={Styles.experience}>&nbsp; • &nbsp;{c?.experience} yrs experience</span>
                 </div>
                 </div>
 
@@ -179,13 +179,13 @@ const Artisans = (props: Props) => {
                           (c.specialization).map((s, key)=>{
                             if(key<3)
                               return(
-                                  <span className={Styles.pills} key={key}>{s.feature}</span>
+                                  <span className={Styles.pills} key={key}>{s?.feature}</span>
                               )
                           })
                       }
                       <div className={Styles.button}>
                         <button style={{background:"none",fontSize:"2.7vw"}}>
-                            {c.specialization.length>3?`+${c.specialization.length-3} more`:""}
+                            {c.specialization.length>3?`+${c?.specialization.length-3} more`:""}
                         </button>
                       </div>
                       </div>
