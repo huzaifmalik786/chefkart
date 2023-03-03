@@ -7,6 +7,7 @@ import UseWindowDimensions from "./WindowSize";
 type Props = {
   card: PriceCard;
   isWide: boolean;
+  showspan: boolean;
 };
 
 const PricingCard = (props: Props) => {
@@ -34,7 +35,7 @@ const PricingCard = (props: Props) => {
           props.card.heading === "Popular" && Styles.price_white
         }`}
       >
-        <span style={{marginLeft:"0"}}>Starting from</span>
+        {props.showspan && <span className={Styles.top_span}>Starting from</span>}
         <h2>
           ₹{props.card.price} <span> /Month</span>
         </h2>
