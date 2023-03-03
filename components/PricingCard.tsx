@@ -34,6 +34,7 @@ const PricingCard = (props: Props) => {
           props.card.heading === "Popular" && Styles.price_white
         }`}
       >
+        <span style={{marginLeft:"0"}}>Starting from</span>
         <h2>
           ₹{props.card.price} <span> /Month</span>
         </h2>

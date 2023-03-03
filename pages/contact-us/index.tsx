@@ -52,7 +52,7 @@ type Props = {
   read_more: {
     text: string;
     url: string;
-  }
+  }[]
   faq:{
     heading : string;
     Question_answer: QUESTIONS[]

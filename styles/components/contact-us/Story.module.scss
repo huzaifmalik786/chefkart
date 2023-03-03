@@ -34,6 +34,9 @@
       width: 37.05vw;
       height: 34.35vw;
       z-index: 1;
+      img{
+        object-fit: contain;
+      }
       @media screen and (max-width: 450px){
         width: 76.6vw;
         height: 70.56vw;

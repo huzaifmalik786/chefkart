@@ -18,7 +18,7 @@ type Props = {
   link: {
     text: string;
     url: string;
-  }
+  }[]
 }
 const Story = (props: Props) => {
     const [hidden1,sethidden1]= useState(false);
@@ -81,7 +81,7 @@ const Story = (props: Props) => {
             </Reveal>
 
 
-            <Link href={props.link.text || '#'}>{props.link.text || "Read about our story"}</Link>
+            <Link href={props.link[0].url || '#'}>{props.link[0].text || "Read about our story"}</Link>
         </div>
     </div>
   )
