@@ -131,7 +131,7 @@ const PricingBanner = (props: Props) => {
       <Reveal>
         <div className={Styles.pricing_card}>
           {(props.cards || PricingCardData).map((card, index) => {
-            return <PricingCard card={card} key={index} isWide />;
+            return <PricingCard card={card} key={index} isWide showspan/>;
           })}
         </div>
       </Reveal>

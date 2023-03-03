@@ -85,23 +85,23 @@ const HomePricing = (props:Props) => {
       </div>
       </Reveal>
       ):( */}
-      <div className={Styles.pricing_heading}>
+      {/* <div className={Styles.pricing_heading}>
       <Reveal>
         <h2>
           {
             props.data.brief?.heading || "Gastronomical, economical & Phenomenal"
-          }
+          } */}
           {/* Gastronomical,
           <br /> economical &<br /> Phenomenal
           */}
-        </h2>
+        {/* </h2>
         <p>
           {
             props.data.brief?.subheading || "Starting at just Rs.3000/- that’s 1/3 of 80 online orders on a monthly basis. A simple subscription to hire, manage your apetite and home chefs on the go."
           }
         </p>
       </Reveal>
-      </div>
+      </div> */}
       {/* )} */}
       {/* <div className={Styles.pricing_heading}>
         <h2>
@@ -126,6 +126,7 @@ const HomePricing = (props:Props) => {
               key={key}
               card={pricecard}
               isWide={false}
+              showspan={false}
             />
           );
         })}
