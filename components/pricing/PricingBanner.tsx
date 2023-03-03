@@ -43,25 +43,35 @@ type Props = {
   data: {
     heading: {
       text: string;
-      highlight: boolean
-    }[]
+      highlight: boolean;
+    }[];
     description: {
-      text: string
-      highlight: boolean
-    }[]
-    image : image_type
-    mobile_banner_image : image_type
+      text: string;
+      highlight: boolean;
+    }[];
+    image: image_type;
+    mobile_banner_image: image_type;
   };
-  cards: PriceCard[]
+  cards: PriceCard[];
 };
 
 const PricingBanner = (props: Props) => {
-  const { width } = UseWindowDimensions()
+  const { width } = UseWindowDimensions();
   return (
     <div className={Styles.pricing_wrapper}>
       <div className={Styles.banner}>
         <div className={Styles.banner_img}>
-          <Image src={(width>450 ? props.data?.image?.data?.attributes?.url : props.data?.mobile_banner_image?.data.attributes?.url) || '/pricing-banner.png'} alt={props.data.image.data.attributes.alternativeText || "banner"} fill style={{objectFit: "cover"}} />
+          <Image
+            src={
+              (width > 450
+                ? props.data?.image?.data?.attributes?.url
+                : props.data?.mobile_banner_image?.data.attributes?.url) ||
+              "/pricing-banner.png"
+            }
+            alt={props.data.image.data.attributes.alternativeText || "banner"}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
         <div className={Styles.overlay}>
           <div className={Styles.content}>
@@ -72,8 +82,33 @@ const PricingBanner = (props: Props) => {
                     return (
                       <span key={key}>
                         {item.highlight ? (
+                          <>
+                            <br />
+                            <span className={Styles.colored}>{item.text} </span>
+                          </>
+                        ) : (
+                          item.text
+                        )}
+                      </span>
+                    );
+                  })
+                ) : (
+                  <span>
+                    Gastronomical, economical <br />&{" "}
+                    <span className={Styles.colored}>Phenomenal</span>
+                  </span>
+                )}
+              </h2>
+            </div>
+            <div className={Styles.subheading}>
+              <p>
+                {props.data?.description ? (
+                  (props.data?.description).map((item, key) => {
+                    return (
+                      <span key={key}>
+                        {item.highlight ? (
                           <span className={Styles.colored}>
-                            {/* <br /> */}
+                            <br />
                             {item.text}{" "}
                           </span>
                         ) : (
@@ -84,43 +119,21 @@ const PricingBanner = (props: Props) => {
                   })
                 ) : (
                   <span>
-                    Gastronomical, economical <br />& <span className={Styles.colored}>Phenomenal</span>
+                    Starting at just Rs.3000/- that’s 1/3 of 80 online orders on
+                    a monthly basis.
                   </span>
                 )}
-              </h2>
-            </div>
-            <div className={Styles.subheading}>
-              <p>
-                {props.data?.description ? (
-                (props.data?.description).map((item, key)=>{
-                  return (
-                    <span key={key}>
-                      {item.highlight ? (
-                        <span className={Styles.colored}>
-                          <br />
-                          {item.text}{" "}
-                        </span>
-                      ) : (
-                        item.text
-                      )}
-                    </span>
-                  );
-                })
-                ): (
-                  <span>Starting at just Rs.3000/- that’s 1/3 of 80 online orders on a monthly basis.</span>
-                )}
-                
               </p>
             </div>
           </div>
         </div>
       </div>
       <Reveal>
-      <div className={Styles.pricing_card}>
-        {(props.cards || PricingCardData).map((card, index) => {
-          return <PricingCard card={card} key={index} isWide />;
-        })}
-      </div>
+        <div className={Styles.pricing_card}>
+          {(props.cards || PricingCardData).map((card, index) => {
+            return <PricingCard card={card} key={index} isWide />;
+          })}
+        </div>
       </Reveal>
     </div>
   );
