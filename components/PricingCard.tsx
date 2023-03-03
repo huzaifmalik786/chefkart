@@ -69,7 +69,7 @@ const PricingCard = (props: Props) => {
             paddingRight: props.isWide ? "8.75vw" : "6vw",
           }}
         >
-          {props.card.button.button_text || "Book a trial"}
+          {props?.card?.button?.button_text || "Book a trial"}
         </button>
       </div>
     </div>
