@@ -81,7 +81,7 @@ const Story = (props: Props) => {
             </Reveal>
 
 
-            <Link href={props.link[0].url || '#'}>{props.link[0].text || "Read about our story"}</Link>
+            <Link href={props?.link[0]?.url || '#'}>{props?.link[0]?.text || "Read about our story"}</Link>
         </div>
     </div>
   )

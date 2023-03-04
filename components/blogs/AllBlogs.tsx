@@ -69,8 +69,10 @@ const BlogData: BlogCardType[] = [
 const AllBlogs = (props: Props) => {
   const {width}= UseWindowDimensions();
   const componentRef = useRef<HTMLDivElement>(null);
+  const [isFirst, setFirst] = useState<boolean>(true)
 
-  const itemsPerPage = width>= 450 ? 6 : 4
+  // const itemsPerPage = width>= 450 ? 6 : 4
+  const itemsPerPage = 6
 
   const [activeBtn, setActiveBtn] = useState<string>(props.buttons[0].attributes.category);
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -102,9 +104,11 @@ const AllBlogs = (props: Props) => {
       componentRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     },
+   
     [currentPage, startIndex, endIndex, props.data, width, morecards ]
   );
 
+ 
 
   const checkBlogCategory = (card: BlogCardType, filter: string) =>{
     const categories = card.attributes.blogs_categories.data
@@ -140,7 +144,8 @@ const AllBlogs = (props: Props) => {
         })}
       </div>
       {
-        itemsPerPage <= totalBlogs && (
+        
+        itemsPerPage <= displayedItems.length && (
           <div className={Styles.pagination}>
             {Array.from({length: totalPages}, (_, i) => i + 1).map((item, index) => {
               return <button type="button" className={`${item === currentPage ? Styles.active : ''}`} onClick={()=> handlePageChange(item)} key={index}>{item}</button>;

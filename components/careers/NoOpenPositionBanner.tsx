@@ -4,7 +4,7 @@ import Styles from "../../styles/components/careers/noopenpositionbanner.module.
 function NoOpenPositionBanner() {
   return (
     <div className={Styles.banner}>
-        <h1>No open position banner</h1>
+        <h1>No open positions...</h1>
     </div>
   )
 }
