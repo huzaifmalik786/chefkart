@@ -109,7 +109,7 @@ const Culture = (props: Props) => {
       <div className={Styles.culture_header}>
         <h3>{props.data.heading || "Culture"}</h3>
         <p style={fullText ? {maxHeight: "none"} : {}}>
-          {((props.data.description).substring(0,82) || text.substring(0,82))} <span style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} className={Styles.read_more}>..Read more</span> <span style={fullText ? {display: "inline"} : {}} className={Styles.overflow_text}>{(props.data.description).substring(83) || text.substring(83)}</span>
+          {((props.data?.description)?.substring(0,82) || text.substring(0,82))} <span style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} className={Styles.read_more}>..Read more</span> <span style={fullText ? {display: "inline"} : {}} className={Styles.overflow_text}>{(props.data?.description)?.substring(83) || text.substring(83)}</span>
         </p>
         
       </div>

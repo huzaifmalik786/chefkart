@@ -33,14 +33,14 @@ const VideoComponent = (props: Props) => {
     <div className={Styles.video_wrapper}>
       <div className={Styles.video_text}>
         <Image src={"/comma.svg"} alt="comma" height={33} width={41} />
-        <h2>{props.data.review || "Yeh sirf ek ghar ki nahi, har ghar ki kahani hai."}</h2>
-        <p>{props.data.name || "Rishi"}</p>
+        <h2>{props.data?.review || "Yeh sirf ek ghar ki nahi, har ghar ki kahani hai."}</h2>
+        <p>{props.data?.name || "Rishi"}</p>
       </div>
       <div className={Styles.video_container}>
         {/* <Image src={"/join-video.png"} alt="video" width={773} height={468} /> */}
         <video
           ref={videoRef}
-          src={props.data.video.data?.attributes.url}
+          src={props.data?.video?.data?.attributes?.url}
           loop
           className={Styles.video}
         />

@@ -45,7 +45,7 @@ const ContactForm = (props: Props) => {
   return (
     <div className={Styles.investor_contactForm}>
       <div className={Styles.banner}>
-        <Image src={props.data?.banner_image?.data?.attributes?.url || '/Rectangle 185.png'} alt={props.data.banner_image?.data?.attributes?.alternativeText || ""} fill />
+        <Image src={props.data?.banner_image?.data?.attributes?.url || '/Rectangle 185.png'} alt={props.data?.banner_image?.data?.attributes?.alternativeText || ""} fill />
       </div>
       <h2>
       {

@@ -88,7 +88,8 @@ const CareersHero = (props: Props) => {
         <button>{props.data.button_text || "VIEW OPEN POSITIONS"}</button>
       </div>
       <div className={Styles.img_container}>
-        <div className={Styles.img1}>
+        {
+          props.data.images.data && props.data.images.data[0]  && <div className={Styles.img1}>
           <Image
             src={props.data.images.data[0].attributes.url || "/career-hero-1.png"}
             alt="img"
@@ -97,7 +98,9 @@ const CareersHero = (props: Props) => {
             fill
           />
         </div>
-        <div className={Styles.img2}>
+        }
+        {
+          props.data.images.data && props.data.images.data[1] && <div className={Styles.img2}>
           <Image
             src={props.data.images.data[1].attributes.url ||"/career-hero-2.png"}
             alt="img"
@@ -106,15 +109,20 @@ const CareersHero = (props: Props) => {
             fill
           />
         </div>
-        <div className={Styles.img3}>
-          <Image
-            src={props.data.images.data[2].attributes.url || "/career-hero-3.png"}
-            alt="img"
-            // height={366}
-            // width={158}
-            fill
-          />
-        </div>
+        }
+        {
+           props.data.images.data  && props.data.images.data[2] && <div className={Styles.img3}>
+           <Image
+             src={props.data.images.data[2].attributes.url || "/career-hero-3.png"}
+             alt="img"
+             // height={366}
+             // width={158}
+             fill
+           />
+         </div>
+        }
+        
+        
       </div>
       </div>
       <Slider
@@ -130,11 +138,11 @@ const CareersHero = (props: Props) => {
         centerMode
       >
         {
-          (carouselData).map((item, key)=>{
+          (props.data?.images.data || carouselData).map((item, key)=>{
             return(
               <div key={key} className={`item ${Styles.item}`}>
                 <Image
-                  src={item.image}
+                  src={item?.attributes?.url}
                   alt="img"
                   // height={489}
                   // width={326}

@@ -12,6 +12,7 @@ import { GetStaticProps } from 'next'
 import { Footer_type, Header_type, image_type, ProfileCardType } from '../../interfaces/interfaces'
 import UseWindowDimensions from '../../components/WindowSize'
 import Reveal from '../../components/Reveal'
+import HowChefkartWorks from '../../components/homepage/HowChefkartWorks'
 
 type Props = {
   header: Header_type;
@@ -91,6 +92,19 @@ form: {
       }[]
       submit_button: string;
 }
+how_it_works: {
+  brief: {
+    heading: string;
+    description: string;
+  }
+  steps:{
+    text: string;
+    image: image_type
+  }[]
+  download_icon: {
+    icon: image_type
+  }[]
+},
   social: {
     heading: string;
     icons: {
@@ -130,6 +144,9 @@ const index = (props: Props) => {
         <ContactForm data={props.form_image} form={props.form} /> 
         </Reveal>
         <Reveal>
+          <HowChefkartWorks data={props.how_it_works} />
+      </Reveal>
+        <Reveal>
         <Social data={props.social} />
       </Reveal>
     </Layout>
@@ -161,12 +178,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       header: header_data.data.attributes,
       banner: {
-        badge: about_data.data.attributes.badge,
-        heading: about_data.data.attributes.heading,
-        description: about_data.data.attributes.description,
-        button: about_data.data.attributes.button.button_text,
-        image_front: about_data.data.attributes.image_front,
-        image_back: about_data.data.attributes.image_back,
+        badge: about_data.data?.attributes?.badge,
+        heading: about_data?.data?.attributes?.heading,
+        description: about_data?.data?.attributes?.description,
+        button: about_data.data?.attributes?.button?.button_text,
+        image_front: about_data.data?.attributes?.image_front,
+        image_back: about_data.data?.attributes?.image_back,
       },
       vision: about_data.data.attributes.vision,
       facts: about_data.data.attributes.facts,
@@ -178,10 +195,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
         heading: about_data.data.attributes.founder.heading,
         array: about_data.data.attributes.profile,
       },
-      form_image: about_data.data.attributes.form_image.data.attributes,
-      form: about_data.data.attributes.contact_form,
+      form_image: about_data.data?.attributes?.form_image?.data?.attributes,
+      form: about_data.data?.attributes?.contact_form,
+      how_it_works: about_data.data.attributes?.Chefcart_works,
+
       social: {
-        heading: about_data.data.attributes.social_heading,
+        heading: about_data.data?.attributes?.social_heading,
         icons: about_data.data.attributes.icons,
       },
       thank_you: about_data.data.attributes.thank_you,

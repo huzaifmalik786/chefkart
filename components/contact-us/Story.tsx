@@ -23,9 +23,9 @@ type Props = {
 const Story = (props: Props) => {
     const [hidden1,sethidden1]= useState(false);
     const [hidden2,sethidden2]= useState(false);
-    const content1= props.data[0].description.map(d => d.text).join("") || "Our mission is to provide at-home cooking services in a way that has never been experienced before by empowering millions of cooks across India"
-
-    const content2= props.data[1].description.map(d => d.text).join("") || "ChefKart is a platform that connects home chefs and households seamlessly by building an ecosystem. Our professionals are handpicked to serve you hygienic and wholesome meals catered to your taste!"
+      const content1 = props.data && props.data[0] ? props.data[0]?.description?.map(d => d.text)?.join("") : "Our mission is to provide at-home cooking services in a way that has never been experienced before by empowering millions of cooks across India"
+    
+    const content2 = props.data && props.data[1] ? props.data[1]?.description?.map(d => d.text).join("") : "ChefKart is a platform that connects home chefs and households seamlessly by building an ecosystem. Our professionals are handpicked to serve you hygienic and wholesome meals catered to your taste!"
   return (
     <div className={Styles.story_container}>
         <Reveal>
@@ -51,7 +51,7 @@ const Story = (props: Props) => {
                 <span className={Styles.line}></span>
             </div>
             <div className={Styles.image}>
-                <Image src={props.data[0].image.data.attributes.url || '/M_F_Home chef_refine 1.png'} alt="chef_photo" fill />
+                <Image src={props.data[0]?.image?.data?.attributes?.url || '/M_F_Home chef_refine 1.png'} alt="chef_photo" fill />
                 <div className={Styles.bg_orange}></div>
             </div>
         </div>
@@ -59,7 +59,7 @@ const Story = (props: Props) => {
 
         <div className={Styles.right_section} >
             <div className={Styles.image}>
-                <Image src={props.data[1].image.data.attributes.url || '/Image.png'} alt={props.data[1].image.data.attributes.alternativeText || "chef_photo"} fill />
+                <Image src={props.data[1]?.image?.data?.attributes?.url || '/Image.png'} alt={props.data[1]?.image?.data?.attributes?.alternativeText || "chef_photo"} fill />
             </div>
             <Reveal>
             <p className={Styles.desktop_only}>

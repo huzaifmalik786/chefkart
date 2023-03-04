@@ -179,8 +179,8 @@ const EndCarousel = (props: Props) => {
   return (
     <div className={Styles.end_carousel}>
       <div className={Styles.carousel_header}>
-        <h1>{props.data.heading || "Lorem Ipsum Dolor"}</h1>
-        <p>{props.data.description || "Our values outline who we are, what we hope to accomplish, "}</p>
+        <h1>{props.data?.heading || "Lorem Ipsum Dolor"}</h1>
+        <p>{props.data?.description || "Our values outline who we are, what we hope to accomplish, "}</p>
       </div>
       <div className={Styles.carousel_wrapper}>
         <Slider
@@ -195,7 +195,7 @@ const EndCarousel = (props: Props) => {
            prevArrow= {<PrevArrow />}
            className={Styles.carousel}
         >
-        {(props.data.carousel || Images).map((img, key) => {
+        {(props.data?.carousel || Images).map((img, key) => {
             return (
               <div key={key} className={Styles.items}>
                 <Image src={img.image.data.attributes.url} alt={img.image.data.attributes.alternativeText || "food"} fill className={Styles.img} />

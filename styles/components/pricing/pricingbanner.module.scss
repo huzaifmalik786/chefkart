@@ -68,6 +68,27 @@
             }
           }
         }
+
+        .btn {
+          padding-top: 1.5vw;
+          @media screen and (max-width:450px){
+            padding-top: 14.45vw;
+          }
+  
+          button {
+            font-weight: 800;
+            font-size: 1.38vw;
+            line-height: 1.66vw;
+            text-transform: uppercase;
+            padding: 1.2vw 1.38vw;
+            @media screen and (max-width:450px){
+              border-radius: 2.23vw;
+              font-size: 3.34vw;
+              line-height: 120%;
+              padding: 3.89vw 5.56vw;
+            }
+          }
+        }
       }
     }
   }

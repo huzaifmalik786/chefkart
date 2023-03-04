@@ -235,7 +235,7 @@ const BlogArticleCarousel = (props: Props) => {
      >
      {(props.cards || Images).map((blog, key) => {
           return (
-            <Link href={`/blogs/${blog.attributes.slug}`} key={key}>
+            <Link href={`/blogs/${blog.attributes.slug}` || "#"} key={key}>
             <div className={Styles.items} style={props.isSmall && width<=450?{width:"43.33vw",height:"51.38vw", borderRadius:"1.1vw"}:{
               marginRight: "0.7vw"
             }}>
@@ -272,7 +272,7 @@ const BlogArticleCarousel = (props: Props) => {
      >
      {(props.cards || Images).map((blog, key) => {
           return (
-            <Link href={`/blogs/${blog.attributes.slug}`} key={key}>
+            <Link href={`/blogs/${blog.attributes.slug}` || "#"} key={key}>
             <div className={Styles.items} style={props.isSmall && width<=450?{width:"43.33vw !important",height:"51.38vw", borderRadius:"1.1vw"}:{}}>
               <Image src={blog.attributes.image?.data?.attributes?.url} alt="food" fill className={Styles.img} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}/>
               <div className={Styles.item_overlay} style={props.isSmall && width<=450?{borderRadius:"1.1vw"}:{}}>

@@ -93,7 +93,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
         },
         social_icon: {
           heading: articles.data.attributes.share_heading,
-          icons: articles.data.attributes.icons,
+          fb: articles.data.attributes.facebook,
+          twitter: articles.data.attributes.twitter,
+          linkedin: articles.data.attributes.twitter,
           like: articles.data.attributes.like_button
         },
 

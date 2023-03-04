@@ -61,10 +61,10 @@ const CookWithUs = (props: Props) => {
 	return (
 		<div className={Styles.us_wrapper}>
 			<Reveal>
-				<h2>{props.data.heading || "Why cook with us?"}</h2>
+				<h2>{props.data?.heading || "Why cook with us?"}</h2>
 			</Reveal>
 			<div className={Styles.cards_wrapper}>
-				{(props.data.cards || WhyUs).map((item, index) => (
+				{(props.data?.cards || WhyUs).map((item, index) => (
 					<Reveal key={index}>
 						<div className={Styles.card}>
 							<div>
@@ -74,8 +74,8 @@ const CookWithUs = (props: Props) => {
 									fill
 								/>
 							</div>
-							<h4>{item.heading}</h4>
-							<p>{item.description}</p>
+							<h4>{item?.heading}</h4>
+							<p>{item?.description}</p>
 						</div>
 					</Reveal>
 				))}

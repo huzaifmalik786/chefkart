@@ -10,6 +10,7 @@ import Reveal from '../../components/Reveal'
 import Modal from '../../components/careers/Modal'
 import ThankYou from '../../components/Forms/ThankYou'
 import { ModalContext } from '../../components/ModalContext'
+import HowChefkartWorks from '../../components/homepage/HowChefkartWorks'
 
 // type contextprops={
 //   showModal: boolean;
@@ -57,6 +58,20 @@ type Props = {
     heading : string;
     Question_answer: QUESTIONS[]
   };
+  how_it_works: {
+    brief: {
+      heading: string;
+      description: string;
+    }
+    steps:{
+      text: string;
+      image: image_type
+    }[]
+    download_icon: {
+      icon: image_type
+    }[]
+  },
+
   thank_you: {
     heading: string;
     subheading: string;
@@ -78,6 +93,9 @@ const index = (props: Props) => {
         <Story data={props.stories} link={props.read_more} />
         <Reveal>
         <FAQ data={props.faq} />
+        </Reveal>
+        <Reveal>
+        <HowChefkartWorks data={props.how_it_works} />
         </Reveal>
     </Layout>
   )
@@ -115,6 +133,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       stories: contact_data.data.attributes.stories,
       read_more: contact_data.data.attributes.read_more,
       faq: contact_data.data.attributes.faq,
+      how_it_works: contact_data.data.attributes?.Chefcart_works,
       footer: footer_data.data.attributes.Footer,
       thank_you: contact_data.data.attributes.thank_you
 

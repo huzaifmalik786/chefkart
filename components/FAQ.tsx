@@ -54,7 +54,7 @@ const FAQ = (props: Props) => {
       <h2 className={Styles.faq_title}>{props.data?.heading || "Frequently Asked Questions"}</h2>
 
       <div className={Styles.questions}>
-        {(props.data.Question_answer || questions).map((q, key) => {
+        {(props.data?.Question_answer || questions).map((q, key) => {
           return <Accordion title={q.heading} content={q.description} key={key} />;
         })}
       </div>

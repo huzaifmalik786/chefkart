@@ -37,7 +37,7 @@ type styleType = {
 const BlogHero = (props: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 const words = ['Anniversary', 'Kitty Parties', 'House Parties', 'Birthday Parties', 'Special Ocassions', 'Something Special'];
-const items = props.data.slider.map((item, key)=>{
+const items = props?.data?.slider.map((item, key)=>{
   return(
     {
       word: item.text
@@ -65,14 +65,14 @@ const items = props.data.slider.map((item, key)=>{
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % items.length);
+      setCurrentIndex((currentIndex + 1) % items?.length);
     }, 3000)
 
     return () => clearInterval(interval)
   }, [currentIndex])
 
 
-  const wordElements = (items).map((word, index) => {
+  const wordElements = (items)?.map((word, index) => {
     const style : styleType = {
       color: '#FF8811',
       marginTop: '',
@@ -141,7 +141,7 @@ const items = props.data.slider.map((item, key)=>{
           }
           
         </h4>
-        <button>{props.data.button.button_text || "Read More"}</button>
+        <button>{props.data?.button?.button_text || "Read More"}</button>
       </div>
       {/* <div className={Styles.hero_img}>
         <Image src={"/blogs_hero.png"} className={Styles.img} alt="chef" fill />
@@ -149,7 +149,7 @@ const items = props.data.slider.map((item, key)=>{
       <div className={Styles.video_container}>
         <video
           ref={videoRef}
-          src={props.data.video.data.attributes.url || 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}
+          src={props.data?.video?.data?.attributes?.url || 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}
           loop
           className={Styles.video}
         />

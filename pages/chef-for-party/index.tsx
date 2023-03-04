@@ -31,6 +31,27 @@ type Props = {
     mobile_banner_image : image_type
 
   }
+  contactForm: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+  }
+  thank_you: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+
+  }
+  banner_CTA: string;
+ 
 
   cards: PriceCard[]
 
@@ -152,11 +173,13 @@ type Props = {
   }
 }
 
+
 const index = (props: Props) => {
+    console.log(props.contactForm)
   const {width}= UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
-      <PricingBanner data={props.banner} cards={props.cards} />
+      <PricingBanner data={props.banner} cards={props.cards} cta={props.banner_CTA} form={props.contactForm} thankYou={props.thank_you} />
       <Reveal>
       <Features data={props.affordable_price} />
       </Reveal>
@@ -198,7 +221,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const footer_data = await res3.json();
 
   const res2 = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/monthly-subscription?populate=deep,10`);
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/chef-for-party?populate=deep,10`);
     const pricing_data = await res2.json();
 
     return {
@@ -206,6 +229,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         header: header_data.data.attributes,
 
         banner : pricing_data.data.attributes.banner,
+        banner_CTA: pricing_data.data.attributes.banner_CTA,
         cards: pricing_data?.data?.attributes?.pricing_cards,
         affordable_price: pricing_data.data.attributes.factors,
         hygiene: pricing_data.data.attributes.hygiene,
@@ -215,6 +239,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
         faq: pricing_data.data.attributes.FAQs,
         how_it_works: pricing_data.data.attributes?.Chefcart_works,
         book_trial: pricing_data.data.attributes.ending_banner,
+        contactForm: pricing_data.data.attributes.form,
+
+        thank_you: pricing_data.data.attributes.thank_you_modal,
         footer: footer_data.data.attributes.Footer
 
       }

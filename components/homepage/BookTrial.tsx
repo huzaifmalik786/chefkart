@@ -28,7 +28,7 @@ const BookTrial = (props: Props) => {
             props?.data?.heading || "Good Food. Good People. Good Life."
           }
         </h1>
-        <button>{props?.data?.button?.button_text || "Book a Trial"}</button>
+        {/* <button>{props?.data?.button?.button_text || "Book a Trial"}</button> */}
       </div>
     </div>
   );

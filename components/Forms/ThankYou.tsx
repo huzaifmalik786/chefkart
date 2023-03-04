@@ -18,7 +18,6 @@ type Props = {
 }
 
 const ThankYou = (props: Props) => {
-  console.log(props.data)
   return (
     <div className={Styles.thank_you_modal}>
       <div className={Styles.upper_content}>
@@ -26,11 +25,11 @@ const ThankYou = (props: Props) => {
             <Image src={props.data?.icon?.data?.attributes?.url || '/Checkmark.png'} alt={props.data?.icon?.data?.attributes?.alternativeText || "check logo"} fill />
         </div>
         <div className={Styles.content}>
-            <h2>{props.data.heading || "Thank You"}</h2>
-            <p>{props.data.subheading || "We’ll get in touch as soon as we can."}</p>
+            <h2>{props.data?.heading || "Thank You"}</h2>
+            <p>{props.data?.subheading || "We’ll get in touch as soon as we can."}</p>
         </div>
         </div>
-        <Link href={props.data.link.url || '/'} >{props.data.link.text || "Back to homepage"}</Link>
+        <Link href={props.data?.link?.url || '/'} >{props.data?.link?.text || "Back to homepage"}</Link>
 
     </div>
   )

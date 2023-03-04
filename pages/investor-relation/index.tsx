@@ -12,6 +12,7 @@ import Layout from "../../components/layouts/Layout";
 import { GetStaticProps } from "next";
 import { BlogCardType, Footer_type, Header_type, image_type, investor_type } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
+import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
 
 
 type Props = {
@@ -70,6 +71,19 @@ type Props = {
       }
     }
   }
+  how_it_works: {
+    brief: {
+      heading: string;
+      description: string;
+    }
+    steps:{
+      text: string;
+      image: image_type
+    }[]
+    download_icon: {
+      icon: image_type
+    }[]
+  },
   form_data: {
     heading: string;
       inputs: {
@@ -128,7 +142,9 @@ const index = (props: Props) => {
       <Reveal>
       <ContactForm data={props.form} form={props.form_data} />
       </Reveal>
-      
+      <Reveal>
+      <HowChefkartWorks data={props.how_it_works} />
+      </Reveal>
       <Reveal>
       <Banner data={props.last_banner} />
       </Reveal>
@@ -178,6 +194,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
         investors: investor_relation.data.attributes.our_investor,
         form: investor_relation.data.attributes.form_banner,
         form_data: investor_relation.data.attributes.contact_form,
+        how_it_works: investor_relation.data.attributes?.Chefcart_works,
+
         last_banner: {
           heading: investor_relation.data.attributes.ending_banner_heading,
           img: investor_relation.data.attributes.last_banner_img

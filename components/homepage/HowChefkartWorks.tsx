@@ -76,7 +76,7 @@ const HowChefkartWorks = (props: Props) => {
 				</div>
 			</Reveal>
 			<div className={Styles.how_right}>
-				{(props.data.steps || Steps).map((step, key) => {
+				{(props.data?.steps || Steps).map((step, key) => {
 					return (
 						<Reveal key={key}>
 							<div className={Styles.step}>

@@ -18,6 +18,7 @@ import Reveal from "../../components/Reveal";
 
 type Props = {
   header: Header_type
+  show_page: boolean;
   footer: Footer_type
   banner: {
     heading: string
@@ -96,28 +97,33 @@ type Props = {
 const index = (props: Props) => {
   return (
     <Layout title="Careers" header={props.header} footer={props.footer}>
-      <CareersHero data={props.banner} />
-      <Reveal>
-      <Culture data={props.culture}  />
-      </Reveal>
-      <Reveal>
-      <Perks data={props.perks} />
-      </Reveal>
-      <Reveal>
-      <Vacancies data={props.vacancy} />
-      </Reveal>
-      <Reveal>
-      <FeaturedArticle data={props.articles} />
-      </Reveal>
-      <Reveal>
-      <Founders data={props.founders} />
-      </Reveal>
-      <Reveal>
-      <Leadership data={props.leaders} />
-      </Reveal>
-      <Reveal>
-      <EndCarousel data={props.end_carousel}  />
-      </Reveal>
+      {
+        props.show_page &&  <div>
+        <CareersHero data={props.banner} />
+        <Reveal>
+        <Culture data={props.culture}  />
+        </Reveal>
+        <Reveal>
+        <Perks data={props.perks} />
+        </Reveal>
+        <Reveal>
+        <Vacancies data={props.vacancy} />
+        </Reveal>
+        <Reveal>
+        <FeaturedArticle data={props.articles} />
+        </Reveal>
+        <Reveal>
+        <Founders data={props.founders} />
+        </Reveal>
+        <Reveal>
+        <Leadership data={props.leaders} />
+        </Reveal>
+        <Reveal>
+        <EndCarousel data={props.end_carousel}  />
+        </Reveal>
+        </div>
+      }
+     
       <Divider />
     </Layout>
   );
@@ -143,11 +149,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     return {
       props : {
-        header: header_data.data.attributes,
-        banner: career.data.attributes.banner,
+        header: header_data.data?.attributes,
+        show_page: career.data?.attributes?.enable_page,
+        banner: career.data?.attributes?.banner,
         culture: career.data.attributes.culture,
         founders: {
-          heading: career.data.attributes.founder.heading,
+          heading: career.data.attributes?.founder?.heading,
           profile: career.data.attributes.profile
         },
         perks: career.data.attributes.Perks,

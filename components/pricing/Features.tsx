@@ -98,11 +98,11 @@ const Features = (props: Props) => {
         </div>
         <div className={Styles.icons_container}>
             {
-                (props.data.factors || icons).map((i, key)=>{
+                (props.data?.factors || icons).map((i, key)=>{
                     return (
                         <div className={Styles.icons_item} key={key}>
-                            <div className={Styles.icon}><Image src={i.image.data.attributes.url} alt={i.image.data.attributes.alternativeText} fill /></div>
-                            <span className={Styles.icon_title}>{i.text}</span>
+                            <div className={Styles.icon}><Image src={i?.image?.data?.attributes?.url} alt={i.image?.data?.attributes?.alternativeText} fill /></div>
+                            <span className={Styles.icon_title}>{i?.text}</span>
                         </div>
                     )
                 })

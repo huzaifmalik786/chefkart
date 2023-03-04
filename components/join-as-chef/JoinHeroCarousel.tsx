@@ -130,7 +130,7 @@ const JoinHeroCarousel = (props: Props) => {
           return (
             <div key={key} className={Styles.items}>
               <div className={Styles.carousel_img}>
-                <Image src={(width>450 ? img.image.data.attributes.url : img.mobile_banner_image.data.attributes.url)} alt={img.image.data.attributes.alternativeText || "food"} fill />
+                <Image src={(width>450 ? img.image?.data?.attributes?.url : img.mobile_banner_image?.data?.attributes?.url)} alt={img.image?.data?.attributes?.alternativeText || "food"} fill />
               </div>
               <div className={Styles.carousel_text}>
                 <h1>
@@ -154,7 +154,7 @@ const JoinHeroCarousel = (props: Props) => {
               (img.description).map((item, key)=>{
                 return(
                   <span key={key}>
-                    {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
+                    {item.highlight ? <span className={Styles.colored}>{item?.text} </span> : item?.text }
                   </span>
                 )
               })
@@ -163,7 +163,7 @@ const JoinHeroCarousel = (props: Props) => {
             )
           }
                 </p>
-                <button onClick={()=>setOpenModal(true)}>{img.button.button_text || "Sign up now"}</button>
+                <button onClick={()=>setOpenModal(true)}>{img?.button?.button_text || "Sign up now"}</button>
               </div>
             </div>
           );

@@ -1,9 +1,11 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from '../../styles/components/articles/article.module.scss'
 import Reveal from '../Reveal'
 import UseWindowDimensions from '../WindowSize'
 import { image_type } from '../../interfaces/interfaces'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const content = {
 	article_content:
@@ -21,10 +23,9 @@ type Props = {
     };
     social_icon: {
         heading: string;
-        icons: {
-            url: string;
-            icon: image_type
-        }[]
+       fb: image_type;
+       twitter: image_type;
+       linkedin: image_type;
 
         like: image_type
     }
@@ -85,8 +86,13 @@ const icons_array = [
 ]
 const Article = (props: Props) => {
     const {width}= UseWindowDimensions();
-    console.log(props.social_icon)
-
+    const router = useRouter();
+  const [url, setUrl] = useState('');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setUrl(window.location.href);
+    }
+  }, [router]);
     function changeFormat(d: string){
         let date = new Date(d);
         let formatter = new Intl.DateTimeFormat('en-US', {
@@ -117,30 +123,24 @@ const Article = (props: Props) => {
             <div className={Styles.social}>
                 <span>{props.social_icon.heading || "Share"}</span>
 				<div className={Styles.right}>
-                    {/* <div className={Styles.fb}>
-                        <Image src='/fb.png' alt='' fill />
-                    </div>
-                    <div className={Styles.twitter}>
-                        <Image src='/Vector (11).png' alt='' fill />
-                    </div>
-                    <div className={Styles.linkedin}>
-                        <Image src='/Vector (12).png' alt='' fill />
-                    </div>
-                    <div className={Styles.mail}>
+                    <Link href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="_blank" className={Styles.fb}>
+                        <Image src={props?.social_icon?.fb?.data?.attributes?.url || '/fb.png'} alt='' fill />
+                    </Link>
+                    <Link href={`https://twitter.com/intent/tweet?text=${url}`} target="_blank" className={Styles.twitter}>
+                        <Image src={props?.social_icon?.twitter?.data?.attributes?.url || '/Vector (11).png'} alt='' fill />
+                    </Link>
+                    <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="_blank" className={Styles.linkedin}>
+                        <Image src={props?.social_icon?.linkedin?.data?.attributes?.url || '/Vector (12).png'} alt='' fill />
+                    </Link>
+                    {/* 
+                    <Link href={} className={Styles.mail}>
                         <Image src='/Vector (13).png' alt='' fill />
-                    </div>
-                    <div className={Styles.link}>
+                    </Link>
+                    <Link href={} className={Styles.link}>
                         <Image src='/Vector (14).png' alt='' fill />
-                    </div> */}
-                    {
-                        (props.social_icon.icons || icons_array).map((item, key)=>{
-                            return(
-                                <div key={key} className={Styles.fb} style={{ backgroundImage: `url("${item.icon.data.attributes.url}")`}}>
-                                    {/* <Image src={item.icons.attributes.data.url} alt="" fill /> */}
-                                </div>
-                            )
-                        })
-                    }
+                    </Link> */}
+                    {/* </div> */}
+                    
                 </div>
             
                 <div className={Styles.left}>

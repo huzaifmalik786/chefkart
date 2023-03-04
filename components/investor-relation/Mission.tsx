@@ -40,12 +40,12 @@ const Mission = (props: Props) => {
             )
           }
               </h2>
-            <Link href={props.data?.Link?.url}>{props.data?.Link?.text || "A letter from our CEO"}</Link>
+            <Link href={props.data?.Link?.url || "#"}>{props.data?.Link?.text || "A letter from our CEO"}</Link>
         </div>
         <div className={Styles.right_content}>
             <Facts data={props.data?.Facts} bgcolor='#ECECEC' color='#2D4739' />
         </div>
-        <Link className={Styles.mobile_only_link} href={props.data?.Link?.url}>{props.data?.Link?.text || "A letter from our CEO"}</Link>
+        <Link className={Styles.mobile_only_link} href={props.data?.Link?.url || "#"}>{props.data?.Link?.text || "A letter from our CEO"}</Link>
     </div>
   )
 }

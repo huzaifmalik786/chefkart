@@ -166,7 +166,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const footer_data = await res3.json();
 
   const res2 = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/join-as-chef?populate=deep,10`);
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/chef-it?populate=deep,10`);
     const join_chef = await res2.json();
 
     // const temp_res = await fetch(

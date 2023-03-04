@@ -201,9 +201,6 @@ type Props = {
   
 };
 export default function Home(props: Props) {
-
-  console.log(props.homepage.thank_you)
-
   const {width}= UseWindowDimensions();
   return (
     <>
@@ -234,7 +231,6 @@ export default function Home(props: Props) {
           />
         </div>
         <HomePricing data={props.homepage.pricing} />
-        <HowChefkartWorks data={props.homepage.how_it_works} />
         <ReviewsSection data={props.homepage.reviews} />
         <Reveal>
         <HasleFreeHiring data={props.homepage.hiring} />
@@ -302,7 +298,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
           cards: homepage_data.data.attributes?.Pricing_card
         },
 
-        how_it_works: homepage_data.data.attributes?.Chefcart_works,
+        // how_it_works: homepage_data.data.attributes?.Chefcart_works,
 
         reviews: homepage_data.data.attributes?.testimonial_section,
         hiring: homepage_data.data.attributes?.hiring,

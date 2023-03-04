@@ -7,23 +7,25 @@ import UseWindowDimensions from "./WindowSize";
 type Props = {
   card: PriceCard;
   isWide: boolean;
+  index: number;
 };
 
 const PricingCard = (props: Props) => {
+  const even:boolean = (props.index)%2 === 0 
   const {width}= UseWindowDimensions();
   return (
     <div
       className={Styles.card_wrapper}
       style={{
         width: props.isWide ? "34.16vw" : "27vw",
-        backgroundColor: props.card.heading === "Popular" ? "#fff" : "#2d4739",
-        border: props.card.heading === "Popular" ? "1px solid #D9D9D9" : "none",
+        backgroundColor: even ? "#fff" : "#2d4739",
+        border: even ? "1px solid #D9D9D9" : "none",
       }}
     >
       <div className={Styles.heading_wrapper}>
       <div
         className={`${Styles.card_header} ${
-          props.card.heading === "Popular" && Styles.header_white
+          even && Styles.header_white
         }`}
       >
         <h4>{props.card.heading}</h4>
@@ -31,7 +33,7 @@ const PricingCard = (props: Props) => {
       </div>
       <div
         className={`${Styles.card_price} ${
-          props.card.heading === "Popular" && Styles.price_white
+          even && Styles.price_white
         }`}
       >
         <h2>
@@ -41,7 +43,7 @@ const PricingCard = (props: Props) => {
       </div>
       <div
         className={`${Styles.card_key_points} ${
-          props.card.heading === "Popular" && Styles.points_white
+          even && Styles.points_white
         }`}
         style={{
           alignSelf: props.isWide ? "center" : "start",
@@ -52,7 +54,7 @@ const PricingCard = (props: Props) => {
           return (
             <div key={index} className={Styles.point}>
               <span className={Styles.check_img}>
-                <Image src={props.card.heading === "Premium" ? '/check_gold.svg' : '/check_circle.svg'} alt="check" fill />
+                <Image src={even ? '/check_circle.svg' : '/check_gold.svg'} alt="check" fill />
               </span>
               <p>{point.feature}</p>
             </div>
@@ -63,13 +65,13 @@ const PricingCard = (props: Props) => {
 
       <div className={Styles.card_footer}>
         <button
-        className={props.card.heading === "Premium" ? Styles.colored_bg : ""}
+        className={ !even ? Styles.colored_bg : ""}
           style={{
             paddingLeft: props.isWide ? "8.75vw" : "6vw",
             paddingRight: props.isWide ? "8.75vw" : "6vw",
           }}
         >
-          {props.card.button.button_text || "Book a trial"}
+          {props.card?.button?.button_text || "Book a trial"}
         </button>
       </div>
     </div>

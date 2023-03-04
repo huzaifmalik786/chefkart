@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/pricing/pricingbanner.module.scss";
 import PricingCard from "../PricingCard";
 import { image_type, PriceCard } from "../../interfaces/interfaces";
 import Reveal from "../Reveal";
 import UseWindowDimensions from "../WindowSize";
+import Modal from "../careers/Modal";
+import ThankYou from "../Forms/ThankYou";
+import ContactForm from "../Forms/ContactForm";
 const PricingCardData: PriceCard[] = [
   {
     heading: "Premium",
@@ -53,15 +56,51 @@ type Props = {
     mobile_banner_image : image_type
   };
   cards: PriceCard[]
+  cta?: string;
+
+  form?: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+  }
+  thankYou?: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+
+  }
 };
 
 const PricingBanner = (props: Props) => {
   const { width } = UseWindowDimensions()
+  const [openModal, setOpenModal] = useState<boolean>(false)
+  const [secondModal, setSecondModal] = useState<boolean>(false)
+
+  const handlemodalClosed = (closed:boolean)=>{
+    setOpenModal(closed);
+    setSecondModal(!closed)
+  }
   return (
+    <>
+     {
+      props.thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} /></Modal>
+    }
+    {
+      props.form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} /></Modal>
+    }
+
     <div className={Styles.pricing_wrapper}>
       <div className={Styles.banner}>
         <div className={Styles.banner_img}>
-          <Image src={(width>450 ? props.data?.image?.data?.attributes?.url : props.data?.mobile_banner_image?.data.attributes?.url) || '/pricing-banner.png'} alt={props.data.image.data.attributes.alternativeText || "banner"} fill style={{objectFit: "cover"}} />
+          <Image src={(width>450 ? props?.data?.image?.data?.attributes?.url : props.data?.mobile_banner_image?.data?.attributes?.url) || '/pricing-banner.png'} alt={props.data?.image?.data?.attributes?.alternativeText || "banner"} fill style={{objectFit: "cover"}} />
         </div>
         <div className={Styles.overlay}>
           <div className={Styles.content}>
@@ -112,17 +151,24 @@ const PricingBanner = (props: Props) => {
                 
               </p>
             </div>
+            {
+              props.cta && 
+                <div className={Styles.btn}>
+                  <button onClick={()=> setOpenModal(true)}>{props?.cta || "get in touch" }</button>
+                </div>
+            }
           </div>
         </div>
       </div>
       <Reveal>
       <div className={Styles.pricing_card}>
-        {(props.cards || PricingCardData).map((card, index) => {
-          return <PricingCard card={card} key={index} isWide />;
+        {(props?.cards || PricingCardData).map((card, index) => {
+          return <PricingCard card={card} key={index} isWide index={index} />;
         })}
       </div>
       </Reveal>
     </div>
+    </>
   );
 };
 

@@ -28,7 +28,7 @@ const ContactBanner = (props: Props) => {
     <div className={Styles.contact_wrapper}>
         <div className={Styles.banner}>
           <div className={Styles.banner_img}>
-            <Image src={(width>450 ?  props.data?.banner_img?.data?.attributes?.url : props.data?.mobile_banner_image?.data?.attributes?.url) || "/Rectangle 60.png"} alt={props.data?.banner_img?.data.attributes?.alternativeText || ""} fill />
+            <Image src={(width>450 ?  props.data?.banner_img?.data?.attributes?.url : props.data?.mobile_banner_image?.data?.attributes?.url) || "/Rectangle 60.png"} alt={props.data?.banner_img?.data?.attributes?.alternativeText || ""} fill />
           </div>
             <h2>{props.data?.banner_heading || "Contact us"}</h2>
         </div>
