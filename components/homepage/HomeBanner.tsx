@@ -63,7 +63,7 @@ const HomeBanner = (props: Props) => {
   return (
     <>
     {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} /></Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} closeModal={setSecondModal}/></Modal>
     }
     {
       openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} /></Modal>
@@ -108,7 +108,9 @@ const HomeBanner = (props: Props) => {
             }
           </div>
           <div className={Styles.btn}>
-            <button onClick={()=> setOpenModal(true)} >{props.data?.button.button_text || "get in touch" }</button>
+            <a href="#">
+            <button>{props.data?.button.button_text || "get in touch" }</button>
+            </a>
           </div>
         </div>
       </div>

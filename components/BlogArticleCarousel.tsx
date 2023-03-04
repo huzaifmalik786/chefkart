@@ -268,7 +268,7 @@ const BlogArticleCarousel = (props: Props) => {
      slidesToShow = {slides <= 2? slides : 2.8}
      slidesToScroll={1}
      responsive={responsive}
-     autoplay={true}
+    //  autoplay={true}
      >
      {(props.cards || Images).map((blog, key) => {
           return (

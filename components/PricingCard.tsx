@@ -8,6 +8,7 @@ type Props = {
   card: PriceCard;
   isWide: boolean;
   index: number;
+  showspan: boolean;
 };
 
 const PricingCard = (props: Props) => {
@@ -36,6 +37,7 @@ const PricingCard = (props: Props) => {
           even && Styles.price_white
         }`}
       >
+        {props.showspan && <span className={Styles.top_span}>Starting from</span>}
         <h2>
           ₹{props.card.price} <span> /Month</span>
         </h2>
@@ -71,7 +73,7 @@ const PricingCard = (props: Props) => {
             paddingRight: props.isWide ? "8.75vw" : "6vw",
           }}
         >
-          {props.card?.button?.button_text || "Book a trial"}
+          {props?.card?.button?.button_text || "Book a trial"}
         </button>
       </div>
     </div>

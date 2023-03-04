@@ -48,7 +48,7 @@ const PricingSignUp = (props: Props) => {
           
         </h2>
 
-        <button>{props.data?.button?.button_text || "Sign up now"}</button>
+        {/* <button>{props.data?.button?.button_text || "Sign up now"}</button> */}
       </div>
     </div>
   );

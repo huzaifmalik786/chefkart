@@ -5,7 +5,7 @@ import CareersHero from "../../components/careers/CareersHero";
 import Culture from "../../components/careers/Culture";
 import EndCarousel from "../../components/careers/EndCarousel";
 import FeaturedArticle from "../../components/careers/FeaturedArticle";
-
+import NoOpenPositionBanner from "../../components/careers/NoOpenPositionBanner";
 import Founders from "../../components/careers/Founders";
 import Leadership from "../../components/careers/Leadership";
 import Perks from "../../components/careers/Perks";
@@ -98,7 +98,7 @@ const index = (props: Props) => {
   return (
     <Layout title="Careers" header={props.header} footer={props.footer}>
       {
-        props.show_page &&  <div>
+        props.show_page ?  <div>
         <CareersHero data={props.banner} />
         <Reveal>
         <Culture data={props.culture}  />
@@ -122,6 +122,8 @@ const index = (props: Props) => {
         <EndCarousel data={props.end_carousel}  />
         </Reveal>
         </div>
+        :
+        <NoOpenPositionBanner />
       }
      
       <Divider />

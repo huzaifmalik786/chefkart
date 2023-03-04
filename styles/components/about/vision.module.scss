@@ -103,6 +103,9 @@
         border-radius: 0.83vw;
         overflow: hidden;
         z-index: 1;
+        img{
+          object-fit: contain;
+        }
         @media screen and (max-width: 450px){
           width: 75.9vw;
           height: 70.56vw;

@@ -19,8 +19,9 @@
 
     .carousel_text {
       position: relative;
-      margin-top: 18.6vw;
+      margin-top: 12.6vw;
       left: 5%;
+      width: 50%;
       color: white;
       margin-bottom: 9.6vw;
       @media screen and (max-width: 450px) {
@@ -49,7 +50,7 @@
         font-size: 1.25vw;
         line-height: 1.94vw;
         font-weight: 500;
-        width: 46%;
+        width: 80%;
         @media screen and (max-width: 450px) {
           font-size: 3.89vw;
           line-height: 120%;

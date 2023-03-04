@@ -3,9 +3,11 @@ import Dropdown from './Dropdown'
 import Input from './Input'
 import Styles from '../../styles/components/forms/signup.module.scss'
 import Button from './Button'
+import Image from 'next/image'
 type Props = {
     openModal: boolean;
     setOpenModal: (open:boolean)=> void;
+    closeModal: (open:boolean)=> void;
 
     form: {
         heading: string;
@@ -34,6 +36,11 @@ const SignupForm = (props:Props) => {
 
   return (
     <div className={Styles.form_container}>
+            {/* <div className={Styles.modal_header}> */}
+                <button type="button" className={Styles.cross_icon} onClick={()=> props.closeModal(false)}>
+                    <Image src="/Icon.svg" alt="" fill />
+                </button>
+            {/* </div> */}
             <form onSubmit={handleSubmit}>
                 <div className={Styles.inputs}>
                     {
