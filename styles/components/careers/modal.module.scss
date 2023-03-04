@@ -14,7 +14,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
 
     -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	  animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -26,9 +26,7 @@
     align-items: center;
     min-height: 100%;
     height: auto;
-    padding-bottom: 4.44vw;
-
-      
+    padding-bottom: 4.44vw;      
     }
 
     .modal_header{

@@ -7,6 +7,7 @@ import GalleryVideo from './GalleryVideo';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import UseWindowDimensions from '../WindowSize';
 
 type gallery_vids = {
     attributes: {
@@ -48,28 +49,9 @@ const gallery : gallery_vids[] = [
 
 ]
 
-// const responsive = {
-//     desktop: {
-//       breakpoint: { max: 3000, min: 1024 },
-//       items: 5,
-//       slidesToSlide: 1,
-//     },
-//     tablet: {
-//       breakpoint: { max: 1024, min: 540 },
-//       items: 3,
-//       slidesToSlide: 1,
-//       partialVisibilityGutter: 160,
-//     },
-//     mobile: {
-//       breakpoint: { max: 540, min: 0 },
-//       items: 1,
-//       slidesToSlide: 1,
-//       partialVisibilityGutter: 120,
-//     },
-//   };
-
 
 const Gallery = (props: Props) => {
+  const {width}= UseWindowDimensions();
   const [slide,setslide]= useState(props.data.videos.length);
   const responsive=[
     {
@@ -92,7 +74,7 @@ const Gallery = (props: Props) => {
     }
   ]
   return (
-    <div className={Styles.gallery_container}>
+    <div className={Styles.gallery_container} style={width>450 && slide<5?{padding: "0 14vw"}:{}}>
         <h2>Gallery</h2>
         <Slider
           draggable

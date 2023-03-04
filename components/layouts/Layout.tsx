@@ -75,7 +75,7 @@ const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer,
   const [secondModal, setSecondModal] = useState<boolean>(false);
   const handlemodalClosed = (closed:boolean)=>{
     setOpenModal(closed);
-    setSecondModal(!closed)
+    setSecondModal(!closed);
   }
   return (
     <div>
@@ -91,14 +91,14 @@ const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer,
       setModalOpen: (open: boolean) => setShowModal(open),
       setSecondModal: (open:boolean)=>setOpenModal(open)}}>
       {
-        thankYou && showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou data={thankYou} /></Modal>
+        thankYou && showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou data={thankYou} closeModal={setShowModal}/></Modal>
       }
       {
-        thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={thankYou} /></Modal>
+        thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={thankYou} closeModal={setSecondModal}/></Modal>
       }
       
       {
-       sign_up_form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm form={sign_up_form} setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
+       sign_up_form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm form={sign_up_form} setOpenModal={handlemodalClosed} closeModal={setOpenModal} openModal={openModal} /></Modal>
       }
         {children}
         </ModalContext.Provider>

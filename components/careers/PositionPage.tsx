@@ -79,11 +79,11 @@ const PositionPage = (props: Props) => {
   return (
     <>
     {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.career.thank_you} /></Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.career.thank_you} closeModal={setSecondModal}/></Modal>
     }
 
     {
-      openModal && <Modal setOpenModal={setOpenModal} openModal={openModal}><JoinOurTeam form={props.career.join_form} setOpenModal={handlemodalClosed} openModal={openModal} /> </Modal>
+      openModal && <Modal setOpenModal={setOpenModal} openModal={openModal}><JoinOurTeam form={props.career.join_form} setOpenModal={handlemodalClosed} closeModal={setOpenModal} openModal={openModal} /> </Modal>
     }
     <div className={Styles.positionPage}>
       <header>

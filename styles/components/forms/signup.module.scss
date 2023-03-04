@@ -3,25 +3,34 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 3.33vw 3.88vw 3.88vw 3.88vw;
+  padding: 3.88vw;
+  padding-top: 5vw;
   gap: 2.22vw;
-
   position: relative;
   width: 37.61vw;
-  height: 28.6vw;
-
+  height: 29.6vw;
   background: #ffffff;
+  position: relative;
   @media (max-width: 450px) {
     width: 91.11vw;
     height: max-content;
     padding-top: 10vw;
   }
-
+  .cross_icon{
+    width: 1.3vw;
+    height: 1.3vw;
+    position: absolute;
+    top: 1.5vw;
+    right: 1.5vw;
+    background: transparent;
+    @media (max-width: 450px){
+      display: none;
+    }
+  }
   form{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 3.33vw;
     width: 100%;
     @media screen and (max-width: 450px) {
@@ -56,20 +65,20 @@
     }
 
     .inputs{
-        display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 1.11vw;
-width: 100%;
-@media (max-width: 450px) {
-  gap: 4.44vw;
-}
-
-.two_input {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
     gap: 1.11vw;
     width: 100%;
+    @media (max-width: 450px) {
+      gap: 4.44vw;
+    }
+
+    .two_input {
+        display: flex;
+        gap: 1.11vw;
+        width: 100%;
 
     .dropdown {
       font-family: var(--secondary_font);

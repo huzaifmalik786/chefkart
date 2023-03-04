@@ -7,6 +7,7 @@ import Button from './Button';
 import Modal from '../careers/Modal';
 import ThankYou from './ThankYou';
 import { image_type } from '../../interfaces/interfaces';
+import Image from 'next/image';
 
 type FormValues = {
     name: string;
@@ -34,6 +35,7 @@ type FormValues = {
 type Props = {
   openModal: boolean;
   setOpenModal: (open:boolean)=> void;
+  closeModal: (open:boolean) =>void
 
   form: {
     heading: string;
@@ -63,6 +65,9 @@ const JoinOurTeam = (props: Props) => {
 
     <div className={Styles.join_team_form}>
         <h2>{props.form.heading || "Join Our Team"}</h2>
+        <button type="button" className={Styles.cross_icon} onClick={()=> props.closeModal(false)}>
+            <Image src="/Icon.svg" alt="" fill />
+        </button>
 
         <form action="" onSubmit={onSubmit}>
           {

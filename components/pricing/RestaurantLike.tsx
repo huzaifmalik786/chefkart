@@ -64,7 +64,7 @@ const RestaurantLike = (props: Props) => {
           }
        
         </p>
-        <button>{props.data?.button?.button_text || "Start your trial"}</button>
+        {/* <button>{props.data?.button?.button_text || "Start your trial"}</button> */}
       </div>
       <div className={Styles.cook_img}>
         <Image src={props.data?.image?.data?.attributes?.url || "/cook-1.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "cook"} fill />

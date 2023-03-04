@@ -74,7 +74,7 @@ const ProjectFeatures = (props : Props) => {
                     })
                 }
                 </div>
-                <button className={Styles.get_started_popular} style={{backgroundColor:"#FFFFFF", color:"#2C2C2C"}}>{props.data?.button?.button_text || "Get Started"}</button>
+                {/* <button className={Styles.get_started_popular} style={{backgroundColor:"#FFFFFF", color:"#2C2C2C"}}>{props.data?.button?.button_text || "Get Started"}</button> */}
             </div>
             <div className={Styles.card} style={{backgroundColor:"#2D4739", color:"white"}}>
                 <div className={Styles.header}>
@@ -92,7 +92,7 @@ const ProjectFeatures = (props : Props) => {
                     })
                 }
                 </div>
-                <button className={Styles.get_started_popular}>{props.data?.button?.button_text || "Get Started"}</button>
+                {/* <button className={Styles.get_started_popular}>{props.data?.button?.button_text || "Get Started"}</button> */}
             </div>
             </div>
             </Reveal>
@@ -121,8 +121,8 @@ const ProjectFeatures = (props : Props) => {
                 }
                 <tr>
                     <td></td>
-                    <td ><button className={Styles.get_started_popular}>{props.data?.button?.button_text || "Get Started"}</button> </td>
-                    <td className={Styles.premium_btn}><button className={Styles.get_started_premium}>{props.data?.button?.button_text || "Get Started"}</button></td>
+                    {/* <td ><button className={Styles.get_started_popular}>{props.data?.button?.button_text || "Get Started"}</button> </td> */}
+                    {/* <td className={Styles.premium_btn}><button className={Styles.get_started_premium}>{props.data?.button?.button_text || "Get Started"}</button></td> */}
                 </tr>
             </tbody>
         </table>

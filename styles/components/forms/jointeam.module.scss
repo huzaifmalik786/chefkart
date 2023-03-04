@@ -1,6 +1,6 @@
 .join_team_form {
   width: 60.1vw;
-  height: 55.7vw;
+  height: 48.7vw;
   background: #ffffff;
   border-radius: 0.83vw;
   display: flex;
@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   padding: 3.4vw 0px 6.24vw 0px;
-
+  position: relative;
   @media (max-width: 450px) {
     height: max-content;
     width: 100vw;
@@ -39,7 +39,18 @@
       color: #292929;
     }
   }
-
+    .cross_icon{
+      width: 1.3vw;
+      height: 1.3vw;
+      position: absolute;
+      top: 1.5vw;
+      right: 1.5vw;
+      background-color: transparent;
+      
+      @media (max-width: 450px){
+        display: none;
+      }
+    }
   form{
     display: flex;
     flex-direction: column;

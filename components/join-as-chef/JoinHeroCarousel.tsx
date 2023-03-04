@@ -107,10 +107,10 @@ const JoinHeroCarousel = (props: Props) => {
   return (
     <>
     {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} /></Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} closeModal={setSecondModal}/></Modal>
     }
     {
-      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm form={props.form} setOpenModal={handlemodalClosed} openModal={openModal} /></Modal>
+      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm form={props.form} setOpenModal={handlemodalClosed} closeModal={setOpenModal} openModal={openModal} /></Modal>
     }
     <div className={Styles.carousel_wrapper}>
       <Slider

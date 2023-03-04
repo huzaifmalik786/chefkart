@@ -13,14 +13,17 @@ type Props = {
       url: string;
     }
     icon: image_type
-
-  }
+  },
+  closeModal: (open: boolean)=>void;
 }
 
 const ThankYou = (props: Props) => {
   console.log(props.data)
   return (
     <div className={Styles.thank_you_modal}>
+      <button type="button" className={Styles.cross_icon} onClick={()=> props.closeModal(false)}>
+          <Image src="/Icon.svg" alt="" fill />
+      </button>
       <div className={Styles.upper_content}>
         <div className={Styles.icon}>
             <Image src={props.data?.icon?.data?.attributes?.url || '/Checkmark.png'} alt={props.data?.icon?.data?.attributes?.alternativeText || "check logo"} fill />
