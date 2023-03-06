@@ -185,7 +185,7 @@ const NextArrow: React.FC<ArrowProps> = ({onClick}) => {
 
 const BlogArticleCarousel = (props: Props) => {
   const {width}= UseWindowDimensions();
-  const [slides, setSlides] = useState<number>(props.cards.length);
+  const [slides, setSlides] = useState<number>(props?.cards?.length);
   const responsive = [
     // {
     //   breakpoint: 1280,
@@ -233,7 +233,7 @@ const BlogArticleCarousel = (props: Props) => {
 
     //  style={{width: "70vw", }}
      >
-     {(props.cards || Images).map((blog, key) => {
+     {(props?.cards || Images).map((blog, key) => {
           return (
             <Link href={`/blogs/${blog.attributes.slug}` || "#"} key={key}>
             <div className={Styles.items} style={props.isSmall && width<=450?{width:"43.33vw",height:"51.38vw", borderRadius:"1.1vw"}:{
@@ -270,7 +270,7 @@ const BlogArticleCarousel = (props: Props) => {
      responsive={responsive}
     //  autoplay={true}
      >
-     {(props.cards || Images).map((blog, key) => {
+     {(props?.cards || Images).map((blog, key) => {
           return (
             <Link href={`/blogs/${blog.attributes.slug}` || "#"} key={key}>
             <div className={Styles.items} style={props.isSmall && width<=450?{width:"43.33vw !important",height:"51.38vw", borderRadius:"1.1vw"}:{}}>

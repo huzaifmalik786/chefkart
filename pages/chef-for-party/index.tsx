@@ -175,7 +175,6 @@ type Props = {
 
 
 const index = (props: Props) => {
-    console.log(props.contactForm)
   const {width}= UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>

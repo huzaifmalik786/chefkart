@@ -6,9 +6,36 @@
     justify-content: center;
       background: #fff9f2;
 
+      @media (max-width: 450px) {
+        height: 100vw;
+        padding: 0 4.44vw;
+      }
 
-    h1{
-        font-size: 4vw;
-        line-height: 130%;
-    }
+      div{
+        width: 60%;
+
+        @media (max-width: 450px) {
+          width: 100%;
+        }
+
+        h1{
+            font-size: 4vw;
+            line-height: 130%;
+            text-align: center;
+
+            @media (max-width: 450px) {
+              font-size: 8vw;
+            }
+        }
+        p{
+          text-align: center;
+          font-size: 2vw;
+          line-height: 150%;
+
+          @media (max-width: 450px) {
+              font-size: 4vw;
+            }
+        }
+      }
+
 }

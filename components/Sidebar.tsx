@@ -55,7 +55,6 @@ const headerItems: HeaderItems[] = [
 
 const Sidebar = (props: Props) => {
   const { width } = UseWindowDimensions()
-  console.log(props.navlinks);
   function disableBodyScroll() {
     document.body.style.overflowY = "hidden";
   }

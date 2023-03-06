@@ -37,9 +37,9 @@ const Blog = (props:Props) => {
   return (
     <Layout header={props.header} footer={props.footer}>
         <Article social_icon={props.social_icon} data={props.article} />
-        <CommentInput />
+        {/* <CommentInput />
         <CommentBox />
-        <AuthorBox />
+        <AuthorBox /> */}
         <Recomended data={props.article_carousel} />
     </Layout>
   )

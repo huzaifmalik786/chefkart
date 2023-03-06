@@ -32,6 +32,7 @@ type Props = {
     // like: image_type
 }
 
+
 const icons_array = [
     {
         url: "#",
@@ -143,11 +144,11 @@ const Article = (props: Props) => {
                     
                 </div>
             
-                <div className={Styles.left}>
+                {/* <div className={Styles.left}>
                     <div className={Styles.fb_like}>
                         <Image src={props.social_icon?.like?.data?.attributes?.url || '/Facebook like.png'} alt='' fill />
                     </div>
-                </div>
+                </div> */}
             </div>
             <article>
                 {

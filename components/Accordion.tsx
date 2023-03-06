@@ -18,7 +18,7 @@ const Accordion = (props: Props) => {
         onClick={() => {setIsActive(!isActive)} }
       >
         <div className={Styles.accordion}>
-          <p>{props.title}</p>
+          <p>{props?.title}</p>
           <div className={Styles.arrow}>
             <Image
               src="/arrow_forward_ios.svg"
@@ -30,7 +30,7 @@ const Accordion = (props: Props) => {
 
           </div>
         </div>
-        {isActive && <div className={Styles.panel}>{props.content}</div>}
+        {isActive && <div className={Styles.panel}>{props?.content}</div>}
       </div>
     );
   };

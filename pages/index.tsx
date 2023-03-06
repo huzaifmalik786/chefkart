@@ -31,8 +31,9 @@ type Props = {
         text: string;
         highlight: boolean;
       }[];
-      button: {
-        button_text: string;
+      CTA: {
+        text: string;
+        url: string;
       };
       banner_image : image_type;
       mobile_banner_image : image_type;

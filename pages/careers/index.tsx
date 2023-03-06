@@ -91,6 +91,12 @@ type Props = {
       image: image_type;
     }[]
 
+
+
+  }
+  no_open_position: {
+    heading: string;
+    description: string;
   }
 };
 
@@ -123,7 +129,7 @@ const index = (props: Props) => {
         </Reveal>
         </div>
         :
-        <NoOpenPositionBanner />
+        <NoOpenPositionBanner data={props.no_open_position} />
       }
      
       <Divider />
@@ -152,6 +158,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return {
       props : {
         header: header_data.data?.attributes,
+        no_open_position: career.data?.attributes?.no_open_position,
         show_page: career.data?.attributes?.enable_page,
         banner: career.data?.attributes?.banner,
         culture: career.data.attributes.culture,

@@ -130,7 +130,6 @@ const FoodDisplay = (props: Props) => {
     if (div.offsetWidth < div.scrollWidth) {
       setOverflowText(div.innerText.substring(div.innerText.length * (div.offsetWidth / div.scrollWidth)));
       div.innerText = div.innerText.substring(0, div.innerText.length * (div.offsetWidth / div.scrollWidth));
-      console.log("inner")
     }
   }, []);
 

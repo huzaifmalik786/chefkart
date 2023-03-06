@@ -71,14 +71,15 @@ const AllBlogs = (props: Props) => {
   const componentRef = useRef<HTMLDivElement>(null);
   const [isFirst, setFirst] = useState<boolean>(true)
 
-  // const itemsPerPage = width>= 450 ? 6 : 4
-  const itemsPerPage = 6
+  const itemsPerPage = width>= 450 ? 6 : 4
+  // const itemsPerPage = 6
 
   const [activeBtn, setActiveBtn] = useState<string>(props.buttons[0].attributes.category);
   const [currentPage, setCurrentPage] = useState<number>(1)
   const startIndex = (currentPage - 1) * itemsPerPage
   var endIndex = startIndex + itemsPerPage
-  const [displayedItems, setDisplayedItems] = useState((props.data || BlogData).slice(0, itemsPerPage))
+  const [filteredData, setFilteredData] = useState((props.data || BlogData).filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category == 'Trending')}))
+  const [displayedItems, setDisplayedItems] = useState((filteredData).slice(0, itemsPerPage))
   // const [startIndex, setStartIndex] = useState(0)
   // const [endIndex, setEndIndex] = useState(itemsPerPage)
   
@@ -98,15 +99,19 @@ const AllBlogs = (props: Props) => {
 
   useEffect(() => {
   
-    width >= 450 ? setDisplayedItems((props.data || BlogData).slice(startIndex, endIndex)) : setDisplayedItems((props.data || BlogData).slice(0, endIndex+morecards))
+    width >= 450 ? setDisplayedItems(filteredData.slice(startIndex, endIndex)) : setDisplayedItems(filteredData.slice(0, endIndex+morecards))
 
     if(componentRef && componentRef.current && width > 450){
       componentRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     },
    
-    [currentPage, startIndex, endIndex, props.data, width, morecards ]
+    [currentPage, startIndex, endIndex, width, morecards, filteredData ]
   );
+useEffect(() => {
+  setFilteredData(props.data.filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category === activeBtn)}))
+  setCurrentPage(1)
+}, [activeBtn, props.data])
 
  
 
@@ -140,12 +145,12 @@ const AllBlogs = (props: Props) => {
         {displayedItems
         .map((card, index) => {
           // console.log(card.attributes.category)
-          return checkBlogCategory(card, activeBtn) && <BlogCard card={card} key={index} />
+          return <BlogCard card={card} key={index} />
         })}
       </div>
       {
         
-        itemsPerPage <= displayedItems.length && (
+        itemsPerPage < filteredData.length && (
           <div className={Styles.pagination}>
             {Array.from({length: totalPages}, (_, i) => i + 1).map((item, index) => {
               return <button type="button" className={`${item === currentPage ? Styles.active : ''}`} onClick={()=> handlePageChange(item)} key={index}>{item}</button>;

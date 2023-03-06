@@ -16,8 +16,9 @@ type Props = {
       text: string,
       highlight: boolean
     }[],
-  button: {
-    button_text: string
+  CTA: {
+    text: string;
+    url: string;
   }
 
   banner_image : image_type
@@ -108,8 +109,8 @@ const HomeBanner = (props: Props) => {
             }
           </div>
           <div className={Styles.btn}>
-            <a href="#">
-            <button>{props.data?.button.button_text || "get in touch" }</button>
+            <a href={props.data?.CTA?.url || "#"}>
+            <button>{props.data?.CTA?.text || "get in touch" }</button>
             </a>
           </div>
         </div>

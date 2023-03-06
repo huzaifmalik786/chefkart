@@ -111,7 +111,6 @@ const Vacancies = (props: Props) => {
       setFilteredData(filteredData)
     }
   }, [departmentFilter, props.data.all_openings, locationFilter])
-  console.log(departmentFilter)
   const router = useRouter();
   return (
     <div className={Styles.vacancy_container}>
