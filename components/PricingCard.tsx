@@ -65,17 +65,20 @@ const PricingCard = (props: Props) => {
         })}
       </div>
 
-      <div className={Styles.card_footer}>
-        <button
-        className={ !even ? Styles.colored_bg : ""}
-          style={{
-            paddingLeft: props.isWide ? "8.75vw" : "6vw",
-            paddingRight: props.isWide ? "8.75vw" : "6vw",
-          }}
-        >
-          {props?.card?.button?.button_text || "Book a trial"}
-        </button>
-      </div>
+    {
+      props?.card?.button?.button_text && <div className={Styles.card_footer}>
+      <button
+      className={ !even ? Styles.colored_bg : ""}
+        style={{
+          paddingLeft: props.isWide ? "8.75vw" : "6vw",
+          paddingRight: props.isWide ? "8.75vw" : "6vw",
+        }}
+      >
+        {props?.card?.button?.button_text || "Book a trial"}
+      </button>
+    </div>
+  }
+      
     </div>
   );
 };

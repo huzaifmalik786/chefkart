@@ -127,7 +127,7 @@ const HomePricing = (props:Props) => {
               card={pricecard}
               isWide={false}
               index={key}
-              showspan={false}
+              showspan
             />
           );
         })}

@@ -70,7 +70,7 @@ const index = (props: Props) => {
       <Recomended data={props.articles} />
       </Reveal>
       <Reveal>
-      <HowChefkartWorks data={props.how_it_works} />
+      {/* <HowChefkartWorks data={props.how_it_works} /> */}
 
       </Reveal>
     </Layout>
@@ -107,7 +107,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
           heading: blogs?.data?.attributes?.articles_heading,
           carousel: blogs?.data?.attributes?.article_carousel?.blog_pages?.data
         },
-        how_it_works: blogs.data.attributes?.Chefcart_works,
+        // how_it_works: blogs.data.attributes?.Chefcart_works,
       footer: footer_data.data.attributes.Footer
       }
     }

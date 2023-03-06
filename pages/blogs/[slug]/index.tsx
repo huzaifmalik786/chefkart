@@ -13,10 +13,9 @@ type Props = {
       footer: Footer_type
       social_icon: {
         heading: string;
-        icons: {
-            url: string;
-            icon: image_type
-        }[]
+        fb: image_type;
+        twitter: image_type;
+        linkedin: image_type;
 
         like: image_type
       }
