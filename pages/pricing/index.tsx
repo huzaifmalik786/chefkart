@@ -170,6 +170,7 @@ const index = (props: Props) => {
         fontweight={width<=450?"400":""}
         descsize={width<=450?"3.89vw":""}
       />
+      <HowChefkartWorks data={props.how_it_works} />
       <ProjectFeatures data={props.features} />
       <Reveal>
       <RestaurantLike data={props.restaurant} />
@@ -181,7 +182,6 @@ const index = (props: Props) => {
       <FAQ data={props.faq} />
       </Reveal>
       <Reveal>
-      <HowChefkartWorks data={props.how_it_works} />
       <BookTrial data={props.book_trial} py={width<=450?"15vw":""}/>
       </Reveal>
     </Layout>

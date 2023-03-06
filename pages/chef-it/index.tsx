@@ -128,6 +128,7 @@ const index = (props: Props) => {
       <Metrics data={props.metrics} />
       </Reveal>
       <CookWithUs data={props.cook} />
+      <HowChefkartWorks data={props.how_it_works} />
       <div style={width<=450?{background:"#EEEFF2",padding: "10vw 3.33vw",paddingBottom:"12.78vw"}:{}}>
       <Reveal>
       <VideoComponent data={props.review} />
@@ -145,8 +146,6 @@ const index = (props: Props) => {
       </div>
       </Reveal>
       <Reveal>
-        <HowChefkartWorks data={props.how_it_works} />
-
       </Reveal>
       <Reveal>
       <FAQ data={props.faq} />
