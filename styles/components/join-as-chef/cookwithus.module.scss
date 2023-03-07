@@ -24,9 +24,10 @@
 
   .cards_wrapper {
     display: flex;
-    // align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 8.26vw;
+    column-gap: 8.26vw;
+    row-gap: 4vw;
     padding: 4vw 0;
     @media screen and (max-width: 450px) {
       flex-direction: column;

@@ -51,7 +51,7 @@ const Facts = (props: Props) => {
 			{(props.data || FactArr).map((item, index) => {
 				return (
 					<Reveal key={index}>
-						<div>
+						<div className={Styles.fact}>
 							<p className={Styles.fact_title}>{item.heading}</p>
 							<div className={Styles.description}>
 								<p className={Styles.fact_description}>{item.description}</p>
