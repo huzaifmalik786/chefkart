@@ -34,7 +34,7 @@ const ContactBanner = (props: Props) => {
         </div>
         <div className={Styles.form}>
         <Reveal>
-          <ContactForm data={props.form}  />
+          <ContactForm data={props.form}  crossButton={false}/>
         </Reveal>
 
         </div>

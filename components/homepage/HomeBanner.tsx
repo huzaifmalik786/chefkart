@@ -67,7 +67,7 @@ const HomeBanner = (props: Props) => {
       secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} closeModal={setSecondModal}/></Modal>
     }
     {
-      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} /></Modal>
+      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} closeModal={setOpenModal}/></Modal>
     }
     <div className={Styles.banner}>
       <div className={Styles.banner_img}>

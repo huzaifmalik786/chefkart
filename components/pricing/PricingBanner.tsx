@@ -99,7 +99,7 @@ const PricingBanner = (props: Props) => {
       props.thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou closeModal={setSecondModal} data={props.thankYou} /></Modal>
     }
     {
-      props.form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} /></Modal>
+      props.form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} closeModal={setOpenModal}/></Modal>
     }
 
     <div className={Styles.pricing_wrapper}>
