@@ -9,7 +9,7 @@
   @media screen and (max-width: 450px){
     flex-direction: column;
     justify-content:flex-start;
-    height: 165vw;
+    height: auto;
     background: none;
     padding: 0 4.44vw;
     margin-bottom: 11.12vw;
@@ -76,7 +76,7 @@
       color: #000000;
       @media screen and (max-width: 450px) {
         font-size: 3.89vw;
-        line-height: 9.75vw;
+        line-height: 150%;
         margin-top: 3.33vw;
         width: 91vw;
         margin-bottom: 0;
@@ -112,7 +112,7 @@
     padding-top: 2.43vw;
     @media screen and (max-width: 450px) {
       width: 100%;
-      // justify-content: center;
+      height: 93vw;
 
     }
 

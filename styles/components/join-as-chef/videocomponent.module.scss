@@ -10,9 +10,11 @@
 
   .video_text {
     place-self: center;
+    width: 38vw;
     @media screen and (max-width: 450px){
       place-self: start;
       padding: 3.33vw;
+      width: 100%;
       img{
         width: 6.67vw;
         height: 5.56vw;
@@ -22,7 +24,7 @@
     h2 {
       color: #4a4a4a;
       white-space: pre-line;
-      font-size: 3.33vw;
+      font-size: 3vw;
       line-height: 4vw;
       padding-top: 2.22vw;
       font-weight: 400;
