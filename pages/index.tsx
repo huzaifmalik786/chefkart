@@ -13,7 +13,7 @@ import Layout from "../components/layouts/Layout";
 import Hygiene from "../components/Hygiene";
 import ReviewsSection from "../components/homepage/ReviewsSection";
 import { GetStaticProps } from "next";
-import { blogType, chefType, Footer_type, Header_type, image_type, ReviewsCardType } from "../interfaces/interfaces";
+import { blogType, chefType, Footer_type, Header_type, image_type, PriceCard, ReviewsCardType } from "../interfaces/interfaces";
 import UseWindowDimensions from "../components/WindowSize";
 import Reveal from "../components/Reveal";
 
@@ -90,19 +90,7 @@ type Props = {
         heading: string;
         subheading: string;
       },
-      cards: {
-        heading: string;
-        subheading: string;
-        price: string;
-        button: {
-          button_text: string;
-        };
-  
-        features: {
-          feature: string;
-        }[]
-  
-      }[]
+      cards: PriceCard[]
     }
 
     //6th component

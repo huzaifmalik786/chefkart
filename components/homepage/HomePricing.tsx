@@ -20,7 +20,8 @@ const PricingCardData: PriceCard[] = [
     ],
     // checkImg: "/check_gold.svg",
     button: {
-      button_text: "Book a trial"
+      text: "Book a trial",
+      url: "#"
     }
     
   },
@@ -36,7 +37,8 @@ const PricingCardData: PriceCard[] = [
     ],
     // checkImg: "/check_circle.svg",
     button: {
-      button_text: "Book a trial"
+      text: "Book a trial",
+      url: "#"
     }
     
   },
@@ -48,19 +50,7 @@ type Props = {
       heading: string;
       subheading: string;
     },
-    cards: {
-      heading: string;
-      subheading: string;
-      price: string;
-      button: {
-        button_text: string;
-      };
-
-      features: {
-        feature: string;
-      }[]
-
-    }[]
+    cards: PriceCard[]
   }
 }
 const HomePricing = (props:Props) => {
