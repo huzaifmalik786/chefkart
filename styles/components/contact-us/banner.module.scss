@@ -38,15 +38,18 @@
   }
 
   .form{
-    display: flex;
+    // display: flex;
     // margin-top: -30%;
     // padding-bottom: 1vw;
     z-index: 5;
     // position: relative;
-    justify-content: center;
-    gap: 2.22vw;
+    // justify-content: center;
+    // gap: 2.22vw;
     position: absolute;
-    width: 100%;
+    width: max-content;
+    left: 0;
+    right: 0;
+    margin:auto;
     top: 16.65vw;
     @media screen and (max-width: 450px) {
       padding-top: 11.11vw;
