@@ -69,6 +69,7 @@ const BlogData: BlogCardType[] = [
 const AllBlogs = (props: Props) => {
   const {width}= UseWindowDimensions();
   const componentRef = useRef<HTMLDivElement>(null);
+  const isMounted = useRef(false);
   const [isFirst, setFirst] = useState<boolean>(true)
 
   const itemsPerPage = width>= 450 ? 6 : 4
@@ -80,6 +81,7 @@ const AllBlogs = (props: Props) => {
   var endIndex = startIndex + itemsPerPage
   const [filteredData, setFilteredData] = useState((props.data || BlogData).filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category == 'Trending')}))
   const [displayedItems, setDisplayedItems] = useState((filteredData).slice(0, itemsPerPage))
+  const [firstRender, setFirstRender] = useState(true);
   // const [startIndex, setStartIndex] = useState(0)
   // const [endIndex, setEndIndex] = useState(itemsPerPage)
   
@@ -101,9 +103,7 @@ const AllBlogs = (props: Props) => {
   
     width >= 450 ? setDisplayedItems(filteredData.slice(startIndex, endIndex)) : setDisplayedItems(filteredData.slice(0, endIndex+morecards))
 
-    if(componentRef && componentRef.current && width > 450){
-      componentRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+    
     },
    
     [currentPage, startIndex, endIndex, width, morecards, filteredData ]
@@ -111,7 +111,17 @@ const AllBlogs = (props: Props) => {
 useEffect(() => {
   setFilteredData(props.data.filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category === activeBtn)}))
   setCurrentPage(1)
-}, [activeBtn, props.data])
+  
+  if(isMounted.current && componentRef && componentRef.current && width > 450){
+    componentRef.current.scrollIntoView({ behavior: 'smooth' });
+  }else{
+    isMounted.current = true;
+  }
+
+  return()=>{
+    setFilteredData([])
+  }
+}, [activeBtn, props.data, width])
 
  
 
@@ -123,6 +133,8 @@ useEffect(() => {
     }
     return false;
   }
+
+
 
   return (
     <div className={Styles.blogs}  ref={componentRef}>

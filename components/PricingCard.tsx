@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PriceCard } from "../interfaces/interfaces";
 import Styles from "../styles/components/pricecard.module.scss";
 import UseWindowDimensions from "./WindowSize";
+import Link from "next/link";
 
 type Props = {
   card: PriceCard;
@@ -66,16 +67,17 @@ const PricingCard = (props: Props) => {
       </div>
 
     {
-      props?.card?.button?.button_text && <div className={Styles.card_footer}>
-      <button
+      props?.card?.button && <div className={Styles.card_footer}>
+      <Link
+      href={`${props?.card?.button?.url}` || "#"}
       className={ !even ? Styles.colored_bg : ""}
         style={{
           paddingLeft: props.isWide ? "8.75vw" : "6vw",
           paddingRight: props.isWide ? "8.75vw" : "6vw",
         }}
       >
-        {props?.card?.button?.button_text || "Book a trial"}
-      </button>
+        {props?.card?.button?.text || "Book a trial"}
+      </Link>
     </div>
   }
       

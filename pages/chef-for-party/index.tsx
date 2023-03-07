@@ -29,6 +29,9 @@ type Props = {
     }[]
     image : image_type
     mobile_banner_image : image_type
+    button: {
+      button_text: string;
+    }
 
   }
   contactForm: {
@@ -178,7 +181,7 @@ const index = (props: Props) => {
   const {width}= UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
-      <PricingBanner data={props.banner} cards={props.cards} cta={props.banner_CTA} form={props.contactForm} thankYou={props.thank_you} />
+      <PricingBanner data={props.banner} cards={props.cards} form={props.contactForm} thankYou={props.thank_you} />
       <Reveal>
       <Features data={props.affordable_price} />
       </Reveal>
@@ -228,7 +231,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         header: header_data.data.attributes,
 
         banner : pricing_data.data.attributes.banner,
-        banner_CTA: pricing_data.data.attributes.banner_CTA,
+        // banner_CTA: pricing_data.data.attributes.banner_CTA,
         cards: pricing_data?.data?.attributes?.pricing_cards,
         affordable_price: pricing_data.data.attributes.factors,
         hygiene: pricing_data.data.attributes.hygiene,

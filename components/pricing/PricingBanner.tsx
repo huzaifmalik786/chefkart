@@ -22,7 +22,8 @@ const PricingCardData: PriceCard[] = [
     ],
     // checkImg: "/check_gold.svg",
     button: {
-      button_text: "Book a trial",
+      text: "Book a trial",
+      url: "#"
     },
   },
   {
@@ -37,7 +38,8 @@ const PricingCardData: PriceCard[] = [
     ],
     // checkImg: "/check_circle.svg",
     button: {
-      button_text: "Book a trial",
+      text: "Book a trial",
+      url: "#"
     },
   },
 ];
@@ -54,9 +56,12 @@ type Props = {
     }[];
     image: image_type;
     mobile_banner_image: image_type;
+    button: {
+      button_text: string;
+    }
   };
   cards: PriceCard[]
-  cta?: string;
+  // cta?: string;
 
   form?: {
     heading: string;
@@ -164,12 +169,9 @@ const PricingBanner = (props: Props) => {
                 )}
               </p>
             </div>
-            {
-              props.cta && 
                 <div className={Styles.btn}>
-                  <button onClick={()=> setOpenModal(true)}>{props?.cta || "get in touch" }</button>
-                </div>
-            }
+                  <button onClick={()=> setOpenModal(true)}>{props?.data?.button?.button_text || "get in touch" }</button>
+            </div>
           </div>
         </div>
       </div>

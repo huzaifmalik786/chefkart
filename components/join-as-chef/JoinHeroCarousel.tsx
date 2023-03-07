@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import UseWindowDimensions from "../WindowSize";
+import ContactForm from "../Forms/ContactForm";
 
 type Props = {
   data: {
@@ -106,11 +107,11 @@ const JoinHeroCarousel = (props: Props) => {
 
   return (
     <>
-    {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.thankYou} closeModal={setSecondModal}/></Modal>
+     {
+      props.thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou closeModal={setSecondModal} data={props.thankYou} /></Modal>
     }
     {
-      openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><SignupForm form={props.form} setOpenModal={handlemodalClosed} closeModal={setOpenModal} openModal={openModal} /></Modal>
+      props.form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} /></Modal>
     }
     <div className={Styles.carousel_wrapper}>
       <Slider

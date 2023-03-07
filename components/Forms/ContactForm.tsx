@@ -63,12 +63,12 @@ const ContactForm = (props: Props) => {
   return (
     <>
     <div className={Styles.contact_form}>
-      <h2>{props.data.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
+      <h2>{props.data?.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
 
       <form onSubmit={onSubmit}>
 
         {
-          props.data.inputs.map((item, key)=>{
+          props.data?.inputs?.map((item, key)=>{
             return(
         item.type !== "textarea" ? <Input key={key} placeholder={item.placeholder || "Name"} type={item.type || "text"} name={item.name || "name"} /> : <TextArea key={key} placeholder={item.placeholder || "Message"} name={item.name || "message"} row={4}/>
 
@@ -88,7 +88,7 @@ const ContactForm = (props: Props) => {
 
         {/* {errors.message && <p>Please enter a message</p>} */}
 
-        <Button text={props.data.submit_button || "Submit"} />
+        <Button text={props.data?.submit_button || "Submit"} />
       </form>
 
       

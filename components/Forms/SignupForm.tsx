@@ -44,7 +44,7 @@ const SignupForm = (props:Props) => {
             <form onSubmit={handleSubmit}>
                 <div className={Styles.inputs}>
                     {
-                        props.form.inputs.map((item, key)=>{
+                        props.form?.inputs.map((item, key)=>{
                             return(
                                item.name !== "mobile" ? <Input key={key} placeholder={item.placeholder || "Name"} type={item.type || "text"} name={item.name || "name"} /> : (
                                 <div className={Styles.two_input}>
@@ -70,11 +70,11 @@ const SignupForm = (props:Props) => {
                     </div> */}
 
                     <div className={Styles.checbox_container}>
-                        <input type="checkbox" name="" id="checkbox" /> {props.form.terms_condition_check || "I agree to Chefkart’s terms of service & Privacy Policy"}
+                        <input type="checkbox" name="" id="checkbox" /> {props.form?.terms_condition_check || "I agree to Chefkart’s terms of service & Privacy Policy"}
                     </div>
                 </div>
 
-                <Button bgcolor="#E5871C" text={props.form.submit_button || "Submit"} />
+                <Button bgcolor="#E5871C" text={props.form?.submit_button || "Submit"} />
             </form>
         </div>
   )

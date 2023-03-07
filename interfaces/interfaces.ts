@@ -7,7 +7,8 @@ export interface PriceCard {
   }[];
   // checkImg: string;
   button: {
-    button_text: string
+    text: string;
+    url: string;
   }
 }
 

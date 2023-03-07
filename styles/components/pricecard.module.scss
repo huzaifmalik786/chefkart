@@ -171,12 +171,17 @@
   .card_footer {
     align-self: center;
 
-    button {
+    a {
       font-weight: 700;
       font-size: 1.38vw;
       line-height: 1.66vw;
       padding-top: 1vw;
       padding-bottom: 1vw;
+      cursor: pointer;
+      border: none;
+      border-radius: 0.55vw;
+      background-color: #ff961f;
+      color: white;
       @media screen and (max-width: 450px) {
         border-radius: 2.22vw;
         padding: 3.33vw 5.56vw;

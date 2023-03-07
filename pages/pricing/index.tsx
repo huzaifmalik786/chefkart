@@ -28,7 +28,10 @@ type Props = {
       highlight: boolean
     }[]
     image : image_type
-    mobile_banner_image : image_type
+    mobile_banner_image : image_type;
+    button: {
+      button_text: string;
+    }
 
   }
 
