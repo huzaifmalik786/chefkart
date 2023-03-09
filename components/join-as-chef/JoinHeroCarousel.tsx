@@ -53,38 +53,38 @@ type Props = {
   }
 };
 
-const Images = [
-{
-  image: {
-    data: {
-      attributes: {
-        url: '/join-carousel-1.png'
-      }
-    }
-  }
-}
-];
+// const Images = [
+// {
+//   image: {
+//     data: {
+//       attributes: {
+//         url: '/join-carousel-1.png'
+//       }
+//     }
+//   }
+// }
+// ];
 
-const CustomDot = ({ onClick, ...rest }: any) => {
-  const {
-    onMove,
-    index,
-    active,
-    carouselState: { currentSlide, deviceType },
-  } = rest;
-  const carouselItems = [1, 2, 3, 4, 5];
-  // onMove means if dragging or swiping in progress.
-  // active is provided by this lib for checking if the item is active or not.
-  return (
-    <button
-      className={active ? Styles.active : Styles.inactive}
-      onClick={() => onClick()}
-    >
-      {/* {React.Children.toArray(carouselItems)[index]} */}
-      <p />
-    </button>
-  );
-};
+// const CustomDot = ({ onClick, ...rest }: any) => {
+//   const {
+//     onMove,
+//     index,
+//     active,
+//     carouselState: { currentSlide, deviceType },
+//   } = rest;
+//   const carouselItems = [1, 2, 3, 4, 5];
+//   // onMove means if dragging or swiping in progress.
+//   // active is provided by this lib for checking if the item is active or not.
+//   return (
+//     <button
+//       className={active ? Styles.active : Styles.inactive}
+//       onClick={() => onClick()}
+//     >
+//       {/* {React.Children.toArray(carouselItems)[index]} */}
+//       <p />
+//     </button>
+//   );
+// };
 
 const JoinHeroCarousel = (props: Props) => {
   const { width } = UseWindowDimensions()
@@ -127,11 +127,13 @@ const JoinHeroCarousel = (props: Props) => {
            dotsClass={`slick-dots ${Styles.customdots}`}
            pauseOnHover={false}
       >
-      {(props.data || Images).map((img, key) => {
+      {(props.data).map((img, key) => {
           return (
             <div key={key} className={Styles.items}>
               <div className={Styles.carousel_img}>
-                <Image src={(width>450 ? img.image?.data?.attributes?.url : img.mobile_banner_image?.data?.attributes?.url)} alt={img.image?.data?.attributes?.alternativeText || "food"} fill />
+                <Image className={Styles.mobile} src={img.mobile_banner_image?.data?.attributes?.url} alt={img.image?.data?.attributes?.alternativeText || "food"} fill />
+
+                <Image className={Styles.desktop} src={img.image?.data?.attributes?.url} alt={img.image?.data?.attributes?.alternativeText || "food"} fill />
               </div>
               <div className={Styles.carousel_text}>
                 <h1>

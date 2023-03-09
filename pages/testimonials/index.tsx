@@ -7,7 +7,7 @@ import OurWord from "../../components/testimonials/OurWord";
 import UserReviews from "../../components/testimonials/UserReviews";
 import { Footer_type, Header_type, image_type, ReviewsCardType } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
-import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
+// import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
 type Props = {
   header: Header_type
   footer: Footer_type
@@ -21,19 +21,19 @@ type Props = {
       }
     }
   }
-  how_it_works: {
-    brief: {
-      heading: string;
-      description: string;
-    }
-    steps:{
-      text: string;
-      image: image_type
-    }[]
-    download_icon: {
-      icon: image_type
-    }[]
-  },
+  // how_it_works: {
+  //   brief: {
+  //     heading: string;
+  //     description: string;
+  //   }
+  //   steps:{
+  //     text: string;
+  //     image: image_type
+  //   }[]
+  //   download_icon: {
+  //     icon: image_type
+  //   }[]
+  // },
   section_heading: string;
   cards: {
     review: string;
@@ -54,9 +54,9 @@ const index = (props: Props) => {
       <Reveal>
       <UserReviews data={props.reviews} />
       </Reveal>
-      <Reveal>
+      {/* <Reveal>
           <HowChefkartWorks data={props.how_it_works} />
-      </Reveal>
+      </Reveal> */}
       <Divider />
     </Layout>
   );
@@ -83,7 +83,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         banner : testimonial_data.data.attributes.banner,
         section_heading: testimonial_data.data.attributes.section_heading,
         cards: testimonial_data.data.attributes.testimonials_cards,
-      how_it_works: testimonial_data.data.attributes?.Chefcart_works,
+      // how_it_works: testimonial_data.data.attributes?.Chefcart_works,
 
         reviews: testimonial_data.data.attributes.video_review,
       footer: footer_data.data.attributes.Footer

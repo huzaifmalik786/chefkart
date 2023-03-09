@@ -57,10 +57,10 @@ const Hero = (props: Props) => {
         </div>
         <div className={Styles.images_section}>
             <div className={Styles.rightmost}>
-                <Image src={props.data?.image_back?.data?.attributes?.url || '/Rectangle 190.png'} alt="food" fill />
+                <Image src={props.data?.image_back?.data?.attributes?.url} alt="food" fill />
                 <div className={Styles.left_image_bg}>
                     <div className={Styles.left_image}>
-                        <Image src={props.data?.image_front?.data?.attributes?.url || '/DSCF8347 copy.png'} alt="chef" fill />
+                        <Image src={props.data?.image_front?.data?.attributes?.url} alt="chef" fill />
                     </div>
                 </div>
 

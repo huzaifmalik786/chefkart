@@ -117,7 +117,7 @@ const Article = (props: Props) => {
         </header>
 
         <div className={Styles.article_image}>
-            <Image src={props.data?.image?.data?.attributes?.url || '/Rectangle 153.png'} alt={props.data?.image?.data?.attributes?.alternativeText || 'no'} fill />
+            <Image src={props.data?.image?.data?.attributes?.url} alt={props.data?.image?.data?.attributes?.alternativeText || 'no'} fill />
         </div>
 
         <div className={Styles.main}>

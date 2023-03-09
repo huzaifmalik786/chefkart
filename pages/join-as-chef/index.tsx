@@ -12,7 +12,7 @@ import { GetStaticProps } from "next";
 import { Footer_type, Header_type, image_type, QUESTIONS } from "../../interfaces/interfaces";
 import UseWindowDimensions from "../../components/WindowSize";
 import Reveal from "../../components/Reveal";
-import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
+// import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
 
 type Props = {
   header: Header_type
@@ -85,19 +85,19 @@ type Props = {
     heading : string;
     Question_answer: QUESTIONS[]
   }
-  how_it_works: {
-    brief: {
-      heading: string;
-      description: string;
-    }
-    steps:{
-      text: string;
-      image: image_type
-    }[]
-    download_icon: {
-      icon: image_type
-    }[]
-  },
+  // how_it_works: {
+  //   brief: {
+  //     heading: string;
+  //     description: string;
+  //   }
+  //   steps:{
+  //     text: string;
+  //     image: image_type
+  //   }[]
+  //   download_icon: {
+  //     icon: image_type
+  //   }[]
+  // },
   form: {
     heading: string;
       inputs: {
@@ -144,10 +144,9 @@ const index = (props: Props) => {
       <SimplifyWay data={props.join_us} />
       </div>
       </Reveal>
-      <Reveal>
+      {/* <Reveal>
         <HowChefkartWorks data={props.how_it_works} />
-
-      </Reveal>
+      </Reveal> */}
       <Reveal>
       <FAQ data={props.faq} />
       </Reveal>
@@ -190,7 +189,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
           description: join_chef.data.attributes.description
         },
         faq: join_chef.data.attributes.FAQ,
-        how_it_works: join_chef.data.attributes?.Chefcart_works,
+        // how_it_works: join_chef.data.attributes?.Chefcart_works,
       footer: footer_data.data.attributes.Footer,
       thank_you: join_chef.data.attributes.thank_you_modal
       }

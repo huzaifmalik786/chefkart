@@ -12,7 +12,7 @@ import { GetStaticProps } from 'next'
 import { Footer_type, Header_type, image_type, ProfileCardType } from '../../interfaces/interfaces'
 import UseWindowDimensions from '../../components/WindowSize'
 import Reveal from '../../components/Reveal'
-import HowChefkartWorks from '../../components/homepage/HowChefkartWorks'
+// import HowChefkartWorks from '../../components/homepage/HowChefkartWorks'
 
 type Props = {
   header: Header_type;
@@ -92,19 +92,19 @@ form: {
       }[]
       submit_button: string;
 }
-how_it_works: {
-  brief: {
-    heading: string;
-    description: string;
-  }
-  steps:{
-    text: string;
-    image: image_type
-  }[]
-  download_icon: {
-    icon: image_type
-  }[]
-},
+// how_it_works: {
+//   brief: {
+//     heading: string;
+//     description: string;
+//   }
+//   steps:{
+//     text: string;
+//     image: image_type
+//   }[]
+//   download_icon: {
+//     icon: image_type
+//   }[]
+// },
   social: {
     heading: string;
     icons: {
@@ -143,9 +143,9 @@ const index = (props: Props) => {
         <Reveal>
         <ContactForm data={props.form_image} form={props.form} /> 
         </Reveal>
-        <Reveal>
+        {/* <Reveal>
           <HowChefkartWorks data={props.how_it_works} />
-      </Reveal>
+      </Reveal> */}
         <Reveal>
         <Social data={props.social} />
       </Reveal>
@@ -197,7 +197,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       },
       form_image: about_data.data?.attributes?.form_image?.data?.attributes,
       form: about_data.data?.attributes?.contact_form,
-      how_it_works: about_data.data.attributes?.Chefcart_works,
+      // how_it_works: about_data.data.attributes?.Chefcart_works,
 
       social: {
         heading: about_data.data?.attributes?.social_heading,

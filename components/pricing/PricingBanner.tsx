@@ -106,12 +106,15 @@ const PricingBanner = (props: Props) => {
       <div className={Styles.banner}>
         <div className={Styles.banner_img}>
           <Image
-            src={
-              (width > 450
-                ? props.data?.image?.data?.attributes?.url
-                : props.data?.mobile_banner_image?.data?.attributes?.url) ||
-              "/pricing-banner.png"
-            }
+            className={Styles.desktop}
+            src={props.data?.image?.data?.attributes?.url}
+            alt={props.data?.image?.data?.attributes?.alternativeText || "banner"}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+           <Image
+            className={Styles.mobile}
+            src={props.data?.mobile_banner_image?.data?.attributes?.url}
             alt={props.data?.image?.data?.attributes?.alternativeText || "banner"}
             fill
             style={{ objectFit: "cover" }}

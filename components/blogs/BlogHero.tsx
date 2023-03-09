@@ -149,7 +149,7 @@ const items = props?.data?.slider.map((item, key)=>{
       <div className={Styles.video_container}>
         <video
           ref={videoRef}
-          src={props.data?.video?.data?.attributes?.url || 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}
+          src={props.data?.video?.data?.attributes?.url}
           loop
           className={Styles.video}
         />

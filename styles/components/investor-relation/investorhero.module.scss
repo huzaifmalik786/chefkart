@@ -2,7 +2,17 @@
   position: relative;
   width: 100vw;
   height: 34.375vw;
-
+  .mobile{
+    display: none;
+  }
+  @media (max-width: 450px){
+    .mobile{
+      display: flex;
+    }
+    .desktop{
+      display: none;
+    }
+  }
   img{
 
     @media (max-width: 450px) {

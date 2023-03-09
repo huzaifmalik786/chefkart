@@ -7,7 +7,7 @@ import Recomended from "../../components/blogs/Recomended";
 import Layout from "../../components/layouts/Layout";
 import { BlogCardType, blogType, Footer_type, Header_type, image_type } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
-import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
+// import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
 
 type Props = {
   header: Header_type
@@ -44,19 +44,19 @@ type Props = {
     heading: string;
     carousel: blogType[]
   }
-  how_it_works: {
-    brief: {
-      heading: string;
-      description: string;
-    }
-    steps:{
-      text: string;
-      image: image_type
-    }[]
-    download_icon: {
-      icon: image_type
-    }[]
-  },
+  // how_it_works: {
+  //   brief: {
+  //     heading: string;
+  //     description: string;
+  //   }
+  //   steps:{
+  //     text: string;
+  //     image: image_type
+  //   }[]
+  //   download_icon: {
+  //     icon: image_type
+  //   }[]
+  // },
 };
 
 const index = (props: Props) => {

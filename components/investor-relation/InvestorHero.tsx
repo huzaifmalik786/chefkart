@@ -20,7 +20,8 @@ const InvestorHero = (props: Props) => {
   const { width } = UseWindowDimensions()
   return (
     <div className={Styles.hero_wrapper}>
-      <Image src={(width > 450 ? props.data?.image?.data?.attributes?.url : props.data?.mobile_banner_image?.data?.attributes?.url) || "/investor_hero.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "investor-hero"} fill />
+      <Image className={Styles.desktop} src={props.data?.image?.data?.attributes?.url} alt={props.data?.image?.data?.attributes?.alternativeText || "investor-hero"} fill />
+      <Image className={Styles.mobile} src={props.data?.mobile_banner_image?.data?.attributes?.url} alt={props.data?.image?.data?.attributes?.alternativeText || "investor-hero"} fill />
       <div className={Styles.hero_heading}>
         <h3>
         {

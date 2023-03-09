@@ -91,7 +91,7 @@ const CareersHero = (props: Props) => {
         {
           props.data.images.data && props.data.images.data[0]  && <div className={Styles.img1}>
           <Image
-            src={props.data.images.data[0].attributes.url || "/career-hero-1.png"}
+            src={props.data.images.data[0].attributes.url}
             alt="img"
             // height={489}
             // width={326}
@@ -102,7 +102,7 @@ const CareersHero = (props: Props) => {
         {
           props.data.images.data && props.data.images.data[1] && <div className={Styles.img2}>
           <Image
-            src={props.data.images.data[1].attributes.url ||"/career-hero-2.png"}
+            src={props.data.images.data[1].attributes.url}
             alt="img"
             // height={366}
             // width={244}
@@ -113,7 +113,7 @@ const CareersHero = (props: Props) => {
         {
            props.data.images.data  && props.data.images.data[2] && <div className={Styles.img3}>
            <Image
-             src={props.data.images.data[2].attributes.url || "/career-hero-3.png"}
+             src={props.data.images.data[2].attributes.url}
              alt="img"
              // height={366}
              // width={158}

@@ -7,7 +7,7 @@ import HasleFreeHiring from "../components/homepage/HasleFreeHiring";
 import HomeBanner from "../components/homepage/HomeBanner";
 import HomeBlogs from "../components/homepage/HomeBlogs";
 import HomePricing from "../components/homepage/HomePricing";
-import HowChefkartWorks from "../components/homepage/HowChefkartWorks";
+// import HowChefkartWorks from "../components/homepage/HowChefkartWorks";
 import JoinAsChef from "../components/homepage/JoinAsChef";
 import Layout from "../components/layouts/Layout";
 import Hygiene from "../components/Hygiene";
@@ -94,19 +94,19 @@ type Props = {
     }
 
     //6th component
-    how_it_works: {
-      brief: {
-        heading: string;
-        description: string;
-      }
-      steps:{
-        text: string;
-        image: image_type
-      }[]
-      download_icon: {
-        icon: image_type
-      }[]
-    },
+    // how_it_works: {
+    //   brief: {
+    //     heading: string;
+    //     description: string;
+    //   }
+    //   steps:{
+    //     text: string;
+    //     image: image_type
+    //   }[]
+    //   download_icon: {
+    //     icon: image_type
+    //   }[]
+    // },
 
     //7th component
     reviews: {

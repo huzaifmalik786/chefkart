@@ -9,8 +9,17 @@
       position: absolute;
       width: 100vw;
       height: 46.5vw;
+      .mobile{
+        display: none;
+      }
       @media screen and (max-width: 450px){
         height: 111.11vw;
+        .desktop{
+          display: none;
+        }
+        .mobile{
+          display: flex;
+        }
         img{
           object-fit: cover;
         }
