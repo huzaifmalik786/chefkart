@@ -170,22 +170,26 @@
 
   .card_footer {
     align-self: center;
+    width: 100%;
 
     a {
       font-weight: 700;
       font-size: 1.38vw;
       line-height: 1.66vw;
-      padding-top: 1vw;
-      padding-bottom: 1vw;
+      padding: 1vw;
       cursor: pointer;
       border: none;
       border-radius: 0.55vw;
       background-color: #ff961f;
       color: white;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
       @media screen and (max-width: 450px) {
         border-radius: 2.22vw;
         padding: 3.33vw 5.56vw;
-        width: 82.2vw;
+        // width: 82.2vw;
         font-size: 3.89vw;
         line-height: 5vw;
       }

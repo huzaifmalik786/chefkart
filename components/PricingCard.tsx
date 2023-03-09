@@ -13,7 +13,7 @@ type Props = {
 };
 
 const PricingCard = (props: Props) => {
-  const even:boolean = (props.index)%2 === 0 
+  const even:boolean = (props.index)%2 === 0
   const {width}= UseWindowDimensions();
   return (
     <div
@@ -72,8 +72,8 @@ const PricingCard = (props: Props) => {
       href={`${props?.card?.button?.url}` || "#"}
       className={ !even ? Styles.colored_bg : ""}
         style={{
-          paddingLeft: props.isWide ? "8.75vw" : "6vw",
-          paddingRight: props.isWide ? "8.75vw" : "6vw",
+          // paddingLeft: props.isWide ? "8.75vw" : "6vw",
+          // paddingRight: props.isWide ? "8.75vw" : "6vw",
         }}
       >
         {props?.card?.button?.text || "Book a trial"}

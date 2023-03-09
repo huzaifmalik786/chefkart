@@ -153,13 +153,32 @@ type Props = {
       }
     }
   }
+  contactForm: {
+    heading: string;
+      inputs: {
+        placeholder: string;
+        name: string;
+        type: string;
+      }[]
+      submit_button: string;
+  }
+  thank_you: {
+    heading: string;
+    subheading: string;
+    link: {
+      text: string;
+      url: string;
+    }
+    icon: image_type
+
+  }
 }
 
 const index = (props: Props) => {
   const {width}= UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
-      <PricingBanner data={props.banner} cards={props.cards} />
+      <PricingBanner data={props.banner} cards={props.cards} form={props.contactForm} thankYou={props.thank_you}  />
       <Reveal>
       <Features data={props.affordable_price} />
       </Reveal>
@@ -218,6 +237,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
         faq: pricing_data.data.attributes.FAQs,
         how_it_works: pricing_data.data.attributes?.Chefcart_works,
         book_trial: pricing_data.data.attributes.ending_banner,
+        contactForm: pricing_data.data.attributes.form,
+
+        thank_you: pricing_data.data.attributes.thank_you_modal,
         footer: footer_data.data.attributes.Footer
 
       }
