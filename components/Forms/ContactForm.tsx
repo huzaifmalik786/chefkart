@@ -5,6 +5,7 @@ import Button from "./Button";
 import Input from "./Input";
 import { ModalContext} from "../ModalContext";
 import TextArea from "./TextArea";
+import Image from "next/image";
 
 
 type FormValues = {
@@ -33,6 +34,8 @@ type FormValues = {
 
     openModal_two?: boolean;
     setOpenModal_two ?: (open:boolean)=> void;
+    closeModal ?: (open:boolean)=>void;
+    crossButton? : boolean;
     data: {
       heading: string;
       inputs: {
@@ -50,19 +53,32 @@ const ContactForm = (props: Props) => {
 
   const onSubmit = (data: any) => {
     data.preventDefault()
-    if(modalContext.setModalOpen){
+    if(modalContext.setModalOpen && props.crossButton===false){
       modalContext.setModalOpen(true);
     }
     if(props.setOpenModal_two){
       props.setOpenModal_two(false)
-
     }
     // send form data to server or perform other actions
   };
+  const handleClick= (data: any) =>{
+    data.preventDefault();
+    if(props.closeModal){
+      props.closeModal(false);
+    }
+  }
 
   return (
     <>
     <div className={Styles.contact_form}>
+      {props.crossButton===false?(
+       <></>
+      ):(
+        <button type="button" className={Styles.cross_icon} onClick={handleClick}>
+        <Image src="/Icon.svg" alt="" fill />
+    </button>
+      )}
+      
       <h2>{props.data?.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
 
       <form onSubmit={onSubmit}>
