@@ -158,7 +158,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return {
       props : {
         header: header_data.data?.attributes,
-        // no_open_position: career?.data?.attributes?.no_open_position,
+        no_open_position: career?.data?.attributes?.no_open_position,
         show_page: career.data?.attributes?.enable_page,
         banner: career.data?.attributes?.banner,
         culture: career.data.attributes.culture,

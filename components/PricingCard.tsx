@@ -30,8 +30,8 @@ const PricingCard = (props: Props) => {
           even && Styles.header_white
         }`}
       >
-        <h4>{props.card.heading}</h4>
-        <p>{props.card.subheading}</p>
+        <h4>{props.card?.heading}</h4>
+        <p>{props.card?.subheading}</p>
       </div>
       <div
         className={`${Styles.card_price} ${

@@ -17,12 +17,12 @@ const Social = (props: Props) => {
   const {width}= UseWindowDimensions()
   return (
     <div className={Styles.about_us_social}>
-        <h2>{props.data.heading || "Lets get Social"}</h2>
+        <h2>{props.data?.heading || "Lets get Social"}</h2>
         <div className={Styles.icon_container}>
           {
-            (props.data.icons).map((item, key)=>{
+            (props.data?.icons).map((item, key)=>{
               return(
-                <SocialIcon key={key} image={item.icon.data.attributes.url || '/Vector.svg'} width={width<=450?"5.67vw":"1.82vw"} height={width<=450?"5.67vw":"1.82vw"} />
+                <SocialIcon key={key} image={item.icon?.data?.attributes?.url || '/Vector.svg'} width={width<=450?"5.67vw":"1.82vw"} height={width<=450?"5.67vw":"1.82vw"} />
 
               )
             })
