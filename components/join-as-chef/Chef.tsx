@@ -42,7 +42,7 @@ const Chef = (props: Props) => {
         <p>
           <Link href={props.data?.apply_link?.url || "#"}>{props.data?.apply_link?.text || "Apply here"}</Link> {props.data?.link_text || "to join our network of private chefs."}
         </p>
-        <button onClick={()=>handleClick()}>{props.data?.button.button_text || "Sign up now"}</button>
+        <button onClick={()=>handleClick()}>{props.data?.button?.button_text || "Sign up now"}</button>
       </div>
     </div>
   );
