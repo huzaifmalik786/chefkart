@@ -25,7 +25,9 @@ type Props = {
       highlight: string;
     }[];
 
-    button: string;
+    button: {
+      button_text: string;
+    };
     image_front: {
       data: {
         attributes: {
@@ -181,7 +183,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         badge: about_data.data?.attributes?.badge,
         heading: about_data?.data?.attributes?.heading,
         description: about_data?.data?.attributes?.description,
-        button: about_data.data?.attributes?.button?.button_text,
+        button: about_data.data?.attributes?.button,
         image_front: about_data.data?.attributes?.image_front,
         image_back: about_data.data?.attributes?.image_back,
       },

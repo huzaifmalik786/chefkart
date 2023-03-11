@@ -11,7 +11,9 @@ type Props = {
             highlight: string;
         }[]
         
-        button: string;
+        button: {
+            button_text: string;
+        };
         image_front: {
             data: {
                 attributes: {
@@ -52,7 +54,7 @@ const Hero = (props: Props) => {
           }
         </h2>
                 <p>{props.data?.description || "The best private chefs, cooking in your kitchen."}</p>
-                <button>{props.data?.button || "ReQUEST A CALLBACK"}</button>
+                <button>{props.data?.button?.button_text || "ReQUEST A CALLBACK"}</button>
             </div>
         </div>
         <div className={Styles.images_section}>
