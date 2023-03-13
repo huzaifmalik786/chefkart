@@ -71,9 +71,11 @@ type Props = {
   }
   founders: {
     heading: {
-      text: string;
-      highlight: boolean;
-    }[]
+      heading: {
+        text: string;
+        highlight: boolean;
+      }[]
+    }
   
     profile: ProfileCardType[]
 
@@ -163,7 +165,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         banner: career.data?.attributes?.banner,
         culture: career.data.attributes.culture,
         founders: {
-          heading: career.data.attributes?.founder?.heading,
+          heading: career.data.attributes?.founder,
           profile: career.data.attributes.profile
         },
         perks: career.data.attributes.Perks,

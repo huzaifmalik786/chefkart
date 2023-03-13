@@ -40,7 +40,7 @@ const PricingCard = (props: Props) => {
       >
         {props.showspan && <span className={Styles.top_span}>Starting from</span>}
         <h2>
-          ₹{props.card.price} <span> /Month</span>
+          ₹{props.card?.price} <span> {props.card?.duration}</span>
         </h2>
       </div>
       </div>

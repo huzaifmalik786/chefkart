@@ -2,6 +2,7 @@ export interface PriceCard {
   heading: string;
   subheading: string;
   price: string;
+  duration: string;
   features: {
     feature: string
   }[];

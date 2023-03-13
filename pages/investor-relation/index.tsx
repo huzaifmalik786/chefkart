@@ -53,7 +53,9 @@ type Props = {
   }
   blogs: {
     heading: string;
-    blogs_array: BlogCardType[]
+    blogs_array: {
+      data: BlogCardType[];
+    } 
   }
   investors: investor_type[]
   form: {
@@ -188,7 +190,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         },
         blogs: {
           heading: investor_relation.data.attributes.blog_heading,
-          blogs_array: investor_relation.data.attributes.blog_pages.data
+          blogs_array: investor_relation.data.attributes.blog_pages
         },
 
         investors: investor_relation.data.attributes.our_investor,

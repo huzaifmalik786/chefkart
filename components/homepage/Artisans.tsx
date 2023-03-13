@@ -12,7 +12,9 @@ import Slider from "react-slick";
 
 type Props={
   data: {
-    heading: string;
+    heading: {
+      heading: string;
+    };
     chef_array: chefType[]
   }
 }
@@ -137,7 +139,7 @@ const Artisans = (props: Props) => {
 
   return (
     <div className={Styles.chef_container}>
-      <h3>{props.data.heading || "Meet the Food Artisans"}</h3>
+      <h3>{props.data.heading?.heading || "Meet the Food Artisans"}</h3>
 
       <Slider
         infinite={true}

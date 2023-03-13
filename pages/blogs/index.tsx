@@ -101,7 +101,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       props : {
         header: header_data.data?.attributes,
         banner: blogs?.data?.attributes?.banner,
-        blogs: blogs?.data?.attributes?.blog_pages.data,
+        blogs: blogs?.data?.attributes?.blog_pages,
         filter_buttons: button.data,
         articles:{
           heading: blogs?.data?.attributes?.articles_heading,

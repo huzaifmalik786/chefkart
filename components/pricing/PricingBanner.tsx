@@ -13,6 +13,8 @@ const PricingCardData: PriceCard[] = [
     heading: "Premium",
     subheading: `Suitable for the foodies, with a huge apetite for various flavours`,
     price: "4500",
+    duration: '/Month',
+
     features: [
       { feature: "Certified Home chefs" },
       { feature: "Monthly Starchef Visits" },
@@ -30,6 +32,8 @@ const PricingCardData: PriceCard[] = [
     heading: "Popular",
     subheading: "Missing the ‘ghar ka khana \n much? This one’s for you.",
     price: "3000",
+    duration: '/Month',
+
     features: [
       { feature: "Certified Home chefs" },
       { feature: "Homecooked & Nutritious meals" },

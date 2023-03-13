@@ -132,7 +132,9 @@ type Props = {
     },
     //9th componenent
     artisans:{
-      heading: string;
+      heading: {
+        heading: string;
+      };
       chef_array: chefType[]
     },
 
@@ -283,7 +285,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         hygiene: homepage_data.data.attributes?.Hygiene,
 
         pricing: {
-          brief: homepage_data.data.attributes?.Pricing?.brief,
+          // brief: homepage_data.data.attributes?.Pricing,
           cards: homepage_data.data.attributes?.Pricing_card
         },
 
@@ -293,7 +295,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         hiring: homepage_data.data.attributes?.hiring,
 
         artisans: {
-          heading: homepage_data.data.attributes?.chefs?.heading,
+          heading: homepage_data.data.attributes?.chefs,
           chef_array: homepage_data.data.attributes?.chef_carousel
         },
         join_as_chef: homepage_data.data.attributes?.join_as_chef,

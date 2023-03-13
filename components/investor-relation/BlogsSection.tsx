@@ -13,7 +13,9 @@ import Slider from "react-slick";
 type Props = {
   data: {
     heading: string;
-    blogs_array: BlogCardType[]
+    blogs_array: {
+      data: BlogCardType[]; 
+    } 
   }
 };
 
@@ -99,7 +101,7 @@ const BlogData: BlogCardType[] = [
 ];
 
 const BlogsSection = (props: Props) => {
-  const [slide,setslide]= useState(props.data?.blogs_array.length);
+  const [slide,setslide]= useState(props.data?.blogs_array?.data?.length);
   // const responsive = {
   //   desktop: {
   //     breakpoint: { max: 3000, min: 1024 },
@@ -123,7 +125,7 @@ const BlogsSection = (props: Props) => {
     <div className={Styles.blog_wrapper}>
       <h2>{props.data?.heading || "Blogs"}</h2>
       <div className={Styles.cards_wrapper}>
-        {(props.data?.blogs_array || BlogData).map((card, index) => {
+        {(props.data?.blogs_array?.data || BlogData).map((card, index) => {
           return <BlogCard card={card} key={index} />;
         })}
       </div>
@@ -138,7 +140,7 @@ const BlogsSection = (props: Props) => {
          slidesToScroll={1}
          className={Styles.carousel}
       >
-        {(props.data?.blogs_array || BlogData).map((card, index) => {
+        {(props.data?.blogs_array?.data || BlogData).map((card, index) => {
             return <BlogCard card={card} key={index} small/>;
         })}
       </Slider>

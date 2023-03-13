@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import Styles from '../../styles/components/about/hero.module.scss'
 
@@ -12,7 +13,8 @@ type Props = {
         }[]
         
         button: {
-            button_text: string;
+            text: string;
+            url: string;
         };
         image_front: {
             data: {
@@ -54,7 +56,7 @@ const Hero = (props: Props) => {
           }
         </h2>
                 <p>{props.data?.description || "The best private chefs, cooking in your kitchen."}</p>
-                <button>{props.data?.button?.button_text || "ReQUEST A CALLBACK"}</button>
+               <Link href={props.data?.button?.url || "#"}> <button>{props.data?.button?.text || "ReQUEST A CALLBACK"}</button></Link>
             </div>
         </div>
         <div className={Styles.images_section}>

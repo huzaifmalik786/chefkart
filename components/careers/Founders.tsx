@@ -6,9 +6,11 @@ import { ProfileCardType } from '../../interfaces/interfaces'
 type Props={
   data: {
     heading: {
-      text: string;
-      highlight: boolean;
-    }[]
+      heading: {
+        text: string;
+        highlight: boolean;
+      }[]
+    }
   
     profile: ProfileCardType[]
 
@@ -20,8 +22,8 @@ const Founders = (props: Props) => {
         <div className={Styles.heading}>
             <h2>
             {
-            (props.data?.heading) ? (
-              (props.data?.heading).map((item, key)=>{
+            (props.data?.heading?.heading) ? (
+              (props.data?.heading?.heading).map((item, key)=>{
                 return(
                   <span key={key}>
                     {item.highlight ? <span className={Styles.colored}>{item.text} </span> : item.text }
