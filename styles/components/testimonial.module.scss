@@ -4,8 +4,10 @@
   // align-items: flex-start;
   // gap: 0.98vw;
   height: 32vw;
+  padding: 0 2vw;
   @media screen and (max-width:450px) {
-    padding-top: 14.11vw;
+    padding: 0;
+    padding-top: 4.11vw;
     height: 90vw;
   }
 }
@@ -20,11 +22,13 @@
   width: 23.4vw !important;
   margin: 6vw 0;
   // margin-left: 2vw;
+  min-height: 22vw;
   @media screen and (max-width: 450px) {
     width: 82vw !important;
     border-radius: 2.56vw;
     padding: 4.96vw 4.44vw 0 4.44vw;
     margin: 15vw 0;
+    min-height: 65vw;
     // margin-left: 8.3vw;
   }
 
@@ -40,7 +44,7 @@
       transform: scale(1.1);
       font-size: inherit;
       line-height: inherit;
-      border: 0.5px solid #ABC0B5;
+      border: 1.8px solid #ABC0B5;
     }
 
     .line{

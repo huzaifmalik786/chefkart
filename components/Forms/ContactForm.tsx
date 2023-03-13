@@ -78,8 +78,10 @@ const ContactForm = (props: Props) => {
         <Image src="/Icon.svg" alt="" fill />
     </button>
       )}
+      <div className={Styles.text}>
+        <h2>{props.data?.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
+      </div>
       
-      <h2>{props.data?.heading || "Please fill out the form below and we will respond within 24hrs."} </h2>
 
       <form onSubmit={onSubmit}>
 

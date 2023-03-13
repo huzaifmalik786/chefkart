@@ -79,7 +79,7 @@ const PositionPage = (props: Props) => {
   return (
     <>
     {
-      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={props.career.thank_you} closeModal={setSecondModal}/></Modal>
+      secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal} hidebutton={true}><ThankYou data={props.career.thank_you} closeModal={setSecondModal}/></Modal>
     }
 
     {

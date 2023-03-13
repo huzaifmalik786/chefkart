@@ -38,7 +38,7 @@ const HomeBlogs = (props: Props) => {
       </div>
       <div className={Styles.carousel_wrapper}>
         <BlogArticleCarousel
-          isArrow={false}
+          isArrow={true}
           isDots={false}
           isFull={false}
           isInfinite={false}

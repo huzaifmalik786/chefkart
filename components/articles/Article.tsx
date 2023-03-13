@@ -6,6 +6,7 @@ import UseWindowDimensions from '../WindowSize'
 import { image_type } from '../../interfaces/interfaces'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import ReactMarkdown from "react-markdown";
 
 const content = {
 	article_content:
@@ -155,7 +156,10 @@ const Article = (props: Props) => {
                     (props.data?.content || content.article_content).split('\n').map((item, key)=>{
                         return(
                             <Reveal key={key}>
-                            <p key={key}>{item}</p>
+                            {/* <p key={key}>{item}</p> */}
+                            <ReactMarkdown>
+                                {item}
+                            </ReactMarkdown>
                             </Reveal>
                         )
                     })

@@ -53,6 +53,8 @@
     position: relative;
     width: 53.64vw;
     height: 32.48vw;
+    display: flex;
+    justify-content: center;
 
     .video{
       width: 100%;

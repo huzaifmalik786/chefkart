@@ -53,7 +53,7 @@ const PricingCard = (props: Props) => {
         }}
       >
         {props.card.features.map((point, index) => {
-          if((width<=450 && index<3) || width>450){
+          // if((width<=450 && index<3) || width>450){
           return (
             <div key={index} className={Styles.point}>
               <span className={Styles.check_img}>
@@ -62,7 +62,7 @@ const PricingCard = (props: Props) => {
               <p>{point.feature}</p>
             </div>
           );
-        }
+        // }
         })}
       </div>
 
@@ -70,7 +70,7 @@ const PricingCard = (props: Props) => {
       props?.card?.button && <div className={Styles.card_footer}>
       <Link
       href={`${props?.card?.button?.url}` || "#"}
-      className={ !even ? Styles.colored_bg : ""}
+      className={ !even ? Styles.colored_bg : Styles.white_bg}
         style={{
           // paddingLeft: props.isWide ? "8.75vw" : "6vw",
           // paddingRight: props.isWide ? "8.75vw" : "6vw",

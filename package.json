@@ -22,6 +22,7 @@
     "react-dom": "18.2.0",
     "react-gsap": "^3.2.1",
     "react-hook-form": "^7.41.2",
+    "react-markdown": "^8.0.5",
     "react-multi-carousel": "^2.8.2",
     "react-owl-carousel": "^2.3.3",
     "react-phone-number-input": "^3.2.16",

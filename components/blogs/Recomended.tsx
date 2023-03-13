@@ -19,7 +19,7 @@ const Recomended = (props: Props) => {
       <div className={Styles.carousel_container}>
         <BlogArticleCarousel
         cards={props.data.carousel}
-          isArrow={false}
+          isArrow={true}
           isDots={false}
           isFull={false}
           isInfinite={false}

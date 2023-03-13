@@ -259,7 +259,7 @@ const InvestorCarousel = (props: Props) => {
                   <h2>{investor.heading}</h2>
                 </div>
                 <div className={Styles.desc} style={fullText ? {maxHeight: "none"} : {}}>
-                  <p>{(investor.description).substring(0, 70)}<span style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} className={Styles.read_more}>..Read more</span><span style={fullText ? {display: "inline"} : {}} className={Styles.overflow_text}>{(investor.description).substring(71)}</span></p>
+                  <p>{(investor.description).substring(0, 70)}<span style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} className={Styles.read_more}>..Read more</span><span style={fullText ? {display: "inline"} : {}} className={Styles.overflow_text}>{(investor.description).substring(70)}</span></p>
                 </div>
                 <div className={Styles.investor_name}>
                   <h5>{investor.name}</h5>

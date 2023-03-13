@@ -100,7 +100,7 @@ const PricingBanner = (props: Props) => {
   return (
     <>
      {
-      props.thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou closeModal={setSecondModal} data={props.thankYou} /></Modal>
+      props.thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal} hidebutton><ThankYou closeModal={setSecondModal} data={props.thankYou} /></Modal>
     }
     {
       props.form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} closeModal={setOpenModal}/></Modal>
@@ -176,9 +176,9 @@ const PricingBanner = (props: Props) => {
                 )}
               </p>
             </div>
-                <div className={Styles.btn}>
+                {/* <div className={Styles.btn}>
                   <button onClick={()=> setOpenModal(true)}>{props?.data?.button?.button_text || "get in touch" }</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

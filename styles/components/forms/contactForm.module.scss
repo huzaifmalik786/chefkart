@@ -29,7 +29,9 @@
     }
   }
 
-
+  .text{
+    width: 100%;
+  }
   h2 {
     font-family: var(--secondary_font);
     font-weight: 600;
@@ -43,7 +45,8 @@
     @media screen and (max-width: 450px) {
       font-size: 4.44vw;
       line-height: 6vw;  
-      padding-bottom: 6.67vw;    
+      padding-bottom: 6.67vw;
+      justify-content: center;
     }
   }
 

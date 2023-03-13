@@ -146,8 +146,6 @@ const index = (props: Props) => {
       </div>
       </Reveal>
       <Reveal>
-      </Reveal>
-      <Reveal>
       <FAQ data={props.faq} />
       </Reveal>
     </Layout>

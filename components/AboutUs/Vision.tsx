@@ -38,7 +38,7 @@ const Vision = (props: Props) => {
               <span className={Styles.subheading}>{item.subheading}</span>
               <h2>{item.heading}</h2>
 
-                    <p>{item.description.substring(0, 75)}<button className={Styles.read_more} style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} >...Read more</button> <span style={fullText ? {display: "inline"} : {}}  className={Styles.overflow_text}>{item.description.substring(75)}</span> </p>
+                    <p>{item.description.substring(0, 75)}<button className={Styles.read_more} style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} >...Read more</button><span style={fullText ? {display: "inline"} : {}}  className={Styles.overflow_text}>{item.description.substring(75)}</span> </p>
                     
                     </div>
             <div className={Styles.right_section}>

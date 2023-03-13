@@ -6,7 +6,9 @@ import Image from "next/image";
 import UseWindowDimensions from "../WindowSize";
 
 type Props = {
-  data: BlogCardType[]
+  data:{
+    data: BlogCardType[]
+  } 
   buttons: {
     attributes: {
       category: string;
@@ -79,7 +81,7 @@ const AllBlogs = (props: Props) => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const startIndex = (currentPage - 1) * itemsPerPage
   var endIndex = startIndex + itemsPerPage
-  const [filteredData, setFilteredData] = useState((props.data || BlogData).filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category == 'Trending')}))
+  const [filteredData, setFilteredData] = useState((props?.data?.data || BlogData).filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category == 'Trending')}))
   const [displayedItems, setDisplayedItems] = useState((filteredData).slice(0, itemsPerPage))
   const [firstRender, setFirstRender] = useState(true);
   // const [startIndex, setStartIndex] = useState(0)
@@ -91,7 +93,7 @@ const AllBlogs = (props: Props) => {
 
   
   // const displayedItems = (props.data || BlogData).slice(startIndex, endIndex)
-  const totalBlogs = (props.data?.length || BlogData.length)
+  const totalBlogs = (props.data?.data.length || BlogData.length)
   const totalPages = Math.ceil(totalBlogs/itemsPerPage)
 
   const [morecards,setmorecards]= useState<number>(0);
@@ -109,7 +111,7 @@ const AllBlogs = (props: Props) => {
     [currentPage, startIndex, endIndex, width, morecards, filteredData ]
   );
 useEffect(() => {
-  setFilteredData(props.data.filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category === activeBtn)}))
+  setFilteredData(props?.data?.data.filter((i)=> {return i.attributes.blogs_categories.data.find(i => i.attributes.category === activeBtn)}))
   setCurrentPage(1)
   
   if(isMounted.current && componentRef && componentRef.current && width > 450){

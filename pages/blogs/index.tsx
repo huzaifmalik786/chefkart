@@ -34,7 +34,9 @@ type Props = {
     }
   }
   }
-  blogs: BlogCardType[]
+  blogs:{
+    data: BlogCardType[]
+  } 
   filter_buttons: {
     attributes: {
       category: string;

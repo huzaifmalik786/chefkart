@@ -22,7 +22,7 @@ const Banner = (props: Props) => {
     <div className={Styles.banner_container}>
         <div className={Styles.banner}>
           <div className={Styles.banner_img}>
-            <Image src={props.data?.img?.data?.attributes?.url || "/BG (1).png"} alt={props.data?.img?.data?.attributes?.alternativeText || ""} fill />
+            <Image style={{objectFit:"cover"}} src={props.data?.img?.data?.attributes?.url || "/BG (1).png"} alt={props.data?.img?.data?.attributes?.alternativeText || ""} fill/>
           </div>
             <p>
             {

@@ -16,6 +16,7 @@ type Props = {
             text: string;
             url: string;
         };
+        
         image_front: {
             data: {
                 attributes: {

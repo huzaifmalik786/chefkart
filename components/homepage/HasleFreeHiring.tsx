@@ -11,6 +11,7 @@ type Props = {
     image: image_type
     download_icons: {
       icon: image_type
+      url: string
     }[]
   }
 };
@@ -53,7 +54,9 @@ const HasleFreeHiring = (props: Props) => {
             props.data?.download_icons.map((item, key)=>{
               return(
                 <div key={key} className={Styles.app_icon}>
-            <Image src={item?.icon.data?.attributes?.url || "/app-store-icon.svg"} alt={item?.icon?.data?.attributes?.alternativeText || "appstore"} fill />
+                  <a href={item?.url}>
+                    <Image src={item?.icon.data?.attributes?.url || "/app-store-icon.svg"} alt={item?.icon?.data?.attributes?.alternativeText || "appstore"} fill />
+                  </a>
           </div>
               )
             })

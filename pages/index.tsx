@@ -128,6 +128,7 @@ type Props = {
     image: image_type
     download_icons: {
       icon: image_type
+      url: string
     }[]
     },
     //9th componenent

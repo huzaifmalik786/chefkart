@@ -55,7 +55,7 @@ const ProjectFeatures = (props : Props) => {
         <p className={Styles.sub_heading}>{props.data?.subheading || "Get the details you need to purchase"}</p>
         <h4 className={Styles.heading}>{props.data?.heading || "An overview of what’s included"}</h4>
         </Reveal>
-        {width<=450?(
+        {/* {width<=450?(
             <Reveal>
             <div className={Styles.container}>
             <div className={Styles.card}>
@@ -74,7 +74,6 @@ const ProjectFeatures = (props : Props) => {
                     })
                 }
                 </div>
-                {/* <button className={Styles.get_started_popular} style={{backgroundColor:"#FFFFFF", color:"#2C2C2C"}}>{props.data?.button?.button_text || "Get Started"}</button> */}
             </div>
             <div className={Styles.card} style={{backgroundColor:"#2D4739", color:"white"}}>
                 <div className={Styles.header}>
@@ -92,11 +91,10 @@ const ProjectFeatures = (props : Props) => {
                     })
                 }
                 </div>
-                {/* <button className={Styles.get_started_popular}>{props.data?.button?.button_text || "Get Started"}</button> */}
             </div>
             </div>
             </Reveal>
-        ):(
+        ):( */}
         <Reveal>
         <table className={Styles.table}>
             <tbody>
@@ -127,7 +125,7 @@ const ProjectFeatures = (props : Props) => {
             </tbody>
         </table>
         </Reveal>
-        )}
+        {/* )} */}
     </div>
   )
 }

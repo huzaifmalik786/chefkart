@@ -72,7 +72,7 @@ const ContactForm = (props: Props) => {
           {
             props.form.inputs.map((item, key)=> {
               return(
-                item.type !== "textarea" ? <Input key={key} placeholder={item.placeholder || "Name"} type={item.type || "text"} name={item.name || "name"} /> : <TextArea placeholder={item.placeholder || "Name"} name={item.name || "name"} row={2} />
+                item.type !== "textarea" ? <Input key={key} placeholder={item.placeholder || "Name"} type={item.type || "text"} name={item.name || "name"}/> : <TextArea placeholder={item.placeholder || "Name"} name={item.name || "name"} row={2} />
               )
             })
           }

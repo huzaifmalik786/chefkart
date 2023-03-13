@@ -14,6 +14,9 @@
       gap:3.33vw;
       overflow-x: scroll;
       padding: 0 4.44vw;
+      &::-webkit-scrollbar{
+        display: none;
+      }
     }
 
     .button {

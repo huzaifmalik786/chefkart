@@ -91,7 +91,7 @@ const Layout: React.FC<Props> = ({ children, title = "Chefkart", header, footer,
       setModalOpen: (open: boolean) => setShowModal(open),
       setSecondModal: (open:boolean)=>setOpenModal(open)}}>
       {
-        thankYou && showModal && <Modal openModal={showModal} setOpenModal={setShowModal}><ThankYou data={thankYou} closeModal={setShowModal}/></Modal>
+        thankYou && showModal && <Modal openModal={showModal} setOpenModal={setShowModal} hidebutton={true}><ThankYou data={thankYou} closeModal={setShowModal}/></Modal>
       }
       {
         thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal}><ThankYou data={thankYou} closeModal={setSecondModal}/></Modal>

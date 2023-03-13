@@ -13,7 +13,7 @@
         position: relative;
         @media screen and (max-width: 450px) {
             width: 29vw;
-            border: 1.5px solid rgba(159, 159, 159,0.5);
+            border: 1.5px solid rgba(159, 159, 159,0.3);
             border-radius: 2.22vw;
             padding: 2vw;
           }
@@ -43,14 +43,13 @@
             align-items: center;
             text-align: center;
             letter-spacing: -0.01em;
-    
             color: #000000;
             @media screen and (max-width: 450px) {
                 font-size: 3.05vw;
                 line-height: 120%;
                 margin-top: 1.5vw;
                 text-align: start;
-                color: #5A5A5A;
+                color: #484848;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;

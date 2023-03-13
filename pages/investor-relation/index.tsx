@@ -150,7 +150,7 @@ const index = (props: Props) => {
       <Reveal>
       <Banner data={props.last_banner} />
       </Reveal>
-      <Divider />
+      {/* <Divider /> */}
     </Layout>
   )
 };

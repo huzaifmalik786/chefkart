@@ -1,7 +1,7 @@
 .project_feature_container {
   padding: 6.94vw 6.45vw 2.43vw 6.38vw;
   @media screen and (max-width: 450px) {
-    padding: 0 0 12.78vw 0;
+    padding: 0 4.44vw 12.78vw 4.44vw;
     margin-top: -5vw;
     .container{
       display: flex;
@@ -102,6 +102,11 @@
       font-size: 1.25vw;
       line-height: 1.59vw;
       color: #2c2c2c;
+      @media (max-width: 450px){
+        font-size: 3.89vw;
+        line-height: 5vw;
+        padding: 3.33vw 2vw;
+      }
     }
 
     th:first-child {
@@ -110,17 +115,26 @@
 
     td {
       padding: 0.83vw 1.94vw;
+      @media (max-width: 450px){
+        padding: 3.33vw 2.6vw;
+      }
     }
 
 
     .popular {
       max-width: 18.87vw;
+      @media (max-width: 450px){
+        max-width: 25.87vw;
+      }
     }
     .premium {
       max-width: 18.87vw;
       background-color: #eeeeee;
       color: #343434;
       border-radius: 0.55vw 0.55vw 0px 0px;
+      @media (max-width: 450px){
+        max-width: 25vw;
+      }
     }
     .feature_name {
       font-family: var(--tertiary_font);
@@ -129,6 +143,10 @@
       font-size: 1.11vw;
       line-height: 150%;
       color: #2c2c2c;
+      @media (max-width: 450px){
+        font-size: 3.33vw;
+        line-height: 150%;
+      }
     }
 
     .checked {
@@ -136,6 +154,10 @@
       width: 1.24vw;
       aspect-ratio: 1/1;
       margin: auto;
+      @media (max-width: 450px){
+        width: 3.05vw;
+        height: 3.05vw;
+      }
     }
 
     .get_started_popular {

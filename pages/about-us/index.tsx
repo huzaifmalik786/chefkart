@@ -26,7 +26,8 @@ type Props = {
     }[];
 
     button: {
-      button_text: string;
+      text: string;
+      url: string;
     };
     image_front: {
       data: {
