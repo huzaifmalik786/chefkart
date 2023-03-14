@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
+import { image_type } from '../../interfaces/interfaces'
 import Styles from '../../styles/components/about/hero.module.scss'
+import Modal from '../careers/Modal'
+import ThankYou from '../Forms/ThankYou'
+// import ContactForm from './ContactForm'
+import ContactForm from "../Forms/ContactForm";
 
 type Props = {
     data: {
@@ -34,9 +39,41 @@ type Props = {
             }
         }
     }
+    form?: {
+        heading: string;
+          inputs: {
+            placeholder: string;
+            name: string;
+            type: string;
+          }[]
+          submit_button: string;
+    }
+    thankYou?: {
+    heading: string;
+    subheading: string;
+    link: {
+        text: string;
+        url: string;
+    }
+    icon: image_type
+    }
 }
 const Hero = (props: Props) => {
+    const [openModal, setOpenModal] = useState<boolean>(false)
+    const [secondModal, setSecondModal] = useState<boolean>(false)
+  
+    const handlemodalClosed = (closed:boolean)=>{
+      setOpenModal(closed);
+      setSecondModal(!closed)
+    }
   return (
+    <>
+    {
+      props.thankYou && secondModal && <Modal openModal={secondModal} setOpenModal={setSecondModal} hidebutton><ThankYou closeModal={setSecondModal} data={props.thankYou} /></Modal>
+    }
+    {
+      props.form && openModal && <Modal openModal={openModal} setOpenModal={setOpenModal}><ContactForm data={props.form} setOpenModal_two={handlemodalClosed} openModal_two={openModal} closeModal={setOpenModal}/></Modal>
+    }
     <div className={Styles.about_hero}>
         <div className={Styles.description}>
             <div>
@@ -57,7 +94,12 @@ const Hero = (props: Props) => {
           }
         </h2>
                 <p>{props.data?.description || "The best private chefs, cooking in your kitchen."}</p>
-               <Link href={props.data?.button?.url || "#"}> <button>{props.data?.button?.text || "ReQUEST A CALLBACK"}</button></Link>
+                {props.data?.button?.url?(
+               <Link href={props.data?.button?.url}> <button onClick={()=> setOpenModal(true)}>{props.data?.button?.text || "ReQUEST A CALLBACK"}</button></Link>
+
+                ):(
+                    <button onClick={()=> setOpenModal(true)}>{props.data?.button?.text || "ReQUEST A CALLBACK"}</button>
+                )}
             </div>
         </div>
         <div className={Styles.images_section}>
@@ -70,7 +112,7 @@ const Hero = (props: Props) => {
                 </div>
 
                 <div className={Styles.big_ellipse}>
-                    <Image src='https://chefkart.netlify.app/Ellipse 25.png' alt="" fill />
+                    <Image src='/Ellipse 25.png' alt="" fill />
                 </div>
 
                 <div className={Styles.small_ellipse}> 
@@ -79,6 +121,7 @@ const Hero = (props: Props) => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 
