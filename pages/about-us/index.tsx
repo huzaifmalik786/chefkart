@@ -95,15 +95,6 @@ form: {
       }[]
       submit_button: string;
 }
-contactForm: {
-  heading: string;
-    inputs: {
-      placeholder: string;
-      name: string;
-      type: string;
-    }[]
-    submit_button: string;
-}
 // how_it_works: {
 //   brief: {
 //     heading: string;
@@ -139,7 +130,7 @@ const index = (props: Props) => {
   const { width } = UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer} thankYou={props.thank_you}>
-        <Hero data={props.banner} form={props.contactForm} thankYou={props.thank_you}/>
+        <Hero data={props.banner} form={props.form} thankYou={props.thank_you}/>
         <Reveal>
         <Vision data={props.vision} />
         </Reveal>
@@ -180,9 +171,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/about?populate=deep,10`
   );
   const about_data = await res2.json();
-  const res4 = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/chef-for-party?populate=deep,10`);
-    const pricing_data = await res4.json();
 
   // const temp_res = await fetch(
   //   `http://localhost:1337/api/about?populate=deep,10`
@@ -200,7 +188,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
         image_front: about_data.data?.attributes?.image_front,
         image_back: about_data.data?.attributes?.image_back,
       },
-      contactForm: pricing_data.data.attributes.form,
       vision: about_data.data.attributes.vision,
       facts: about_data.data.attributes.facts,
       gallery: {
