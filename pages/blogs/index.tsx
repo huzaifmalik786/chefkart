@@ -21,7 +21,8 @@ type Props = {
       highlight: boolean;
     }[]
     button: {
-      button_text: string;
+      text: string;
+      url: string;
     }
     slider: {
       text: string
@@ -33,6 +34,7 @@ type Props = {
       }
     }
   }
+  image: image_type;
   }
   blogs:{
     data: BlogCardType[]

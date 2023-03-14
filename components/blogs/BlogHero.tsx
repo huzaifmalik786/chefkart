@@ -2,6 +2,8 @@ import React, { useEffect, useState,useRef } from "react";
 import Image from "next/image";
 import Styles from "../../styles/components/blogs/bloghero.module.scss";
 import UseWindowDimensions from "../WindowSize";
+import Link from "next/link";
+import { image_type } from "../../interfaces/interfaces";
 
 type Props = {
   data: {
@@ -12,7 +14,8 @@ type Props = {
       highlight: boolean;
     }[]
     button: {
-      button_text: string;
+      text: string;
+      url: string;
     }
     slider: {
         text: string
@@ -24,6 +27,7 @@ type Props = {
         }
       }
     }
+    image: image_type;
   }
 };
 
@@ -141,25 +145,35 @@ const items = props?.data?.slider.map((item, key)=>{
           }
           
         </h4>
-        <button>{props.data?.button?.button_text || "Read More"}</button>
+        <Link href={props.data?.button?.url || "#"}>
+        <button>{props.data?.button?.text || "Read More"}</button>
+        
+        </Link>
       </div>
       {/* <div className={Styles.hero_img}>
         <Image src={"/blogs_hero.png"} className={Styles.img} alt="chef" fill />
       </div> */}
+        {props.data?.video?(
       <div className={Styles.video_container}>
-        <video
-          ref={videoRef}
-          src={props.data?.video?.data?.attributes?.url}
-          loop
-          className={Styles.video}
-        />
-        <div
-        className={Styles.pause_button}
-          onClick={togglePause}
-        >
-          {paused ? <Image src={'/Play Button Circled.svg'} alt="" fill /> : ""}
-        </div>
+           <video
+           ref={videoRef}
+           src={props.data?.video?.data?.attributes?.url}
+           loop
+           className={Styles.video}
+         />
+         <div
+         className={Styles.pause_button}
+           onClick={togglePause}
+         >
+           {paused ? <Image src={'/Play Button Circled.svg'} alt="" fill /> : ""}
+         </div>  
       </div>
+        ):(
+          <div className={Styles.hero_img}>
+            <Image src={props.data?.image?.data?.attributes?.url || "/blogs_hero.png"} alt="chef" fill/>
+          </div>
+        )}
+       
     </div>
   );
 };

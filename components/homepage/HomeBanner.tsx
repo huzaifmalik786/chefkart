@@ -12,6 +12,7 @@ type Props = {
   data : {
     heading: string,
     badge: string,
+    badge_icon: image_type,
     subheading: {
       text: string,
       highlight: boolean
@@ -79,7 +80,7 @@ const HomeBanner = (props: Props) => {
           <div className={Styles.toast}>
             <div className={Styles.icon}>
             <Image
-              src={"/toast-burger-icon.svg"}
+              src={props.data?.badge_icon?.data?.attributes?.url || "/toast-burger-icon.svg"}
               alt="taost-icon"
               fill
             />

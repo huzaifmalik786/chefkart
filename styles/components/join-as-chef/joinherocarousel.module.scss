@@ -4,7 +4,10 @@
 
 .carousel_wrapper {
   .items {
-
+    height: 46.5vw;
+    @media (max-width: 450px){
+      height: 111.11vw;
+    }
     .carousel_img {
       position: absolute;
       width: 100vw;
@@ -90,7 +93,7 @@
 
 .customdots{
   position: absolute !important;
-  top:40vw;
+  top:42vw;
   @media (max-width: 450px) {
     top:100vw;
   }

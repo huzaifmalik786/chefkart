@@ -178,7 +178,7 @@ const index = (props: Props) => {
   const {width}= UseWindowDimensions();
   return (
     <Layout header={props.header} footer={props.footer}>
-      <PricingBanner data={props.banner} cards={props.cards} form={props.contactForm} thankYou={props.thank_you}  />
+      <PricingBanner data={props.banner} cards={props.cards} form={props.contactForm} thankYou={props.thank_you}/>
       <Reveal>
       <Features data={props.affordable_price} />
       </Reveal>

@@ -176,9 +176,13 @@ const PricingBanner = (props: Props) => {
                 )}
               </p>
             </div>
+            {props?.data?.button?.button_text &&
+            <div className={Styles.btn}>
+              <button onClick={()=> setOpenModal(true)}>{props?.data?.button?.button_text}</button>
+            </div>}
                 {/* <div className={Styles.btn}>
                   <button onClick={()=> setOpenModal(true)}>{props?.data?.button?.button_text || "get in touch" }</button>
-            </div> */}
+                </div> */}
           </div>
         </div>
       </div>

@@ -27,6 +27,7 @@ type Props = {
     homebanner: {
       heading: string;
       badge: string;
+      badge_icon: image_type;
       subheading: {
         text: string;
         highlight: boolean;
