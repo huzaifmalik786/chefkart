@@ -105,6 +105,7 @@ const Article = (props: Props) => {
         let newDate = formatter.format(date);
         return newDate
     }
+    console.log(props.data)
     
   return (
     <div className={Styles.article_container}>

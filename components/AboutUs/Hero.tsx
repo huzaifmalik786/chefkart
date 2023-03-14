@@ -70,7 +70,7 @@ const Hero = (props: Props) => {
                 </div>
 
                 <div className={Styles.big_ellipse}>
-                    <Image src='/Ellipse 25.png' alt="" fill />
+                    <Image src='https://chefkart.netlify.app/Ellipse 25.png' alt="" fill />
                 </div>
 
                 <div className={Styles.small_ellipse}> 

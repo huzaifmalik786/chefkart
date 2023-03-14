@@ -72,8 +72,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     );
     const footer_data = await res3.json();
   
-    const blog = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages?filters[slug]=${params.slug}`);
+    const blog = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-pages?filters[slug]=${params.slug}&populate=*`);
     const blog_data = await blog.json()
+    // console.log(blog_data)
 
     const articles_res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog-single?populate=deep,10`)
     const articles = await articles_res.json();

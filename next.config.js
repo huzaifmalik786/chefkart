@@ -8,7 +8,7 @@ const nextConfig = {
   },
 
   optimizeFonts: false,
-  images: { "domains": ['chefkart-strapi-media.s3.ap-south-1.amazonaws.com']}
+  images: { "domains": ['chefkart-strapi-media.s3.ap-south-1.amazonaws.com', 'chefkart.netlify.app']}
 };
 
 module.exports = nextConfig;

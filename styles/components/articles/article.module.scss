@@ -72,6 +72,9 @@
     width: 100%;
     height: 39.4vw;
     border-radius: 1.4vw;
+    img{
+      object-fit: cover;
+    }
     @media screen and (max-width: 450px) {
       width: 91.11vw;
       height: 101.6vw;

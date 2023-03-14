@@ -7,6 +7,7 @@ import Recomended from "../../components/blogs/Recomended";
 import Layout from "../../components/layouts/Layout";
 import { BlogCardType, blogType, Footer_type, Header_type, image_type } from "../../interfaces/interfaces";
 import Reveal from "../../components/Reveal";
+import { json } from "stream/consumers";
 // import HowChefkartWorks from "../../components/homepage/HowChefkartWorks";
 
 type Props = {
@@ -94,6 +95,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const res2 = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/blog?populate=deep,10`);
     const blogs = await res2.json();
+    // console.log({blogs: JSON.stringify(blogs)})
 
     // const temp_res = await fetch(`http://localhost:1337/api/blog?populate=deep,10`)
     // const temp_array = await temp_res.json()
