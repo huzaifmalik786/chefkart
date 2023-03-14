@@ -150,6 +150,9 @@
           position: relative;
           width: 19.63vw;
           height: 29.45vw;
+          img{
+            object-fit: cover;
+          }
           @media screen and (max-width: 450px) {
             width: 46.9vw;
             height: 70.4vw;

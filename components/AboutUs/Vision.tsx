@@ -45,7 +45,7 @@ const Vision = (props: Props) => {
               <div className={Styles.vison_image}>
                 <Image
                   src={
-                    item.image.data.attributes.url || "/iStock-1223383996 1.png"
+                    item.image?.data?.attributes.url || "/iStock-1223383996 1.png"
                   }
                   alt="vision_image"
                   fill

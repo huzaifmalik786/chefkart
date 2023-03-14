@@ -95,8 +95,7 @@ const Hero = (props: Props) => {
         </h2>
                 <p>{props.data?.description || "The best private chefs, cooking in your kitchen."}</p>
                 {props.data?.button?.url?(
-               <Link href={props.data?.button?.url}> <button onClick={()=> setOpenModal(true)}>{props.data?.button?.text || "ReQUEST A CALLBACK"}</button></Link>
-
+                    <Link href={props.data?.button?.url}> <button>{props.data?.button?.text || "ReQUEST A CALLBACK"}</button></Link>
                 ):(
                     <button onClick={()=> setOpenModal(true)}>{props.data?.button?.text || "ReQUEST A CALLBACK"}</button>
                 )}
