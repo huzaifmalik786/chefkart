@@ -266,7 +266,7 @@ const InvestorCarousel = (props: Props) => {
                   <p>{investor.designation}</p>
                 </div>
                 <div className={Styles.logo_container}>
-                  {investor.company_logos.data.map((logo, key) => {
+                  {investor?.company_logos?.data?.map((logo, key) => {
                     return (
                       <div key={key} className={Styles.logo}>
                         <Image src={logo.attributes.url} alt="logo" fill />
