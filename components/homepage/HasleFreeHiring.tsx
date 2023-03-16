@@ -26,10 +26,13 @@ const HasleFreeHiring = (props: Props) => {
   // },3000)
   return (
     <div className={Styles.container}>
+      <div className={Styles.phone_container}>
       <div className={Styles.phone_img}>
         <video className={Styles.video} src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/phonevideo_f8b73e4bc3.MP4?updated_at=2023-03-16T15:06:37.737Z" loop autoPlay muted/>
+        {/* <video className={Styles.video} src={"/phoneVideo.mp4"} loop autoPlay muted/> */}
       {/* <Image src={active && width>450? "/mobile1.png": "/mobile2.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "phone"} fill /> */}
         {/* <Image src={props.data?.image?.data?.attributes?.url || "/phone.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "phone"} fill /> */}
+      </div>
       </div>
       <div className={Styles.container_text}>
         <div className={Styles.heading}>
