@@ -7,6 +7,26 @@
     background-color: #fff;
     padding: 0 0 12.5vw 0;
   }
+  .heading {
+    padding-left:4.79vw; 
+    @media (max-width: 450px) {
+      padding: 0 4.44vw 4.44vw 4.44vw ;
+      
+    }
+    h2 {
+      font-size: 2.77vw;
+      font-family: var(--tertiary_font);
+      line-height: 3.5vw;
+      font-weight: 700;
+
+      @media (max-width: 450px) {
+        text-align: center;
+        font-size: 5.56vw;
+        line-height: 7.5vw;
+        letter-spacing: -0.01em;
+      }
+    }
+  }
 
   .card {
     display: grid !important;
@@ -20,27 +40,6 @@
     .investor_about {
       padding-left: 4.79vw;
       padding-bottom: 6.34vw;
-
-      .heading {
-
-        @media (max-width: 450px) {
-          padding: 0 4.44vw 4.44vw 4.44vw ;
-          
-        }
-        h2 {
-          font-size: 2.77vw;
-          font-family: var(--tertiary_font);
-          line-height: 3.5vw;
-          font-weight: 700;
-
-          @media (max-width: 450px) {
-            text-align: center;
-            font-size: 5.56vw;
-            line-height: 7.5vw;
-            letter-spacing: -0.01em;
-          }
-        }
-      }
 
       .desc,
       .investor_name > h5 {

@@ -27,7 +27,8 @@ const HasleFreeHiring = (props: Props) => {
   return (
     <div className={Styles.container}>
       <div className={Styles.phone_img}>
-      <Image src={active && width>450? "/mobile1.png": "/mobile2.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "phone"} fill />
+        <video className={Styles.video} src="/phonevideo.mp4" loop autoPlay muted/>
+      {/* <Image src={active && width>450? "/mobile1.png": "/mobile2.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "phone"} fill /> */}
         {/* <Image src={props.data?.image?.data?.attributes?.url || "/phone.png"} alt={props.data?.image?.data?.attributes?.alternativeText || "phone"} fill /> */}
       </div>
       <div className={Styles.container_text}>

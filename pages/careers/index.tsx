@@ -134,7 +134,7 @@ const index = (props: Props) => {
         <NoOpenPositionBanner data={props.no_open_position}  />
       }
      
-      <Divider />
+      {/* <Divider /> */}
     </Layout>
   );
 };

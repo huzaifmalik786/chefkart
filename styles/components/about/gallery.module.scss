@@ -45,10 +45,18 @@
     width: 16.58vw !important;
     height: 16.58vw !important;
     position: relative;
+    margin: 2vw 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     background-color: #d9d9d9;
     border-radius: 0.45vw;
     overflow: hidden;
+    transition: transform 0.3s ease;
+    &:hover{
+      transform: scale(1.05);
+      @media (max-width: 450px){
+        transform: none;
+      }
+    }
     // margin-left: 1vw;
     @media (max-width: 1024px) {
       // margin-left: 8vw;

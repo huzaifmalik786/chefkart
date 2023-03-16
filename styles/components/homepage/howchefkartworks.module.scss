@@ -1,7 +1,7 @@
 .how_container {
   display: grid;
   grid-template-columns: 3fr 6fr;
-  padding: 8vw 1vw 10vw 1vw;
+  padding: 5vw 1vw 5vw 1vw;
   @media screen and (max-width: 450px) {
     grid-template-columns: 1fr;
     padding: 12.78vw 4.44vw;

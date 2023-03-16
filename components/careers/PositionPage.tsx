@@ -127,7 +127,7 @@ const PositionPage = (props: Props) => {
         </div> */}
         <div className={Styles.section}>
         {
-          (props.data.Content).map((data, key)=>{
+          (props.data?.Content).map((data, key)=>{
             return(
               <>
               <h2>{data.heading}</h2>

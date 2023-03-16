@@ -81,7 +81,7 @@ const FoodDisplay = (props: Props) => {
       //  style.width = '13.3vw'
     } else {
       if(width<=450){
-        style.marginTop = `${index > currentIndex ? "6.47vw" : `-6.47vw`}`;
+        style.marginTop = `${index > currentIndex ? "6.7vw" : `-6.7vw`}`;
       }
       else{
         style.marginTop = `${index > currentIndex ? "3.47vw" : `-3.47vw`}`;

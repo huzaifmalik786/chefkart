@@ -33,15 +33,17 @@ const PricingCard = (props: Props) => {
         <h4>{props.card?.heading}</h4>
         <p>{props.card?.subheading}</p>
       </div>
-      <div
-        className={`${Styles.card_price} ${
-          even && Styles.price_white
-        }`}
-      >
-        {props.showspan && <span className={Styles.top_span}>Starting from</span>}
-        <h2>
-          ₹{props.card?.price} <span> {props.card?.duration}</span>
-        </h2>
+      <div className={Styles.price_container}>
+        <div
+          className={`${Styles.card_price} ${
+            even && Styles.price_white
+          }`}
+        >
+          {props.showspan && <span className={Styles.top_span}>Starting from</span>}
+          <h2>
+            ₹{props.card?.price} <span> {props.card?.duration}</span>
+          </h2>
+        </div>
       </div>
       </div>
       <div

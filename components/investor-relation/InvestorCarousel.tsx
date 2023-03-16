@@ -197,9 +197,9 @@ const PrevArrow: React.FC<ArrowProps> = ({onClick}) => {
       style={{
         backgroundColor: "transparent",
         position: "absolute",
-        width: "3.11vw",
+        width: "3.01vw",
         zIndex: '1',
-        top: "10vw",
+        top: "10.3vw",
         aspectRatio: "1/1",
         left: "1.31vw"
       }}
@@ -237,6 +237,9 @@ const InvestorCarousel = (props: Props) => {
   // };
   return (
     <div className={Styles.investorcarousel_wrapper}>
+      <div className={Styles.heading}>
+            <h2>{props?.data[0]?.heading}</h2>
+      </div>
       <Slider
          draggable
          slidesToShow={1}
@@ -255,11 +258,11 @@ const InvestorCarousel = (props: Props) => {
           return (
             <div className={Styles.card} key={index}>
               <div className={Styles.investor_about}>
-                <div className={Styles.heading}>
-                  <h2>{investor.heading}</h2>
-                </div>
+                
                 <div className={Styles.desc} style={fullText ? {maxHeight: "none"} : {}}>
-                  <p>{(investor.description).substring(0, 70)}<span style={fullText ? {display: "none"} : {}} onClick={()=> setFullText(true)} className={Styles.read_more}>..Read more</span><span style={fullText ? {display: "inline"} : {}} className={Styles.overflow_text}>{(investor.description).substring(70)}</span></p>
+                  <p>{investor?.description?.substring(0, 70)}
+                  <span style={fullText || investor.description?.length<70 || !investor.description ? {display: "none"} : {}} onClick={()=> setFullText(true)} className={Styles.read_more}>..Read more</span>
+                  <span style={fullText ? {display: "inline"} : {}} className={Styles.overflow_text}>{(investor.description)?.substring(70)}</span></p>
                 </div>
                 <div className={Styles.investor_name}>
                   <h5>{investor.name}</h5>

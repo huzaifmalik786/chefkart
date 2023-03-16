@@ -57,7 +57,7 @@ const index = (props: Props) => {
       {/* <Reveal>
           <HowChefkartWorks data={props.how_it_works} />
       </Reveal> */}
-      <Divider />
+      {/* <Divider /> */}
     </Layout>
   );
 };

@@ -87,42 +87,49 @@
         }
       }
     }
-  
-    .card_price {
-      border-width: 1px 0px;
+    .price_container{
+      border-width: 1.5px 0px;
       border-style: solid;
       border-color: rgba(0,0,0,0.05);
-      padding: 0.5vw;
+      width: 23vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       @media screen and (max-width: 450px) {
         border: none;
       }
-      .top_span{
-        margin-left: 0;
-        font-size: 1vw;
-        @media (max-width: 450px){
-          font-size: 3vw;
+      .card_price {
+     
+        padding: 0.5vw;
+        .top_span{
+          margin-left: 0;
+          font-size: 1vw;
+          @media (max-width: 450px){
+            font-size: 3vw;
+          }
         }
-      }
-  
-      h2 {
-        font-size: 3.88vw;
-        font-weight: 700;
-        line-height: 3.16vw;
-        @media screen and (max-width:450px) {
-          font-size: 7.23vw;
-          line-height: 6vw;
+    
+        h2 {
+          font-size: 3.88vw;
+          font-weight: 700;
+          line-height: 3.16vw;
+          @media screen and (max-width:450px) {
+            font-size: 7.23vw;
+            line-height: 6vw;
+          }
         }
-      }
-      span {
-        line-height: 1.38vw;
-        font-size: 1.25vw;
-        margin-left: -1vw;
-        font-weight: 400;
-        @media screen and (max-width:450px) {
-          font-size: 3.83vw;
+        span {
+          line-height: 1.38vw;
+          font-size: 1.25vw;
+          margin-left: -1vw;
+          font-weight: 400;
+          @media screen and (max-width:450px) {
+            font-size: 3.83vw;
+          }
         }
       }
     }
+
   }
 
 

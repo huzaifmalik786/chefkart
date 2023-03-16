@@ -159,7 +159,7 @@ const PricingBanner = (props: Props) => {
                       <span key={key}>
                         {item.highlight ? (
                           <span className={Styles.colored}>
-                            <br />
+                            {/* <br /> */}
                             {item.text}{" "}
                           </span>
                         ) : (
