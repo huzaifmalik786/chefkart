@@ -3,7 +3,7 @@ import Image from "next/image";
 import Styles from "../../styles/components/homepage/haslefreehiring.module.scss";
 import { image_type } from "../../interfaces/interfaces";
 import UseWindowDimensions from "../WindowSize";
-import { useInterval } from 'usehooks-ts'
+// import { useInterval } from 'usehooks-ts'
 
 type Props = {
   data: {
@@ -21,9 +21,9 @@ type Props = {
 const HasleFreeHiring = (props: Props) => {
   const {width}= UseWindowDimensions();
   const [active,setactive]= useState<boolean>(true);
-  useInterval(()=>{
-    setactive(!active);
-  },3000)
+  // useInterval(()=>{
+  //   setactive(!active);
+  // },3000)
   return (
     <div className={Styles.container}>
       <div className={Styles.phone_img}>
@@ -42,7 +42,7 @@ const HasleFreeHiring = (props: Props) => {
         </div>
         <div className={Styles.text}>
           <div className={Styles.para_1}>
-            <p className={active && width>450? Styles.active:""}>
+            <p className={!active && width>450? Styles.active:""}>
               {
                 props.data?.subheading1 || "It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here. Get us close to your fingertips It all starts here."
               }
